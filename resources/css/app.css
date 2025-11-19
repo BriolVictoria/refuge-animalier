@@ -2,6 +2,8 @@
 @import './colors/colors.css';
 @import './fonts/fonts.css';
 @import './fonts/font-sizes.css';
+@import './shadows/shadows.css';
+@import './public/burger_menu.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
