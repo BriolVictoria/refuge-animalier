@@ -7,28 +7,6 @@
     transition: all ease-in-out 200ms;
 }
 
-.links_bg {
-    font-size: var(--text-lg);
-    line-height: var(--text-lg--line-height);
-    font-weight: 500;
-    margin-bottom: 2.625rem;
-}
-
-.links_bg:nth-child(1) {
-    margin-top: 4.5rem;
-}
-
-.link_bg {
-    font-size: var(--text-sm);
-    line-height: var(--text-sm--line-height);
-    font-weight: 500;
-    color: var(--color-blue-900);
-    padding: 0.5rem 1.875rem;
-    border: solid var(--color-blue-900) 0.09375rem;
-    border-radius: 0.25rem; /* Probléme de border radius*/
-    margin-bottom: 7.625rem;
-}
-
 .burger_menu:not(:checked) ~.nav_container {
     right: -100%;
 }
@@ -54,3 +32,4 @@
     transform: rotate(-45deg) translateY(-25%);
 }
 
+/**{outline: 1px solid blue;}*/
