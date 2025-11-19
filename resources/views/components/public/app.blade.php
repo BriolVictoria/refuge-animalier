@@ -17,5 +17,7 @@
 {!! $slot !!}
 
 {{--Footer component--}}
+<x-public.section.footer/>
+
 </body>
 </html>
