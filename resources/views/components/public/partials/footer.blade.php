@@ -1,27 +1,27 @@
 @php
     $navigations = [
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => '#', 'links_class' => 'text-xs font-regular mt-[1.5rem] inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'À propos', 'title' => 'Vers la page À propos', 'route_name' => '#', 'links_class' => 'text-xs font-regular inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => '#', 'links_class' => 'text-xs font-regular inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => '#', 'links_class' => 'text-xs font-regular inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => '#', 'links_class' => 'text-xs font-regular inline-block '],
+           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => '#', 'links_class' => 'text-xs font-normal mt-[1.5rem] inline-block '],
+           ['list_class'=>'mb-[0.875rem]', 'label'=> 'À propos', 'title' => 'Vers la page À propos', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
        ];
 
     $contact_details = [
-           ['list_class'=>'mb-[0.875rem]', 'label'=> '04 72 56 91 42', 'title' => 'Vers le numéro', 'route_name' => '#', 'links_class' => 'text-xs font-regular mt-[1.5rem] inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'contact@lespattesheureuses.be', 'title' => 'Vers l‘adresse mail', 'route_name' => '#', 'links_class' => 'text-xs font-regular inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> '12 Rue des Fleurs, 69000 Heusy, Belgique', 'title' => 'Vers l‘adresse', 'route_name' => '#', 'links_class' => 'text-xs font-regular inline-block '],
+           ['list_class'=>'mb-[0.875rem]', 'label'=> '04 72 56 91 42', 'title' => 'Vers le numéro', 'route_name' => '#', 'links_class' => 'text-xs font-normal mt-[1.5rem] inline-block '],
+           ['list_class'=>'mb-[0.875rem]', 'label'=> 'contact@lespattesheureuses.be', 'title' => 'Vers l‘adresse mail', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'mb-[0.875rem]', 'label'=> '12 Rue des Fleurs, 69000 Heusy, Belgique', 'title' => 'Vers l‘adresse', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
     ];
 
     $legal_notices = [
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Mentions légales', 'title' => 'Vers le numéro', 'route_name' => '#', 'links_class' => 'text-xs font-regular mt-[1.5rem] inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Politique de confidentialité', 'title' => 'Vers l‘adresse', 'route_name' => '#', 'links_class' => 'text-xs font-regular inline-block '],
+           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Mentions légales', 'title' => 'Vers le numéro', 'route_name' => '#', 'links_class' => 'text-xs font-normal mt-[1.5rem] inline-block '],
+           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Politique de confidentialité', 'title' => 'Vers l‘adresse', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
     ];
 
 
 @endphp
 
-<footer class="bg-white shadow-xl pl-[1.25rem] pb-[1.5rem] pt-[3rem] pr-[1.25rem]">
+<footer class="bg-white shadow-xl pb-[1.5rem] pt-[3rem] px-[1.25rem]">
 
     <h2 class="sr-only">Footer</h2>
     <nav>
