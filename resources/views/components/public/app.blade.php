@@ -12,12 +12,12 @@
 <body class="max-w-[125rem] m-auto">
 
 {{--Header component--}}
-<x-public.section.header/>
+<x-public.partials.header/>
 
 {!! $slot !!}
 
 {{--Footer component--}}
-<x-public.section.footer/>
+<x-public.partials.footer/>
 
 </body>
 </html>
