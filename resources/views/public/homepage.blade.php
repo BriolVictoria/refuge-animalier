@@ -1,6 +1,6 @@
 @php
     $buttons =[
-       ['route_name'=>'#', 'title'=> 'Vers Nos animaux', 'label' => 'Adopter maintenant !', 'class' => 'bg-blue-900 text-white'],
+       ['route_name'=>'#', 'title'=> 'Vers Nos animaux', 'label' => 'Adopter maintenant&nbsp;!', 'class' => 'bg-blue-900 text-white'],
        ['route_name'=>'#', 'title'=> 'Vers Contactez-nous', 'label' => 'Contactez-nous', 'class' => 'border-blue-900 border-[0.09375rem] text-blue-900'],
     ];
 
@@ -22,7 +22,7 @@
             image_alt="Image d'un golden qui souris beaucoup sur un fond rond vert"
             sub_title="Le refuge"
             title="LES PATTES HEUREUSES"
-            content="Chaque patte mérite un foyer aimant. Découvrez nos compagnons à quatre pattes et offrez-leur une nouvelle vie pleine de câlins et d’aventures&nbsp;!"
+            content="Chaque patte mérite un foyer aimant&nbsp;. Découvrez nos compagnons à quatre pattes et offrez-leur une nouvelle vie pleine de câlins et d’aventures&nbsp;!"
             :buttons="$buttons"
         />
 

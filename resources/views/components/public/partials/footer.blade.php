@@ -76,7 +76,7 @@
         <a href="{!! route('public.homepage') !!}" title="Vers la page Accueil">
             <img src="{!! asset("assets/img/logo_admin.svg") !!}" width="300"  alt="Logo les pattes heureuses">
         </a>
-       <p class="text-center mt-[0.75rem]">© 2025 Les Pattes Heureuses. Tous droits réservés.</p>
+       <p class="text-center mt-[0.75rem]">© 2025 Les Pattes Heureuses&nbsp;. Tous droits réservés&nbsp;.</p>
     </div>
 
 
