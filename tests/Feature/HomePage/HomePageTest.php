@@ -1,9 +1,8 @@
 <?php
 
-/*  */
 
 it(
-    'create the homepage',
+    'displays the homepage',
     function () {
         //Act
         $response = $this->get(route('public.homepage')) ;
