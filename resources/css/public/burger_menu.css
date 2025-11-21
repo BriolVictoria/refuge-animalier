@@ -32,4 +32,8 @@
     transform: rotate(-45deg) translateY(-25%);
 }
 
+body:has(.burger_menu:checked) {
+    overflow: hidden;
+}
+
 /**{outline: 1px solid blue;}*/
