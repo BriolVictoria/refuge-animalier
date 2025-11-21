@@ -28,7 +28,7 @@
             :have_button="true"
             btn_url="{!! route('public.aboutpage') !!}"
             btn_title="Vers la page Le refuge"
-            btn_label="Le refuge"
+            btn_label="Voir le refuge"
             btn_class="bg-blue-900 text-white self-start"
         />
 
