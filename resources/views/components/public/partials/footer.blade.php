@@ -1,31 +1,31 @@
 @php
     $navigations = [
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => '#', 'links_class' => 'text-xs font-normal mt-[1.5rem] inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'À propos', 'title' => 'Vers la page À propos', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => '#', 'links_class' => 'text-xs font-normal pt-6 inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'À propos', 'title' => 'Vers la page À propos', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
        ];
 
     $contact_details = [
-           ['list_class'=>'mb-[0.875rem]', 'label'=> '04 72 56 91 42', 'title' => 'Vers le numéro', 'route_name' => '#', 'links_class' => 'text-xs font-normal mt-[1.5rem] inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'contact@lespattesheureuses.be', 'title' => 'Vers l‘adresse mail', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> '12 Rue des Fleurs, 69000 Heusy, Belgique', 'title' => 'Vers l‘adresse', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> '04 72 56 91 42', 'title' => 'Vers le numéro', 'route_name' => '#', 'links_class' => 'text-xs font-normal pt-6 inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'contact@lespattesheureuses.be', 'title' => 'Vers l‘adresse mail', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> '12 Rue des Fleurs, 69000 Heusy, Belgique', 'title' => 'Vers l‘adresse', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
     ];
 
     $legal_notices = [
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Mentions légales', 'title' => 'Vers le numéro', 'route_name' => '#', 'links_class' => 'text-xs font-normal mt-[1.5rem] inline-block '],
-           ['list_class'=>'mb-[0.875rem]', 'label'=> 'Politique de confidentialité', 'title' => 'Vers l‘adresse', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Mentions légales', 'title' => 'Vers le numéro', 'route_name' => '#', 'links_class' => 'text-xs font-normal pt-6 inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Politique de confidentialité', 'title' => 'Vers l‘adresse', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
     ];
 
 
 @endphp
 
-<footer class="bg-white shadow-xl pb-[1.5rem] pt-[3rem] px-[1.25rem]">
+<footer class="bg-white shadow-[var(--shadow-xl)] py-6 px-[1.25rem] ">
 
     <h2 class="sr-only">Footer</h2>
     <nav>
-        <h3 class="text-lg leading-[var(--text-lg--line-height)] font-medium">Navigation</h3>
+        <h3 class="text-lg font-medium">Navigation</h3>
         <ul>
             @foreach($navigations as $navigation)
 
@@ -40,7 +40,7 @@
     </nav>
 
     <div>
-        <h3 class="text-lg leading-[var(--text-lg--line-height)] font-medium mt-[2.625rem]">Coordonnées</h3>
+        <h3 class="text-lg font-medium pt-10.5">Coordonnées</h3>
         <ul>
             @foreach($contact_details as $contact_detail)
 
@@ -56,7 +56,7 @@
 
 
     <div>
-        <h3 class="text-lg leading-[var(--text-lg--line-height)] font-medium mt-[2.625rem]">Mentions légales</h3>
+        <h3 class="text-lg font-medium pt-10.5">Mentions légales</h3>
 
         <ul>
             @foreach($legal_notices as $legal_notice)
@@ -72,11 +72,11 @@
     </div>
 
 
-    <div class="flex flex-col items-center mt-[2.625rem]">
+    <div class="flex flex-col items-center pt-10.5">
         <a href="{!! route('public.homepage') !!}" title="Vers la page Accueil">
             <img src="{!! asset("assets/img/logo_admin.svg") !!}" width="300"  alt="Logo les pattes heureuses">
         </a>
-       <p class="text-center mt-[0.75rem]">© 2025 Les Pattes Heureuses&nbsp;. Tous droits réservés&nbsp;.</p>
+       <p class="text-center pt-3">© 2025 Les Pattes Heureuses. Tous droits réservés.</p>
     </div>
 
 
