@@ -43,7 +43,7 @@
 
         <x-public.sections.text-media
             :image_path="asset('assets/img/volunteer_image.png')"
-            image_alt="Image d'un arbre avec des mains coloré dessus, sur un fond bleu"
+            image_alt="Image d’un arbre avec des mains colorées dessus sur un fond bleu"
             title="Comment nous aider&nbsp;?"
             content="Envie de faire la différence&nbsp;? Rejoignez notre équipe de bénévoles et offrez temps et amour à nos compagnons à quatre pattes. Chaque petit geste compte et transforme leur vie&nbsp;! Aidez-nous à leur offrir un foyer heureux et une vie meilleure."
             :have_button="true"
