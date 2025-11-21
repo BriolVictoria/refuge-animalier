@@ -11,7 +11,7 @@
 
 ])
 
-<section class="flex flex-col gap-6 md:flex-row-reverse">
+<section {!! $attributes->merge(['class' => 'flex flex-col items-center gap-6 md:flex-row-reverse']) !!}>
     <figure>
         <img src="{!! $image_path !!}"
              alt="{!! $image_alt !!}">

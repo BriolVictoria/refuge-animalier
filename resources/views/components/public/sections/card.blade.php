@@ -20,27 +20,27 @@
     <div class="flex flex-col gap-3.5 p-3.5">
         <dl class="grid grid-cols-2 gap-y-4 gap-x-10.5">
             <div class="flex">
-                <dt class="text-xs font-norma pr-2.5">Nom: </dt>
+                <dt class="text-xs font-norma pr-2.5">Nom&nbsp;: </dt>
                 <dd class="text-xs font-bold">{!! $definitions['name'] !!}</dd>
             </div>
             <div class="flex">
-                <dt class="text-xs font-normal pr-2.5">Age: </dt>
+                <dt class="text-xs font-normal pr-2.5">Age&nbsp;: </dt>
                 <dd class="text-xs font-bold">{!! $definitions['age'] !!}</dd>
             </div>
             <div class="flex">
-                <dt class="text-xs font-normal pr-2.5">Race: </dt>
+                <dt class="text-xs font-normal pr-2.5">Race&nbsp;: </dt>
                 <dd class="text-xs font-bold">{!! $definitions['breed'] !!}</dd>
             </div>
             <div class="flex">
-                <dt class="text-xs font-normal pr-2.5">Pelage: </dt>
+                <dt class="text-xs font-normal pr-2.5">Pelage&nbsp;: </dt>
                 <dd class="text-xs font-bold">{!! $definitions['color'] !!}</dd>
             </div>
             <div class="flex">
-                <dt class="text-xs font-normal pr-2.5">Date: </dt>
+                <dt class="text-xs font-normal pr-2.5">Date&nbsp;: </dt>
                 <dd class="text-xs font-bold">{!! $definitions['date'] !!}</dd>
             </div>
             <div class="flex">
-                <dt class="text-xs font-normal pr-2.5">Attitude: </dt>
+                <dt class="text-xs font-normal pr-2.5">Attitude&nbsp;: </dt>
                 <dd class="text-xs font-bold">{!! $definitions['attitude'] !!}</dd>
             </div>
         </dl>

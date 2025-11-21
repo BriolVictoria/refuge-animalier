@@ -1,7 +1,7 @@
 @php
     $navigations = [
-           ['list_class'=>'pb-3.5', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => '#', 'links_class' => 'text-xs font-normal pt-6 inline-block '],
-           ['list_class'=>'pb-3.5', 'label'=> 'À propos', 'title' => 'Vers la page À propos', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => route('public.homepage'), 'links_class' => 'text-xs font-normal pt-6 inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Le refuge', 'title' => 'Vers la page Le refuge', 'route_name' => route('public.aboutpage'), 'links_class' => 'text-xs font-normal inline-block '],
            ['list_class'=>'pb-3.5', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
            ['list_class'=>'pb-3.5', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
            ['list_class'=>'pb-3.5', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
@@ -14,8 +14,8 @@
     ];
 
     $legal_notices = [
-           ['list_class'=>'pb-3.5', 'label'=> 'Mentions légales', 'title' => 'Vers le numéro', 'route_name' => '#', 'links_class' => 'text-xs font-normal pt-6 inline-block '],
-           ['list_class'=>'pb-3.5', 'label'=> 'Politique de confidentialité', 'title' => 'Vers l‘adresse', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Mentions légales', 'title' => 'Vers la page Mentions légales', 'route_name' => '#', 'links_class' => 'text-xs font-normal pt-6 inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Politique de confidentialité', 'title' => 'Vers la page Politique de confidentialité', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
     ];
 
 
@@ -28,11 +28,11 @@
         <h3 class="text-lg font-medium">Navigation</h3>
         <ul>
             @foreach($navigations as $navigation)
-
                 <x-public.navigation.navigation_link
                     :list_class="$navigation['list_class']"
                     :label="$navigation['label']"
                     :title="$navigation['title']"
+                    :route_name="$navigation['route_name']"
                     :links_class="$navigation['links_class']"/>
 
             @endforeach
@@ -48,6 +48,7 @@
                     :list_class="$contact_detail['list_class']"
                     :label="$contact_detail['label']"
                     :title="$contact_detail['title']"
+                    :route_name="$contact_detail['route_name']"
                     :links_class="$contact_detail['links_class']"/>
 
             @endforeach
@@ -65,6 +66,8 @@
                     :list_class="$legal_notice['list_class']"
                     :label="$legal_notice['label']"
                     :title="$legal_notice['title']"
+                    :route_name="$contact_detail['route_name']"
+
                     :links_class="$legal_notice['links_class']"/>
 
             @endforeach
@@ -74,9 +77,9 @@
 
     <div class="flex flex-col items-center pt-10.5">
         <a href="{!! route('public.homepage') !!}" title="Vers la page Accueil">
-            <img src="{!! asset("assets/img/logo_admin.svg") !!}" width="300"  alt="Logo les pattes heureuses">
+            <img src="{!! asset("assets/img/logo_admin.svg") !!}" width="300"  alt="Logo Les Pattes Heureuses avec deux pattes vertes">
         </a>
-       <p class="text-center pt-3">© 2025 Les Pattes Heureuses. Tous droits réservés.</p>
+       <p class="text-center pt-3">©&nbsp;2025 Les Pattes Heureuses. Tous droits réservés.</p>
     </div>
 
 
