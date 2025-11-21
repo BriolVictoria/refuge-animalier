@@ -1,11 +1,10 @@
 @php
     $items = [
-       ['list_class'=>'mb-[2.625rem]', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => '#', 'links_class' => 'text-lg font-medium mt-[4.5rem] inline-block'],
-       ['list_class'=>'mb-[2.625rem]', 'label'=> 'À propos', 'title' => 'Vers la page À propos', 'route_name' => '#', 'links_class' => 'text-lg font-medium'],
-       ['list_class'=>'mb-[2.625rem]', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => '#', 'links_class' => 'text-lg font-medium'],
-       ['list_class'=>'mb-[2.625rem]', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => '#', 'links_class' => 'text-lg font-medium'],
-       ['list_class'=>'mb-[2.625rem]', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => '#', 'links_class' => 'rounded-sm inline-block border-blue-900 border-[0.09375rem] text-sm font-medium pr-[1.875rem] pl-[1.875rem] pt-[0.5rem] pb-[0.5rem] mb-[7.625rem] text-blue-900'],
-/*VOIR POUR LE PADDING ET LE MARGIN*/
+       ['list_class'=>'mb-10.5', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => '#', 'links_class' => 'text-lg font-medium mt-[4.5rem] inline-block'],
+       ['list_class'=>'mb-10.5', 'label'=> 'À propos', 'title' => 'Vers la page À propos', 'route_name' => '#', 'links_class' => 'text-lg font-medium'],
+       ['list_class'=>'mb-10.5', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => '#', 'links_class' => 'text-lg font-medium'],
+       ['list_class'=>'mb-10.5', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => '#', 'links_class' => 'text-lg font-medium'],
+       ['list_class'=>'mb-10.5', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => '#', 'links_class' => 'rounded-sm inline-block border-blue-900 border-[0.09375rem] text-sm font-medium px-7.5 py-2 text-blue-900'],
    ];
 @endphp
 
