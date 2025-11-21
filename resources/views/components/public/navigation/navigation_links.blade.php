@@ -22,7 +22,7 @@
     @endforeach
 
     <a href="{!! route('public.homepage') !!}" title="Vers la page Accueil">
-        <img src="{!! asset("assets/img/logo_bg_phone.svg") !!}" alt="Logo les pattes heureuses">
+        <img src="{!! asset("assets/img/logo_bg_phone.svg") !!}" alt="Logo Les Pattes Heureuses avec deux pattes vertes au dessus du texte">
     </a>
 
 </ul>
