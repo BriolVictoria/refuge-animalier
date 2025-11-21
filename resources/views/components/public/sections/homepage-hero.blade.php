@@ -13,11 +13,11 @@
              alt="{!! $image_alt !!}">
     </figure>
     <div>
-        <span>{!! $sub_title !!}</span>
-        <h2 class="text-lg font-normal text-green-900">
+        <span class="text-sm font-normal">{!! $sub_title !!}</span>
+        <h2 class="text-xl font-normal text-green-900 font-[PatrickHand]">
             {!! $title !!}
         </h2>
-        <p class="text-sm font-light pt-[0.75rem] pb-[3rem] ">
+        <p class="text-sm font-light pt-3 pb-12 ">
             {!! $content !!}
         </p>
 
