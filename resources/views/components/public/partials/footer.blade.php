@@ -1,7 +1,7 @@
 @php
     $navigations = [
            ['list_class'=>'pb-3.5', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => '#', 'links_class' => 'text-xs font-normal pt-6 inline-block '],
-           ['list_class'=>'pb-3.5', 'label'=> 'À propos', 'title' => 'Vers la page À propos', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
+           ['list_class'=>'pb-3.5', 'label'=> 'Le refuge', 'title' => 'Vers la page Le refuge', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
            ['list_class'=>'pb-3.5', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
            ['list_class'=>'pb-3.5', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
            ['list_class'=>'pb-3.5', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block '],
@@ -28,11 +28,11 @@
         <h3 class="text-lg font-medium">Navigation</h3>
         <ul>
             @foreach($navigations as $navigation)
-
                 <x-public.navigation.navigation_link
                     :list_class="$navigation['list_class']"
                     :label="$navigation['label']"
                     :title="$navigation['title']"
+                    :route_name="$navigation['route_name']"
                     :links_class="$navigation['links_class']"/>
 
             @endforeach
@@ -48,6 +48,7 @@
                     :list_class="$contact_detail['list_class']"
                     :label="$contact_detail['label']"
                     :title="$contact_detail['title']"
+                    :route_name="$contact_detail['route_name']"
                     :links_class="$contact_detail['links_class']"/>
 
             @endforeach
@@ -65,6 +66,8 @@
                     :list_class="$legal_notice['list_class']"
                     :label="$legal_notice['label']"
                     :title="$legal_notice['title']"
+                    :route_name="$contact_detail['route_name']"
+
                     :links_class="$legal_notice['links_class']"/>
 
             @endforeach
