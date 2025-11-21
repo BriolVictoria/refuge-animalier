@@ -3,19 +3,9 @@
        ['route_name'=>'#', 'title'=> 'Vers Nos animaux', 'label' => 'Adopter maintenant&nbsp;!', 'class' => 'bg-blue-900 text-white'],
        ['route_name'=>'#', 'title'=> 'Vers Contactez-nous', 'label' => 'Contactez-nous', 'class' => 'border-blue-900 border-[0.09375rem] text-blue-900'],
     ];
-
-    /*$definitions =[
-       ['title' => 'Nom:', 'content' => 'Pedro'],
-       ['title' => 'Age:', 'content' => '6 mois'],
-       ['title' => 'Race:', 'content' => 'Golden'],
-       ['title' => 'Pelage:', 'content' => 'Beige'],
-       ['title' => 'Date:', 'content' => '21/12/24'],
-       ['title' => 'Attitude:', 'content' => 'Calme'],
-    ];*/
-/*VOIR COMMENT FAIRE POUR RECUPERER LES DEF*/
 @endphp
 
-<x-public.app title="Page d'accueil A TRADUIRE">
+<x-public.app title="Page d'accueil">
     <main>
         <x-public.sections.homepage-hero
             :image_path="asset('assets/img/homepage_picture.png')"
@@ -36,9 +26,9 @@
             l’attention, l’amour et le dévouement, tout en sensibilisant le public à leur importance et à leur
             bien-être."
             :have_button="true"
-            btn_url="#"
-            btn_title="Vers la page À propos"
-            btn_label="Nous découvrir"
+            btn_url="{!! route('public.aboutpage') !!}"
+            btn_title="Vers la page Le refuge"
+            btn_label="Le refuge"
             btn_class="bg-blue-900 text-white self-start"
         />
 
