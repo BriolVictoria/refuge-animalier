@@ -1,11 +1,12 @@
 @php
     $definitions =[
-           ['title' => 'Nom:', 'content' => 'Pedro'],
-           ['title' => 'Age:', 'content' => '6 mois'],
-           ['title' => 'Race:', 'content' => 'Golden'],
-           ['title' => 'Pelage:', 'content' => 'Beige'],
-           ['title' => 'Date:', 'content' => '21/12/24'],
-           ['title' => 'Attitude:', 'content' => 'Calme'],
+           'name' => 'Pedro',
+           'age' => '6 mois',
+           'breed' => 'Golden',
+           'color' => 'Beige',
+           'date' => '21/12/24',
+           'attitude' => 'Calme',
+           'statut' => 'Disponible',
         ];
     /*VOIR POUR AVOIR UN AUTRE NOM*/
 @endphp
@@ -28,39 +29,20 @@
             {!! $content!!}
         </p>
     </div>
+    @for ($i = 0; $i < 3; $i++)
 
-    <x-public.sections.card
-        section_title="Animal: Pedro"
-        :image_path="asset('assets/img/image_animal.png')"
-        image_alt="Image d'un chien (un golden) couché sur de l'herbe"
-        :definitions="$definitions"
-        btn_url="#"
-        btn_title="Vers la page Pedro"
-        btn_label="Voir la fiche"
-        btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
-    />
+        <x-public.sections.card
+            section_title="Animal: Pedro"
+            :image_path="asset('assets/img/image_animal.png')"
+            image_alt="Image d'un chien (un golden) couché sur de l'herbe"
+            :definitions="$definitions"
+            btn_url="#"
+            btn_title="Vers la fiche Pedro"
+            btn_label="Voir la fiche"
+            btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
+        />
 
-    <x-public.sections.card
-        section_title="Animal: Pascal"
-        :image_path="asset('assets/img/image_animal_bis.png')"
-        image_alt="Image d'un chien (un cocker) qui regarde quelque chose derrière la caméra"
-        :definitions="$definitions"
-        btn_url="#"
-        btn_title="Vers la page Pascal"
-        btn_label="Voir la fiche"
-        btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
-    />
-
-    <x-public.sections.card
-        section_title="Animal: Pascal"
-        :image_path="asset('assets/img/image_animal_bis.png')"
-        image_alt="Image d'un chien (un cocker) qui regarde quelque chose derrière la caméra"
-        :definitions="$definitions"
-        btn_url="#"
-        btn_title="Vers la page Pascal"
-        btn_label="Voir la fiche"
-        btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
-    />
+    @endfor
 
     <x-public.buttons.button
         :route_name="$btn_url"
@@ -68,6 +50,6 @@
         :label="$btn_label"
         :class="$btn_class"/>
 
-{{--VOIR SI ON DOIT FAIRE UN COMPOSANT POUR LES CLASSES QUI SE REPETTE--}}
+    {{--VOIR SI ON DOIT FAIRE UN COMPOSANT POUR LES CLASSES QUI SE REPETTE--}}
 
 </section>
