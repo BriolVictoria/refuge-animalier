@@ -8,7 +8,6 @@
            'attitude' => 'Calme',
            'statut' => 'Disponible',
         ];
-    /*VOIR POUR AVOIR UN AUTRE NOM*/
 @endphp
 
 @props([
@@ -50,6 +49,5 @@
         :label="$btn_label"
         :class="$btn_class"/>
 
-    {{--VOIR SI ON DOIT FAIRE UN COMPOSANT POUR LES CLASSES QUI SE REPETTE--}}
 
 </section>
