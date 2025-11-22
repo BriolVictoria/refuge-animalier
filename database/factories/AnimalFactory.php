@@ -15,7 +15,8 @@ class AnimalFactory extends Factory
         $name = ['Sol', 'Pedro', 'Pascal', 'Luna', 'Simon', 'Stéphanie', 'Gertrude'];
         $breed = ['Golden', 'Cocker', 'Berger Australien', 'Border collie', 'Berger Américain', 'American staff', 'Bichon'];
         $coat = ['Beige', 'Blue', 'Noir', 'Blanc', 'Taché', 'Mort', 'Gris'];
-        $date = ['Calme', 'Méchant', 'Sympa', 'Drôle', 'Timide', 'Compliqué', 'Ca va'];
+        $attitude = ['Calme', 'Méchant', 'Sympa', 'Drôle', 'Timide', 'Compliqué', 'Ca va'];
+        $state = ['changer'];
 
         return [
             'image_path' => asset('assets/img/image_animal.png'),
@@ -24,7 +25,8 @@ class AnimalFactory extends Factory
             'breed' => $this->faker->randomElement($breed),
             'coat' => $this->faker->randomElement($coat),
             'date' => $this->faker->date(),
-            'attitude' => $this->faker->randomElement($date),
+            'attitude' => $this->faker->randomElement($attitude),
+            'state' => $this->faker->randomElement($state),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
