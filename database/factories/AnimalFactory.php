@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\AnimalStates;
 use App\Models\Animal;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
@@ -16,7 +17,7 @@ class AnimalFactory extends Factory
         $breed = ['Golden', 'Cocker', 'Berger Australien', 'Border collie', 'Berger Américain', 'American staff', 'Bichon'];
         $coat = ['Beige', 'Blue', 'Noir', 'Blanc', 'Taché', 'Mort', 'Gris'];
         $attitude = ['Calme', 'Méchant', 'Sympa', 'Drôle', 'Timide', 'Compliqué', 'Ca va'];
-        $state = ['changer'];
+        $state = [AnimalStates::Available, AnimalStates::AwaitingAdoption, AnimalStates::CurrentlyAdopted, AnimalStates::InCare, AnimalStates::Adopted];
 
         return [
             'image_path' => asset('assets/img/image_animal.png'),
