@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->string('age');
             $table->string('breed');
             $table->string('coat');
-            $table->timestamp('date');
+            $table->string('date');
             $table->string('attitude');
             $table->string('state');
             $table->timestamps();
