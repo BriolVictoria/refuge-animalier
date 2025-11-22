@@ -25,7 +25,7 @@ class AnimalFactory extends Factory
             'age' => $this->faker->numberBetween(1, 10),
             'breed' => $this->faker->randomElement($breed),
             'coat' => $this->faker->randomElement($coat),
-            'date' => $this->faker->date(),
+            'date' => $this->faker->date('d/m/y'),
             'attitude' => $this->faker->randomElement($attitude),
             'state' => $this->faker->randomElement($state),
             'created_at' => Carbon::now(),
