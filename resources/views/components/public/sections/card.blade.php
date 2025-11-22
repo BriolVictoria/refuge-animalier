@@ -9,7 +9,7 @@
     'btn_class',
 ])
 
-<article class="bg-white rounded-lg relative">
+<article class="bg-white rounded-lg relative shadow-[var(--shadow-xl)]">
     <h3 class="sr-only">{!! $section_title !!}</h3>
     <figure>
         <img class="rounded-t-lg rounded-tr-lg max-h-[11.5625rem] object-cover" width="500" height="400"
