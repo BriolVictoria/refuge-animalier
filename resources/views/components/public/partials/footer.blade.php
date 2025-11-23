@@ -21,7 +21,7 @@
 
 @endphp
 
-<footer class="bg-white shadow-[var(--shadow-xl)] py-6 px-[1.25rem] ">
+<footer class="bg-white shadow-[var(--shadow-xl)] py-11.5 px-[1.25rem] ">
 
     <h2 class="sr-only">Footer</h2>
     <nav>
