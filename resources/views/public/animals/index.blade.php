@@ -28,9 +28,6 @@
         />
 
     </main>
+    {{ $animals->links() }}
 
 </x-public.app>
-
-{{--@foreach($animals as $animal)
-    <p>{{$animal->name}}{{$animal->state}}</p>
-@endforeach--}}
