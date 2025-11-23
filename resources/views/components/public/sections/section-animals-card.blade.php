@@ -30,7 +30,6 @@
                         'age' => $animal->age,
                         'breed' => $animal->breed,
                         'color' => $animal->coat,
-                        'date' => $animal->date,
                         'attitude' => $animal->attitude,
                         'statut' => $animal->state,
                     ]"
@@ -41,7 +40,8 @@
                 />
             @endforeach
 
-    </div>
 
+
+    </div>
 
 </section>
