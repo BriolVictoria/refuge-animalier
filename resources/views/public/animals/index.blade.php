@@ -1,10 +1,3 @@
-@php
-    $buttons =[
-       ['route_name'=>'#', 'title'=> 'Rechercher', 'label' => 'Rechercher', 'class' => 'border-blue-900 border-[0.09375rem] text-blue-900'],
-       ['route_name'=>'#', 'title'=> 'Filtrer', 'label' => 'Filtrer', 'class' => 'border-blue-900 border-[0.09375rem] text-blue-900'],
-    ];
-@endphp
-
 <x-public.app title="Nos animaux">
 
     <main>
@@ -23,8 +16,11 @@
 
         <x-public.sections.section-animals-card
         title="Nos animaux"
-        :buttons="$buttons"
         :animals="$animals"
+        btn_url="#"
+        btn_title="Filtrer"
+        btn_label="Filtrer"
+        btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
         />
 
     </main>
