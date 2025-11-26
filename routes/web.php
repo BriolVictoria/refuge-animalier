@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('public.homepage');
-})->name('public.homepage');
+Route::get('/', [\App\Http\Controllers\HomePageController::class, 'index'])->name('public.homepage');
 
 Route::get('/about', function () {
     return view('public.aboutpage');
@@ -20,4 +18,5 @@ Route::get('/volunteer', function () {
 
 
 Route::get('/animals', [\App\Http\Controllers\AnimalController::class, 'index'])->name('public.animals.index');
+Route::get('/animals/{animal}', [\App\Http\Controllers\AnimalController::class, 'show'])->name('public.animals.show');
 

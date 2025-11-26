@@ -1,3 +1,15 @@
+@php
+    $definitions =[
+           'name' => 'Pedro',
+           'age' => '6 mois',
+           'breed' => 'Golden',
+           'color' => 'Beige',
+           'date' => '21/12/24',
+           'attitude' => 'Calme',
+           'statut' => 'Disponible',
+        ];
+@endphp
+
 @props([
     'title',
     'animals',
@@ -35,7 +47,7 @@
                         'attitude' => $animal->attitude,
                         'statut' => $animal->state,
                     ]"
-                btn_url="#"
+                btn_url="{!! route('public.animals.show', $animal->id) !!}"
                 btn_title="Vers la fiche Pedro"
                 btn_label="Voir la fiche"
                 btn_class="border-blue-900 border-[0.09375rem] text-blue-900"

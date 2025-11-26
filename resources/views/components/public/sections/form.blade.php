@@ -5,7 +5,7 @@
 ])
 
 
-<section class="form flex flex-col gap-6 md:flex-row-reverse pt-[6rem]">
+<section {!! $attributes->merge(['class' => 'flex flex-col gap-1 gap-6']) !!} >
 <div class="flex flex-col gap-3">
     <h2 class="text-lg font-medium">{!! $title !!}</h2>
     <p class="text-xs font-light text-red-500">{!! $sub_title !!}</p>
