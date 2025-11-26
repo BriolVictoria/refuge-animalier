@@ -30,13 +30,6 @@
         </div>
     </aside>
 
-    <x-public.sections.form
-    title="Formulaire de contact"
-    sub_title="Les champs * sont des champs requis"
-    btn_url="#"
-    btn_title="Envoyer le message"
-    btn_label="Envoyer le message"
-    btn_class="bg-blue-900 text-white self-start"
-    />
+
 </section>
 
