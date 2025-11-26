@@ -12,7 +12,7 @@
         <h2 class="text-center text-xl font-medium">{!! $title !!}</h2>
 
         <div class="flex flex-col gap-4">
-            <x-public.form.search_input/>
+            <x-public.form.fields.search_input/>
 
             <x-public.buttons.button
                 :route_name="$btn_url"

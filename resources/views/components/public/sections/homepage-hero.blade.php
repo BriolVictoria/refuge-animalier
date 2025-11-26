@@ -1,3 +1,5 @@
+
+
 @props([
     'image_path',
     'image_alt',
