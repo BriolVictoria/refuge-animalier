@@ -1,0 +1,11 @@
+@props([
+    'field_name',
+    'label',
+    'value',
+    'placeholder',
+])
+
+<div {!! $attributes->merge(['class'=>'flex flex-col gap-1']) !!}>
+    <label class="text-sm font-normal" for="{!! $field_name !!}">{!! $label !!}</label>
+    <textarea class="text-sm font-normal text-blue-400 border border-blue-400 px-3 py-3 rounded-sm" name="{!! $field_name !!}" id="{!! $field_name !!}" rows="3" placeholder="{!! $placeholder !!}">{!! $value ??  old($field_name) !!}</textarea>
+</div>
