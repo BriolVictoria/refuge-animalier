@@ -8,8 +8,8 @@
             title="Nos animaux disponible"
             content="Chaque jour, de nouveaux compagnons attendent un foyer aimant.Découvrez nos pensionnaires en attente d’adoption et laissez-vous toucher par leur histoire."
             :have_button="true"
-            btn_url="#"
-            btn_title="Vers la page Adopté"
+            btn_url="{!! route('public.animals.index') !!}"
+            btn_title="Vers la page Nos animaux"
             btn_label="Adopté maintenant&nbsp;!"
             btn_class="bg-blue-900 text-white"
         />
@@ -17,7 +17,7 @@
         <x-public.sections.section-animals-card
         title="Nos animaux"
         :animals="$animals"
-        btn_url="#"
+        btn_url="{!! route('public.animals.index') !!}"
         btn_title="Filtrer"
         btn_label="Filtrer"
         btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
