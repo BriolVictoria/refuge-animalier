@@ -1,7 +1,7 @@
 @php
     $buttons =[
        ['route_name'=>'#', 'title'=> 'Vers Nos animaux', 'label' => 'Adopter maintenant&nbsp;!', 'class' => 'bg-blue-900 text-white'],
-       ['route_name'=>'#', 'title'=> 'Vers Contactez-nous', 'label' => 'Contactez-nous', 'class' => 'border-blue-900 border-[0.09375rem] text-blue-900'],
+       ['route_name'=>route('public.contactpage'), 'title'=> 'Vers Contactez-nous', 'label' => 'Contactez-nous', 'class' => 'border-blue-900 border-[0.09375rem] text-blue-900'],
     ];
 @endphp
 
