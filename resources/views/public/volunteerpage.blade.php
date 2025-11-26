@@ -8,18 +8,18 @@
 
 @endphp
 
-<x-public.app title="Formulaire de contact">
+<x-public.app title="Formulaire de demande de bénévolat">
 
     <x-public.sections.section-contact-forms
-        title="Vous avez une question sur le refuge &nbsp;?"
-        content="Ecrivez-nous un message pour qu’on puisse y répondre"
+        title="Envie de nous aider &nbsp;?"
+        content="Faites votre demande d’adoption pour adopter votre animal de rêve"
         sub_title="Nos coordonnées"
         :coords="$coords"
     />
 
     <x-public.sections.form>
         <x-slot:title>
-            Formulaire de contact
+            Formulaire de demande de bénévolat
         </x-slot:title>
         <x-slot:sub_title>
             Les champs * sont des champs requis
@@ -47,23 +47,30 @@
             />
 
             <x-public.form.fields.input
-                field_name="object"
-                label="Objet"
+                field_name="phone"
+                label="Numéro de téléphone"
+                type="tel"
+                placeholder="+32 4 56 12 76 32 45"
+            />
+
+            <x-public.form.fields.input
+                field_name="address"
+                label="Adresse compléte"
                 type="text"
-                placeholder="Votre objet"
+                placeholder="Rue des Lilas, Argentine, 3234 n°132"
             />
 
             <x-public.form.fields.textarea
                 field_name="message"
-                label="Message"
+                label="Pourquoi devenir bénévole &nbsp;?"
                 placeholder="Votre message"
             />
 
 
             <x-public.buttons.button
                 route_name="#"
-                title="Envoyer le message"
-                label="Envoyer le message"
+                title="Envoyer la demande"
+                label="Envoyer la demande"
                 class="bg-blue-900 text-white self-start"/>
         </x-slot:content>
     </x-public.sections.form>
