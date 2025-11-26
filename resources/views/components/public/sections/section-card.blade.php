@@ -11,6 +11,7 @@
 @endphp
 
 @props([
+    'animals',
     'title',
     'content',
     'btn_url',
@@ -28,20 +29,27 @@
             {!! $content!!}
         </p>
     </div>
-    @for ($i = 0; $i < 3; $i++)
+    @foreach($animals as $animal)
 
         <x-public.sections.card
-            section_title="Animal: Pedro"
+            :section_title="'Animal:'. $animal->name"
             :image_path="asset('assets/img/image_animal.png')"
             image_alt="Image d'un chien (un golden) couché sur de l'herbe"
-            :definitions="$definitions"
-            btn_url="#"
+            :definitions="[
+                        'name' => $animal->name,
+                        'age' => $animal->age,
+                        'breed' => $animal->breed,
+                        'color' => $animal->coat,
+                        'attitude' => $animal->attitude,
+                        'statut' => $animal->state,
+                    ]"
+            btn_url="{!! route('public.animals.show', $animal->id) !!}"
             btn_title="Vers la fiche Pedro"
             btn_label="Voir la fiche"
             btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
         />
 
-    @endfor
+    @endforeach
 
     <x-public.buttons.button
         :route_name="$btn_url"
