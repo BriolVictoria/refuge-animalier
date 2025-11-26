@@ -49,4 +49,24 @@ it(
         }
 
 
-    });
+    }
+);
+
+it(
+    'verifies if the animal that we see on the show page have the correct information',
+    function () {
+
+        $animal = Animal::factory()->create()->toArray();
+        $other_animal = Animal::factory()->create()->toArray();
+
+        //Act
+        $response = $this->get(route('public.animals.show', $animal['id']));
+
+        $response->assertStatus(200);
+
+        $response->assertSee($animal['name']);
+        $response->assertDontSee($other_animal['name']);
+    }
+);
+
+
