@@ -1,14 +1,14 @@
 @php
     $items = [
-       ['list_class'=>'mb-10.5', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => route('public.homepage'), 'links_class' => 'text-lg font-medium mt-[4.5rem] inline-block'],
-       ['list_class'=>'mb-10.5', 'label'=> 'Le refuge', 'title' => 'Vers la page Le refuge', 'route_name' => route('public.aboutpage'), 'links_class' => 'text-lg font-medium'],
-       ['list_class'=>'mb-10.5', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => route('public.animals.index'), 'links_class' => 'text-lg font-medium'],
-       ['list_class'=>'mb-10.5', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => route('public.volunteerpage'), 'links_class' => 'text-lg font-medium'],
-       ['list_class'=>'mb-10.5', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => route('public.contactpage'), 'links_class' => 'rounded-sm inline-block border-blue-900 border-[0.09375rem] text-sm font-medium px-7.5 py-2 text-blue-900'],
+       ['list_class'=>'mb-10.5', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => route('public.homepage'), 'links_class' => 'text-lg font-medium mt-[4.5rem] inline-block lg:hidden transition-transform duration-300 ease-in-out hover:scale-105 hover:text-blue-800 inline-block'],
+       ['list_class'=>'mb-10.5 lg:mb-0', 'label'=> 'Le refuge', 'title' => 'Vers la page Le refuge', 'route_name' => route('public.aboutpage'), 'links_class' => 'text-lg font-medium lg:text-sm min-[1750px]:text-2xl transition-transform duration-300 ease-in-out hover:scale-105 hover:text-blue-800 inline-block'],
+       ['list_class'=>'mb-10.5 lg:mb-0', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => route('public.animals.index'), 'links_class' => 'text-lg font-medium lg:text-sm min-[1750px]:text-2xl transition-transform duration-300 ease-in-out hover:scale-105 hover:text-blue-800 inline-block'],
+       ['list_class'=>'mb-10.5 lg:mb-0', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => route('public.volunteerpage'), 'links_class' => 'text-lg font-medium lg:text-sm min-[1750px]:text-2xl transition-transform duration-300 ease-in-out hover:scale-105 hover:text-blue-800 inline-block'],
+       ['list_class'=>'mb-10.5 lg:mb-0', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => route('public.contactpage'), 'links_class' => 'rounded-sm inline-block border-blue-900 border-[0.09375rem] text-sm font-medium px-7.5 py-2 text-blue-900 lg:py-1 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-blue-900 hover:text-white inline-block'],
    ];
 @endphp
 
-<ul class="nav_container flex flex-col items-center">
+<ul class="nav_container flex flex-col items-center lg:flex-row gap-7 py-10 lg:justify-end min-[1200px]:gap-11">
 
     @foreach($items as $item)
 
@@ -21,9 +21,12 @@
 
     @endforeach
 
-    <a href="{!! route('public.homepage') !!}" title="Vers la page Accueil">
+    <a class="inline-block transition-transform duration-300 ease-in-out hover:scale-105 lg:hidden " href="{!! route('public.homepage') !!}" title="Vers la page Accueil">
         <img src="{!! asset("assets/img/logo_bg_phone.svg") !!}" alt="Logo Les Pattes Heureuses avec deux pattes vertes au dessus du texte">
     </a>
+
+
+
 
 </ul>
 
