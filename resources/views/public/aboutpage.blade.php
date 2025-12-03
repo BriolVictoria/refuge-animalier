@@ -1,5 +1,5 @@
 <x-public.app title="Notre refuge">
-
+<main>
     <x-public.sections.text-media
         class="bg-green-50"
         :image_path="asset('assets/img/aboutpage_picture.png')"
@@ -10,7 +10,7 @@
         btn_url="{!! route('public.contactpage') !!}"
         btn_title="Vers la page Contact"
         btn_label="Contactez-nous"
-        btn_class="bg-blue-900 text-white"
+        btn_class="bg-blue-900 text-white self-start transition-transform duration-300 hover:scale-105"
     />
 
     <x-public.sections.text-media
@@ -22,11 +22,11 @@
         btn_url="{!! route('public.animals.index') !!}"
         btn_title="Vers la page Voir les animaux"
         btn_label="Voir les animaux"
-        btn_class="bg-blue-900 text-white self-start"
+        btn_class="bg-blue-900 text-white self-start transition-transform duration-300 hover:scale-105"
     />
 
     <x-public.sections.section_card_skills
-    title="Nos valeurs"
+        title="Nos valeurs"
     />
 
     <x-public.sections.text-media
@@ -48,7 +48,9 @@ Ensemble, nous veillons à offrir à chaque compagnon les meilleurs soins et bea
         btn_url="{!! route('public.volunteerpage') !!}"
         btn_title="Vers la page Devenir bénévole"
         btn_label="Devenir bénévole"
-        btn_class="bg-blue-900 text-white self-start"
+        btn_class="bg-blue-900 text-white self-start transition-transform duration-300 hover:scale-105"
     />
+
+</main>
 
 </x-public.app>

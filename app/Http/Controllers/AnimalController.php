@@ -9,7 +9,7 @@ class AnimalController extends Controller
 {
     public function index()
     {
-        $animals = Animal::where('state', AnimalStates::Available)->paginate(5);
+        $animals = Animal::where('state', AnimalStates::Available)->paginate(12);
 
         return view('public.animals.index', compact('animals'));
     }

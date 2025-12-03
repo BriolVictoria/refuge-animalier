@@ -11,19 +11,21 @@
             btn_url="{!! route('public.animals.index') !!}"
             btn_title="Vers la page Nos animaux"
             btn_label="Adopté maintenant&nbsp;!"
-            btn_class="bg-blue-900 text-white"
+            btn_class="bg-blue-900 text-white self-start transition-transform duration-300 hover:scale-105"
         />
 
         <x-public.sections.section-animals-card
-        title="Nos animaux"
-        :animals="$animals"
-        btn_url="{!! route('public.animals.index') !!}"
-        btn_title="Filtrer"
-        btn_label="Filtrer"
-        btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
+            title="Nos animaux"
+            :animals="$animals"
+            btn_url="{!! route('public.animals.index') !!}"
+            btn_title="Filtrer"
+            btn_label="Filtrer"
+            btn_class="border-blue-900 border-[0.09375rem] text-blue-900 transition-transform duration-300 hover:scale-105"
         />
 
     </main>
-    {{ $animals->links() }}
+    <div class="px-11.5">
+        {{ $animals->links() }}
+    </div>
 
 </x-public.app>

@@ -19,11 +19,11 @@
     'btn_class',
 ])
 
-<section class="flex flex-col items-center gap-6 md:flex-row-reverse">
-    <div class="flex flex-col gap-12">
+<section class="flex flex-col items-center gap-6 md:flex-row-reverse md:grid md:grid-cols-9 2xl:grid-cols-12">
+    <div class="flex flex-col gap-[4.5rem] md:col-start-1 md:col-end-10 2xl:col-start-1 2xl:col-end-13">
         <h2 class="text-center text-xl font-medium">{!! $title !!}</h2>
 
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 md:flex-row md:justify-between md:col-start-1 md:col-end-10 2xl:col-start-1 2xl:col-end-13">
             <x-public.form.fields.search_input/>
 
             <x-public.buttons.button
@@ -33,12 +33,14 @@
                 :class="$btn_class"/>
         </div>
 
+        <div class="flex flex-col gap-8 items-center md:grid md:grid-cols-2 2xl:grid-cols-3">
 
         @foreach($animals as $animal)
             <x-public.sections.card
                 :section_title="'Animal:'. $animal->name"
                 :image_path="asset('assets/img/image_animal.png')"
                 image_alt="Image d'un chien (un golden) couché sur de l'herbe"
+                :animal="$animal"
                 :definitions="[
                         'name' => $animal->name,
                         'age' => $animal->age,
@@ -53,7 +55,7 @@
                 btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
             />
         @endforeach
-
+        </div>
 
     </div>
 

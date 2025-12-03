@@ -1,3 +1,11 @@
 section:not(.not_form) {
     padding: 4rem 1.25rem;
 }
+
+@media (min-width: 1024px) {
+    section:not(.not_form) {
+        padding: 4.5rem 6.25rem;
+    }
+}
+
+/**{outline: 1px solid blue;}*/

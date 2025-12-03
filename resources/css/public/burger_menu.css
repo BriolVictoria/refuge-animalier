@@ -7,6 +7,14 @@
     transition: all ease-in-out 200ms;
 }
 
+@media (min-width: 1023px) {
+    .nav_container {
+        position: initial;
+        height: auto;
+        background-color: transparent;
+    }
+}
+
 .burger_menu:not(:checked) ~.nav_container {
     right: -100%;
 }
@@ -36,4 +44,4 @@ body:has(.burger_menu:checked) {
     overflow: hidden;
 }
 
-/**{outline: 1px solid blue;}*/
+

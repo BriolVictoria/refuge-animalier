@@ -1,14 +1,14 @@
 @php
     $buttons =[
-       ['route_name'=>route('public.animals.index'), 'title'=> 'Vers Nos animaux', 'label' => 'Adopter maintenant&nbsp;!', 'class' => 'bg-blue-900 text-white'],
-       ['route_name'=>route('public.contactpage'), 'title'=> 'Vers Contactez-nous', 'label' => 'Contactez-nous', 'class' => 'border-blue-900 border-[0.09375rem] text-blue-900'],
+       ['route_name'=>route('public.animals.index'), 'title'=> 'Vers Nos animaux', 'label' => 'Adopter maintenant&nbsp;!', 'class' => 'bg-blue-900 text-white transition-transform duration-300 hover:scale-105'],
+       ['route_name'=>route('public.contactpage'), 'title'=> 'Vers Contactez-nous', 'label' => 'Contactez-nous', 'class' => 'border-blue-900 border-[0.09375rem] text-blue-900 transition-transform duration-300 hover:scale-105'],
     ];
 @endphp
 
 <x-public.app title="Page d'accueil">
     <main>
         <x-public.sections.homepage-hero
-            :image_path="asset('assets/img/homepage_picture.png')"
+            :image_path="asset('assets/img/imagetestcomputer.svg')"
             image_alt="Image d'un golden qui souris beaucoup avec fond vert."
             sub_title="Le refuge"
             title="LES PATTES HEUREUSES"
@@ -29,7 +29,7 @@
             btn_url="{!! route('public.aboutpage') !!}"
             btn_title="Vers la page Le refuge"
             btn_label="Voir le refuge"
-            btn_class="bg-blue-900 text-white self-start"
+            btn_class="bg-blue-900 text-white self-start transition-transform duration-300 hover:scale-105"
         />
 
         <x-public.sections.section-card
@@ -39,7 +39,7 @@
             btn_url="{!! route('public.animals.index') !!}"
             btn_title="Vers la page Nos animaux"
             btn_label="Voir les animaux"
-            btn_class="bg-blue-900 text-white self-start"
+            btn_class="bg-blue-900 text-white self-center md:col-[4/7] 2xl:col-[4/7] transition-transform duration-300 hover:scale-105"
         />
 
         <x-public.sections.text-media
@@ -51,9 +51,8 @@
             btn_url="{!! route('public.volunteerpage') !!}"
             btn_title="Vers la page Devenir bénévole"
             btn_label="Devenir bénévole"
-            btn_class="bg-blue-900 text-white self-start"
+            btn_class="bg-blue-900 text-white self-start transition-transform duration-300 hover:scale-105"
         />
 
     </main>
-    {{ $animals->links() }}
 </x-public.app>
