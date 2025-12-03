@@ -30,7 +30,7 @@
         </p>
     </div>
     <div
-        class="flex flex-col gap-8 items-center md:col-start-3 md:col-end-8 lg:flex-row lg:col-start-1 lg:justify-center lg:col-end-10 2xl:gap-8 2xl:flex-row 2xl:col-start-2 2xl:col-end-12">
+        class="flex flex-col gap-8 col-[1/10] items-center md:grid md:grid-cols-3 lg:flex-row lg:col-start-1 lg:justify-center lg:col-end-10 2xl:gap-8 2xl:flex-row 2xl:col-start-2 2xl:col-end-12">
         @foreach($animals as $animal)
             <x-public.sections.card
                 :section_title="'Animal:'. $animal->name"
@@ -48,7 +48,7 @@
                 btn_url="{!! route('public.animals.show', $animal->id) !!}"
                 :btn_title="'Vers la fiche '. $animal->name"
                 btn_label="Voir la fiche"
-                btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
+                btn_class="border-blue-900 border-[0.09375rem] text-blue-900 mt-10"
             />
         @endforeach
     </div>

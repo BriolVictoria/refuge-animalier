@@ -39,7 +39,7 @@
             btn_url="{!! route('public.animals.index') !!}"
             btn_title="Vers la page Nos animaux"
             btn_label="Voir les animaux"
-            btn_class="bg-blue-900 text-white self-center md:col-start-4 md:col-end- 2xl:col-start-6 2xl:col-end-8 transition-transform duration-300 hover:scale-105"
+            btn_class="bg-blue-900 text-white self-center md:col-[4/7] 2xl:col-[4/7] transition-transform duration-300 hover:scale-105"
         />
 
         <x-public.sections.text-media
