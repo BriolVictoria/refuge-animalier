@@ -15,9 +15,8 @@
         ['url' => asset('assets/img/image3.png'), 'alt' => 'Toujours la même image du chien'],
 ];
 
-    $buttonTop=['route_name'=>'#animal_form', 'title'=> 'Adopter cet animal', 'label' => 'Adopter cet animal', 'class' => 'bg-blue-900 text-white'];
 
-    $buttonBottom=['route_name'=>route('public.animals.index'), 'title'=> 'Retour aux animaux', 'label' => 'Retour aux animaux', 'class' => 'border-blue-900 border-[0.09375rem] text-blue-900'];
+    $buttons=['route_name'=>route('public.animals.index'), 'title'=> 'Retour aux animaux', 'label' => 'Retour aux animaux', 'class' => 'md:col-start-4 md:col-end-7 md:row-start-3 lg:col-start-5 lg:col-end-9 lg:row-start-3 border-blue-900 border-[0.09375rem] text-blue-900 transition-transform duration-300 hover:scale-105'];
 
 
 @endphp
@@ -33,8 +32,7 @@
         animal_first_img="{!! asset('assets/img/image_animal_bis.png') !!}"
         animal_first_alt="Image d'un chien (un cocker) qui regarde la caméra"
         :definitions="$definitions"
-        :buttonTop="$buttonTop"
-        :buttonBottom="$buttonBottom"
+        :buttons="$buttons"
         information_title="Informations supplémentaires"
         images_title="Images supplémentaire"
         images_content="Nous avons ajouté plusieurs photos pour que vous puissiez ressentir toute
