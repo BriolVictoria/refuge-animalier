@@ -16,6 +16,7 @@ Route::get('/volunteer', function () {
     return view('public.volunteerpage');
 })->name('public.volunteerpage');
 
+Route::livewire('/dashboard', 'pages::dashboard')->name('dashboard');
 
 Route::get('/animals', [\App\Http\Controllers\AnimalController::class, 'index'])->name('public.animals.index');
 Route::get('/animals/{animal}', [\App\Http\Controllers\AnimalController::class, 'show'])->name('public.animals.show');
