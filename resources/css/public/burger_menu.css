@@ -1,25 +1,31 @@
-.nav_container {
+.nav_container, .admin_nav_container {
     position: fixed;
-    top: 4.75rem;
-    height: calc(100vh - 4.75rem);
+    top: 4.125rem;
+    height: calc(100vh - 4.125rem);
     width: 100%;
     background-color: var(--color-white);
     transition: all ease-in-out 200ms;
 }
 
-@media (min-width: 1023px) {
+@media (min-width: 1024px) {
     .nav_container {
         position: initial;
         height: auto;
         background-color: transparent;
     }
+
+    .admin_nav_container {
+        position: initial;
+        background-color: transparent;
+    }
 }
 
-.burger_menu:not(:checked) ~.nav_container {
+.burger_menu:not(:checked) ~ .nav_container, .burger_menu:not(:checked) ~ .admin_nav_container {
     right: -100%;
 }
 
-.burger_menu:checked ~.nav_container {
+
+.burger_menu:checked ~ .nav_container, .burger_menu:checked ~ .admin_nav_container {
     right: 0;
 }
 
@@ -28,15 +34,15 @@
     transition: all ease-in-out 200ms;
 }
 
-.burger_menu:checked ~.burger_menu_label path:nth-of-type(1){
+.burger_menu:checked ~ .burger_menu_label path:nth-of-type(1) {
     transform: rotate(45deg) translateY(25%);
 }
 
-.burger_menu:checked ~.burger_menu_label path:nth-of-type(2){
+.burger_menu:checked ~ .burger_menu_label path:nth-of-type(2) {
     transform: scale(0);
 }
 
-.burger_menu:checked ~.burger_menu_label path:nth-of-type(3){
+.burger_menu:checked ~ .burger_menu_label path:nth-of-type(3) {
     transform: rotate(-45deg) translateY(-25%);
 }
 
