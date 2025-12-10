@@ -28,7 +28,7 @@ it(
 
         /*Créer un animal pour les autres statut de enums*/
         foreach (\App\Enums\AnimalStates::cases() as $animalStates) {
-            if ($animalStates !== \App\Enums\AnimalStates::Available) {
+            if ($animalStates->value != \App\Enums\AnimalStates::Available->value) {
                 Animal::factory()->create(['state' => $animalStates->value]);
             }
         }

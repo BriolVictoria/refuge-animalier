@@ -11,7 +11,7 @@
         </div>
         <x-admin.button
             route_name="#"
-            title="Se déconnecter"
+            title_button="Se déconnecter"
             label="Déconnexion"
             class="bg-blue-900 text-white transition-transform duration-300 hover:scale-105 w-1/1 inline-block"/>
     </div>

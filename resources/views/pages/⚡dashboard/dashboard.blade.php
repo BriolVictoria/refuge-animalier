@@ -63,12 +63,12 @@
                 </div>
 
                 <div class="md:col-start-6 md:col-end-10">
-                    <x-admin.messages.message_container
+                    <x-admin.messages_dashboard.message_container
                         title="Messages récent"
                         :messages="$messages"
-                        route="#"
+                        route="{!! route('messages.index') !!}"
                         label="Voir tous les messages"
-                        title="Voir tous les messages"
+                        title_button="Voir tous les messages"
                         class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-105 w-1/1 inline-block"
                     />
                 </div>
