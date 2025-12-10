@@ -18,7 +18,7 @@
 
     <x-admin.button.button
         route_name="{!! $route !!}"
-        title="{!! $title !!}"
+        title_button="{!! $title !!}"
         label="{!! $label !!}"
         class="{!! $class !!}"/>
 
