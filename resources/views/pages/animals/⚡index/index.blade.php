@@ -6,7 +6,7 @@
     label="+ Ajouter un animal"
     title_button="+ Ajouter un animal"
     route_name="#"
-    class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-105 inline-block"
+    class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 inline-block"
     search_placeholder="Rechercher un animal"
 
     />
