@@ -21,6 +21,7 @@ Route::livewire('/admin/animals', 'pages::animals.index')->name('animals.index')
 Route::livewire('/admin/adoptings', 'pages::adoptings.index')->name('adoptings.index');
 Route::livewire('/admin/volunteers', 'pages::volunteers.index')->name('volunteers.index');
 Route::livewire('/admin/messages', 'pages::messages.index')->name('messages.index');
+Route::livewire('/admin/settings', 'pages::settings')->name('settings');
 
 Route::get('/animals', [\App\Http\Controllers\AnimalController::class, 'index'])->name('public.animals.index');
 Route::get('/animals/{animal}', [\App\Http\Controllers\AnimalController::class, 'show'])->name('public.animals.show');

@@ -58,7 +58,7 @@
                         route="#"
                         label="Exporter le PDF"
                         title="Exporter le PDF"
-                        class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-105 w-1/1 inline-block"
+                        class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 w-1/1 inline-block"
                     />
                 </div>
 
@@ -69,7 +69,7 @@
                         route="{!! route('messages.index') !!}"
                         label="Voir tous les messages"
                         title_button="Voir tous les messages"
-                        class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-105 w-1/1 inline-block"
+                        class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 w-1/1 inline-block"
                     />
                 </div>
 

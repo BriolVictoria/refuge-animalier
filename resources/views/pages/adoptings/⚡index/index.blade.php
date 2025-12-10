@@ -6,7 +6,7 @@
         label="+ Ajouter une demande d'adoption"
         title_button="+ Ajouter une demande d'adoption"
         route_name="#"
-        class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-105 inline-block"
+        class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 inline-block"
         search_placeholder="Rechercher une demande"
     />
 
