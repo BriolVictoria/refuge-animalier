@@ -16,7 +16,11 @@ class AnimalFactory extends Factory
         $name = ['Sol', 'Pedro', 'Pascal', 'Luna', 'Simon', 'Stéphanie', 'Gertrude'];
         $breed = ['Golden', 'Cocker', 'Berger Australien', 'Border collie', 'Berger Américain', 'American staff', 'Bichon'];
         $coat = ['Beige', 'Blue', 'Rouge', 'Blanc', 'Taché', 'Noir', 'Gris'];
+        $sex = ['Mâle', 'Femelle'];
+        $vaccine = ['Vacciné', 'Non-vacciné'];
+        $type = ['Lapin', 'Chien', 'Chat'];
         $attitude = ['Calme', 'Méchant', 'Sympa', 'Drôle', 'Timide', 'Compliqué', 'Ca va'];
+        $trait = ['Il est très gentil et calme', 'Très énergique, gentil et en manque d‘affection', 'Il est sympa'];
 
         return [
             'image_path' => asset('assets/img/image_animal.png'),
@@ -25,7 +29,11 @@ class AnimalFactory extends Factory
             'breed' => $this->faker->randomElement($breed),
             'coat' => $this->faker->randomElement($coat),
             'attitude' => $this->faker->randomElement($attitude),
-            'state' => AnimalStates::Available,
+            'state' => $this->faker->randomElement(AnimalStates::cases()),
+            'sex' => $this->faker->randomElement($sex),
+            'vaccine' => $this->faker->randomElement($vaccine),
+            'type' => $this->faker->randomElement($type),
+            'trait' => $this->faker->randomElement($trait),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
