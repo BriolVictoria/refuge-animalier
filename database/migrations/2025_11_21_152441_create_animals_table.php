@@ -9,13 +9,17 @@ return new class extends Migration {
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
-            $table->string('image_path');
+            $table->string('image_path')->default('public/assets/img/animalProfil.jpg');
             $table->string('name');
             $table->string('age');
             $table->string('breed');
             $table->string('coat');
             $table->string('attitude');
             $table->string('state');
+            $table->string('sex');
+            $table->string('vaccine');
+            $table->string('type');
+            $table->string('trait');
             $table->timestamps();
         });
     }
