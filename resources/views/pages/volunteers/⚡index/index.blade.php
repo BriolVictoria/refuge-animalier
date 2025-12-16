@@ -1,5 +1,6 @@
 <main class="w-full">
     <x-admin.volunteers.index.table
+        :volunteers="$this->volunteers"
         title_sronly="Bénévoles"
         title="Bénévoles"
         label="+ Ajouter un bénévole"
