@@ -12,16 +12,24 @@ class VolunteerFactory extends Factory
 
     public function definition(): array
     {
-        $name = ['Lorian Flamant', 'Ambre Smith', 'Victoria Briol'];
+        $last_name = ['Flamant', 'Smith', 'Briol'];
+        $first_name = ['Lorian', 'Ambre', 'Victoria'];
         $email = ['lorian.flamant@gmail.com', 'ambre.smith@gmail.com', 'victoria.briol@gmail.com'];
-        $phone_number = ['04 70/85/96/85/78/96', '04 78 85/36/96/25/41', '04 75/96/32/74/10/25'];
-        $disponibilities = ['Lun, Mer, Jeu', 'Lun, Mar, Ven', 'Lun, Mar, Mer'];
+        $phone_number = ['0470 85 96 85', '0478 85 36 96', '0475 96 32 74'];
+        $adresse = ['Rue des Lilas 50', 'Rue des Tulippes 58', 'Rue des truc 78'];
+        $postal_code = ['1234', '4321', '5678'];
+        $password = ['123456789', 'azerty', '2406'];
+        $town = ['Londres', 'New-York', 'Paris'];
 
         return [
-            'name' => $this->faker->randomElement($name),
+            'last_name' => $this->faker->randomElement($last_name),
+            'first_name' => $this->faker->randomElement($first_name),
             'email' => $this->faker->randomElement($email),
             'phone_number' => $this->faker->randomElement($phone_number),
-            'disponibilities' => $this->faker->randomElement($disponibilities),
+            'adresse' => $this->faker->randomElement($adresse),
+            'postal_code' => $this->faker->randomElement($postal_code),
+            'password' => $this->faker->randomElement($password),
+            'town' => $this->faker->randomElement($town),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
