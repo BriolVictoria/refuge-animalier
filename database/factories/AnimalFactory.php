@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Enums\AnimalSex;
 use App\Enums\AnimalStates;
+use App\Enums\AnimalVaccine;
 use App\Models\Animal;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
@@ -16,8 +18,6 @@ class AnimalFactory extends Factory
         $name = ['Sol', 'Pedro', 'Pascal', 'Luna', 'Simon', 'Stéphanie', 'Gertrude'];
         $breed = ['Golden', 'Cocker', 'Berger Australien', 'Border collie', 'Berger Américain', 'American staff', 'Bichon'];
         $coat = ['Beige', 'Blue', 'Rouge', 'Blanc', 'Taché', 'Noir', 'Gris'];
-        $sex = ['Mâle', 'Femelle'];
-        $vaccine = ['Vacciné', 'Non-vacciné'];
         $type = ['Lapin', 'Chien', 'Chat'];
         $attitude = ['Calme', 'Méchant', 'Sympa', 'Drôle', 'Timide', 'Compliqué', 'Ca va'];
         $trait = ['Il est très gentil et calme', 'Très énergique, gentil et en manque d‘affection', 'Il est sympa'];
@@ -30,8 +30,8 @@ class AnimalFactory extends Factory
             'coat' => $this->faker->randomElement($coat),
             'attitude' => $this->faker->randomElement($attitude),
             'state' => $this->faker->randomElement(AnimalStates::cases()),
-            'sex' => $this->faker->randomElement($sex),
-            'vaccine' => $this->faker->randomElement($vaccine),
+            'sex' => $this->faker->randomElement(AnimalSex::cases()),
+            'vaccine' => $this->faker->randomElement(AnimalVaccine::cases()),
             'type' => $this->faker->randomElement($type),
             'trait' => $this->faker->randomElement($trait),
             'created_at' => Carbon::now(),
