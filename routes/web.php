@@ -17,12 +17,19 @@ Route::get('/volunteer', function () {
 })->name('public.volunteerpage');
 
 Route::livewire('/admin/dashboard', 'pages::dashboard')->name('dashboard');
+
 Route::livewire('/admin/animals', 'pages::animals.index')->name('animals.index');
 Route::livewire('/admin/animals/create', 'pages::animals.create')->name('animals.create');
 Route::livewire('/admin/animals/{id}', 'pages::animals.show')->name('animals.show');
 Route::livewire('/admin/animals/{id}/edit', 'pages::animals.edit')->name('animals.edit');
+
 Route::livewire('/admin/adoptings', 'pages::adoptings.index')->name('adoptings.index');
+
 Route::livewire('/admin/volunteers', 'pages::volunteers.index')->name('volunteers.index');
+Route::livewire('/admin/volunteers/create', 'pages::volunteers.create')->name('volunteers.create');
+Route::livewire('/admin/volunteers/{id}/edit', 'pages::volunteers.edit')->name('volunteers.edit');
+Route::livewire('/admin/volunteers/{id}', 'pages::volunteers.show')->name('volunteers.show');
+
 Route::livewire('/admin/messages', 'pages::messages.index')->name('messages.index');
 Route::livewire('/admin/settings', 'pages::settings')->name('settings');
 
