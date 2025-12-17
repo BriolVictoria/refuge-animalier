@@ -1,18 +1,14 @@
 @php
-    $type =['Chien', 'Chat', 'Lapin'];
+     $type =['Chien', 'Chat', 'Lapin'];
+     $race =['Golden', 'Américan staff', 'Cocker'];
+     $vaccin =[\App\Enums\AnimalVaccine::Vaccinated->value, \App\Enums\AnimalVaccine::NotVaccinated->value];
 
-     $radios =[
-  ['field_name' => 'Femelle', 'name' => 'sex'],
-  ['field_name' => 'Mâle', 'name' => 'sex'],
-];
+      $radios =[
+            ['field_name' => \App\Enums\AnimalSex::Female->value, 'name' => 'sex'],
+            ['field_name' => \App\Enums\AnimalSex::Male->value, 'name' => 'sex'],
+      ];
 
-          $statut =['En attente d‘adoption', 'Adopté', 'En soins'];
-
-              $buttons =[
-  ['route' => '#', 'label' => 'Modifier la fiche de l‘animal', 'title_bouton' => 'Modifier la fiche de l‘animal', 'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600'],
-  ['route' => '#', 'label' => 'Annuler la modification', 'title_bouton' => 'Annuler la modification', 'class' => 'border border-blue-900 self-start text-blue-900 transition-all duration-300 hover:scale-101 hover:text-blue-600 hover:border-blue-600'],
-
-];
+      $statut =['En attente d‘adoption', 'Adopté', 'En soins'];
 
 @endphp
 
@@ -62,12 +58,12 @@
                         :radios="$radios"
                     />
 
-                    <x-admin.form.field.input
+                    <x-admin.form.field.selected
                         wire="animalRace"
                         field_name="Race"
                         label="Race"
-                        type="text"
-                        placeholder="Golden"
+                        :options="$race"
+                        select="Golden"
                     />
 
                     <x-admin.form.field.input
@@ -83,12 +79,12 @@
                     title="Santé et caractéristiques"
                     content="Les Pattes Heureuses, c’est avant tout une famille de bénévoles dévoués : vétérinaires, soigneurs, familles d’accueil et amoureux des animaux."
                 >
-                    <x-admin.form.field.input
+                    <x-admin.form.field.selected
                         wire="animalVaccine"
                         field_name="Vaccin"
                         label="Vaccin"
-                        type="text"
-                        placeholder="Vacciné"
+                        :options="$vaccin"
+                        select="Vacciné"
                     />
 
                     <x-admin.form.field.selected
@@ -96,21 +92,24 @@
                         field_name="Statut"
                         label="Statut"
                         :options="$statut"
-                        select="En attente d'adoption"
+                        select="En attente d’adoption"
                     />
 
 
                     <x-admin.form.field.textarea
                         wire="animalTrait"
-                        field_name="Caractère"
-                        label="Caractère"
-                        placeholder="Caractère"
+                        field_name="Caractèristiques"
+                        label="Caractèristiques"
+                        placeholder="Caractèristiques"
                     />
                 </x-admin.animals.informations_animal>
 
-                <x-admin.animals.buttons_animal_create
-                    :buttons="$buttons"
-                />
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <x-admin.form.field.button
+                        label="Modifier la fiche de l‘animal"
+                        title_button="Modifier la fiche de l‘animal"
+                    />
+                </div>
 
             </article>
 
