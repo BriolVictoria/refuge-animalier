@@ -1,20 +1,14 @@
 @php
-    $type =['Chien', 'Chat', 'Lapin'];
-    $race =['Golden', 'Américan staff', 'Cocker'];
-    $vaccin =['Vacciné', 'Non-vacciné'];
+    $type = ['Chien', 'Chat', 'Lapin'];
+    $race = ['Golden', 'Américan staff', 'Cocker'];
+    $vaccin = [\App\Enums\AnimalVaccine::Vaccinated->value, \App\Enums\AnimalVaccine::NotVaccinated->value];
 
-     $radios =[
-  ['field_name' => 'Femelle', 'name' => 'sex'],
-  ['field_name' => 'Mâle', 'name' => 'sex'],
-];
+     $radios = [
+         ['field_name' => \App\Enums\AnimalSex::Female->value, 'name' => 'sex'],
+         ['field_name' => \App\Enums\AnimalSex::Male->value, 'name' => 'sex'],
+     ];
 
-          $statut =['En attente d‘adoption', 'Adopté', 'En soins'];
-
-              $buttons =[
-  ['route' => '#', 'label' => 'Ajouter l‘animal', 'title_bouton' => 'Ajouter l‘animal', 'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600'],
-  ['route' => '#', 'label' => 'Annuler la création', 'title_bouton' => 'Annuler la création', 'class' => 'border border-blue-900 self-start text-blue-900 transition-all duration-300 hover:scale-101 hover:text-blue-600 hover:border-blue-600'],
-
-];
+     $statut =['En attente d‘adoption', 'Adopté', 'En soins'];
 
 @endphp
 
@@ -111,13 +105,12 @@
                     />
                 </x-admin.animals.informations_animal>
 
-                <button wire:click.prevent="create" type="button">
-                    Créer un animal
-                </button>
-
-                <x-admin.animals.buttons_animal_create
-                    :buttons="$buttons"
-/>
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <x-admin.form.field.button
+                        label="Créer la fiche de l‘animal"
+                        title_button="Créer la fiche de l‘animal"
+                    />
+                </div>
 
             </article>
 

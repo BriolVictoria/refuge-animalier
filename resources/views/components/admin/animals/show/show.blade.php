@@ -24,8 +24,12 @@
         <h3 class="text-xl font-medium text-blue-900 md:col-span-2">{!! $title1 !!}</h3>
 
         <div class="flex md:justify-end">
-            <span class="bg-green-200 text-xs font-light px-3 py-2 rounded-4xl w-fit">{!! $state !!}</span>
+            <x-admin.animals.animals_state
+                page="show"
+                :state="$state"
+            />
         </div>
+
 
         <img
             src="{!! $image_src !!}"
@@ -52,7 +56,7 @@
         <h3 class="text-xl font-medium text-blue-900">{!! $title2 !!}</h3>
         <x-admin.animals.show.visit
             :visits="$visits"
-/>
+        />
         <x-admin.button.button
             route_name="{!! $route_name !!}"
             title_button="{!! $title_bouton !!}"
