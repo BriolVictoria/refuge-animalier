@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Adopting;
+use App\Models\Animal;
 use App\Models\Availability;
 use App\Models\Volunteer;
 
@@ -15,4 +17,17 @@ it(
 
     }
 );
+
+it(
+    'verify if an adopting is related to an animal',
+    function () {
+        $animal = Animal::factory()->create();
+
+        $adopting = Adopting::factory()->for($animal)->create();
+
+        expect($animal->adopting()->count())->toBe(1);
+    }
+);
+
+
 

@@ -24,6 +24,9 @@ Route::livewire('/admin/animals/{id}', 'pages::animals.show')->name('animals.sho
 Route::livewire('/admin/animals/{id}/edit', 'pages::animals.edit')->name('animals.edit');
 
 Route::livewire('/admin/adoptings', 'pages::adoptings.index')->name('adoptings.index');
+Route::livewire('/admin/adoptings/create', 'pages::adoptings.create')->name('adoptings.create');
+Route::livewire('/admin/adoptings/{id}/edit', 'pages::adoptings.edit')->name('adoptings.edit');
+Route::livewire('/admin/adoptings/{id}', 'pages::adoptings.show')->name('adoptings.show');
 
 Route::livewire('/admin/volunteers', 'pages::volunteers.index')->name('volunteers.index');
 Route::livewire('/admin/volunteers/create', 'pages::volunteers.create')->name('volunteers.create');

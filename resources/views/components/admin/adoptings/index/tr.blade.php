@@ -1,21 +1,29 @@
-{{--Mettre valeurs de la BD--}}
+@props([
+    'adoptings'
+])
 
-@for($i = 0; $i < 10; $i++)
+@foreach($adoptings as $adopting)
 
 <tr class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
-    <td class="px-4 py-4">Lorian Flamant</td>
-    <td class="px-4 py-4">Pedro</td>
-    <td class="px-4 py-4">24/06/2025</td>
-    <td class="px-4 py-4"><span class="bg-green-500 py-1 px-2 rounded-2xl">En cours</span>
+    <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 "><a
+            href="#">{!! $adopting->last_name !!}</a></td>
+    <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 "><a
+            href="#">{!! $adopting->first_name !!}</a></td>
+    <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 "><a
+            href="{!! route('animals.show', $adopting->animal->id) !!}">{!! $adopting->animal->name !!}</a></td>
+    <td class="px-4 py-4">{!! $adopting->creation_date !!}</td>
+    <td class="px-4 py-4"> <x-admin.adoptings.adoptings_state
+            :state="$adopting->state"
+        />
     </td>
     <td class="px-4 py-4">
-        <a href="{!! route('volunteers.show', $volunteer->id) !!}" class="inline-block pr-2">
+        <a href="{!! route('adoptings.show', $adopting->id) !!}" class="inline-block pr-2">
             <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.57716 15.4352C2.47298 15.1546 2.47298 14.8458 2.57716 14.5652C3.59178 12.105 5.31405 10.0015 7.52562 8.52133C9.73719 7.04115 12.3385 6.25098 14.9997 6.25098C17.6609 6.25098 20.2621 7.04115 22.4737 8.52133C24.6853 10.0015 26.4075 12.105 27.4222 14.5652C27.5263 14.8458 27.5263 15.1546 27.4222 15.4352C26.4075 17.8954 24.6853 19.9989 22.4737 21.4791C20.2621 22.9593 17.6609 23.7494 14.9997 23.7494C12.3385 23.7494 9.73719 22.9593 7.52562 21.4791C5.31405 19.9989 3.59178 17.8954 2.57716 15.4352Z" stroke="#2B517A" fill="none" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M15 18.75C17.0711 18.75 18.75 17.0711 18.75 15C18.75 12.9289 17.0711 11.25 15 11.25C12.9289 11.25 11.25 12.9289 11.25 15C11.25 17.0711 12.9289 18.75 15 18.75Z" stroke="#2B517A" fill="none" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </a>
-        <a href="{!! route('volunteers.edit', $volunteer->id) !!}" class="inline-block pr-2">
+        <a href="{!! route('adoptings.edit', $adopting->id) !!}" class="inline-block pr-2">
             <svg width="28" height="28" viewBox="0 0 28 28"
                  xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -50,4 +58,4 @@
 </tr>
 
 
-@endfor
+@endforeach

@@ -4,10 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Animal extends Model
 {
     use Hasfactory;
 
     protected $fillable = ['image_path', 'name', 'age', 'breed', 'coat', 'state', 'attitude', 'sex', 'vaccine', 'type', 'trait'];
+    public function adopting(): HasMany
+    {
+        return $this->hasMany(Adopting::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

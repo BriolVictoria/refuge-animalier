@@ -15,7 +15,6 @@ class AnimalFactory extends Factory
 
     public function definition(): array
     {
-        $name = ['Sol', 'Pedro', 'Pascal', 'Luna', 'Simon', 'Stéphanie', 'Gertrude'];
         $breed = ['Golden', 'Cocker', 'Berger Australien', 'Border collie', 'Berger Américain', 'American staff', 'Bichon'];
         $coat = ['Beige', 'Blue', 'Rouge', 'Blanc', 'Taché', 'Noir', 'Gris'];
         $type = ['Lapin', 'Chien', 'Chat'];
@@ -24,7 +23,7 @@ class AnimalFactory extends Factory
 
         return [
             'image_path' => asset('assets/img/image_animal.png'),
-            'name' => $this->faker->randomElement($name),
+            'name' => $this->faker->firstName(),
             'age' => $this->faker->numberBetween(1, 10),
             'breed' => $this->faker->randomElement($breed),
             'coat' => $this->faker->randomElement($coat),
