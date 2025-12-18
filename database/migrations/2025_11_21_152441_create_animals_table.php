@@ -9,6 +9,7 @@ return new class extends Migration {
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('image_path')->default('public/assets/img/animalProfil.jpg');
             $table->string('name');
             $table->string('age');
