@@ -25,8 +25,6 @@
 
 
 
-
-
 @endphp
 
 <main class="w-full">
@@ -37,7 +35,11 @@
             <div class="flex flex-col gap-6 md:grid md:grid-cols-9 md:gap-6 lg:flex 2xl:grid 2xl:grid-cols-9">
                 <div class="md:col-start-1 md:col-end-6">
                     <x-admin.definitions.definition
+                        :adoptings="$this->adoptings"
                         title="Demandes d'adoptions"
+                        label="Voir toutes les demandes"
+                        title_button="Voir toutes les demandes"
+                        class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 w-1/1 inline-block"
                     />
                 </div>
 
