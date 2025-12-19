@@ -7,7 +7,14 @@
 
         <div class="flex items-baseline">
             <dt class="text-sm font-medium pr-2.5">{!! $definition['title'] !!}&nbsp;:</dt>
-            <dd class="text-xs font-light">{!! $definition['content'] !!}</dd>
+
+            <dd class="text-xs font-light">
+                @if($definition['title'] === 'Mot de passe')
+                    *******
+                @else
+                {!! $definition['content'] !!}
+                @endif
+            </dd>
         </div>
 
     @endforeach
