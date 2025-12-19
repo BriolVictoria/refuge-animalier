@@ -4,10 +4,14 @@
 @foreach($animals as $animal)
 
     <tr class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
-        <td class="px-4 py-4"><img alt="Image d'un chien" class="inline-block w-10 h-10 rounded-full"
-                                   src="{!! $animal->image_path !!}"></td>
-        <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 "><a
-                href="{!! route('animals.show', $animal->id) !!}">{!! $animal->name !!}</a></td>
+        <td class="px-4 py-4 transition-all duration-300 hover:scale-105">
+            <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">
+            <img alt="Image d'un chien" class="inline-block w-10 h-10 rounded-full"
+                                   src="{!! $animal->image_path !!}">
+            </a>
+        </td>
+        <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 ">
+            <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">{!! $animal->name !!}</a></td>
 
         <td class="px-4 py-4">{!! $animal->breed !!}</td>
         <td class="px-4 py-4">
@@ -16,9 +20,9 @@
                 :state="$animal->state"
             />
         </td>
-        <td class="px-4 py-4">{!! $animal->created_at !!}</td>
+        <td class="px-4 py-4">{!! $animal->date !!}</td>
         <td class="px-4 py-4">
-            <a href="{!! route('animals.show', $animal->id) !!}" class="inline-block pr-2">
+            <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M2.57716 15.4352C2.47298 15.1546 2.47298 14.8458 2.57716 14.5652C3.59178 12.105 5.31405 10.0015 7.52562 8.52133C9.73719 7.04115 12.3385 6.25098 14.9997 6.25098C17.6609 6.25098 20.2621 7.04115 22.4737 8.52133C24.6853 10.0015 26.4075 12.105 27.4222 14.5652C27.5263 14.8458 27.5263 15.1546 27.4222 15.4352C26.4075 17.8954 24.6853 19.9989 22.4737 21.4791C20.2621 22.9593 17.6609 23.7494 14.9997 23.7494C12.3385 23.7494 9.73719 22.9593 7.52562 21.4791C5.31405 19.9989 3.59178 17.8954 2.57716 15.4352Z"
@@ -30,7 +34,7 @@
                         stroke-linejoin="round"/>
                 </svg>
             </a>
-            <a href="{!! route('animals.edit', $animal->id) !!}" class="inline-block pr-2">
+            <a title="Modifier la fiche de {!! $animal->name !!}" href="{!! route('animals.edit', $animal->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="28" height="28" viewBox="0 0 28 28"
                      xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -40,7 +44,7 @@
                 </svg>
 
             </a>
-            <a href="#" class="inline-block pr-2">
+            <a title="Supprimer la fiche de {!! $animal->name !!}" href="#" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="24" height="27" viewBox="0 0 24 27"
                      xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.375 11.875V19.375" stroke="#26486C" stroke-width="1.25"
