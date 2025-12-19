@@ -55,14 +55,17 @@
 
         <h3 class="text-xl font-medium text-blue-900">{!! $title2 !!}</h3>
         <x-admin.animals.show.visit
-            :visits="$visits"
+            :notes="$this->notes"
         />
         <x-admin.button.button
+            wire:click="openModal('add_visit')"
             route_name="{!! $route_name !!}"
             title_button="{!! $title_bouton !!}"
             label="{!! $label !!}"
             class="{!! $class !!}"
         />
     </div>
+
+
 
 </section>
