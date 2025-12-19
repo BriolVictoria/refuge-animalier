@@ -36,7 +36,7 @@
                     <div class="flex flex-col space-y-1">
                         <div class="flex flex-col items-baseline">
                             <dt class="text-sm font-medium pr-2.5">Nom&nbsp;:</dt>
-                            <dd class="text-xs font-light">Simon Alvarez</dd>
+                            <dd wire:click="openModal('see_message')" class="text-xs font-light">Simon Alvarez</dd>
                         </div>
 
                         <div class="flex flex-col items-baseline">
@@ -57,7 +57,7 @@
 
 
                     </div>
-                    <a href="{!! route('animals.edit') !!}" class="inline-block pr-2">
+                    <a title="Supprimer le message" href="#" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                         <svg width="24" height="27" viewBox="0 0 24 27" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.375 11.875V19.375" stroke="#26486C" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M14.375 11.875V19.375" stroke="#26486C" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>

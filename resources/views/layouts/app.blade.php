@@ -6,7 +6,11 @@
         <title>{{ $title ?? config('app.name') }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="max-w-[125rem] m-auto lg:flex lg:flex-row relative">
+    <body x-data="{open : false}"
+          x-on:open-modal.window="open = true"
+          x-on:close-modal.window="open = false"
+          :class="open ? 'overflow-hidden' : ''"
+        class="max-w-[125rem] m-auto lg:flex lg:flex-row relative">
         <livewire:admin::partials.heading />
         {{ $slot }}
 

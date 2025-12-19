@@ -10,4 +10,12 @@
 
     />
 
+    @if($openMessage)
+        <x-admin.modal.modal
+        title="Le message"
+        >
+            <p>Hello</p>
+        </x-admin.modal.modal>
+    @endif
+
 </main>

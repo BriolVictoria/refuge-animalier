@@ -17,12 +17,13 @@
     $state = [\App\Enums\AdoptingState::Pending->value, \App\Enums\AdoptingState::Done->value, \App\Enums\AdoptingState::InProgress->value];
 
     $environment = [\App\Enums\AdoptingEnvironement::Flat->value, \App\Enums\AdoptingEnvironement::FlatShare->value, \App\Enums\AdoptingEnvironement::House->value, \App\Enums\AdoptingEnvironement::Other->value, \App\Enums\AdoptingEnvironement::Studio->value];
+
 @endphp
 
 <main class="w-full">
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
-            <a href="{!! route('adoptings.index') !!}"
+            <a title="Voir les demandes d'adoptions" href="{!! route('adoptings.index') !!}"
                class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">Demande d'adoptions</a>
             <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
             <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">Ajouter une demande</h1>
@@ -94,6 +95,21 @@
 
 
                 </x-admin.volunteers.informations_volunteer>
+
+                {{--voir--}}
+                {{--<x-admin.volunteers.informations_volunteer
+                    title="Animal désiré"
+                    content="Les Pattes Heureuses, c’est avant tout une famille de bénévoles dévoués : vétérinaires, soigneurs, familles d’accueil et amoureux des animaux."
+                >
+
+                    <x-admin.form.field.selected
+                        wire="animal_name"
+                        field_name="Animal désiré"
+                        label="Animal désiré"
+                        :options="$animal_name"
+                    />
+
+                </x-admin.volunteers.informations_volunteer>--}}
 
                 <x-admin.volunteers.informations_volunteer
                     title="Environnement de vie"

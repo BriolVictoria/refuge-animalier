@@ -6,6 +6,7 @@ use App\Enums\AvailabilitySelect;
 use App\Models\Adopting;
 use App\Models\Animal;
 use App\Models\Availability;
+use App\Models\Note;
 use App\Models\User;
 use App\Models\Volunteer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -29,6 +30,7 @@ class DatabaseSeeder extends Seeder
 
         Animal::factory(50)
             ->has(Adopting::factory(1))
+            ->has(Note::factory()->count(18))
             ->for($user)->create();
 
         Volunteer::factory(50)->has(Availability::factory(1))->create();
