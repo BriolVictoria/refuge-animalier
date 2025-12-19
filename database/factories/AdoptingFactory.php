@@ -19,7 +19,7 @@ class AdoptingFactory extends Factory
             'last_name' => $this->faker->lastName(),
             'first_name' => $this->faker->firstName(),
             'email' => $this->faker->unique()->safeEmail(),
-            'phone_number' => $this->faker->phoneNumber(),
+            'phone_number' => $this->faker->unique()->phoneNumber(),
             'address' => $this->faker->address(),
             'city' => $this->faker->city(),
             'postcode' => $this->faker->postcode(),
