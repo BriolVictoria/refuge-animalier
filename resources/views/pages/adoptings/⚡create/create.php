@@ -1,10 +1,10 @@
 <?php
 
 use App\Models\Animal;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
-new class extends Component
-{
+new class extends Component {
     public string $adoptingFirstName;
     public string $adoptingLastName;
     public string $adoptingEmail;
@@ -19,9 +19,22 @@ new class extends Component
     public string $adoptingCreationDate;
     public string $adoptingState = 'En attente';
     public string $adoptingComment;
-    //public int $adoptingAnimalId;
+    public string $adoptingSelectedAnimalId;
 
-    public function create(): void
+    public Collection $animals;
+
+    public function mount(): void
+    {
+        $this->animals = Animal::all();
+        $this->adoptingSelectedAnimalId = $this->animals->toArray()[0]['id'];
+    }
+
+    public function updated(): void
+    {
+        $this->validation();
+    }
+
+    protected function validation(): void
     {
         $this->validate(
             [
@@ -39,9 +52,14 @@ new class extends Component
                 'adoptingCreationDate' => ['required', 'string', 'max:255'],
                 'adoptingState' => ['required', 'string', 'max:255'],
                 'adoptingComment' => ['required', 'string', 'max:255'],
-
+                'adoptingSelectedAnimalId' => ['required', 'string', 'max:255'],
             ]
         );
+    }
+
+    public function create(): void
+    {
+        $this->validation();
 
         \App\Models\Adopting::create(
             [
