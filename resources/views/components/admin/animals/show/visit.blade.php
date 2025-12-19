@@ -1,7 +1,12 @@
-<dl class="2xl:grid 2xl:grid-cols-2 2xl:gap-2">
+@props([
+    'notes',
+])
+
+<dl class="flex flex-col gap-2 2xl:grid 2xl:grid-cols-2 2xl:gap-2">
 
     <x-admin.animals.show.visit_card
-    :visits="$visits"
+        :notes="$notes"
     />
 
 </dl>
+{!! $notes->links() !!}
