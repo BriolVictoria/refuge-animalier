@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->string('image_path')->default('public/assets/img/animalProfil.jpg');
             $table->string('name');
             $table->string('age');
+            $table->string('date');
             $table->string('breed');
             $table->string('coat');
             $table->string('attitude');
