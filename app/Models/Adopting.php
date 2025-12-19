@@ -19,4 +19,10 @@ class Adopting extends Model
     {
         return $this->belongsTo(Animal::class);
     }
+
+    /*public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }*/
+
 }
