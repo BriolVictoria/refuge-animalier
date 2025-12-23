@@ -2,19 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Note;
+use App\Models\notification;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
-class NoteFactory extends Factory
+class NotificationFactory extends Factory
 {
-    protected $model = Note::class;
+    protected $model = notification::class;
 
     public function definition(): array
     {
         return [
-            'email' => $this->faker->unique()->safeEmail(),
-            'note' => $this->faker->sentence(10),
+            'text' => $this->faker->sentence(5),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

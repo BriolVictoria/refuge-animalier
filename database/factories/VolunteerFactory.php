@@ -17,7 +17,7 @@ class VolunteerFactory extends Factory
             'last_name' => $this->faker->lastName(),
             'first_name' => $this->faker->firstName(),
             'email' => $this->faker->unique()->email(),
-            'phone_number' => $this->faker->phoneNumber(),
+            'phone_number' => $this->faker->numerify('04## ## ## ##'),
             'adresse' => $this->faker->address(),
             'postal_code' => $this->faker->postcode(),
             'password' => $this->faker->password(),
