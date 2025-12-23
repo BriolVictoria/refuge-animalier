@@ -1,22 +1,3 @@
-@php
-    $role =[\App\Enums\RoleUser::Volunteer->value, \App\Enums\RoleUser::Administrator->value];
-
-  $notifications =[
-  ['title' => 'Notifications par email'],
-  ['title' => 'Notifications tableau de bord'],
-  ['title' => 'Alertes adoption urgentes'],
-  ['title' => 'Rappel de RDV'],
-];
-
-    $buttons =[
-  ['route' => '#', 'label' => 'Enregistrer les modifications', 'title_bouton' => 'Enregistrer les modifications', 'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600 w-1/1 inline-block'],
-  ['route' => '#', 'label' => 'Annuler les modifications', 'title_bouton' => 'Annuler les modifications', 'class' => 'border border-blue-900 self-start text-blue-900 transition-all duration-300 hover:scale-101 hover:text-blue-600 hover:border-blue-600 w-1/1 inline-block'],
-
-];
-
-
-@endphp
-
 <main class="w-full">
     <div>
         <h1 class="py-4 px-8 text-xl text-blue-900 font-semibold border-b border-b-blue-900 w-1/1">Profil</h1>
@@ -58,7 +39,7 @@
                     wire="userRole"
                     field_name="Rôle"
                     label="Rôle"
-                    :options="$role"
+                    :options="$this->roles"
                     select="Bénévole"
                 />
 
@@ -69,6 +50,7 @@
                     type="date"
                     placeholder="12/12/2025"
                 />
+
             </x-admin.settings.information_profil>
 
             <x-admin.settings.password
@@ -102,11 +84,11 @@
 
             <x-admin.settings.notification_settings
                 title="Préférence de notifications"
-                :notifications="$notifications"
             />
-
-            <x-admin.settings.buttons_settings
-                :buttons="$buttons"
+            <x-admin.form.field.button
+                label="Enregistrer les modifications"
+                title_button="Enregistrer les modifications"
+                click_wire="update"
             />
         </section>
     </div>
