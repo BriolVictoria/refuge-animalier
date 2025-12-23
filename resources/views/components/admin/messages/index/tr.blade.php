@@ -1,13 +1,15 @@
-{{--Mettre valeurs de la BD--}}
+@foreach($this->messages as $message)
 
-@for($i = 0; $i < 10; $i++)
-
-<tr wire:click="openModal('see_message')" class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
-    <td class="px-4 py-4 "  >Simon Alvarez</td>
-    <td class="px-4 py-4">simon.alvarez@gmail.com</td>
-    <td class="px-4 py-4">Avez-vous des nouvelles de Sol?</td>
-    <td class="px-4 py-4">02/12/2505</td>
-    <td class="px-4 py-4"><span class="bg-red-100 py-1 px-2 rounded-2xl">Non lu</span>
+<tr wire:click="openModal('see_message', {{$message->id}})" class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
+    <td class="px-4 py-4 ">{!! $message->name !!}</td>
+    <td class="px-4 py-4">{!! $message->email !!}</td>
+    <td class="px-4 py-4">{!! $message->object !!}</td>
+    <td class="px-4 py-4">{!! $message->date->translatedFormat('d/m/Y') !!}</td>
+    <td class="px-4 py-4">
+        <x-admin.messages.messages_state
+            page="table"
+            :state="$message->state"
+        />
     </td>
     <td class="px-4 py-4">
         <a href="#" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
@@ -18,12 +20,10 @@
                 <path d="M0.625 5.625H23.125" stroke="#26486C" fill="none" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M6.875 5.625V3.125C6.875 2.46196 7.13839 1.82607 7.60723 1.35723C8.07607 0.888392 8.71196 0.625 9.375 0.625H14.375C15.038 0.625 15.6739 0.888392 16.1428 1.35723C16.6116 1.82607 16.875 2.46196 16.875 3.125V5.625" stroke="#26486C" stroke-width="1.25" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-
-
         </a>
 
     </td>
 </tr>
 
 
-@endfor
+@endforeach
