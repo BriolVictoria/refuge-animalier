@@ -6,7 +6,6 @@
     'label',
     'class',
     'search_placeholder',
-    'volunteers',
 ])
 
 <div>
@@ -25,15 +24,13 @@
         <table class="w-full overflow-hidden rounded-sm hidden 2xl:table">
             <x-admin.volunteers.index.thead/>
             <tbody>
-            <x-admin.volunteers.index.tr
-                :volunteers="$volunteers"
-            />
+            <x-admin.volunteers.index.tr/>
             </tbody>
         </table>
 
         <div
             class="2xl:hidden space-y-4 md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-1 [@media(min-width:1170px)]:grid-cols-2">
-            @foreach($volunteers as $volunteer)
+            @foreach($this->volunteers as $volunteer)
                 <div
                     class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
                     <div class="flex flex-col space-y-1">
@@ -105,6 +102,6 @@
                 </div>
             @endforeach
         </div>
-        {!! $volunteers->links() !!}
+        {!! $this->volunteers->links() !!}
     </section>
 </div>

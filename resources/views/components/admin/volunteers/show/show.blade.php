@@ -15,14 +15,10 @@
 
 
 
-        <x-admin.volunteers.show.definitions_volunteer
-            :definitions="$definitions"
-        />
+        <x-admin.volunteers.show.definitions_volunteer/>
 
         <div class="flex flex-col gap-3 md:col-span-3 lg:flex-row lg:justify-end">
-            <x-admin.volunteers.show.buttons_show
-                :buttons="$buttons"
-            />
+            <x-admin.volunteers.show.buttons_show/>
         </div>
 
 

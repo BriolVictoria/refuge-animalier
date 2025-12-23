@@ -1,7 +1,3 @@
-@php
-    $type =[\App\Enums\AvailabilitySelect::NotAvailable->value, \App\Enums\AvailabilitySelect::AvailableInTheEvening->value, \App\Enums\AvailabilitySelect::AvailableInTheMorning->value, \App\Enums\AvailabilitySelect::AvailableDuringTheDay->value];
-@endphp
-
 <main class="w-full">
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
@@ -48,7 +44,7 @@
                         field_name="Numéro de téléphone"
                         label="Numéro de téléphone"
                         type="text"
-                        placeholder="04 70/85/96/87/58"
+                        placeholder="0450 78 96 87"
                     />
 
                     <x-admin.form.field.input
@@ -68,7 +64,7 @@
                     />
 
                     <x-admin.form.field.input
-                        wire="volunteerCodePostal"
+                        wire="volunteerPostalCode"
                         field_name="Code postal"
                         label="Code Postal"
                         type="text"
@@ -87,7 +83,7 @@
                         wire="volunteerAvailabilities.monday"
                         field_name="Lundi"
                         label="Lundi"
-                        :options="$type"
+                        :options="$this->options"
                         select="Pas disponible"
                     />
 
@@ -95,7 +91,7 @@
                         wire="volunteerAvailabilities.tuesday"
                         field_name="Mardi"
                         label="Mardi"
-                        :options="$type"
+                        :options="$this->options"
                         select="Pas disponible"
                     />
 
@@ -103,7 +99,7 @@
                         wire="volunteerAvailabilities.wednesday"
                         field_name="Mercredi"
                         label="Mercredi"
-                        :options="$type"
+                        :options="$this->options"
                         select="Pas disponible"
                     />
 
@@ -111,7 +107,7 @@
                         wire="volunteerAvailabilities.thursday"
                         field_name="Jeudi"
                         label="Jeudi"
-                        :options="$type"
+                        :options="$this->options"
                         select="Pas disponible"
                     />
 
@@ -119,7 +115,7 @@
                         wire="volunteerAvailabilities.friday"
                         field_name="Vendredi"
                         label="Vendredi"
-                        :options="$type"
+                        :options="$this->options"
                         select="Pas disponible"
                     />
 
@@ -127,7 +123,7 @@
                         wire="volunteerAvailabilities.saturday"
                         field_name="Samedi"
                         label="Samedi"
-                        :options="$type"
+                        :options="$this->options"
                         select="Pas disponible"
                     />
 
@@ -135,7 +131,7 @@
                         wire="volunteerAvailabilities.sunday"
                         field_name="Dimanche"
                         label="Dimanche"
-                        :options="$type"
+                        :options="$this->options"
                         select="Pas disponible"
                     />
 
@@ -161,6 +157,7 @@
                     <x-admin.form.field.button
                         label="Créer la fiche du bénévole"
                         title_button="Créer la fiche du bénévole"
+                        click_wire="create"
                     />
                 </div>
 

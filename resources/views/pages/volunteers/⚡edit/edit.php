@@ -14,6 +14,7 @@ new class extends Component
     public string $volunteerTown;
     public string $volunteerPostalCode;
     public string $volunteerPassword;
+    public array $options;
     public array $volunteerAvailabilities = [
         'monday' => 'available',
         'tuesday' => 'available',
@@ -26,6 +27,7 @@ new class extends Component
     public function mount($id): void
     {
         $this->volunteer = Volunteer::find($id);
+        $this->options = [\App\Enums\AvailabilitySelect::NotAvailable->value, \App\Enums\AvailabilitySelect::AvailableInTheEvening->value, \App\Enums\AvailabilitySelect::AvailableInTheMorning->value, \App\Enums\AvailabilitySelect::AvailableDuringTheDay->value];
 
         $this->volunteerLastName = $this->volunteer->last_name;
         $this->volunteerFirstName = $this->volunteer->first_name;
@@ -42,5 +44,37 @@ new class extends Component
         $this->volunteerTown = $this->volunteer->town;
         $this->volunteerPostalCode = $this->volunteer->postal_code;
         $this->volunteerPassword = $this->volunteer->password;
+    }
+
+
+    public function update(): void
+    {
+        $this->validate(
+            [
+                'volunteerLastName' => ['required', 'string', 'max:255'],
+                'volunteerFirstName' => ['required', 'string', 'max:255'],
+                'volunteerEmail' => ['required', 'string', 'max:255'],
+                'volunteerPhoneNumber' => ['required', 'string', 'max:255'],
+                'volunteerAdresse' => ['required', 'string', 'max:255'],
+                'volunteerTown' => ['required', 'string', 'max:255'],
+                'volunteerPostalCode' => ['required', 'string', 'max:255'],
+                'volunteerPassword' => ['required', 'string', 'max:255'],
+            ]
+        );
+
+        $this->volunteer->update(
+            [
+                'last_name' => $this->volunteerLastName,
+                'first_name' => $this->volunteerFirstName,
+                'email' => $this->volunteerEmail,
+                'phone_number' => $this->volunteerPhoneNumber,
+                'adresse' => $this->volunteerAdresse,
+                'town' => $this->volunteerTown,
+                'postal_code' => $this->volunteerPostalCode,
+                'password' => $this->volunteerPassword,
+            ]
+        );
+
+        $this->redirect(route('volunteers.show', $this->volunteer->id));
     }
 };
