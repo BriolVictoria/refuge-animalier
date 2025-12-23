@@ -15,14 +15,10 @@
 
 
 
-        <x-admin.adoptings.show.definitions_adopting
-            :definitions="$definitions"
-        />
+        <x-admin.adoptings.show.definitions_adopting/>
 
         <div class="flex flex-col gap-3 md:col-span-3 lg:flex-row lg:justify-end">
-            <x-admin.volunteers.show.buttons_show
-                :buttons="$buttons"
-            />
+            <x-admin.volunteers.show.buttons_show/>
         </div>
 
 

@@ -1,8 +1,6 @@
 <main class="w-full">
 
     <x-admin.adoptings.index.table
-        :adoptings="$this->adoptings"
-       {{-- wire="term"--}}
         title_sronly="Demandes d'adoptions"
         title="Demandes d'adoptions"
         label="+ Ajouter une demande d'adoption"
