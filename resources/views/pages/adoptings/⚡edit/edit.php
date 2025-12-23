@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
 new class extends Component {
+
+    use \App\ValidationAdopting;
+
     public Adopting $adopting;
 
     public string $adoptingFirstName;
@@ -23,13 +26,40 @@ new class extends Component {
     public string $adoptingState;
     public string $adoptingComment;
 
-    public string $animal_name;
+    public string $adoptingSelectedAnimalId;
+    public array $other_animals = [];
+    public array $children = [];
+    public array $outsides = [];
+    public array $states = [];
+    public array $environments = [];
+
+
 
     public function mount($id): void
     {
         $this->adopting = Adopting::find($id);
+        $this->adoptingSelectedAnimalId = $id;
 
-        $this->animal_name = $this->adopting->animal->name;
+        $this->other_animals = [
+            ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'animal'],
+            ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'animal'],
+        ];
+
+        $this->children = [
+            ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'children'],
+            ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'children'],
+        ];
+
+        $this->outsides = [
+            ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'outside'],
+            ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'outside'],
+        ];
+
+        $this->states = [\App\Enums\AdoptingState::Pending->value, \App\Enums\AdoptingState::Done->value, \App\Enums\AdoptingState::InProgress->value];
+
+        $this->environments = [\App\Enums\AdoptingEnvironement::Flat->value, \App\Enums\AdoptingEnvironement::FlatShare->value, \App\Enums\AdoptingEnvironement::House->value, \App\Enums\AdoptingEnvironement::Studio->value, \App\Enums\AdoptingEnvironement::Other->value];
+
+
         $this->adoptingFirstName = $this->adopting->first_name;
         $this->adoptingLastName = $this->adopting->last_name;
         $this->adoptingEmail = $this->adopting->email;
@@ -41,37 +71,35 @@ new class extends Component {
         $this->adoptingChildren = $this->adopting->children;
         $this->adoptingEnvironment = $this->adopting->environment;
         $this->adoptingOutside = $this->adopting->outside;
-        $this->adoptingCreationDate = $this->adopting->creation_date;
+        $this->adoptingCreationDate = $this->adopting->creation_date->format('Y-m-d');
         $this->adoptingState = $this->adopting->state;
         $this->adoptingComment = $this->adopting->comment;
     }
 
-    public function updated(): void
+    public function update(): void
     {
         $this->validation();
-    }
-
-    protected function validation(): void
-    {
-        $this->validate(
+        $this->adopting->update(
             [
-                'adoptingFirstName' => ['required', 'string', 'max:255'],
-                'adoptingLastName' => ['required', 'string', 'max:255'],
-                'adoptingEmail' => ['required', 'string', 'max:255'],
-                'adoptingPhoneNumber' => ['required', 'string', 'max:255'],
-                'adoptingAddress' => ['required', 'string', 'max:255'],
-                'adoptingCity' => ['required', 'string', 'max:255'],
-                'adoptingPostCode' => ['required', 'string', 'max:255'],
-                'adoptingOtherAnimal' => ['required', 'string', 'max:255'],
-                'adoptingChildren' => ['required', 'string', 'max:255'],
-                'adoptingEnvironment' => ['required', 'string', 'max:255'],
-                'adoptingOutside' => ['required', 'string', 'max:255'],
-                'adoptingCreationDate' => ['required', 'string', 'max:255'],
-                'adoptingState' => ['required', 'string', 'max:255'],
-                'adoptingComment' => ['required', 'string', 'max:255'],
-                'adoptingSelectedAnimalId' => ['required', 'string', 'max:255'],
+                'first_name' => $this->adoptingFirstName,
+                'last_name' => $this->adoptingLastName,
+                'email' => $this->adoptingEmail,
+                'phone_number' => $this->adoptingPhoneNumber,
+                'address' => $this->adoptingAddress,
+                'city' => $this->adoptingCity,
+                'postcode' => $this->adoptingPostCode,
+                'other_animal' => $this->adoptingOtherAnimal,
+                'children' => $this->adoptingChildren,
+                'environment' => $this->adoptingEnvironment,
+                'outside' => $this->adoptingEnvironment,
+                'creation_date' => $this->adoptingCreationDate,
+                'state' => $this->adoptingState,
+                'comment' => $this->adoptingComment,
+                'animal_id' => $this->adoptingSelectedAnimalId
             ]
         );
+
+        $this->redirect(route('adoptings.show', $this->adopting->id));
     }
 };
 
