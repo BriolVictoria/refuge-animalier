@@ -8,7 +8,7 @@
             ['field_name' => \App\Enums\AnimalSex::Male->value, 'name' => 'sex'],
       ];
 
-      $statut =['En attente d‘adoption', 'Adopté', 'En soins'];
+     $statut =[\App\Enums\AnimalStates::Available->value, \App\Enums\AnimalStates::CurrentlyAdopted->value, \App\Enums\AnimalStates::Adopted->value, \App\Enums\AnimalStates::AwaitingAdoption->value, \App\Enums\AnimalStates::InCare->value];
 
 @endphp
 
@@ -25,6 +25,7 @@
             <h2 class="sr-only">Modification d'un animal</h2>
             <article class="flex flex-col gap-6 bg-white rounded-sm shadow-[var(--shadow-xl)] py-6 px-6 h-full">
                 <x-admin.animals.informations_animal
+                    wire="save"
                     title="Informations générales"
                     content="Les Pattes Heureuses, c’est avant tout une famille de bénévoles dévoués : vétérinaires, soigneurs, familles d’accueil et amoureux des animaux."
                 >
@@ -73,6 +74,14 @@
                         type="text"
                         placeholder="Beige"
                     />
+
+                    <x-admin.form.field.input
+                        wire="animalDate"
+                        field_name="Date de mise à jour (date du jour)"
+                        label="Date de mise à jour (date du jour)"
+                        type="date"
+                        placeholder="21/12/2025"
+                    />
                 </x-admin.animals.informations_animal>
 
                 <x-admin.animals.informations_animal
@@ -97,7 +106,7 @@
 
 
                     <x-admin.form.field.textarea
-                        wire="animalTrait"
+                        wire="animalAttitude"
                         field_name="Caractèristiques"
                         label="Caractèristiques"
                         placeholder="Caractèristiques"
@@ -108,6 +117,7 @@
                     <x-admin.form.field.button
                         label="Modifier la fiche de l‘animal"
                         title_button="Modifier la fiche de l‘animal"
+                        click_wire="update"
                     />
                 </div>
 

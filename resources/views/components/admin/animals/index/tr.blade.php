@@ -1,12 +1,8 @@
-@props([
-    'animals'
-])
-@foreach($animals as $animal)
-
+@foreach($this->animals as $animal)
     <tr class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
         <td class="px-4 py-4 transition-all duration-300 hover:scale-105">
             <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">
-            <img alt="Image d'un chien" class="inline-block w-10 h-10 rounded-full"
+            <img alt="Image d'un chien" width="60" height="45" class="inline-block rounded-full"
                                    src="{!! $animal->image_path !!}">
             </a>
         </td>
@@ -20,7 +16,7 @@
                 :state="$animal->state"
             />
         </td>
-        <td class="px-4 py-4">{!! $animal->date !!}</td>
+        <td class="px-4 py-4">{!! $animal->date->translatedFormat('d/m/Y') !!}</td>
         <td class="px-4 py-4">
             <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
@@ -62,10 +58,7 @@
                         stroke="#26486C" fill="none" stroke-width="1.25" stroke-linecap="round"
                         stroke-linejoin="round"/>
                 </svg>
-
-
             </a>
-
         </td>
     </tr>
 @endforeach

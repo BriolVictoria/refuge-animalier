@@ -6,14 +6,10 @@
     'label',
     'class',
     'search_placeholder',
-    'animals',
-
 ])
-
 <div>
     <h1 class="py-4 px-8 text-xl text-blue-900 font-semibold border-b border-b-blue-900 w-1/1">{!! $title !!}</h1>
     <section>
-
         <x-admin.table.header
             title_sronly="{!! $title_sronly !!}"
             route_name="{!! $route_name !!}"
@@ -26,19 +22,16 @@
         <table class="w-full overflow-hidden rounded-sm hidden 2xl:table">
             <x-admin.animals.index.thead/>
             <tbody>
-            <x-admin.animals.index.tr
-                :animals="$animals"/>
+                <x-admin.animals.index.tr/>
             </tbody>
         </table>
 
 
-        <div
-            class="space-y-4 2xl:hidden  md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-1 [@media(min-width:1170px)]:grid-cols-2">
-            @foreach($animals as $animal)
-                <dl
-                    class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
+        <div class="space-y-4 2xl:hidden  md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-1 [@media(min-width:1170px)]:grid-cols-2">
+            @foreach($this->animals as $animal)
+                <dl class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
                     <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">
-                        <img alt="Image d'un chien" class="w-24 h-24 rounded-lg"
+                        <img alt="Image d'un chien" width="24" height="24" class="rounded-lg"
                              src="{!! asset('assets/img/image_table.svg') !!}">
                     </a>
                     <div class="flex flex-col space-y-1">
@@ -47,7 +40,6 @@
                             <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}"><dd class="text-xs font-light transition-all duration-300 hover:text-blue-800 ">{!! $animal->name !!}</dd></a>
 
                         </div>
-
                         <div class="flex items-baseline">
                             <dt class="text-sm font-medium pr-2.5">Type&nbsp;:</dt>
                             <dd class="text-xs font-light">{!! $animal->type !!}</dd>
@@ -60,9 +52,8 @@
 
                         <x-admin.animals.animals_state
                             page="index"
-                        :state="$animal->state"
+                            :state="$animal->state"
                         />
-
                     </div>
                     <div class="flex mt-7">
                         <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
@@ -79,7 +70,6 @@
                                     stroke="#26486C" fill="none" stroke-width="1.45833" stroke-linecap="round"
                                     stroke-linejoin="round"/>
                             </svg>
-
                         </a>
                         <a title="Supprimer la fiche de {!! $animal->name !!}" href="#" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                             <svg width="24" height="27" viewBox="0 0 24 27"
@@ -99,16 +89,12 @@
                                     stroke="#26486C" fill="none" stroke-width="1.25" stroke-linecap="round"
                                     stroke-linejoin="round"/>
                             </svg>
-
-
                         </a>
-
                     </div>
                 </dl>
-                {{-- </a>--}}
             @endforeach
         </div>
-        {!! $animals->links() !!}
+        {!! $this->animals->links() !!}
 
     </section>
 </div>

@@ -1,17 +1,3 @@
-@php
-    $type = ['Chien', 'Chat', 'Lapin'];
-    $race = ['Golden', 'Américan staff', 'Cocker'];
-    $vaccin = [\App\Enums\AnimalVaccine::Vaccinated->value, \App\Enums\AnimalVaccine::NotVaccinated->value];
-
-     $radios = [
-         ['field_name' => \App\Enums\AnimalSex::Female->value, 'name' => 'sex'],
-         ['field_name' => \App\Enums\AnimalSex::Male->value, 'name' => 'sex'],
-     ];
-
-     $statut =['En attente d‘adoption', 'Adopté', 'En soins'];
-
-@endphp
-
 <main class="w-full">
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
@@ -40,8 +26,7 @@
                         wire="animalType"
                         field_name="Type"
                         label="Type"
-                        :options="$type"
-                        select="Chien"
+                        :options="$this->types"
                     />
 
                     <x-admin.form.field.input
@@ -55,15 +40,14 @@
                     <x-admin.form.field.radio
                         wire="animalSex"
                         title="Sexe"
-                        :radios="$radios"
+                        :radios="$this->sexes"
                     />
 
                     <x-admin.form.field.selected
                         wire="animalRace"
                         field_name="Race"
                         label="Race"
-                        :options="$race"
-                        select="Golden"
+                        :options="$this->breeds"
                     />
 
                     <x-admin.form.field.input
@@ -72,6 +56,14 @@
                         label="Pelage"
                         type="text"
                         placeholder="Beige"
+                    />
+
+                    <x-admin.form.field.input
+                        wire="animalDate"
+                        field_name="Date de mise à jour (date du jour)"
+                        label="Date de mise à jour (date du jour)"
+                        type="date"
+                        placeholder="21/12/2025"
                     />
                 </x-admin.animals.informations_animal>
 
@@ -84,7 +76,7 @@
                         wire="animalVaccine"
                         field_name="Vaccin"
                         label="Vaccin"
-                        :options="$vaccin"
+                        :options="$this->vaccins"
                         select="Vacciné"
                     />
 
@@ -92,13 +84,13 @@
                         wire="animalState"
                         field_name="Statut"
                         label="Statut"
-                        :options="$statut"
+                        :options="$this->states"
                         select="En attente d’adoption"
                     />
 
 
                     <x-admin.form.field.textarea
-                        wire="animalTrait"
+                        wire="animalAttitude"
                         field_name="Caractèristiques"
                         label="Caractèristiques"
                         placeholder="Caractèristiques"
@@ -109,6 +101,7 @@
                     <x-admin.form.field.button
                         label="Créer la fiche de l‘animal"
                         title_button="Créer la fiche de l‘animal"
+                        click_wire="create"
                     />
                 </div>
 
