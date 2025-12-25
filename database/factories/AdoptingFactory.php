@@ -30,6 +30,7 @@ class AdoptingFactory extends Factory
             'creation_date' => $this->faker->date(),
             'state' => $this->faker->randomElement(AdoptingState::cases()),
             'comment' => $this->faker->word(),
+            'animal_id' => \App\Models\Animal::inRandomOrder()->first()->id,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

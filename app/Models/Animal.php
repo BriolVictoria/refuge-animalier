@@ -11,16 +11,23 @@ class Animal extends Model
 {
     use Hasfactory;
 
-    protected $fillable = ['image_path', 'name', 'age', 'breed', 'date', 'coat', 'state', 'attitude', 'sex', 'vaccine', 'type', 'trait'];
+    protected $fillable = ['image_path', 'name', 'age', 'breed', 'date', 'coat', 'state', 'sex', 'vaccine', 'type', 'attitude'];
+
+    protected function casts(): array
+    {
+        return [
+            'date' => 'date'
+        ];
+    }
     public function adopting(): HasMany
     {
         return $this->hasMany(Adopting::class);
     }
 
-    public function user(): BelongsTo
+   /* public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
-    }
+    }*/
 
 
     public function notes(): HasMany

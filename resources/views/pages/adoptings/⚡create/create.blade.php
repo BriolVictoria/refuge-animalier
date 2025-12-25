@@ -1,24 +1,3 @@
-@php
-    $other_animals = [
-         ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'animal'],
-         ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'animal'],
-     ];
-
-    $children = [
-         ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'children'],
-         ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'children'],
-     ];
-
-    $outside = [
-         ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'outside'],
-         ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'outside'],
-     ];
-
-    $state = [\App\Enums\AdoptingState::Pending->value, \App\Enums\AdoptingState::Done->value, \App\Enums\AdoptingState::InProgress->value];
-
-    $environment = [\App\Enums\AdoptingEnvironement::Flat->value, \App\Enums\AdoptingEnvironement::FlatShare->value, \App\Enums\AdoptingEnvironement::House->value, \App\Enums\AdoptingEnvironement::Other->value, \App\Enums\AdoptingEnvironement::Studio->value];
-@endphp
-
 <main class="w-full">
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
@@ -104,7 +83,7 @@
                         wire="adoptingSelectedAnimalId"
                         field_name="Animal désiré"
                         label="Animal désiré"
-                        :options="$animals"
+                        :options="$this->animals"
                         :select="$adoptingSelectedAnimalId"
                     />
 
@@ -119,27 +98,27 @@
                     <x-admin.form.field.radio
                         wire="adoptingOtherAnimal"
                         title="Autres animaux à la maison?"
-                        :radios="$other_animals"
+                        :radios="$this->other_animals"
                     />
 
                     <x-admin.form.field.radio
                         wire="adoptingChildren"
                         title="Présences d'enfants"
-                        :radios="$children"
+                        :radios="$this->children"
                     />
 
                     <x-admin.form.field.selected
                         wire="adoptingEnvironment"
                         field_name="Type d‘environnement"
                         label="Type d‘environnement"
-                        :options="$environment"
+                        :options="$this->environments"
                         select="Maison"
                     />
 
                     <x-admin.form.field.radio
                         wire="adoptingOutside"
                         title="Espace extérieur"
-                        :radios="$outside"
+                        :radios="$this->outsides"
                     />
 
 
@@ -162,7 +141,7 @@
                         wire="adoptingState"
                         field_name="Statut"
                         label="Statut"
-                        :options="$state"
+                        :options="$this->states"
                         select="En attente d’adoption"
                     />
 
@@ -181,6 +160,7 @@
                     <x-admin.form.field.button
                         label="Enregistrer la demande"
                         title_button="Enregistrer la demande"
+                        click_wire="create"
                     />
                 </div>
 

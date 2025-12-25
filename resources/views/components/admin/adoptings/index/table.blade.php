@@ -20,21 +20,18 @@
             label="{!! $label !!}"
             class="{!! $class !!}"
             search_placeholder="{!! $search_placeholder !!}"
-            {{--wire="{!! $wire !!}"--}}
         />
 
         <table class="w-full overflow-hidden rounded-sm hidden 2xl:table">
             <x-admin.adoptings.index.thead/>
             <tbody>
-            <x-admin.adoptings.index.tr
-                :adoptings="$adoptings"
-            />
+            <x-admin.adoptings.index.tr/>
             </tbody>
         </table>
 
         <div
             class="2xl:hidden space-y-4 md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-1 [@media(min-width:1170px)]:grid-cols-2">
-            @foreach($adoptings as $adopting)
+            @foreach($this->adoptings as $adopting)
                 <div
                     class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
                     <div class="flex flex-col space-y-1">
@@ -106,6 +103,6 @@
                 </div>
             @endforeach
         </div>
-        {!! $adoptings->links() !!}
+        {!! $this->adoptings->links() !!}
     </section>
 </div>

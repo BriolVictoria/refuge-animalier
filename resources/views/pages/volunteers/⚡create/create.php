@@ -2,8 +2,7 @@
 
 use Livewire\Component;
 
-new class extends Component
-{
+new class extends Component {
     public string $volunteerLastName;
     public string $volunteerFirstName;
     public string $volunteerEmail;
@@ -12,6 +11,7 @@ new class extends Component
     public string $volunteerTown;
     public string $volunteerPostalCode;
     public string $volunteerPassword;
+    public array $options;
     public array $volunteerAvailabilities = [
         'monday' => 'available',
         'tuesday' => 'available',
@@ -22,20 +22,25 @@ new class extends Component
         'sunday' => 'available',
     ];
 
+    public function mount()
+    {
+        $this->options = [\App\Enums\AvailabilitySelect::NotAvailable->value, \App\Enums\AvailabilitySelect::AvailableInTheEvening->value, \App\Enums\AvailabilitySelect::AvailableInTheMorning->value, \App\Enums\AvailabilitySelect::AvailableDuringTheDay->value];
+
+    }
 
 
-    public function create():void
+    public function create(): void
     {
 
         $this->validate(
             [
-                'volunteerName' => ['required', 'string', 'max:255'],
+                'volunteerFirstName' => ['required', 'string', 'max:255'],
                 'volunteerEmail' => ['required', 'string', 'max:255'],
                 'volunteerPhoneNumber' => ['required', 'string', 'max:255'],
-                'volunteerFirstName' => ['required', 'string', 'max:255'],
+                'volunteerLastName' => ['required', 'string', 'max:255'],
                 'volunteerAdresse' => ['required', 'string', 'max:255'],
                 'volunteerTown' => ['required', 'string', 'max:255'],
-                'volunteerpostalCode' => ['required', 'string', 'max:255'],
+                'volunteerPostalCode' => ['required', 'string', 'max:255'],
                 'volunteerPassword' => ['required', 'string', 'max:255'],
                 'volunteerAvailabilities.monday' => ['required', 'string', 'max:255'],
                 'volunteerAvailabilities.tuesday' => ['required', 'string', 'max:255'],
@@ -47,7 +52,7 @@ new class extends Component
             ]
         );
 
-        \App\Models\Volunteer::create([
+        $volunteer = \App\Models\Volunteer::create([
             'last_name' => $this->volunteerLastName,
             'first_name' => $this->volunteerFirstName,
             'email' => $this->volunteerEmail,
@@ -58,14 +63,14 @@ new class extends Component
             'password' => $this->volunteerPassword,
         ]);
 
-        \App\Models\Availability::create([
+        $volunteer->availability()->create([
             'monday' => $this->volunteerAvailabilities['monday'],
-            'tuesday' => ['required', 'string', 'max:255'],
-            'wednesday' => ['required', 'string', 'max:255'],
-            'thursday' => ['required', 'string', 'max:255'],
-            'friday' => ['required', 'string', 'max:255'],
-            'saturday' => ['required', 'string', 'max:255'],
-            'sunday' => ['required', 'string', 'max:255'],
+            'tuesday' => $this->volunteerAvailabilities['tuesday'],
+            'wednesday' => $this->volunteerAvailabilities['wednesday'],
+            'thursday' => $this->volunteerAvailabilities['thursday'],
+            'friday' => $this->volunteerAvailabilities['friday'],
+            'saturday' => $this->volunteerAvailabilities['saturday'],
+            'sunday' => $this->volunteerAvailabilities['sunday'],
         ]);
 
         $this->redirect(route('volunteers.index'));

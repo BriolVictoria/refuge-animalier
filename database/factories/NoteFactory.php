@@ -14,7 +14,7 @@ class NoteFactory extends Factory
     {
         return [
             'email' => $this->faker->unique()->safeEmail(),
-            'note' => $this->faker->text(),
+            'note' => $this->faker->sentence(10),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

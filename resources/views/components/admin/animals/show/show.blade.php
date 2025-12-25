@@ -6,9 +6,6 @@
     'image_src',
     'image_class',
     'image_alt',
-    'definitions',
-    'buttons',
-    'visits',
     'route_name',
     'title_bouton',
     'label',
@@ -31,20 +28,15 @@
         </div>
 
 
-        <img
-            src="{!! $image_src !!}"
+        <img width="320" height="320" src="{!! $image_src !!}"
             alt="{!! $image_alt !!}"
             class="{!! $image_class !!}">
 
 
-        <x-admin.animals.show.definitions_show_animal
-            :definitions="$definitions"
-        />
+        <x-admin.animals.show.definitions_show_animal/>
 
         <div class="flex flex-col gap-3 md:col-span-3 lg:flex-row lg:justify-end">
-            <x-admin.animals.show.buttons_show_animal
-                :buttons="$buttons"
-            />
+            <x-admin.animals.show.buttons_show_animal/>
         </div>
 
 
@@ -54,9 +46,8 @@
         class="relative border border-blue-100 rounded-2xl shadow-md p-4 flex flex-col gap-6">
 
         <h3 class="text-xl font-medium text-blue-900">{!! $title2 !!}</h3>
-        <x-admin.animals.show.visit
-            :notes="$this->notes"
-        />
+        <x-admin.animals.show.visit/>
+
         <x-admin.button.button
             wire:click="openModal('add_visit')"
             route_name="{!! $route_name !!}"
@@ -65,7 +56,5 @@
             class="{!! $class !!}"
         />
     </div>
-
-
 
 </section>

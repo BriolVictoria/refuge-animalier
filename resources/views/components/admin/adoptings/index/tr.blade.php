@@ -1,8 +1,4 @@
-@props([
-    'adoptings'
-])
-
-@foreach($adoptings as $adopting)
+@foreach($this->adoptings as $adopting)
 
     <tr class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
         <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 ">
@@ -11,7 +7,7 @@
             <a title="Voir la fiche de {!! $adopting->first_name !!}" href="{!! route('adoptings.show', $adopting->id) !!}">{!! $adopting->first_name !!}</a></td>
         <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 ">
             <a title="Voir la fiche de {!! $adopting->animal->name !!}" href="{!! route('animals.show', $adopting->animal->id) !!}">{!! $adopting->animal->name !!}</a></td>
-        <td class="px-4 py-4">{!! $adopting->creation_date !!}</td>
+        <td class="px-4 py-4">{!! $adopting->creation_date->translatedFormat('d/m/Y') !!}</td>
         <td class="px-4 py-4">
             <x-admin.adoptings.adoptings_state
                 :state="$adopting->state"

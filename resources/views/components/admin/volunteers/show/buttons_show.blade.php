@@ -1,9 +1,4 @@
-@props([
-    'buttons'
-])
-
-@foreach($buttons as $button)
-
+@foreach($this->buttons as $button)
     <x-admin.button.button
         route_name="{!! $button['route_name'] !!}"
         label="{!! $button['label'] !!}"

@@ -5,16 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Adopting extends Model
 {
 
-    use Hasfactory;
+    use HasFactory;
 
     protected $fillable = [
-        'last_name', 'first_name', 'email', 'phone_number', 'address', 'city', 'postcode', 'other_animal', 'children', 'environment', 'outside', 'creation_date', 'state', 'comment'];
+        'last_name', 'first_name', 'email', 'phone_number', 'address', 'city', 'postcode', 'other_animal', 'children', 'environment', 'outside', 'creation_date', 'state', 'comment', 'animal_id'];
 
+    protected function casts(): array
+    {
+        return [
+            'creation_date' => 'date'
+        ];
+    }
     public function animal(): BelongsTo
     {
         return $this->belongsTo(Animal::class);

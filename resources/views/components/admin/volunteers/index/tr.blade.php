@@ -1,8 +1,4 @@
-@props([
-    'volunteers'
-])
-
-@foreach($volunteers as $volunteer)
+@foreach($this->volunteers as $volunteer)
 
     <tr class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
         <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800"><a title="Voir la fiche de {!! $volunteer->first_name !!}" href="{!! route('volunteers.show', $volunteer->id) !!}">{!! $volunteer->last_name !!}</a></td>
