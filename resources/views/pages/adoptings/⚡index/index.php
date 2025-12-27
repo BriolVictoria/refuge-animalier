@@ -3,9 +3,13 @@
 use App\Models\Adopting;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 new class extends Component {
+    use WithPagination;
     public string $term = '';
+    public bool $openModalForDelete = false;
+    public ?int $adoptingToDelete = null;
 
     #[Computed]
     function adoptings()
@@ -18,10 +22,27 @@ new class extends Component {
 
     public function deleteAdopting(int $id): void
     {
-        $adopting = Adopting::findOrFail($id);
-        $adopting->delete();
+        Adopting::findOrFail($id)->delete();
 
-        $this->redirectRoute('adoptings.index', navigate: true);
+        $this->reset(['adoptingToDelete', 'openModalForDelete']);
+
+        session()->flash('success', 'La demande a été supprimé avec succès');
+
+    }
+
+    public function openModal(string $adoptingId)
+    {
+        $this->adoptingToDelete = $adoptingId;
+        $this->openModalForDelete = true;
+
+        $this->dispatch('open-modal');
+    }
+
+    public function closeModal()
+    {
+        $this->openModalForDelete = false;
+
+        $this->dispatch('close-modal');
     }
 };
 
