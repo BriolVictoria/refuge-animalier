@@ -34,13 +34,13 @@ new class extends Component {
 
         $this->validate(
             [
-                'volunteerFirstName' => ['required', 'string', 'max:255'],
-                'volunteerEmail' => ['required', 'string', 'max:255'],
-                'volunteerPhoneNumber' => ['required', 'string', 'max:255'],
-                'volunteerLastName' => ['required', 'string', 'max:255'],
+                'volunteerFirstName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
+                'volunteerEmail' => ['required', 'email', 'max:255'],
+                'volunteerPhoneNumber' => ['required', 'string', 'max:255', 'regex:/^(\+32|0)[1-9][0-9]{7}$/'],
+                'volunteerLastName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
                 'volunteerAdresse' => ['required', 'string', 'max:255'],
                 'volunteerTown' => ['required', 'string', 'max:255'],
-                'volunteerPostalCode' => ['required', 'string', 'max:255'],
+                'volunteerPostalCode' => ['required', 'string', 'regex:/^\d{4}$/'],
                 'volunteerPassword' => ['required', 'string', 'max:255'],
                 'volunteerAvailabilities.monday' => ['required', 'string', 'max:255'],
                 'volunteerAvailabilities.tuesday' => ['required', 'string', 'max:255'],
