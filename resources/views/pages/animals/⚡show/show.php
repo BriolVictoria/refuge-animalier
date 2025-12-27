@@ -56,6 +56,32 @@ new class extends Component {
         $this->redirect(route('animals.show', $this->animal->id));
     }
 
+    public function update(): void
+    {
+        $this->validate(
+            [
+                'noteEmail' => ['required', 'email', 'max:255'],
+                'noteNote' => ['required', 'string', 'max:255'],
+            ]
+        );
+
+        $this->animal->notes()->create(
+            [
+                'email' => $this->noteEmail,
+                'note' => $this->noteNote,
+            ]
+        );
+
+        $this->redirect(route('animals.show', $this->animal->id));
+    }
+
+    public function deleteAnimal(int $id):void
+    {
+        $animal = Animal::findOrFail($id);
+        $animal->delete();
+
+        $this->redirectRoute('animals.index', navigate: true);
+    }
 
     #[\Livewire\Attributes\Computed]
     public function notes()
