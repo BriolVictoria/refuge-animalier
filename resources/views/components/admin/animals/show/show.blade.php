@@ -29,8 +29,8 @@
 
 
         <img width="320" height="320" src="{!! $image_src !!}"
-            alt="{!! $image_alt !!}"
-            class="{!! $image_class !!}">
+             alt="{!! $image_alt !!}"
+             class="{!! $image_class !!}">
 
 
         <x-admin.animals.show.definitions_show_animal/>

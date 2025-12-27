@@ -22,12 +22,13 @@
         <table class="w-full overflow-hidden rounded-sm hidden 2xl:table">
             <x-admin.animals.index.thead/>
             <tbody>
-                <x-admin.animals.index.tr/>
+            <x-admin.animals.index.tr/>
             </tbody>
         </table>
 
 
-        <div class="space-y-4 2xl:hidden  md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-1 [@media(min-width:1170px)]:grid-cols-2">
+        <div
+            class="space-y-4 2xl:hidden  md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-1 [@media(min-width:1170px)]:grid-cols-2">
             @foreach($this->animals as $animal)
                 <dl class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
                     <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">
@@ -37,7 +38,10 @@
                     <div class="flex flex-col space-y-1">
                         <div class="flex items-baseline">
                             <dt class="text-sm font-medium pr-2.5">Nom&nbsp;:</dt>
-                            <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}"><dd class="text-xs font-light transition-all duration-300 hover:text-blue-800 ">{!! $animal->name !!}</dd></a>
+                            <a title="Voir la fiche de {!! $animal->name !!}"
+                               href="{!! route('animals.show', $animal->id) !!}">
+                                <dd class="text-xs font-light transition-all duration-300 hover:text-blue-800 ">{!! $animal->name !!}</dd>
+                            </a>
 
                         </div>
                         <div class="flex items-baseline">
@@ -56,13 +60,23 @@
                         />
                     </div>
                     <div class="flex mt-7">
-                        <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
+                        <a title="Voir la fiche de {!! $animal->name !!}"
+                           href="{!! route('animals.show', $animal->id) !!}"
+                           class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                             <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.57716 15.4352C2.47298 15.1546 2.47298 14.8458 2.57716 14.5652C3.59178 12.105 5.31405 10.0015 7.52562 8.52133C9.73719 7.04115 12.3385 6.25098 14.9997 6.25098C17.6609 6.25098 20.2621 7.04115 22.4737 8.52133C24.6853 10.0015 26.4075 12.105 27.4222 14.5652C27.5263 14.8458 27.5263 15.1546 27.4222 15.4352C26.4075 17.8954 24.6853 19.9989 22.4737 21.4791C20.2621 22.9593 17.6609 23.7494 14.9997 23.7494C12.3385 23.7494 9.73719 22.9593 7.52562 21.4791C5.31405 19.9989 3.59178 17.8954 2.57716 15.4352Z" stroke="#2B517A" fill="none" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M15 18.75C17.0711 18.75 18.75 17.0711 18.75 15C18.75 12.9289 17.0711 11.25 15 11.25C12.9289 11.25 11.25 12.9289 11.25 15C11.25 17.0711 12.9289 18.75 15 18.75Z" stroke="#2B517A" fill="none" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path
+                                    d="M2.57716 15.4352C2.47298 15.1546 2.47298 14.8458 2.57716 14.5652C3.59178 12.105 5.31405 10.0015 7.52562 8.52133C9.73719 7.04115 12.3385 6.25098 14.9997 6.25098C17.6609 6.25098 20.2621 7.04115 22.4737 8.52133C24.6853 10.0015 26.4075 12.105 27.4222 14.5652C27.5263 14.8458 27.5263 15.1546 27.4222 15.4352C26.4075 17.8954 24.6853 19.9989 22.4737 21.4791C20.2621 22.9593 17.6609 23.7494 14.9997 23.7494C12.3385 23.7494 9.73719 22.9593 7.52562 21.4791C5.31405 19.9989 3.59178 17.8954 2.57716 15.4352Z"
+                                    stroke="#2B517A" fill="none" stroke-width="1.25" stroke-linecap="round"
+                                    stroke-linejoin="round"/>
+                                <path
+                                    d="M15 18.75C17.0711 18.75 18.75 17.0711 18.75 15C18.75 12.9289 17.0711 11.25 15 11.25C12.9289 11.25 11.25 12.9289 11.25 15C11.25 17.0711 12.9289 18.75 15 18.75Z"
+                                    stroke="#2B517A" fill="none" stroke-width="1.25" stroke-linecap="round"
+                                    stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <a title="Modifier la fiche de {!! $animal->name !!}" href="{!! route('animals.edit', $animal->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
+                        <a title="Modifier la fiche de {!! $animal->name !!}"
+                           href="{!! route('animals.edit', $animal->id) !!}"
+                           class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                             <svg width="28" height="28" viewBox="0 0 28 28"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -71,7 +85,11 @@
                                     stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <a title="Supprimer la fiche de {!! $animal->name !!}" href="#" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
+                        <x-admin.button.delete_button
+                            wire_delete="deleteAnimal({!! $animal->id !!})"
+                            delete_message="Supprimer la fiche de {!! $animal->name !!}"
+                            class="inline-block pr-2 transition-all duration-300 hover:scale-105"
+                        >
                             <svg width="24" height="27" viewBox="0 0 24 27"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.375 11.875V19.375" stroke="#26486C" stroke-width="1.25"
@@ -89,7 +107,8 @@
                                     stroke="#26486C" fill="none" stroke-width="1.25" stroke-linecap="round"
                                     stroke-linejoin="round"/>
                             </svg>
-                        </a>
+                        </x-admin.button.delete_button>
+
                     </div>
                 </dl>
             @endforeach
