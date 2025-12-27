@@ -15,7 +15,7 @@
             <div class="flex ml-auto">
 
                 <a title="Modifier la fiche de {!! $note->email !!}"
-                   {{--wire:click="openModal('add_visit')"--}} href="#"
+                   href="#"
                    class="mr-2 transition-all duration-300 hover:scale-105">
                     <svg width="28" height="28" viewBox="0 0 28 28"
                          xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,9 @@
                     </svg>
                 </a>
 
-                <a title="Supprimer la note de {!! $note->email !!}" href="#"
+                <a title="Supprimer la note de {!! $note->email !!}"
+                   wire:click.prevent="openModalDeleteNote({{ $note->id }})"
+                   href="#"
                    class=" transition-all duration-300 hover:scale-105">
                     <svg width="24" height="27" viewBox="0 0 24 27"
                          xmlns="http://www.w3.org/2000/svg">

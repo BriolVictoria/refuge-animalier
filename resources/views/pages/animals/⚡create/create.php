@@ -41,15 +41,15 @@ new class extends Component {
     {
         $this->validate(
             [
-                'animalName' => ['required', 'string', 'max:255'],
-                'animalRace' => ['required', 'string', 'max:255'],
-                'animalVaccine' => ['required', 'string', 'max:255'],
-                'animalAge' => ['required', 'max:2'],
-                'animalCoat' => ['required', 'string', 'max:255'],
+                'animalName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
+                'animalRace' => ['required', 'string', 'max:255'], /*A voir*/
+                'animalVaccine' => ['required', 'string', 'max:255'], /*A voir*/
+                'animalAge' => ['required', 'integer', 'min:0', 'max:100'],
+                'animalCoat' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalDate' => ['required', 'date'],
-                'animalState' => ['required', 'string', 'max:255'],
-                'animalSex' => ['required', 'string', 'max:255'],
-                'animalType' => ['required', 'string', 'max:255'],
+                'animalState' => ['required', 'string', 'max:255'], /*A voir*/
+                'animalSex' => ['required', 'string', 'max:255'], /*A voir*/
+                'animalType' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalAttitude' => ['required', 'string', 'max:255'],
             ]
         );

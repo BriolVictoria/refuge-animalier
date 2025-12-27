@@ -9,6 +9,8 @@ new class extends Component {
 
     use WithPagination;
     public string $term = '';
+    public bool $openModalForDelete = false;
+    public ?int $animalToDelete = null;
 
     #[Computed]
     public function animals()
@@ -19,12 +21,28 @@ new class extends Component {
             ->paginate(10);
     }
 
-    public function deleteAnimal(int $id):void
+    public function deleteAnimal(int $id): void
     {
-        $animal = Animal::findOrFail($id);
-        $animal->delete();
+        Animal::findOrFail($id)->delete();
 
-        $this->redirectRoute('animals.index', navigate: true);
+        $this->reset(['animalToDelete', 'openModalForDelete']);
+
+        session()->flash('success', 'L’animal a été supprimé avec succès');
+    }
+
+    public function openModal(string $animalId)
+    {
+        $this->animalToDelete = $animalId;
+        $this->openModalForDelete = true;
+
+        $this->dispatch('open-modal');
+    }
+
+    public function closeModal()
+    {
+        $this->openModalForDelete = false;
+
+        $this->dispatch('close-modal');
     }
 };
 
