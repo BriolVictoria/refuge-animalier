@@ -8,11 +8,23 @@ new class extends Component {
     public bool $openMessage = false;
 
     public string|Message $message = '';
+    public string $term = '';
 
     #[Computed]
     function messages()
     {
-        return Message::paginate(10);
+            return Message::query()
+                ->where('email', 'like', '%' . $this->term . '%')
+                ->orderBy('created_at', 'desc')
+                ->paginate(10);
+    }
+
+    public function deleteMessage(int $id_message):void
+    {
+        $message_delete = Message::findOrFail($id_message);
+        $message_delete->delete();
+
+        $this->redirectRoute('messages.index', navigate: true);
     }
 
     public function openModal(string $modal, $id = '')

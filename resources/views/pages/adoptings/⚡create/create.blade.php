@@ -43,7 +43,7 @@
                         wire="adoptingPhoneNumber"
                         field_name="Numéro de téléphone"
                         label="Numéro de téléphone"
-                        type="text"
+                        type="tel"
                         placeholder="0470 23 43 12"
                     />
 

@@ -43,7 +43,7 @@
                         wire="volunteerPhoneNumber"
                         field_name="Numéro de téléphone"
                         label="Numéro de téléphone"
-                        type="text"
+                        type="tel"
                         placeholder="0450 78 96 87"
                     />
 

@@ -44,7 +44,7 @@
                         wire="volunteerPhoneNumber"
                         field_name="Numéro de téléphone"
                         label="Numéro de téléphone"
-                        type="text"
+                        type="tel"
                         placeholder="04 70/85/96/87/58"
                     />
 
