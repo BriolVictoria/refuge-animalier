@@ -13,6 +13,6 @@
            name="{!! $field_name !!}" id="{!! $field_name !!}" {{--value="{!! $value ??  old($field_name) !!}"--}}
            placeholder="{!! $placeholder ?? '' !!}">
     @error($wire)
-    <p>{{$message}}</p>
+    <p class="text-red-600 mt-1">{{$message}}</p>
     @enderror
 </div>
