@@ -47,10 +47,6 @@
     @if($openMessage)
         <x-admin.modal.modal title="Le message">
             <div class="flex flex-col gap-6">
-                <x-admin.messages.messages_state
-                    page="modal"
-                    :state="$message->state"
-                />
                 <div class="flex items-baseline">
                     <dt class="text-sm font-medium pr-2.5">Nom&nbsp;:</dt>
                     <dd wire:click="openModal('see_message', {{$message->id}})"
