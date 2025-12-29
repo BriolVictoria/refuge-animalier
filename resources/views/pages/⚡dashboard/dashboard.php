@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\MessageState;
 use App\Models\Adopting;
 use App\Models\Animal;
 use App\Models\Message;
@@ -67,8 +68,13 @@ new class extends Component {
     public function openModal(string $modal, $id = '')
     {
         if ($modal === 'see_message') {
-            $this->openMessage = true;
             $this->message = $id !== '' ? Message::find($id) : '';
+
+            if ($this->messages && $this->message->state !== MessageState::Read->value) {
+                $this->message->state = MessageState::Read->value;
+                $this->message->save();
+            }
+            $this->openMessage = true;
 
         }
 

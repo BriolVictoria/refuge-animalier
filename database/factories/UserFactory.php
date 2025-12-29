@@ -25,6 +25,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
+            'avatar' => fake()->imageUrl(125,125, 'people' ),
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'phone_number' => fake()->unique()->phoneNumber(),

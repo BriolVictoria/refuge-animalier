@@ -17,11 +17,8 @@
             title_button="{!! $title_button !!}"
             label="{!! $label !!}"
             class="{!! $class !!}"/>
-        <x-admin.button.button
-            route_name="#"
-            title_button="Filtrer"
-            label="Filtrer"
-            class="border-blue-900 border-[0.09375rem] h-13 text-blue-900 transition-transform duration-300 hover:scale-101 hover:text-blue-600 hover:border-blue-600"/>
     </div>
+
+
 
 </div>

@@ -3,10 +3,12 @@
 use App\Models\User;
 use Livewire\Component;
 
-new class extends Component
-{
+new class extends Component {
+    use \Livewire\WithFileUploads;
+
     public User $user;
 
+    public $userAvatar;
     public string $userName;
     public string $userEmail;
     public string $userPhoneNumber;
@@ -21,9 +23,9 @@ new class extends Component
     {
         $this->user = auth()->user();
 
-        $this->roles =[\App\Enums\RoleUser::Volunteer->value, \App\Enums\RoleUser::Administrator->value];
+        $this->roles = [\App\Enums\RoleUser::Volunteer->value, \App\Enums\RoleUser::Administrator->value];
 
-        $this->notifications =[
+        $this->notifications = [
             ['title' => 'Notifications par email', 'id' => '1', 'for' => '1'],
             ['title' => 'Notifications tableau de bord', 'id' => '2', 'for' => '2'],
             ['title' => 'Alertes adoption urgentes', 'id' => '3', 'for' => '3'],
@@ -42,6 +44,7 @@ new class extends Component
     {
         $this->validate(
             [
+                'userAvatar' => ['nullable', 'image', 'max:2048'],
                 'userName' => ['required', 'string', 'max:255'],
                 'userEmail' => ['required', 'string', 'max:255'],
                 'userPhoneNumber' => ['required', 'string', 'max:255'],
@@ -49,7 +52,14 @@ new class extends Component
                 'userCreationDate' => ['required', 'string', 'max:255'],
                 'userPassword' => ['required', 'string', 'max:255'],
             ]
+
+
         );
+
+        if ($this->userAvatar) {
+            $avatarPath = $this->userAvatar->store('photos', 'public'); // storage/app/public/photos
+            $this->user->avatar = $avatarPath;
+        }
 
         $this->user->update(
             [
@@ -64,4 +74,6 @@ new class extends Component
 
         $this->redirect(route('settings'));
     }
+
+
 };

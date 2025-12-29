@@ -13,7 +13,7 @@
             <article class="flex flex-col gap-6 bg-white rounded-sm shadow-[var(--shadow-xl)] py-6 px-6 h-full">
                 <x-admin.volunteers.informations_volunteer
                     title="Informations personnelles"
-                    content="Les Pattes Heureuses, c’est avant tout une famille de bénévoles dévoués : vétérinaires, soigneurs, familles d’accueil et amoureux des animaux."
+                    content="Renseignez les informations personnelles du bénévole pour le contacter et gérer son profil."
                 >
 
                     <x-admin.form.field.input
@@ -76,7 +76,7 @@
 
                 <x-admin.volunteers.informations_volunteer
                     title="Disponiblités"
-                    content="Les Pattes Heureuses, c’est avant tout une famille de bénévoles dévoués : vétérinaires, soigneurs, familles d’accueil et amoureux des animaux."
+                    content="Indiquez les jours et créneaux où le bénévole est disponible pour participer aux activités."
                 >
 
                     <x-admin.volunteers.day_select
@@ -139,7 +139,7 @@
 
                 <x-admin.volunteers.informations_volunteer
                     title="Création du compte"
-                    content="Les Pattes Heureuses, c’est avant tout une famille de bénévoles dévoués : vétérinaires, soigneurs, familles d’accueil et amoureux des animaux."
+                    content="Définissez le mot de passe pour que le bénévole puisse accéder à son compte."
                 >
                     <x-admin.form.field.input
                         wire="volunteerPassword"

@@ -1,13 +1,17 @@
-@foreach($this->animals as $animal)
+@forelse($this->animals as $animal)
     <tr class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
         <td class="px-4 py-4 transition-all duration-300 hover:scale-105">
             <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">
-            <img alt="Image d'un chien" width="60" height="45" class="inline-block rounded-full"
-                                   src="{!! $animal->image_path !!}">
+                <img alt="Image d'un chien" width="60" height="45"
+                     class="inline-block aspect-square w-12 h-12 rounded-full object-cover object-center"
+                     src="{{ $animal->images && count($animal->images) > 0
+                 ? asset('storage/' . $animal->images[0])
+                 : asset('assets/img/image_table.svg') }}">
             </a>
         </td>
         <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 ">
-            <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">{!! $animal->name !!}</a></td>
+            <a title="Voir la fiche de {!! $animal->name !!}"
+               href="{!! route('animals.show', $animal->id) !!}">{!! $animal->name !!}</a></td>
 
         <td class="px-4 py-4">{!! $animal->breed !!}</td>
         <td class="px-4 py-4">
@@ -18,7 +22,8 @@
         </td>
         <td class="px-4 py-4">{!! $animal->date->translatedFormat('d/m/Y') !!}</td>
         <td class="px-4 py-4">
-            <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
+            <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}"
+               class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M2.57716 15.4352C2.47298 15.1546 2.47298 14.8458 2.57716 14.5652C3.59178 12.105 5.31405 10.0015 7.52562 8.52133C9.73719 7.04115 12.3385 6.25098 14.9997 6.25098C17.6609 6.25098 20.2621 7.04115 22.4737 8.52133C24.6853 10.0015 26.4075 12.105 27.4222 14.5652C27.5263 14.8458 27.5263 15.1546 27.4222 15.4352C26.4075 17.8954 24.6853 19.9989 22.4737 21.4791C20.2621 22.9593 17.6609 23.7494 14.9997 23.7494C12.3385 23.7494 9.73719 22.9593 7.52562 21.4791C5.31405 19.9989 3.59178 17.8954 2.57716 15.4352Z"
@@ -30,7 +35,8 @@
                         stroke-linejoin="round"/>
                 </svg>
             </a>
-            <a title="Modifier la fiche de {!! $animal->name !!}" href="{!! route('animals.edit', $animal->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
+            <a title="Modifier la fiche de {!! $animal->name !!}" href="{!! route('animals.edit', $animal->id) !!}"
+               class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="28" height="28" viewBox="0 0 28 28"
                      xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -40,11 +46,10 @@
                 </svg>
 
             </a>
-            <x-admin.button.delete_button
-                wire_delete="deleteAnimal({!! $animal->id !!})"
-                delete_message="Supprimer la fiche de {!! $animal->name !!}"
-                class="inline-block pr-2 transition-all duration-300 hover:scale-105"
-            >
+            <a title="Supprimer la fiche de {!! $animal->name !!} "
+               wire:click.prevent="openModal({{ $animal->id }})"
+               href="#"
+               class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="24" height="27" viewBox="0 0 24 27"
                      xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.375 11.875V19.375" stroke="#26486C" stroke-width="1.25"
@@ -62,7 +67,14 @@
                         stroke="#26486C" fill="none" stroke-width="1.25" stroke-linecap="round"
                         stroke-linejoin="round"/>
                 </svg>
-            </x-admin.button.delete_button>
+            </a>
         </td>
     </tr>
-@endforeach
+@empty
+    <tr>
+        <td colspan="6" class="text-center py-6 text-gray-500">
+            Aucun résultat trouvé pour votre recherche.
+        </td>
+    </tr>
+@endforelse
+

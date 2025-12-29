@@ -5,12 +5,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    public function up(): void
-    {
+    public function up(): void{
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
-            //$table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('image_path')->default('public/assets/img/animalProfil.jpg');
             $table->string('name');
             $table->string('age');
             $table->string('date');
@@ -20,7 +17,8 @@ return new class extends Migration {
             $table->string('sex');
             $table->string('vaccine');
             $table->string('type');
-            $table->string('attitude');
+            $table->text('attitude');
+            $table->json('images')->nullable();
             $table->timestamps();
         });
     }

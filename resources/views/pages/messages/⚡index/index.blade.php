@@ -1,4 +1,17 @@
 <main class="w-full">
+    @if (session()->has('success'))
+        <div
+            x-data="{ show: true }"
+            x-init="setTimeout(() => show = false, 2500)"
+            x-show="show"
+            x-transition
+            class="fixed top-10 right-10 z-50
+               px-4 py-3 rounded-lg
+               bg-green-600 text-white text-md shadow-md"
+        >
+            {{ session('success') }}
+        </div>
+    @endif
     <x-admin.messages.index.table
         title_sronly="Messages"
         title="Messages"
@@ -15,10 +28,6 @@
             title="Le message"
         >
             <div class="flex flex-col gap-6">
-                <x-admin.messages.messages_state
-                    page="modal"
-                    :state="$message->state"
-                />
                 <div class="flex items-baseline">
                     <dt class="text-sm font-medium pr-2.5">Nom&nbsp;:</dt>
                     <dd wire:click="openModal('see_message', {{$message->id}})"
@@ -56,5 +65,42 @@
             />
         </x-admin.modal.modal>
     @endif
+
+        @if($openModalForDelete)
+            <x-admin.modal.modal
+                title="Voulez-vous supprimé le message ?"
+            >
+
+                <p class="text-sm text-gray-600">
+                    Cette action est définitive.
+                    Ce message sera supprimée et ne pourra pas être récupérée.
+                </p>
+
+
+                <div class="flex flex-col justify-center gap-4 pt-4">
+
+                    <x-admin.button.delete_button
+                        wire_delete="deleteMessage({{ $messageToDelete }})"
+                        delete_message="Supprimer la fiche"
+                        class="px-6 py-2 bg-red-600 text-white text-lg rounded-lg
+                           transition-all duration-300 hover:bg-red-700 hover:scale-105"
+                    >
+                        Supprimer
+                    </x-admin.button.delete_button>
+
+                    <x-admin.button.button
+                        wire:click="closeModalDelete"
+                        route_name="#"
+                        title_button="Annuler"
+                        label="Annuler"
+                        class="px-6 py-2 border border-gray-300 text-gray-600 rounded-lg
+                           transition-all duration-300 hover:bg-gray-100"
+                    />
+
+
+                </div>
+
+            </x-admin.modal.modal>
+        @endif
 
 </main>

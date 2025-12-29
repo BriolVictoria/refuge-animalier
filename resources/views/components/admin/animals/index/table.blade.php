@@ -33,7 +33,9 @@
                 <dl class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
                     <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">
                         <img alt="Image d'un chien" width="24" height="24" class="rounded-lg"
-                             src="{!! asset('assets/img/image_table.svg') !!}">
+                             src="{{ $animal->images && count($animal->images) > 0
+                 ? asset('storage/' . $animal->images[0])
+                 : asset('assets/img/image_table.svg') }}">
                     </a>
                     <div class="flex flex-col space-y-1">
                         <div class="flex items-baseline">
@@ -85,11 +87,10 @@
                                     stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <x-admin.button.delete_button
-                            wire_delete="deleteAnimal({!! $animal->id !!})"
-                            delete_message="Supprimer la fiche de {!! $animal->name !!}"
-                            class="inline-block pr-2 transition-all duration-300 hover:scale-105"
-                        >
+                        <a title="Supprimer la fiche de {!! $animal->name !!} "
+                           wire:click.prevent="openModal({{ $animal->id }})"
+                           href="#"
+                           class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                             <svg width="24" height="27" viewBox="0 0 24 27"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.375 11.875V19.375" stroke="#26486C" stroke-width="1.25"
@@ -107,7 +108,7 @@
                                     stroke="#26486C" fill="none" stroke-width="1.25" stroke-linecap="round"
                                     stroke-linejoin="round"/>
                             </svg>
-                        </x-admin.button.delete_button>
+                        </a>
 
                     </div>
                 </dl>

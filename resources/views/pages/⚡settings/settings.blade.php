@@ -6,9 +6,30 @@
 
             <x-admin.settings.information_profil
                 title="Informations générales"
-                content="Retrouvez ici vos informations personnelles et mettez-les à jour si nécessaire pour garantir la bonne
-                    gestion de votre compte."
+                content="Consultez et mettez à jour vos informations personnelles afin que votre profil soit toujours à jour."
             >
+
+                <div class="flex flex-col">
+                    @if ($userAvatar)
+                        <img src="{{ $userAvatar->temporaryUrl() }}" alt="Aperçu de l'image"
+                             class="w-32 h-32 rounded-full mt-2">
+                    @else
+                        <img
+                            src="{{ auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('assets/img/profil_image.svg') }}"
+                            alt="Avatar actuel"
+                            class="aspect-square w-[7.8125rem] h-[7.8125rem] rounded-full object-cover object-center">
+                    @endif
+                    <input type="file" id="avatarInput" wire:model="userAvatar" class="hidden">
+
+                    <label for="avatarInput"
+                           class="self-start cursor-pointer px-4 py-2 mt-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition">Modifier
+                        l'image</label>
+
+                    @error('userAvatar')
+                    <span class="error">{{ $message }}</span>
+                    @enderror
+                </div>
+
 
                 <x-admin.form.field.input
                     wire="userName"

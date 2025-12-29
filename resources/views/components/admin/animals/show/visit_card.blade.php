@@ -1,4 +1,4 @@
-@foreach($this->notes as $note)
+@forelse($this->notes as $note)
 
     <div class="border border-blue-300 rounded-2xl shadow-md p-4">
         <div class="flex flex-col gap-2">
@@ -13,9 +13,9 @@
             </div>
 
             <div class="flex ml-auto">
-
                 <a title="Modifier la fiche de {!! $note->email !!}"
-                   {{--wire:click="openModal('add_visit')"--}} href="#"
+                   wire:click.prevent="editNote({{ $note->id }})"
+                   href="#"
                    class="mr-2 transition-all duration-300 hover:scale-105">
                     <svg width="28" height="28" viewBox="0 0 28 28"
                          xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,9 @@
                     </svg>
                 </a>
 
-                <a title="Supprimer la note de {!! $note->email !!}" href="#"
+                <a title="Supprimer la note de {!! $note->email !!}"
+                   wire:click.prevent="openModalDeleteNote({{ $note->id }})"
+                   href="#"
                    class=" transition-all duration-300 hover:scale-105">
                     <svg width="24" height="27" viewBox="0 0 24 27"
                          xmlns="http://www.w3.org/2000/svg">
@@ -50,5 +52,10 @@
         </div>
 
     </div>
-
-@endforeach
+    @empty
+        <tr>
+            <td colspan="6" class="text-center py-6 text-gray-500">
+               Cet animal n'as pas de note
+            </td>
+        </tr>
+    @endforelse
