@@ -12,14 +12,29 @@ new class extends Component
     public bool $openModalForDelete = false;
     public ?int $volunteerToDelete = null;
 
+    public string $sortField = 'created_at';
+    public string $sortDirection = 'desc';
+
 
     #[Computed]
     function volunteers()
     {
         return Volunteer::query()
             ->where('first_name', 'like', '%' . $this->term . '%')
-            ->orderBy('created_at', 'desc')
+            ->orderBy($this->sortField, $this->sortDirection)
             ->paginate(10);
+    }
+
+    public function sortBy(string $field)
+    {
+        if ($this->sortField === $field) {
+            $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            $this->sortField = $field;
+            $this->sortDirection = 'asc';
+        }
+
+        $this->resetPage();
     }
 
     public function deleteVolunteer(int $id):void
