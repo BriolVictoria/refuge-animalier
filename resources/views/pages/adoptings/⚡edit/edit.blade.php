@@ -1,72 +1,72 @@
 <main class="w-full">
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
-            <a title="Voir les demandes d'adoptions" href="{!! route('adoptings.index') !!}"
-               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">Demande d'adoptions</a>
+            <a title="{{__('admin/adoptings.ariane.adoptings_index')}}" href="{!! route('adoptings.index') !!}"
+               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">{{__('admin/adoptings.adoptings.title')}}</a>
             <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
-            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">Ajouter une demande</h1>
+            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/adoptings.adoptings.title_edit')}}</h1>
         </div>
 
         <section>
-            <h2 class="sr-only">Demande d‘adoptions</h2>
+            <h2 class="sr-only">{{__('admin/adoptings.adoptings.title_sronly')}}</h2>
             <article class="flex flex-col gap-6 bg-white rounded-sm shadow-[var(--shadow-xl)] py-6 px-6 h-full">
                 <x-admin.volunteers.informations_volunteer
-                    title="Informations sur l‘adoptant"
-                    content="Renseignez les informations personnelles de l'adoptant pour le contacter et suivre sa demande."
+                    title="{{__('admin/adoptings.volunteer_sections.personal_info.title')}}"
+                    content="{{__('admin/adoptings.volunteer_sections.personal_info.content')}}"
                 >
 
                     <x-admin.form.field.input
                         wire="adoptingLastName"
-                        field_name="Nom"
-                        label="Nom"
+                        field_name="{{__('admin/adoptings.fields.last_name')}}"
+                        label="{{__('admin/adoptings.fields.last_name')}}"
                         type="text"
                         placeholder="Smith"
                     />
 
                     <x-admin.form.field.input
                         wire="adoptingFirstName"
-                        field_name="Prénom"
-                        label="Prénom"
+                        field_name="{{__('admin/adoptings.fields.first_name')}}"
+                        label="{{__('admin/adoptings.fields.first_name')}}"
                         type="text"
                         placeholder="Ambre"
                     />
 
                     <x-admin.form.field.input
                         wire="adoptingEmail"
-                        field_name="Email"
-                        label="Email"
+                        field_name="{{__('admin/adoptings.fields.email')}}"
+                        label="{{__('admin/adoptings.fields.email')}}"
                         type="email"
                         placeholder="ambre.smith@gmail.com"
                     />
 
                     <x-admin.form.field.input
                         wire="adoptingPhoneNumber"
-                        field_name="Numéro de téléphone"
-                        label="Numéro de téléphone"
+                        field_name="{{__('admin/adoptings.fields.phone_number')}}"
+                        label="{{__('admin/adoptings.fields.phone_number')}}"
                         type="tel"
                         placeholder="0470 23 43 12"
                     />
 
                     <x-admin.form.field.input
                         wire="adoptingAddress"
-                        field_name="Adresse"
-                        label="Adresse"
+                        field_name="{{__('admin/adoptings.fields.address')}}"
+                        label="{{__('admin/adoptings.fields.address')}}"
                         type="text"
                         placeholder="Rue des Lilas"
                     />
 
                     <x-admin.form.field.input
                         wire="adoptingCity"
-                        field_name="Ville"
-                        label="Ville"
+                        field_name="{{__('admin/adoptings.fields.city')}}"
+                        label="{{__('admin/adoptings.fields.cite')}}"
                         type="text"
                         placeholder="Londres"
                     />
 
                     <x-admin.form.field.input
                         wire="adoptingPostCode"
-                        field_name="Code postal"
-                        label="Code postal"
+                        field_name="{{__('admin/adoptings.fields.postcode')}}"
+                        label="{{__('admin/adoptings.fields.postcode')}}"
                         type="text"
                         placeholder="1234"
                     />
@@ -89,33 +89,33 @@
                 </x-admin.volunteers.informations_volunteer>--}}
 
                 <x-admin.volunteers.informations_volunteer
-                    title="Environnement de vie"
-                    content="Indiquez le cadre de vie de l'adoptant pour assurer le bien-être de l'animal."
+                    title="{{__('admin/adoptings.volunteer_sections.living_environment.title')}}"
+                    content="{{__('admin/adoptings.volunteer_sections.living_environment.content')}}"
                 >
 
                     <x-admin.form.field.radio
                         wire="adoptingOtherAnimal"
-                        title="Autres animaux à la maison?"
+                        title="{{__('admin/adoptings.fields.other_animal')}}"
                         :radios="$this->other_animals"
                     />
 
                     <x-admin.form.field.radio
                         wire="adoptingChildren"
-                        title="Présences d'enfants"
+                        title="{{__('admin/adoptings.fields.children')}}"
                         :radios="$this->children"
                     />
 
                     <x-admin.form.field.selected
                         wire="adoptingEnvironment"
-                        field_name="Type d‘environnement"
-                        label="Type d‘environnement"
+                        field_name="{{__('admin/adoptings.fields.environment')}}"
+                        label="{{__('admin/adoptings.fields.environment')}}"
                         :options="$this->environments"
                         select="Maison"
                     />
 
                     <x-admin.form.field.radio
                         wire="adoptingOutside"
-                        title="Espace extérieur"
+                        title="{{__('admin/adoptings.fields.outside')}}"
                         :radios="$this->outsides"
                     />
 
@@ -123,22 +123,22 @@
                 </x-admin.volunteers.informations_volunteer>
 
                 <x-admin.volunteers.informations_volunteer
-                    title="Autres informations"
-                    content="Ajoutez des informations complémentaires concernant la demande ou des notes internes."
+                    title="{{__('admin/adoptings.volunteer_sections.other_info.title')}}"
+                    content="{{__('admin/adoptings.volunteer_sections.other_info.content')}}"
                 >
 
                     <x-admin.form.field.input
                         wire="adoptingCreationDate"
-                        field_name="Date de la demande"
-                        label="Date de la demande"
+                        field_name="{{__('admin/adoptings.fields.creation_date')}}"
+                        label="{{__('admin/adoptings.fields.creation_date')}}"
                         type="date"
                         placeholder="23/23/23"
                     />
 
                     <x-admin.form.field.selected
                         wire="adoptingState"
-                        field_name="Statut"
-                        label="Statut"
+                        field_name="{{__('admin/adoptings.fields.state')}}"
+                        label="{{__('admin/adoptings.fields.state')}}"
                         :options="$this->states"
                         select="En attente d’adoption"
                     />
@@ -146,8 +146,8 @@
 
                     <x-admin.form.field.textarea
                         wire="adoptingComment"
-                        field_name="Commentaire interne (réservé au personnel)"
-                        label="Commentaire interne (réservé au personnel)"
+                        field_name="{{__('admin/adoptings.fields.comment')}}"
+                        label="{{__('admin/adoptings.fields.comment')}}"
                         placeholder="Commentaire"
                     />
 
@@ -156,9 +156,9 @@
 
                 <div class="flex flex-col lg:flex-row gap-6">
                     <x-admin.form.field.button
-                        label="Enregistrer la demande"
-                        title_button="Enregistrer la demande"
-                        click_wire="update"
+                        label="{{__('admin/adoptings.actions.save')}}"
+                        title_button="{{__('admin/adoptings.actions.save')}}"
+                        click_wire="create"
                     />
                 </div>
 

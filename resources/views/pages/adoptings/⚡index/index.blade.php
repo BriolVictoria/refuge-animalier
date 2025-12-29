@@ -14,22 +14,21 @@
     @endif
 
     <x-admin.adoptings.index.table
-        title_sronly="Demandes d'adoptions"
-        title="Demandes d'adoptions"
-        label="+ Ajouter une demande d'adoption"
-        title_button="+ Ajouter une demande d'adoption"
+        title_sronly="{{__('admin/adoptings.adoptings.title_sronly')}}"
+        title="{{__('admin/adoptings.adoptings.title')}}"
+        label="{{__('admin/adoptings.adoptings.add_label')}}"
+        title_button="{{__('admin/adoptings.adoptings.add_button')}}"
         route_name="{!! route('adoptings.create') !!}"
         class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 inline-block"
-        search_placeholder="Rechercher une demande"
+        search_placeholder="{{__('admin/adoptings.adoptings.search_placeholder')}}"
     />
         @if($openModalForDelete)
             <x-admin.modal.modal
-                title="Voulez-vous supprimé la demande ?"
+                title="{{__('admin/adoptings.delete_modal.title')}}"
             >
 
                 <p class="text-sm text-gray-600">
-                    Cette action est définitive.
-                    La fiche de cette demande sera supprimée et ne pourra pas être récupérée.
+                    {{__('admin/adoptings.delete_modal.description')}}
                 </p>
 
 
@@ -37,18 +36,18 @@
 
                     <x-admin.button.delete_button
                         wire_delete="deleteAdopting({{ $adoptingToDelete }})"
-                        delete_message="Supprimer la fiche"
+                        delete_message="{{__('admin/adoptings.delete_modal.delete_button')}}"
                         class="px-6 py-2 bg-red-600 text-white text-lg rounded-lg
                            transition-all duration-300 hover:bg-red-700 hover:scale-105"
                     >
-                        Supprimer
+                        {{__('admin/adoptings.buttons.delete')}}
                     </x-admin.button.delete_button>
 
                     <x-admin.button.button
                         wire:click="closeModal"
                         route_name="#"
-                        title_button="Annuler"
-                        label="Annuler"
+                        title_button="{{__('admin/adoptings.delete_modal.delete_button')}}"
+                        label="{{__('admin/adoptings.buttons.cancel')}}"
                         class="px-6 py-2 border border-gray-300 text-gray-600 rounded-lg
                            transition-all duration-300 hover:bg-gray-100"
                     />

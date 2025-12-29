@@ -39,7 +39,7 @@ new class extends Component {
 
         $this->reset(['adoptingToDelete', 'openModalForDelete']);
 
-        session()->flash('success', 'La demande a été supprimé avec succès');
+        session()->flash('success', __('admin/adoptings.success_message'));
 
     }
 

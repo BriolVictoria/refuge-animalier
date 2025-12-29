@@ -2,11 +2,11 @@
 
     <tr class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
         <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 ">
-            <a title="Voir la fiche de {!! $adopting->first_name !!}" href="{!! route('adoptings.show', $adopting->id) !!}">{!! $adopting->last_name !!}</a></td>
+            <a title="{{ __('admin/adoptings.actions.view', ['name' => $adopting->first_name]) }}" href="{!! route('adoptings.show', $adopting->id) !!}">{!! $adopting->last_name !!}</a></td>
         <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 ">
-            <a title="Voir la fiche de {!! $adopting->first_name !!}" href="{!! route('adoptings.show', $adopting->id) !!}">{!! $adopting->first_name !!}</a></td>
+            <a title="{{ __('admin/adoptings.actions.view', ['name' => $adopting->first_name]) }}" href="{!! route('adoptings.show', $adopting->id) !!}">{!! $adopting->first_name !!}</a></td>
         <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 ">
-            <a title="Voir la fiche de {!! $adopting->animal->name !!}" href="{!! route('animals.show', $adopting->animal->id) !!}">{!! $adopting->animal->name !!}</a></td>
+            <a title="{{ __('admin/adoptings.actions.view', ['name' => $adopting->animal->name]) }}" href="{!! route('animals.show', $adopting->animal->id) !!}">{!! $adopting->animal->name !!}</a></td>
         <td class="px-4 py-4">{!! $adopting->creation_date->translatedFormat('d/m/Y') !!}</td>
         <td class="px-4 py-4">
             <x-admin.adoptings.adoptings_state
@@ -14,7 +14,7 @@
             />
         </td>
         <td class="px-4 py-4">
-            <a title="Voir la fiche de {!! $adopting->first_name !!}" href="{!! route('adoptings.show', $adopting->id) !!}"
+            <a title="{{ __('admin/adoptings.actions.view', ['name' => $adopting->first_name]) }}" href="{!! route('adoptings.show', $adopting->id) !!}"
                class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -27,7 +27,7 @@
                         stroke-linejoin="round"/>
                 </svg>
             </a>
-            <a title="Modifier la fiche de {!! $adopting->first_name !!}" href="{!! route('adoptings.edit', $adopting->id) !!}"
+            <a title="{{ __('admin/adoptings.actions.edit', ['name' => $adopting->first_name]) }}" href="{!! route('adoptings.edit', $adopting->id) !!}"
                class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="28" height="28" viewBox="0 0 28 28"
                      xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
                 </svg>
 
             </a>
-            <a title="Supprimer la fiche de {!! $adopting->first_name !!} "
+            <a title="{{ __('admin/adoptings.actions.delete', ['name' => $adopting->first_name]) }}"
                wire:click.prevent="openModal({{ $adopting->id }})"
                href="#"
                class="inline-block pr-2 transition-all duration-300 hover:scale-105">
@@ -65,7 +65,7 @@
 @empty
     <tr>
         <td colspan="6" class="text-center py-6 text-gray-500">
-            Aucun résultat trouvé pour votre recherche.
+            {{__('admin/adoptings.empty')}}
         </td>
     </tr>
 @endforelse

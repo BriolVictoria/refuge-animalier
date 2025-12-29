@@ -5,7 +5,7 @@
         class="px-4 py-4 cursor-pointer select-none"
     >
         <div class="flex items-center justify-center gap-1">
-            Nom
+            {{ __('admin/adoptings.columns.last_name')}}
 
             @if ($this->sortField === 'last_name')
                 @if ($this->sortDirection === 'asc')
@@ -29,14 +29,14 @@
             @endif
         </div>
     </th>
-    <th class="px-4 py-4">Prénom</th>
-    <th class="px-4 py-4">Animal désiré</th>
+    <th class="px-4 py-4">{{__('admin/adoptings.columns.first_name')}}</th>
+    <th class="px-4 py-4">{{__('admin/adoptings.columns.animal_name')}}</th>
     <th
         wire:click="sortBy('creation_date')"
         class="px-4 py-4 cursor-pointer select-none"
     >
         <div class="flex items-center justify-center gap-1">
-            Date
+            {{__('admin/adoptings.columns.creation_date')}}
 
             @if ($this->sortField === 'creation_date')
                 @if ($this->sortDirection === 'asc')
@@ -60,7 +60,7 @@
             @endif
         </div>
     </th>
-    <th class="px-4 py-4">Statut</th>
-    <th class="px-4 py-4">Action</th>
+    <th class="px-4 py-4">{{__('admin/adoptings.columns.state')}}</th>
+    <th class="px-4 py-4">{{__('admin/adoptings.columns.actions')}}</th>
 </tr>
 </thead>
