@@ -9,6 +9,8 @@ use Livewire\WithPagination;
 new class extends Component {
     use WithPagination;
     public bool $openMessage = false;
+    public string $sortField = 'created_at';
+    public string $sortDirection = 'desc';
 
     public string|Message $message = '';
     public string $term = '';
@@ -20,8 +22,20 @@ new class extends Component {
     {
         return Message::query()
             ->where('email', 'like', '%' . $this->term . '%')
-            ->orderBy('created_at', 'desc')
+            ->orderBy($this->sortField, $this->sortDirection)
             ->paginate(10);
+    }
+
+    public function sortBy(string $field)
+    {
+        if ($this->sortField === $field) {
+            $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            $this->sortField = $field;
+            $this->sortDirection = 'asc';
+        }
+
+        $this->resetPage();
     }
 
     public function deleteMessage(int $id_message): void

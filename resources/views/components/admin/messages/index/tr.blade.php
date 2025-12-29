@@ -1,4 +1,4 @@
-@foreach($this->messages as $message)
+@forelse($this->messages as $message)
 
 <tr wire:click="openModal('see_message', {{$message->id}})" class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
     <td class="px-4 py-4 ">{!! $message->name !!}</td>
@@ -37,6 +37,11 @@
 
     </td>
 </tr>
+@empty
+    <tr>
+        <td colspan="6" class="text-center py-6 text-gray-500">
+            Aucun résultat trouvé pour votre recherche.
+        </td>
+    </tr>
+@endforelse
 
-
-@endforeach
