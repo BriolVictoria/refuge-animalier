@@ -1,4 +1,4 @@
-@foreach($this->adoptings as $adopting)
+@forelse($this->adoptings as $adopting)
 
     <tr class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
         <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 ">
@@ -62,5 +62,10 @@
             </a>
         </td>
     </tr>
-
-@endforeach
+@empty
+    <tr>
+        <td colspan="6" class="text-center py-6 text-gray-500">
+            Aucun résultat trouvé pour votre recherche.
+        </td>
+    </tr>
+@endforelse
