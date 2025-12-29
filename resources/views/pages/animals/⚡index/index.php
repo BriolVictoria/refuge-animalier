@@ -9,6 +9,8 @@ new class extends Component {
 
     use WithPagination;
     public string $term = '';
+    public string $sortField = 'created_at';
+    public string $sortDirection = 'desc';
     public bool $openModalForDelete = false;
     public ?int $animalToDelete = null;
 
@@ -17,8 +19,20 @@ new class extends Component {
     {
         return Animal::query()
             ->where('name', 'like', '%' . $this->term . '%')
-            ->orderBy('created_at', 'desc')
+            ->orderBy($this->sortField, $this->sortDirection)
             ->paginate(10);
+    }
+
+    public function sortBy(string $field)
+    {
+        if ($this->sortField === $field) {
+            $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            $this->sortField = $field;
+            $this->sortDirection = 'asc';
+        }
+
+        $this->resetPage();
     }
 
     public function deleteAnimal(int $id): void

@@ -21,7 +21,10 @@ class AnimalFactory extends Factory
         $attitude = ['Il est très gentil et calme', 'Très énergique, gentil et en manque d‘affection', 'Il est sympa'];
 
         return [
-            'image_path' => asset('assets/img/image_animal.png'),
+            'images' => [
+                'animals/' . $this->faker->image('storage/app/public/animals', 640, 480, null, false),
+                'animals/' . $this->faker->image('storage/app/public/animals', 640, 480, null, false)
+            ],
             'name' => $this->faker->firstName(),
             'age' => $this->faker->numberBetween(1, 10),
             'breed' => $this->faker->randomElement($breed),

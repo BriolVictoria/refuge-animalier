@@ -27,8 +27,29 @@
                 <x-admin.animals.informations_animal
                     wire="save"
                     title="Informations générales"
-                    content="Les Pattes Heureuses, c’est avant tout une famille de bénévoles dévoués : vétérinaires, soigneurs, familles d’accueil et amoureux des animaux."
+                    content="Renseignez les informations principales de l’animal, y compris son nom, son âge et son type."
                 >
+                    <div class="flex flex-col items-start gap-2">
+                        <label class="text-sm font-medium text-gray-700">Images de l’animal</label>
+
+                        <!-- Input multiple -->
+                        <input type="file" wire:model="animalImages" multiple class="border rounded p-2">
+
+                        <!-- Aperçu -->
+                        @if ($animalImages)
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                @foreach ($animalImages as $image)
+                                    <img src="{{ $image->temporaryUrl() }}"
+                                         alt="Aperçu image"
+                                         class="w-24 h-24 rounded-md object-cover object-center">
+                                @endforeach
+                            </div>
+                        @endif
+
+                        @error('animalImages.*')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
                     <x-admin.form.field.input
                         wire="animalName"
                         field_name="Nom"
@@ -86,7 +107,7 @@
 
                 <x-admin.animals.informations_animal
                     title="Santé et caractéristiques"
-                    content="Les Pattes Heureuses, c’est avant tout une famille de bénévoles dévoués : vétérinaires, soigneurs, familles d’accueil et amoureux des animaux."
+                    content="Indiquez les informations sur la santé, le statut et le caractère de l’animal."
                 >
                     <x-admin.form.field.selected
                         wire="animalVaccine"

@@ -33,7 +33,9 @@
                 <dl class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
                     <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">
                         <img alt="Image d'un chien" width="24" height="24" class="rounded-lg"
-                             src="{!! asset('assets/img/image_table.svg') !!}">
+                             src="{{ $animal->images && count($animal->images) > 0
+                 ? asset('storage/' . $animal->images[0])
+                 : asset('assets/img/image_table.svg') }}">
                     </a>
                     <div class="flex flex-col space-y-1">
                         <div class="flex items-baseline">

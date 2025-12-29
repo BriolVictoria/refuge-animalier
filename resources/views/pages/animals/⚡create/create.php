@@ -5,7 +5,9 @@ use Illuminate\Support\Carbon;
 use Livewire\Component;
 
 new class extends Component {
+    use \Livewire\WithFileUploads;
     public string $animalName;
+    public array $animalImages = [];
     public string $animalRace = 'Golden';
     public string $animalVaccine = 'Vacciné';
     public string $animalAge;
@@ -51,8 +53,13 @@ new class extends Component {
                 'animalSex' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalType' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalAttitude' => ['required', 'string', 'max:255'],
-            ]
-        );
+                'animalImages.*' =>['image', 'max:2048'],
+            ] );
+
+        $imagesUrl = [];
+        foreach ($this->animalImages as $image) {
+            $imagesUrl[] = $image->store('animals', 'public');
+        }
 
         \App\Models\Animal::create(
             [
@@ -66,6 +73,7 @@ new class extends Component {
                 'sex' => $this->animalSex,
                 'type' => $this->animalType,
                 'attitude' => $this->animalAttitude,
+                'images' => $imagesUrl,
             ]
         );
 

@@ -4,9 +4,11 @@ use App\Models\Animal;
 use Livewire\Component;
 
 new class extends Component {
+    use \Livewire\WithFileUploads;
     public Animal $animal;
 
     public string $animalName;
+    public array $animalImages = [];
     public string $animalRace;
     public string $animalVaccine;
     public string $animalAge;
@@ -34,6 +36,7 @@ new class extends Component {
         $this->animalVaccine = $this->animal->vaccine;
         $this->animalType = $this->animal->type;
         $this->animalAttitude = $this->animal->attitude;
+        $this->animalImages = $this->animal->images ?? [];
     }
 
     public function update(): void
@@ -50,8 +53,10 @@ new class extends Component {
                 'animalSex' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalType' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalAttitude' => ['required', 'string', 'max:255'],
+                'animalImages.*' =>['image', 'max:2048'],
             ]
         );
+
 
         $this->animal->update(
             [

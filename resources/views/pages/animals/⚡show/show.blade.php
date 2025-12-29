@@ -39,7 +39,7 @@
 
     @if($openVisitNote)
         <x-admin.modal.modal
-        title="Ajouter une note"
+            title="Ajouter une note"
         >
             <x-admin.form.field.form>
                 <x-admin.form.field.input
@@ -60,6 +60,35 @@
                 <x-admin.form.field.button
                     label="Créer la note"
                     title_button="Créer la note"
+                    click_wire="create"
+                />
+            </x-admin.form.field.form>
+        </x-admin.modal.modal>
+    @endif
+
+    @if($noteToEdit)
+        <x-admin.modal.modal
+            title="Modfier la note"
+        >
+            <x-admin.form.field.form>
+                <x-admin.form.field.input
+                    wire="noteEmail"
+                    field_name="Email"
+                    label="Email"
+                    type="email"
+                    placeholder="ambre.smith@gmail.com"
+                />
+
+                <x-admin.form.field.textarea
+                    wire="noteNote"
+                    field_name="Note"
+                    label="Note"
+                    placeholder="Votre note"
+                />
+
+                <x-admin.form.field.button
+                    label="Modifier la note"
+                    title_button="Modifier la note"
                     click_wire="create"
                 />
             </x-admin.form.field.form>
@@ -103,40 +132,40 @@
         </x-admin.modal.modal>
     @endif
 
-        @if($openModalForDelete)
-            <x-admin.modal.modal
-                title="Voulez-vous supprimé lA NOTE ?"
-            >
+    @if($openModalForDelete)
+        <x-admin.modal.modal
+            title="Voulez-vous supprimé lA NOTE ?"
+        >
 
-                <p class="text-sm text-gray-600">
-                    Cette action est définitive.
-                    La NOTE sera supprimée et ne pourra pas être récupérée.
-                </p>
+            <p class="text-sm text-gray-600">
+                Cette action est définitive.
+                La NOTE sera supprimée et ne pourra pas être récupérée.
+            </p>
 
 
-                <div class="flex flex-col justify-center gap-4 pt-4">
+            <div class="flex flex-col justify-center gap-4 pt-4">
 
-                    <x-admin.button.delete_button
-                        wire_delete="deleteNote({{ $noteToDelete }})"
-                        delete_message="Supprimer la fiche"
-                        class="px-6 py-2 bg-red-600 text-white text-lg rounded-lg
+                <x-admin.button.delete_button
+                    wire_delete="deleteNote({{ $noteToDelete }})"
+                    delete_message="Supprimer la fiche"
+                    class="px-6 py-2 bg-red-600 text-white text-lg rounded-lg
                            transition-all duration-300 hover:bg-red-700 hover:scale-105"
-                    >
-                        Supprimer
-                    </x-admin.button.delete_button>
+                >
+                    Supprimer
+                </x-admin.button.delete_button>
 
-                    <x-admin.button.button
-                        wire:click="closeModal"
-                        route_name="#"
-                        title_button="Annuler"
-                        label="Annuler"
-                        class="px-6 py-2 border border-gray-300 text-gray-600 rounded-lg
+                <x-admin.button.button
+                    wire:click="closeModal"
+                    route_name="#"
+                    title_button="Annuler"
+                    label="Annuler"
+                    class="px-6 py-2 border border-gray-300 text-gray-600 rounded-lg
                            transition-all duration-300 hover:bg-gray-100"
-                    />
+                />
 
 
-                </div>
+            </div>
 
-            </x-admin.modal.modal>
-        @endif
+        </x-admin.modal.modal>
+    @endif
 </main>

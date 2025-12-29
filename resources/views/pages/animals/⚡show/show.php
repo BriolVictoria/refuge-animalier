@@ -17,6 +17,7 @@ new class extends Component {
     public bool $openModalForDelete = false;
     public ?int $animalToDelete = null;
     public ?int $noteToDelete = null;
+    public ?int $noteToEdit = null;
 
     public function mount($id): void
     {
@@ -50,12 +51,21 @@ new class extends Component {
             ]
         );
 
-        $this->animal->notes()->create(
-            [
+        if ($this->noteToEdit) {
+            $note = $this->animal->notes()->findOrFail($this->noteToEdit);
+            $note->update([
                 'email' => $this->noteEmail,
                 'note' => $this->noteNote,
-            ]
-        );
+            ]);
+
+            $this->noteToEdit = null;
+        } else {
+            $this->animal->notes()->create([
+                'email' => $this->noteEmail,
+                'note' => $this->noteNote,
+            ]);
+        }
+        $this->openVisitNote = false;
 
         $this->redirect(route('animals.show', $this->animal->id));
     }
@@ -87,6 +97,17 @@ new class extends Component {
 
         session()->flash('success', 'L’animal a été supprimé avec succès');
         $this->redirectRoute('animals.index');
+    }
+
+    public function editNote(int $id): void
+    {
+        $note = $this->animal->notes()->findOrFail($id);
+        $this->noteToEdit = $note->id;
+        $this->noteEmail =$note->email;
+        $this->noteNote =$note->note;
+        $this->openVisitNote = true;
+
+        $this->dispatch('open-modal');
     }
 
     #[\Livewire\Attributes\Computed]

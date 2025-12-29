@@ -16,25 +16,37 @@
     <h2 class="sr-only">{!! $title_sronly !!}</h2>
 
     <div
-        class="relative border border-blue-100 rounded-2xl shadow-md p-4 flex flex-col gap-6 md:grid md:grid-cols-3 md:items-center">
+        class="relative border border-blue-100 rounded-2xl shadow-md p-4 flex flex-col gap-5">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+            <h3 class="text-xl font-medium text-blue-900 md:col-span-2">{!! $title1 !!}</h3>
 
-        <h3 class="text-xl font-medium text-blue-900 md:col-span-2">{!! $title1 !!}</h3>
 
-        <div class="flex md:justify-end">
             <x-admin.animals.animals_state
                 page="show"
                 :state="$state"
             />
         </div>
 
+        <div class="flex flex-col gap-4">
+            <x-admin.animals.show.definitions_show_animal/>
 
-        <img width="320" height="320" src="{!! $image_src !!}"
-             alt="{!! $image_alt !!}"
-             class="{!! $image_class !!}">
+            @if($this->animal->images && count($this->animal->images) > 0)
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    @foreach($this->animal->images as $image)
+                        <img
+                            src="{{ asset('storage/' . $image) }}"
+                            alt="Image de {{ $this->animal->name }}"
+                            class="rounded-xl w-full aspect-square object-cover object-center shadow-md">
+                    @endforeach
+                </div>
 
-
-        <x-admin.animals.show.definitions_show_animal/>
-
+            @else
+                <img
+                    src="{{ asset('assets/img/animalProfil.jpg') }}"
+                    alt="Image de {{ $this->animal->name }}"
+                    class="rounded-xl w-full aspect-square object-cover object-center shadow-md">
+            @endif
+        </div>
         <div class="flex flex-col gap-3 md:col-span-3 lg:flex-row lg:justify-end">
             <x-admin.animals.show.buttons_show_animal/>
             <x-admin.button
@@ -46,8 +58,8 @@
             />
         </div>
 
-
     </div>
+
 
     <div
         class="relative border border-blue-100 rounded-2xl shadow-md p-4 flex flex-col gap-6">
