@@ -14,14 +14,14 @@
     @endif
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
-            <a title="Voir tous les bénévoles" href="{!! route('volunteers.index') !!}"
-               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg ">Bénévoles</a>
+            <a title="{{__('admin/volunteers.ariane.volunteer_index')}}" href="{!! route('volunteers.index') !!}"
+               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg ">{{__('admin/volunteers.volunteers.title')}}</a>
             <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
-            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">Fiche de {!! $volunteer->first_name !!}</h1>
+            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/volunteers.ariane.volunteer_show', ['name' => $volunteer->first_name])}}</h1>
         </div>
 
         <x-admin.volunteers.show
-            title_sronly="Fiche de {!! $volunteer->first_name !!}"
+            title_sronly="{{__('admin/volunteers.ariane.volunteer_show', ['name' => $volunteer->first_name])}}"
             title1="{!! $volunteer->first_name !!}"
         />
 
@@ -29,12 +29,11 @@
     </div>
         @if($openModalForDelete)
             <x-admin.modal.modal
-                title="Voulez-vous supprimé ce bénévole?"
+                title="{{__('admin/volunteers.delete_modal.title')}}"
             >
 
                 <p class="text-sm text-gray-600">
-                    Cette action est définitive.
-                    La fiche de cette demande sera supprimée et ne pourra pas être récupérée.
+                    {{__('admin/volunteers.delete_modal.description')}}
                 </p>
 
 
@@ -42,18 +41,18 @@
 
                     <x-admin.button.delete_button
                         wire_delete="deleteVolunteer({{ $volunteerToDelete }})"
-                        delete_message="Supprimer la fiche"
+                        delete_message="{{__('admin/volunteers.delete_modal.delete_button')}}"
                         class="px-6 py-2 bg-red-600 text-white text-lg rounded-lg
                            transition-all duration-300 hover:bg-red-700 hover:scale-105"
                     >
-                        Supprimer
+                        {{__('admin/volunteers.buttons.delete')}}
                     </x-admin.button.delete_button>
 
                     <x-admin.button.button
                         wire:click="closeModal"
                         route_name="#"
-                        title_button="Annuler"
-                        label="Annuler"
+                        title_button="{{__('admin/volunteers.delete_modal.cancel_button')}}"
+                        label="{{__('admin/volunteers.buttons.cancel')}}"
                         class="px-6 py-2 border border-gray-300 text-gray-600 rounded-lg
                            transition-all duration-300 hover:bg-gray-100"
                     />

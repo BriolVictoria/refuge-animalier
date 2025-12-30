@@ -30,42 +30,42 @@
 
         <div
             class="2xl:hidden space-y-4 md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-1 [@media(min-width:1170px)]:grid-cols-2">
-            @foreach($this->volunteers as $volunteer)
+            @forelse($this->volunteers as $volunteer)
                 <div
                     class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
                     <div class="flex flex-col space-y-1">
                         <div class="flex items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Nom&nbsp;:</dt>
-                            <a title="Voir la fiche de {!! $volunteer->first_name !!}" href="{!! route('volunteers.show', $volunteer->id) !!}"><dd class="text-xs font-light transition-all duration-300 hover:text-blue-800 ">{!! $volunteer->last_name !!}</dd></a>
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/volunteers.fields.last_name')}}&nbsp;:</dt>
+                            <a title="{{ __('admin/volunteers.buttons.view', ['name' => $volunteer->first_name])}}" href="{!! route('volunteers.show', $volunteer->id) !!}"><dd class="text-xs font-light transition-all duration-300 hover:text-blue-800 ">{!! $volunteer->last_name !!}</dd></a>
 
                         </div>
 
                         <div class="flex items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Prénom&nbsp;:</dt>
-                            <a title="Voir la fiche de {!! $volunteer->first_name !!}" href="{!! route('volunteers.show', $volunteer->id) !!}"><dd class="text-xs font-light transition-all duration-300 hover:text-blue-800 ">{!! $volunteer->first_name !!}</dd></a>
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/volunteers.fields.first_name')}}&nbsp;:</dt>
+                            <a title="{{ __('admin/volunteers.buttons.view', ['name' => $volunteer->first_name])}}" href="{!! route('volunteers.show', $volunteer->id) !!}"><dd class="text-xs font-light transition-all duration-300 hover:text-blue-800 ">{!! $volunteer->first_name !!}</dd></a>
 
                         </div>
 
                         <div class="flex items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Email&nbsp;:</dt>
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/volunteers.fields.email')}}&nbsp;:</dt>
                             <dd class="text-xs font-light">{!! $volunteer->email !!}</dd>
                         </div>
 
                         <div class="flex items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Téléphone&nbsp;:</dt>
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/volunteers.fields.phone_number')}}&nbsp;:</dt>
                             <dd class="text-xs font-light">{!! $volunteer->phone_number !!}</dd>
                         </div>
 
 
                     </div>
                     <div class="flex mt-7">
-                        <a title="Voir la fiche de {!! $volunteer->first_name !!}" href="{!! route('volunteers.show', $volunteer->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
+                        <a title="{{ __('admin/volunteers.buttons.view', ['name' => $volunteer->first_name])}}" href="{!! route('volunteers.show', $volunteer->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                             <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2.57716 15.4352C2.47298 15.1546 2.47298 14.8458 2.57716 14.5652C3.59178 12.105 5.31405 10.0015 7.52562 8.52133C9.73719 7.04115 12.3385 6.25098 14.9997 6.25098C17.6609 6.25098 20.2621 7.04115 22.4737 8.52133C24.6853 10.0015 26.4075 12.105 27.4222 14.5652C27.5263 14.8458 27.5263 15.1546 27.4222 15.4352C26.4075 17.8954 24.6853 19.9989 22.4737 21.4791C20.2621 22.9593 17.6609 23.7494 14.9997 23.7494C12.3385 23.7494 9.73719 22.9593 7.52562 21.4791C5.31405 19.9989 3.59178 17.8954 2.57716 15.4352Z" stroke="#2B517A" fill="none" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M15 18.75C17.0711 18.75 18.75 17.0711 18.75 15C18.75 12.9289 17.0711 11.25 15 11.25C12.9289 11.25 11.25 12.9289 11.25 15C11.25 17.0711 12.9289 18.75 15 18.75Z" stroke="#2B517A" fill="none" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <a title="Modifier la fiche de {!! $volunteer->first_name !!}" href="{!! route('volunteers.edit', $volunteer->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
+                        <a title="{{ __('admin/volunteers.buttons.edit', ['name' => $volunteer->first_name])}}" href="{!! route('volunteers.edit', $volunteer->id) !!}" class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                             <svg width="28" height="28" viewBox="0 0 28 28"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -75,7 +75,7 @@
                             </svg>
 
                         </a>
-                        <a title="Supprimer la fiche de {!! $volunteer->first_name !!} "
+                        <a title="{{ __('admin/volunteers.buttons.delete_fiche', ['name' => $volunteer->first_name])}} "
                            wire:click.prevent="openModal({{ $volunteer->id }})"
                            href="#"
                            class="inline-block pr-2 transition-all duration-300 hover:scale-105">
@@ -101,7 +101,12 @@
                     </div>
 
                 </div>
-            @endforeach
+                @empty
+                    <span class="text-center py-6 text-gray-500">
+                            {{ __('admin/volunteers.empty')}}
+                        </span>
+
+                @endforelse
         </div>
         {!! $this->volunteers->links() !!}
     </section>
