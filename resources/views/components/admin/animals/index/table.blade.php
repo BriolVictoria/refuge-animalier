@@ -29,9 +29,9 @@
 
         <div
             class="space-y-4 2xl:hidden  md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-1 [@media(min-width:1170px)]:grid-cols-2">
-            @foreach($this->animals as $animal)
+            @forelse($this->animals as $animal)
                 <dl class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
-                    <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">
+                    <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}" href="{!! route('animals.show', $animal->id) !!}">
                         <img alt="Image d'un chien" width="24" height="24" class="rounded-lg"
                              src="{{ $animal->images && count($animal->images) > 0
                  ? asset('storage/' . $animal->images[0])
@@ -39,20 +39,20 @@
                     </a>
                     <div class="flex flex-col space-y-1">
                         <div class="flex items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Nom&nbsp;:</dt>
-                            <a title="Voir la fiche de {!! $animal->name !!}"
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/animals.fields.name')}}&nbsp;:</dt>
+                            <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}"
                                href="{!! route('animals.show', $animal->id) !!}">
                                 <dd class="text-xs font-light transition-all duration-300 hover:text-blue-800 ">{!! $animal->name !!}</dd>
                             </a>
 
                         </div>
                         <div class="flex items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Type&nbsp;:</dt>
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/animals.fields.type')}}&nbsp;:</dt>
                             <dd class="text-xs font-light">{!! $animal->type !!}</dd>
                         </div>
 
                         <div class="flex items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Mise à jour&nbsp;:</dt>
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/animals.fields.updated_at')}}&nbsp;:</dt>
                             <dd class="text-xs font-light">{!! $animal->date !!}</dd>
                         </div>
 
@@ -62,7 +62,7 @@
                         />
                     </div>
                     <div class="flex mt-7">
-                        <a title="Voir la fiche de {!! $animal->name !!}"
+                        <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}"
                            href="{!! route('animals.show', $animal->id) !!}"
                            class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                             <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +76,7 @@
                                     stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <a title="Modifier la fiche de {!! $animal->name !!}"
+                        <a title="{{ __('admin/animals.actions.edit_animal', ['name' => $animal->name])}}"
                            href="{!! route('animals.edit', $animal->id) !!}"
                            class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                             <svg width="28" height="28" viewBox="0 0 28 28"
@@ -87,7 +87,7 @@
                                     stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <a title="Supprimer la fiche de {!! $animal->name !!} "
+                        <a title="{{ __('admin/animals.actions.delete_animal', ['name' => $animal->name])}}"
                            wire:click.prevent="openModal({{ $animal->id }})"
                            href="#"
                            class="inline-block pr-2 transition-all duration-300 hover:scale-105">
@@ -112,7 +112,12 @@
 
                     </div>
                 </dl>
-            @endforeach
+            @empty
+                <span class="text-center py-6 text-gray-500">
+                            {{ __('admin/animals.empty')}}
+                        </span>
+
+            @endforelse
         </div>
         {!! $this->animals->links() !!}
 

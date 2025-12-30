@@ -13,22 +13,21 @@
         </div>
     @endif
     <x-admin.animals.index.table
-        title_sronly="Animaux"
-        title="Animaux"
-        label="+ Ajouter un animal"
-        title_button="+ Ajouter un animal"
+        title_sronly="{{ __('admin/animals.animals.title_sronly')}}"
+        title="{{ __('admin/animals.animals.title')}}"
+        label="{{ __('admin/animals.animals.add_label')}}"
+        title_button="{{ __('admin/animals.animals.add_button')}}"
         route_name="{!! route('animals.create') !!}"
         class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 inline-block"
-        search_placeholder="Rechercher un animal"
+        search_placeholder="{{ __('admin/animals.animals.search_placeholder')}}"
     />
     @if($openModalForDelete)
         <x-admin.modal.modal
-            title="Voulez-vous supprimé l’animal ?"
+            title="{{ __('admin/animals.delete_modal.animal.title')}}"
         >
 
             <p class="text-sm text-gray-600">
-                Cette action est définitive.
-                La fiche de cet animal sera supprimée et ne pourra pas être récupérée.
+                {{ __('admin/animals.delete_modal.animal.description')}}
             </p>
 
 
@@ -36,18 +35,18 @@
 
                 <x-admin.button.delete_button
                     wire_delete="deleteAnimal({{ $animalToDelete }})"
-                    delete_message="Supprimer la fiche"
+                    delete_message="{{ __('admin/animals.delete_modal.delete_button')}}"
                     class="px-6 py-2 bg-red-600 text-white text-lg rounded-lg
                            transition-all duration-300 hover:bg-red-700 hover:scale-105"
                 >
-                    Supprimer
+                    {{ __('admin/animals.buttons.delete')}}
                 </x-admin.button.delete_button>
 
                 <x-admin.button.button
                     wire:click="closeModal"
                     route_name="#"
-                    title_button="Annuler"
-                    label="Annuler"
+                    title_button="{{ __('admin/animals.delete_modal.cancel_button')}}"
+                    label="{{ __('admin/animals.buttons.cancel')}}"
                     class="px-6 py-2 border border-gray-300 text-gray-600 rounded-lg
                            transition-all duration-300 hover:bg-gray-100"
                 />

@@ -23,11 +23,11 @@
 
 <footer class="bg-white shadow-[var(--shadow-xl)] py-11.5 px-[1.25rem] lg:px-[6.25rem]">
 
-    <h2 class="sr-only">Footer</h2>
+    <h2 class="sr-only">{{__('public/footer.title')}}</h2>
     <div class="flex flex-col lg:items-center min-[1600px]:flex-row-reverse justify-center">
         <div class="lg:flex flex-row gap-[4.5rem] justify-end">
             <nav>
-                <h3 class="text-lg font-medium">Navigation</h3>
+                <h3 class="text-lg font-medium">{{__('public/footer.navigation.sr_only')}}</h3>
                 <ul>
                     @foreach($navigations as $navigation)
                         <x-public.navigation.navigation_link
@@ -42,7 +42,7 @@
             </nav>
 
             <div>
-                <h3 class="text-lg font-medium pt-10.5 lg:pt-0">Coordonnées</h3>
+                <h3 class="text-lg font-medium pt-10.5 lg:pt-0">{{__('public/footer.contact.title')}}</h3>
                 <ul>
                     @foreach($contact_details as $contact_detail)
 
@@ -59,7 +59,7 @@
 
 
             <div>
-                <h3 class="text-lg font-medium pt-10.5 lg:pt-0">Mentions légales</h3>
+                <h3 class="text-lg font-medium pt-10.5 lg:pt-0">{{__('public/footer.legal.terms.title')}}</h3>
 
                 <ul>
                     @foreach($legal_notices as $legal_notice)
@@ -79,11 +79,11 @@
 
 
         <div class="flex flex-col pt-10.5 lg:items-center min-[1600px]:pr-[8.375rem]">
-            <a href="{!! route('public.homepage') !!}" title="Vers la page Accueil">
+            <a href="{!! route('public.homepage') !!}" title="{{__('public/footer.navigation.home.title')}}">
                 <img src="{!! asset("assets/img/logo_admin.svg") !!}" width="300"
-                     alt="Logo Les Pattes Heureuses avec deux pattes vertes">
+                     alt="{{__('public/footer.image_alt')}}">
             </a>
-            <p class="pt-3">©&nbsp;2025 Les Pattes Heureuses. Tous droits réservés.</p>
+            <p class="pt-3">{{__('public/footer.copyright')}}</p>
         </div>
     </div>
 

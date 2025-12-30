@@ -1,5 +1,4 @@
 @props([
-    'section_title',
     'animal',
     'image_path',
     'image_alt',
@@ -12,7 +11,7 @@
 
 <article class="bg-white rounded-lg relative shadow-[var(--shadow-xl)] w-full has-[a:hover]:scale-[102%] transition-transform duration-300 h-full">
     <a href="{!! route('public.animals.show', $animal->id) !!}" class="absolute top-0 bottom-0 left-0 right-0 z-50">
-        <span class="sr-only">Voir la fiche de l’animal</span>
+        <span class="sr-only">{{__('public/animals.card.sr_only')}}</span>
     </a>
         <figure>
         <img class="rounded-t-lg rounded-tr-lg max-h-[11.5625rem] object-cover w-full" width="500" height="400"
@@ -24,19 +23,19 @@
     <div class="flex flex-col gap-3.5 p-3.5 ">
         <dl class="grid grid-cols-2 gap-y-4 gap-x-10.5 bg-blue-50 px-4 py-4 rounded-sm">
             <div class="flex flex-col">
-                <dt class="text-sm font-medium pr-2.5">Age&nbsp;: </dt>
+                <dt class="text-sm font-medium pr-2.5">{{__('public/animals.card.fields.age')}}&nbsp;: </dt>
                 <dd class="text-xs font-light">{!! $definitions['age'] !!}</dd>
             </div>
             <div class="flex flex-col">
-                <dt class="text-sm font-medium pr-2.5">Race&nbsp;: </dt>
+                <dt class="text-sm font-medium pr-2.5">{{__('public/animals.card.fields.breed')}}&nbsp;: </dt>
                 <dd class="text-xs font-light">{!! $definitions['breed'] !!}</dd>
             </div>
             <div class="flex flex-col">
-                <dt class="text-sm font-medium pr-2.5">Pelage&nbsp;: </dt>
+                <dt class="text-sm font-medium pr-2.5">{{__('public/animals.card.fields.coat')}}&nbsp;: </dt>
                 <dd class="text-xs font-light">{!! $definitions['color'] !!}</dd>
             </div>
             <div class="flex flex-col">
-                <dt class="text-sm font-medium pr-2.5">Attitude&nbsp;: </dt>
+                <dt class="text-sm font-medium pr-2.5">{{__('public/animals.card.fields.attitude')}}&nbsp;: </dt>
                 <dd class="text-xs font-light">{!! $definitions['attitude'] !!}</dd>
             </div>
         </dl>

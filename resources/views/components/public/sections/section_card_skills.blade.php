@@ -10,23 +10,23 @@
     <div class="flex flex-col gap-6 md:flex md:flex-row md:col-start-1 md:col-end-10 md:row-start-2 md:gap-6 2xl:col-start-2 2xl:col-end-12">
         <x-public.sections.card_skills
             :image_path="asset('assets/img/responsability_icon.svg')"
-            image_alt="Icône d’une balance dessinée en trait vert"
-            title="Responsabilité"
-            content="Nous plaçons chaque animal dans un foyer adapté à ses besoins."
+            image_alt="{{__('public/about.values.cards.responsibility.image_alt')}}"
+            title="{{__('public/about.values.cards.responsibility.title')}}"
+            content="{{__('public/about.values.cards.responsibility.content')}}"
         />
 
         <x-public.sections.card_skills
             :image_path="asset('assets/img/compassion_icon.svg')"
-            image_alt="Icône d’un poing fermé dessiné en trait vert"
-            title="Compassion"
-            content="Nous plaçons chaque animal dans un foyer adapté à ses besoins."
+            image_alt="{{__('public/about.values.cards.compassion.image_alt')}}"
+            title="{{__('public/about.values.cards.compassion.title')}}"
+            content="{{__('public/about.values.cards.compassion.content')}}"
         />
 
         <x-public.sections.card_skills
             :image_path="asset('assets/img/engagement_logo.svg')"
-            image_alt="Icône d’un bouclier dessinée en trait vert"
-            title="Engagement"
-            content="Nous plaçons chaque animal dans un foyer adapté à ses besoins."
+            image_alt="{{__('public/about.values.cards.commitment.image_alt')}}"
+            title="{{__('public/about.values.cards.commitment.title')}}"
+            content="{{__('public/about.values.cards.commitment.content')}}"
         />
     </div>
 

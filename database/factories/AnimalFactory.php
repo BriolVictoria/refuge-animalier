@@ -15,7 +15,6 @@ class AnimalFactory extends Factory
 
     public function definition(): array
     {
-        $breed = ['Golden', 'Cocker', 'Berger Australien', 'Border collie', 'Berger Américain', 'American staff', 'Bichon'];
         $coat = ['Beige', 'Blue', 'Rouge', 'Blanc', 'Taché', 'Noir', 'Gris'];
         $type = ['Lapin', 'Chien', 'Chat'];
         $attitude = ['Il est très gentil et calme', 'Très énergique, gentil et en manque d‘affection', 'Il est sympa'];
@@ -27,7 +26,7 @@ class AnimalFactory extends Factory
             ],
             'name' => $this->faker->firstName(),
             'age' => $this->faker->numberBetween(1, 10),
-            'breed' => $this->faker->randomElement($breed),
+            'breed' => $this->faker->text('5'),
             'date' => $this->faker->date(),
             'coat' => $this->faker->randomElement($coat),
             'state' => $this->faker->randomElement(AnimalStates::cases()),

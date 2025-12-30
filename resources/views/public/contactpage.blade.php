@@ -8,59 +8,59 @@
 
 @endphp
 
-<x-public.app title="Formulaire de contact">
+<x-public.app title="{{__('public/contact.page_title')}}">
     <main class="lg:flex lg:flex-row items-start">
         <x-public.sections.section-contact-forms
-            title="Vous avez une question sur le refuge &nbsp;?"
-            content="Ecrivez-nous un message pour qu’on puisse y répondre"
-            sub_title="Nos coordonnées"
+            title="{{__('public/contact.section.title')}}"
+            content="{{__('public/contact.section.content')}}"
+            sub_title="{{__('public/contact.section.sub_title')}}"
             :coords="$coords"
         />
 
         <x-public.sections.form
             class="lg:w-2/3"
-            title="Formulaire de contact"
-            sub_title="Les champs * sont des champs requis">
+            title="{{__('public/contact.form.title')}}"
+            sub_title="{{__('public/contact.form.sub_title')}}">
             <fieldset class="flex flex-col gap-6">
 
                 <x-public.form.fields.input
-                    field_name="name"
-                    label="Nom"
+                    field_name="{{__('public/contact.form.fields.name.label')}}"
+                    label="{{__('public/contact.form.fields.name.label')}}"
                     type="text"
-                    placeholder="Smith"
+                    placeholder="{{__('public/contact.form.fields.name.placeholder')}}"
                 />
 
                 <x-public.form.fields.input
-                    field_name="first-name"
-                    label="Prénom"
+                    field_name="{{__('public/contact.form.fields.first_name.label')}}"
+                    label="{{__('public/contact.form.fields.first_name.label')}}"
                     type="text"
-                    placeholder="Ambre"
+                    placeholder="{{__('public/contact.form.fields.first_name.placeholder')}}"
                 />
 
                 <x-public.form.fields.input
-                    field_name="email"
-                    label="Adresse mail"
+                    field_name="{{__('public/contact.form.fields.email.label')}}"
+                    label="{{__('public/contact.form.fields.email.label')}}"
                     type="email"
-                    placeholder="ambre.smith@gmail.com"
+                    placeholder="{{__('public/contact.form.fields.email.placeholder')}}"
                 />
 
                 <x-public.form.fields.input
-                    field_name="object"
-                    label="Objet"
+                    field_name="{{__('public/contact.form.fields.object.label')}}"
+                    label="{{__('public/contact.form.fields.object.label')}}"
                     type="text"
-                    placeholder="Votre objet"
+                    placeholder="{{__('public/contact.form.fields.object.placeholder')}}"
                 />
 
                 <x-public.form.fields.textarea
-                    field_name="message"
-                    label="Message"
-                    placeholder="Votre message"
+                    field_name="{{__('public/contact.form.fields.message.label')}}"
+                    label="{{__('public/contact.form.fields.message.label')}}"
+                    placeholder="{{__('public/contact.form.fields.message.placeholder')}}"
                 />
 
             </fieldset>
 
             <x-public.form.fields.input_submit
-                label="Envoyer le message"
+                label="{{__('public/contact.form.submit_label')}}"
             />
 
         </x-public.sections.form>

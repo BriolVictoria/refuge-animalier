@@ -42,23 +42,23 @@
             <div class="flex flex-col gap-12 ">
                 <dl class="flex flex-col gap-4 ">
                     <div class="flex gap-4">
-                        <dt class="text-sm font-light">Age&nbsp;:</dt>
+                        <dt class="text-sm font-light">{{__('public/animals.show.fields.age')}}&nbsp;:</dt>
                         <dd class="text-sm font-medium">{!! $definitions['age'] !!}</dd>
                     </div>
 
                     <div class="flex gap-4">
-                        <dt class="text-sm font-light">Race&nbsp;:</dt>
+                        <dt class="text-sm font-light">{{__('public/animals.show.fields.breed')}}&nbsp;:</dt>
                         <dd class="text-sm font-medium">{!! $definitions['breed'] !!}</dd>
                     </div>
 
                     <div class="flex gap-4">
-                        <dt class="text-sm font-light">Pelage&nbsp;:</dt>
+                        <dt class="text-sm font-light">{{__('public/animals.show.fields.coat')}}&nbsp;:</dt>
                         <dd class="text-sm font-medium">{!! $definitions['color'] !!}</dd>
 
                     </div>
 
                     <div class="flex gap-4">
-                        <dt class="text-sm font-light">Attitude&nbsp;:</dt>
+                        <dt class="text-sm font-light">{{__('public/animals.show.fields.attitude')}}&nbsp;:</dt>
                         <dd class="text-sm font-medium">{!! $definitions['attitude'] !!}</dd>
                     </div>
 
@@ -69,14 +69,14 @@
             <div class="flex flex-col gap-6 ">
                 <h3 class="text-xl font-medium">{!! $information_title !!}</h3>
                 <x-public.sections.information_part
-                    title="Caractère&nbsp;:"
+                    title="{{__('public/animals.show.info_parts.character')}}&nbsp;:"
                     content="Calme et câline, affectueuse avec les enfants, aime les moments de repos
                         au soleil, un peu timide au
                         début, mais vite très attachante."
                 />
 
                 <x-public.sections.information_part
-                    title="Petit mot du refuge&nbsp;:"
+                    title="{{__('public/animals.show.info_parts.shelter_note')}}&nbsp;:"
                     content="Sol est une vraie boule de tendresse.Elle attend avec impatience une
                     famille qui saura lui offrir amour et douceur."
                 />

@@ -44,7 +44,7 @@ new class extends Component {
 
         $this->reset(['messageToDelete', 'openModalForDelete']);
 
-        session()->flash('success', 'Le message a été supprimé avec succès');
+        session()->flash('success', __('admin/messages.success_message'));
         $this->redirectRoute('messages.index');
     }
 

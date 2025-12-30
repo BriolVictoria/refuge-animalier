@@ -1,15 +1,3 @@
-@php
-    $definitions =[
-           'name' => 'Pedro',
-           'age' => '6 mois',
-           'breed' => 'Golden',
-           'color' => 'Beige',
-           'date' => '21/12/24',
-           'attitude' => 'Calme',
-           'statut' => 'Disponible',
-        ];
-@endphp
-
 @props([
     'title',
     'animals',
@@ -37,7 +25,6 @@
 
         @foreach($animals as $animal)
             <x-public.sections.card
-                :section_title="'Animal:'. $animal->name"
                 :image_path="asset('assets/img/image_animal.png')"
                 image_alt="Image d'un chien (un golden) couché sur de l'herbe"
                 :animal="$animal"
@@ -50,8 +37,8 @@
                         'statut' => $animal->state,
                     ]"
                 btn_url="{!! route('public.animals.show', $animal->id) !!}"
-                btn_title="Vers la fiche Pedro"
-                btn_label="Voir la fiche"
+                btn_title="{{__('public/animals.card.see_profile_title', ['name' => $animal->name])}}"
+                btn_label="{{__('public/animals.card.see_profile')}}"
                 btn_class="border-blue-900 border-[0.09375rem] text-blue-900"
             />
         @endforeach

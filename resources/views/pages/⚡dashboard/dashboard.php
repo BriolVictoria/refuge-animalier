@@ -30,29 +30,29 @@ new class extends Component {
         $this->statistiques = [
             'animals' => [
                 'route' => asset('assets/img/paw_icon.svg'),
-                'alt' => 'Icon de pâttes',
-                'content' => 'Animaux dans le refuge',
+                'alt' => __('admin/dashboard.stats.animals.alt'),
+                'content' => __('admin/dashboard.stats.animals.content'),
                 'number' => Animal::count(),
             ],
 
             'adoptings' => [
                 'route' => asset('assets/img/file_icon.svg'),
-                'alt' => 'Icon de fichier',
-                'content' => 'Adoption validés ce mois-ci',
+                'alt' => __('admin/dashboard.stats.adoptings.alt'),
+                'content' => __('admin/dashboard.stats.adoptings.content'),
                 'number' => Adopting::where('state', '=', \App\Enums\AdoptingState::Done->value)->count(),
             ],
 
             'waiting' => [
                 'route' => asset('assets/img/house_icon.svg'),
-                'alt' => 'Icon de maison',
-                'content' => 'Demande d‘adoption en attentes',
+                'alt' => __('admin/dashboard.stats.waiting.alt'),
+                'content' => __('admin/dashboard.stats.waiting.content'),
                 'number' => Adopting::where('state', '=', \App\Enums\AdoptingState::Pending->value)->count(),
             ],
 
             'message' => [
                 'route' => asset('assets/img/mail_icon.svg'),
-                'alt' => 'Icon de d‘enveloppe',
-                'content' => 'Message non-lu',
+                'alt' => __('admin/dashboard.stats.message.alt'),
+                'content' => __('admin/dashboard.stats.message.content'),
                 'number' => Message::where('state', '=', \App\Enums\MessageState::NotRead->value)->count(),
             ],
         ];

@@ -1,21 +1,21 @@
 <main class="w-full">
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
-            <a title="Voir tous les animaux" href="{!! route('animals.index') !!}"
-               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">Animaux</a>
+            <a title="{{ __('admin/animals.ariane.animals_index')}}" href="{!! route('animals.index') !!}"
+               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">{{ __('admin/animals.animals.title')}}</a>
             <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
-            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">Ajouter un animal</h1>
+            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{ __('admin/animals.ariane.animal_create')}}</h1>
         </div>
 
         <section>
-            <h2 class="sr-only">Animaux</h2>
+            <h2 class="sr-only">{{ __('admin/animals.animals.title_sronly')}}</h2>
             <article class="flex flex-col gap-6 bg-white rounded-sm shadow-[var(--shadow-xl)] py-6 px-6 h-full">
                 <x-admin.animals.informations_animal
-                    title="Informations générales"
-                    content="Renseignez les informations principales de l’animal, y compris son nom, son âge et son type."
+                    title="{{ __('admin/animals.sections.definitions')}}"
+                    content="{{ __('admin/animals.info_texts.general_information')}}"
                 >
                     <div class="flex flex-col items-start gap-2">
-                        <label class="text-sm font-medium text-gray-700">Images de l’animal</label>
+                        <label class="text-sm font-medium text-gray-700">{{ __('admin/animals.fields.photo')}}</label>
 
                         <!-- Input multiple -->
                         <input type="file" wire:model="animalImages" multiple class="border rounded p-2">
@@ -37,91 +37,91 @@
                     </div>
                     <x-admin.form.field.input
                         wire="animalName"
-                        field_name="Nom"
-                        label="Nom"
+                        field_name="{{ __('admin/animals.fields.name')}}"
+                        label="{{ __('admin/animals.fields.name')}}"
                         type="text"
-                        placeholder="Pedro"
+                        placeholder="{{ __('admin/animals.placeholder.name')}}"
                     />
 
                     <x-admin.form.field.selected
                         wire="animalType"
-                        field_name="Type"
-                        label="Type"
+                        field_name="{{ __('admin/animals.fields.type')}}"
+                        label="{{ __('admin/animals.fields.type')}}"
                         :options="$this->types"
                     />
 
                     <x-admin.form.field.input
                         wire="animalAge"
-                        field_name="Age"
-                        label="Age"
+                        field_name="{{ __('admin/animals.fields.age')}}"
+                        label="{{ __('admin/animals.fields.age')}}"
                         type="number"
-                        placeholder="2 ans"
+                        placeholder="{{ __('admin/animals.placeholder.age')}}"
                     />
 
                     <x-admin.form.field.radio
                         wire="animalSex"
-                        title="Sexe"
+                        title="{{ __('admin/animals.fields.sex')}}"
                         :radios="$this->sexes"
                     />
 
-                    <x-admin.form.field.selected
+                    <x-admin.form.field.input
                         wire="animalRace"
-                        field_name="Race"
-                        label="Race"
-                        :options="$this->breeds"
+                        field_name="{{ __('admin/animals.fields.breed')}}"
+                        label="{{ __('admin/animals.fields.breed')}}"
+                        type="text"
+                        placeholder="{{ __('admin/animals.placeholder.breed')}}"
                     />
+
 
                     <x-admin.form.field.input
                         wire="animalCoat"
-                        field_name="Pelage"
-                        label="Pelage"
+                        field_name="{{ __('admin/animals.fields.coat')}}"
+                        label="{{ __('admin/animals.fields.coat')}}"
                         type="text"
-                        placeholder="Beige"
+                        placeholder="{{ __('admin/animals.placeholder.coat')}}"
                     />
 
                     <x-admin.form.field.input
                         wire="animalDate"
-                        field_name="Date de mise à jour (date du jour)"
-                        label="Date de mise à jour (date du jour)"
+                        field_name="{{ __('admin/animals.fields.date')}}"
+                        label="{{ __('admin/animals.fields.date')}}"
                         type="date"
-                        placeholder="21/12/2025"
+                        placeholder="{{ __('admin/animals.placeholder.date')}}"
                     />
                 </x-admin.animals.informations_animal>
 
                 <x-admin.animals.informations_animal
-                    title="Santé et caractéristiques"
-                    content="Indiquez les informations sur la santé, le statut et le caractère de l’animal."
+                    title="{{ __('admin/animals.sections.health_and_characteristics')}}"
+                    content="{{ __('admin/animals.info_texts.health_and_characteristics')}}"
                 >
 
                     <x-admin.form.field.selected
                         wire="animalVaccine"
-                        field_name="Vaccin"
-                        label="Vaccin"
+                        field_name="{{ __('admin/animals.fields.vaccine')}}"
+                        label="{{ __('admin/animals.fields.vaccine')}}"
                         :options="$this->vaccins"
-                        select="Vacciné"
                     />
 
                     <x-admin.form.field.selected
                         wire="animalState"
-                        field_name="Statut"
-                        label="Statut"
+                        field_name="{{ __('admin/animals.fields.state')}}"
+                        label="{{ __('admin/animals.fields.state')}}"
                         :options="$this->states"
-                        select="En attente d’adoption"
                     />
 
 
                     <x-admin.form.field.textarea
                         wire="animalAttitude"
-                        field_name="Caractèristiques"
-                        label="Caractèristiques"
-                        placeholder="Caractèristiques"
+                        field_name="{{ __('admin/animals.fields.attitude')}}"
+                        label="{{ __('admin/animals.fields.attitude')}}"
+                        placeholder="{{ __('admin/animals.placeholder.attitude')}}"
                     />
                 </x-admin.animals.informations_animal>
 
                 <div class="flex flex-col lg:flex-row gap-6">
                     <x-admin.form.field.button
-                        label="Créer la fiche de l‘animal"
-                        title_button="Créer la fiche de l‘animal"
+                        label="{{ __('admin/animals.buttons.create_animal')}}"
+                        title_button="{{ __('admin/animals.buttons.create_animal')}}"
                         click_wire="create"
                     />
                 </div>

@@ -8,7 +8,7 @@ new class extends Component {
     use \Livewire\WithFileUploads;
     public string $animalName;
     public array $animalImages = [];
-    public string $animalRace = 'Golden';
+    public string $animalRace;
     public string $animalVaccine = 'Vacciné';
     public string $animalAge;
     public string $animalCoat;
@@ -19,7 +19,6 @@ new class extends Component {
     public string $animalAttitude;
 
     public array $types = [];
-    public array $breeds = [];
     public array $vaccins = [];
     public array $sexes = [];
     public array $states = [];
@@ -27,7 +26,6 @@ new class extends Component {
     public function mount()
     {
         $this->types = ['Chien', 'Chat', 'Lapin', 'Hamster'];
-        $this->breeds = ['Golden', 'Américan staff', 'Cocker'];
         $this->vaccins = [\App\Enums\AnimalVaccine::Vaccinated->value, \App\Enums\AnimalVaccine::NotVaccinated->value];
 
         $this->sexes = [
@@ -44,7 +42,7 @@ new class extends Component {
         $this->validate(
             [
                 'animalName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
-                'animalRace' => ['required', 'string', 'max:255'], /*A voir*/
+                'animalRace' => ['required', 'string', 'max:255'],
                 'animalVaccine' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalAge' => ['required', 'integer', 'min:0', 'max:100'],
                 'animalCoat' => ['required', 'string', 'max:255'], /*A voir*/
@@ -54,6 +52,7 @@ new class extends Component {
                 'animalType' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalAttitude' => ['required', 'string', 'max:255'],
                 'animalImages.*' =>['image', 'max:2048'],
+                'animalImages' =>['max:4'],
             ] );
 
         $imagesUrl = [];

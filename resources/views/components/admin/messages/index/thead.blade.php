@@ -5,7 +5,7 @@
         class="px-4 py-4 cursor-pointer select-none"
     >
         <div class="flex items-center justify-center gap-1">
-            Nom
+            {{ __('admin/messages.show_modal.fields.name')}}
 
             @if ($this->sortField === 'name')
                 @if ($this->sortDirection === 'asc')
@@ -29,14 +29,14 @@
             @endif
         </div>
     </th>
-    <th class="px-4 py-4">Email</th>
-    <th class="px-4 py-4">Objet</th>
+    <th class="px-4 py-4">{{ __('admin/messages.show_modal.fields.email')}}</th>
+    <th class="px-4 py-4">{{ __('admin/messages.show_modal.fields.object')}}</th>
     <th
         wire:click="sortBy('date')"
         class="px-4 py-4 cursor-pointer select-none"
     >
         <div class="flex items-center justify-center gap-1">
-            Date
+            {{ __('admin/messages.show_modal.fields.date')}}
 
             @if ($this->sortField === 'date')
                 @if ($this->sortDirection === 'asc')
@@ -60,7 +60,7 @@
             @endif
         </div>
     </th>
-    <th class="px-4 py-4">Statut</th>
-    <th class="px-4 py-4">Action</th>
+    <th class="px-4 py-4">{{ __('admin/messages.show_modal.fields.state')}}</th>
+    <th class="px-4 py-4">{{ __('admin/messages.show_modal.fields.action')}}</th>
 </tr>
 </thead>

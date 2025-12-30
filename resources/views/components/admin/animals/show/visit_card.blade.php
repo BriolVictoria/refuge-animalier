@@ -3,17 +3,17 @@
     <div class="border border-blue-300 rounded-2xl shadow-md p-4">
         <div class="flex flex-col gap-2">
             <div class="flex items-baseline">
-                <dt class="text-sm font-medium pr-2.5">Email&nbsp;:</dt>
+                <dt class="text-sm font-medium pr-2.5">{{__('admin/animals.fields.email')}}&nbsp;:</dt>
                 <dd class="text-xs font-light">{!! $note->email !!}</dd>
             </div>
 
             <div class="flex items-baseline">
-                <dt class="text-sm font-medium pr-2.5">Note&nbsp;:</dt>
+                <dt class="text-sm font-medium pr-2.5">{{__('admin/animals.fields.note')}}&nbsp;:</dt>
                 <dd class="text-xs font-light">{!! $note->note !!}</dd>
             </div>
 
             <div class="flex ml-auto">
-                <a title="Modifier la fiche de {!! $note->email !!}"
+                <a title="{{__('admin/animals.actions.edit_note', ['email' => $note->email])}}"
                    wire:click.prevent="editNote({{ $note->id }})"
                    href="#"
                    class="mr-2 transition-all duration-300 hover:scale-105">
@@ -26,7 +26,7 @@
                     </svg>
                 </a>
 
-                <a title="Supprimer la note de {!! $note->email !!}"
+                <a title="{{__('admin/animals.actions.delete_note', ['email' => $note->email])}}"
                    wire:click.prevent="openModalDeleteNote({{ $note->id }})"
                    href="#"
                    class=" transition-all duration-300 hover:scale-105">
@@ -55,7 +55,7 @@
     @empty
         <tr>
             <td colspan="6" class="text-center py-6 text-gray-500">
-               Cet animal n'as pas de note
+                {{__('admin/animals.empty_notes')}}
             </td>
         </tr>
     @endforelse

@@ -44,7 +44,7 @@ new class extends Component {
         $this->validate(
             [
                 'animalName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
-                'animalRace' => ['required', 'string', 'max:255'], /*A voir*/
+                'animalRace' => ['required', 'string', 'max:255'],
                 'animalVaccine' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalAge' => ['required', 'integer', 'min:0', 'max:100'],
                 'animalCoat' => ['required', 'string', 'max:255'], /*A voir*/

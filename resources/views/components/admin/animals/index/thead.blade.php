@@ -1,12 +1,12 @@
 <thead class="none 2xl:bg-blue-500">
 <tr class="text-white font-medium text-xs">
-    <th class="px-4 py-4">Photo</th>
+    <th class="px-4 py-4">{{ __('admin/animals.fields.photo')}}</th>
     <th
         wire:click="sortBy('name')"
         class="px-4 py-4 cursor-pointer select-none"
     >
         <div class="flex items-center justify-center gap-1">
-            Nom
+            {{ __('admin/animals.fields.name')}}
 
             @if ($this->sortField === 'name')
                 @if ($this->sortDirection === 'asc')
@@ -30,9 +30,9 @@
             @endif
         </div>
     </th>
-    <th class="px-4 py-4">Type</th>
-    <th class="px-4 py-4">Statut</th>
-    <th class="px-4 py-4">Mise à jour</th>
-    <th class="px-4 py-4">Action</th>
+    <th class="px-4 py-4">{{ __('admin/animals.fields.type')}}</th>
+    <th class="px-4 py-4">{{ __('admin/animals.fields.state')}}</th>
+    <th class="px-4 py-4">{{ __('admin/animals.fields.updated_at')}}</th>
+    <th class="px-4 py-4">{{ __('admin/animals.fields.actions')}}</th>
 </tr>
 </thead>

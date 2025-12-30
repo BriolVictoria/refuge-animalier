@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Briol Victoria">
-    <meta name="description" content="Site web pour un refuge animalier">
-    <meta name="keywords" content="Refuge&nbsp;, Animaux&nbsp;, Adoption">
+    <meta name="description" content="{{__('public/header_html.meta.description')}}">
+    <meta name="keywords" content="{{__('public/header_html.meta.keywords')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{!! $title !!} - Les pattes heureuses</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
