@@ -52,15 +52,15 @@
                         field_name="{{__('admin/adoptings.fields.address')}}"
                         label="{{__('admin/adoptings.fields.address')}}"
                         type="text"
-                        placeholder="Rue des Lilas"
+                        placeholder="{{ __('admin/adoptings.placeholder.address')}}"
                     />
 
                     <x-admin.form.field.input
                         wire="adoptingCity"
                         field_name="{{__('admin/adoptings.fields.city')}}"
-                        label="{{__('admin/adoptings.fields.cite')}}"
+                        label="{{__('admin/adoptings.fields.city')}}"
                         type="text"
-                        placeholder="Londres"
+                        placeholder="{{ __('admin/adoptings.placeholder.city')}}"
                     />
 
                     <x-admin.form.field.input
@@ -140,7 +140,6 @@
                         field_name="{{__('admin/adoptings.fields.state')}}"
                         label="{{__('admin/adoptings.fields.state')}}"
                         :options="$this->states"
-                        select="En attente d’adoption"
                     />
 
 
@@ -148,7 +147,7 @@
                         wire="adoptingComment"
                         field_name="{{__('admin/adoptings.fields.comment')}}"
                         label="{{__('admin/adoptings.fields.comment')}}"
-                        placeholder="Commentaire"
+                        placeholder="{{ __('admin/adoptings.placeholder.comment')}}"
                     />
 
 

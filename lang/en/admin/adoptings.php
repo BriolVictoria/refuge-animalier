@@ -2,66 +2,127 @@
 
 return [
 
-    /*INDEX*/
-
-    // Session messages
+    /* GLOBAL MESSAGES */
     'success_message' => 'The request has been successfully deleted!',
     'empty' => 'No results found for your search.',
 
-    // Adoption Table
+    /* TABLE ADOPTIONS */
     'adoptings' => [
         'title_sronly' => 'Adoption Requests',
         'title' => 'Adoption Requests',
         'add_label' => '+ Add an adoption request',
         'add_button' => '+ Add an adoption request',
         'search_placeholder' => 'Search for a request',
+        'title_edit' => 'Search for a request',
     ],
 
-    // Delete Modal
+    /* DELETE MODAL */
     'delete_modal' => [
         'title' => 'Do you want to delete this request?',
         'description' => 'This action is permanent. The record of this request will be deleted and cannot be recovered.',
-        'delete_button' => 'Delete record',
+        'delete_button' => 'Delete the record',
         'cancel_button' => 'Cancel',
     ],
 
-    // General Buttons
+    /* BUTTONS */
     'buttons' => [
         'delete' => 'Delete',
         'cancel' => 'Cancel',
+        'edit_record' => 'Edit the record',
     ],
 
-    // Fields
+    /* FIELDS */
     'fields' => [
         'last_name' => "Adopter's last name",
         'first_name' => "Adopter's first name",
-        'animal_name' => "Desired animal",
-        'creation_date' => "Date",
+        'email' => "Email address",
+        'animal_name' => "Desired animal's name",
+        'phone_number' => "Phone number",
+        'address' => "Address",
+        'city' => "City",
+        'postcode' => "Postal code",
+        'other_animal' => "Other pets at home",
+        'children' => "Presence of children",
+        'environment' => "Type of environment",
+        'outside' => "Outdoor space",
+        'creation_date' => "Request date",
+        'state' => "Status",
+        'comment' => "Internal comment (staff only)",
+        'selected_animal' => "Desired animal",
+        'actions' => "Actions",
     ],
 
-    // Actions
+    /* PLACEHOLDER */
+    'placeholder' => [
+        'address' => 'Lily Street',
+        'city' => 'London',
+        'comment' => 'Comment',
+    ],
+
+    /* ACTIONS */
     'actions' => [
         'view' => "View :name's record",
         'edit' => "Edit :name's record",
         'delete' => "Delete :name's record",
+        'save' => 'Save the request',
     ],
 
-    /*// States
+    /* POSSIBLE STATES */
     'states' => [
-        // you can add possible request states here
         'pending' => 'Pending',
-        'approved' => 'Approved',
-        'rejected' => 'Rejected',
-    ],*/
+        'done' => 'Completed',
+        'in_progress' => 'In progress',
+    ],
 
-    // Table columns
-    'columns' => [
-        'last_name' => 'Last Name',
-        'first_name' => 'First Name',
-        'animal_name' => 'Desired Animal',
-        'creation_date' => 'Date',
-        'state' => 'Status',
-        'actions' => 'Action',
+    /* BREADCRUMBS / TITLES */
+    'ariane' => [
+        'adoptings_index' => "View adoption requests",
+        'adopting_show' => ":name's record",
+        'adopting_create' => "Add a request",
+    ],
+
+    /* BUTTONS ON CREATE / SHOW PAGE */
+    'buttons_show' => [
+        'edit' => 'Edit the record',
+        'save' => 'Save the request',
+    ],
+
+    /* RADIO / SELECT LABELS */
+    'options' => [
+        'yes' => 'Yes',
+        'no' => 'No',
+        'environments' => [
+            'Flat' => 'Apartment',
+            'FlatShare' => 'Shared flat',
+            'House' => 'House',
+            'Studio' => 'Studio',
+            'Other' => 'Other',
+        ],
+        'states' => [
+            'En attente' => 'Pending',
+            'En cours' => 'In progress',
+            'Terminée' => 'Completed',
+        ],
+    ],
+
+    /* VOLUNTEER INFORMATION TITLES AND CONTENT */
+    'volunteer_sections' => [
+        'personal_info' => [
+            'title' => "Adopter information",
+            'content' => "Enter the adopter's personal information to contact them and track their request.",
+        ],
+        'desired_animal' => [
+            'title' => "Desired animal",
+            'content' => "Select the animal the adopter wants to welcome.",
+        ],
+        'living_environment' => [
+            'title' => "Living environment",
+            'content' => "Specify the adopter's living situation to ensure the animal's well-being.",
+        ],
+        'other_info' => [
+            'title' => "Other information",
+            'content' => "Add additional information regarding the request or internal notes.",
+        ],
     ],
 
 ];

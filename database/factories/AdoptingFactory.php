@@ -15,6 +15,10 @@ class AdoptingFactory extends Factory
 
     public function definition(): array
     {
+        $true_or_false = [TrueOrFalse::Yes->value, TrueOrFalse::No->value];
+        $adopting_environment = [AdoptingEnvironement::House->value, AdoptingEnvironement::FlatShare->value, AdoptingEnvironement::FlatShare->value, AdoptingEnvironement::Other->value, AdoptingEnvironement::Studio->value];
+        $adopting_state = [AdoptingState::Pending->value, AdoptingState::Done->value, AdoptingState::InProgress->value];
+
         return [
             'last_name' => $this->faker->lastName(),
             'first_name' => $this->faker->firstName(),
@@ -23,12 +27,12 @@ class AdoptingFactory extends Factory
             'address' => $this->faker->address(),
             'city' => $this->faker->city(),
             'postcode' => $this->faker->postcode(),
-            'other_animal' => $this->faker->randomElement(TrueOrFalse::cases()),
-            'children' => $this->faker->randomElement(TrueOrFalse::cases()),
-            'environment' => $this->faker->randomElement(AdoptingEnvironement::cases()),
-            'outside' => $this->faker->randomElement(TrueOrFalse::cases()),
+            'other_animal' => $this->faker->randomElement($true_or_false),
+            'children' => $this->faker->randomElement($true_or_false),
+            'environment' => $this->faker->randomElement($adopting_environment),
+            'outside' => $this->faker->randomElement($true_or_false),
             'creation_date' => $this->faker->date(),
-            'state' => $this->faker->randomElement(AdoptingState::cases()),
+            'state' => $this->faker->randomElement($adopting_state),
             'comment' => $this->faker->word(),
             'animal_id' => \App\Models\Animal::inRandomOrder()->first()->id,
             'created_at' => Carbon::now(),

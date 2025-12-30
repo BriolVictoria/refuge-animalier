@@ -49,6 +49,14 @@ return [
         'state' => "Statut",
         'comment' => "Commentaire interne (réservé au personnel)",
         'selected_animal' => "Animal désiré",
+        'actions' => "Actions",
+    ],
+
+    /* PLACEHODLER */
+    'placeholder' => [
+        'address' => 'Rue des Lilas',
+        'city' => 'Londres',
+        'comment' => 'Commentaire',
     ],
 
     /* ACTIONS */

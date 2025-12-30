@@ -4,7 +4,7 @@ namespace App\Enums;
 
 enum AdoptingState: string
 {
-    case InProgress = 'En cours';
-    case Done = 'Terminer';
-    case Pending = 'En attente';
+    case InProgress = 'in_progress';
+    case Done = 'done';
+    case Pending = 'pending';
 }

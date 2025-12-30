@@ -81,7 +81,7 @@ new class extends Component {
                 'other_animal' => $this->adoptingOtherAnimal,
                 'children' => $this->adoptingChildren,
                 'environment' => $this->adoptingEnvironment,
-                'outside' => $this->adoptingEnvironment,
+                'outside' => $this->adoptingOutside,
                 'creation_date' => $this->adoptingCreationDate,
                 'state' => $this->adoptingState,
                 'comment' => $this->adoptingComment,
