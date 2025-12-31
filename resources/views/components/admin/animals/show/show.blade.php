@@ -35,7 +35,7 @@
                     @foreach($this->animal->images as $image)
                         <img
                             src="{{ asset('storage/' . $image) }}"
-                            alt="Image de {{ $this->animal->name }}"
+                            alt="{{__('admin/animals.animal_alt', ['name' => $this->animal->name])}}"
                             class="rounded-xl w-full aspect-square object-cover object-center shadow-md">
                     @endforeach
                 </div>
@@ -43,7 +43,7 @@
             @else
                 <img
                     src="{{ asset('assets/img/animalProfil.jpg') }}"
-                    alt="Image de {{ $this->animal->name }}"
+                    alt="{{__('admin/animals.animal_alt', ['name' => $this->animal->name])}}"
                     class="rounded-xl w-full aspect-square object-cover object-center shadow-md">
             @endif
         </div>

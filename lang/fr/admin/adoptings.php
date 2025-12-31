@@ -14,6 +14,7 @@ return [
         'add_button' => '+ Ajouter une demande d’adoption',
         'search_placeholder' => 'Rechercher une demande',
         'title_edit' => 'Rechercher une demande',
+        'image_alt' => 'Icône d’une flêche pour le fil d’arianne',
     ],
 
     /* MODAL SUPPRESSION */
@@ -54,8 +55,14 @@ return [
 
     /* PLACEHODLER */
     'placeholder' => [
+        'last_name' => 'Smith',
+        'first_name' => 'Ambre',
+        'email' => 'ambre.smith@gmail.com',
+        'phone' => '0470 96 78 33',
         'address' => 'Rue des Lilas',
         'city' => 'Londres',
+        'post_code' => '1234',
+        'date' => '02/12/2025',
         'comment' => 'Commentaire',
     ],
 
@@ -67,12 +74,6 @@ return [
         'save' => 'Enregistrer la demande',
     ],
 
-    /* ETATS POSSIBLES */
-    'states' => [
-        'pending' => 'En attente',
-        'done' => 'Terminée',
-        'in_progress' => 'En cours',
-    ],
 
     /* FIL D’ARIANE / TITRES */
     'ariane' => [
@@ -87,23 +88,6 @@ return [
         'save' => 'Enregistrer la demande',
     ],
 
-    /* LABELS RADIO / SELECT */
-    'options' => [
-        'yes' => 'Oui',
-        'no' => 'Non',
-        'environments' => [
-            'Flat' => 'Appartement',
-            'FlatShare' => 'Colocation',
-            'House' => 'Maison',
-            'Studio' => 'Studio',
-            'Other' => 'Autre',
-        ],
-        'states' => [
-            'En attente' => 'En attente',
-            'En cours' => 'En cours',
-            'Terminée' => 'Terminée',
-        ],
-    ],
 
     /* TITRES ET CONTENUS DES INFORMATIONS VOLUNTEER */
     'volunteer_sections' => [

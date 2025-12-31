@@ -12,6 +12,7 @@ return [
     'title' => 'Log in to continue',
     'required_fields' => 'Fields marked with * are required',
     'forgot_password' => 'Forgot your password?',
+    'logo_alt' => 'Logo LES PATTES HEUREUSES',
 
     /* FORM FIELDS */
     'fields' => [

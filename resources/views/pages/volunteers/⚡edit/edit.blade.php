@@ -1,15 +1,14 @@
 <main class="w-full">
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
-            <a title="voir tous les bénévoles" href="{!! route('volunteers.index') !!}"
-               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">Bénévoles</a>
-            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
-            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">Modifier la fiche
-                de {!! $volunteer->first_name !!}</h1>
+            <a title="{{__('admin/volunteers.ariane.volunteer_index')}}" href="{!! route('volunteers.index') !!}"
+               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">{{__('admin/volunteers.volunteers.title')}}</a>
+            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/volunteers.volunteers.image_alt')}}">
+            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/volunteers.ariane.volunteer_edit', ['name' => $volunteer->first_name])}}</h1>
         </div>
 
         <section>
-            <h2 class="sr-only">Modification d'un bénévole</h2>
+            <h2 class="sr-only">{{__('admin/volunteers.ariane.volunteer_edit', ['name' => $volunteer->first_name])}}</h2>
             <article class="flex flex-col gap-6 bg-white rounded-sm shadow-[var(--shadow-xl)] py-6 px-6 h-full">
                 <x-admin.volunteers.informations_volunteer
                     title="{{__('admin/volunteers.form.sections.personal_info.title')}}"

@@ -15,7 +15,10 @@ return [
         'add_label' => '+ Add an animal',
         'add_button' => '+ Add an animal',
         'search_placeholder' => 'Search for an animal',
+        'image_alt' => 'Breadcrumb arrow icon',
     ],
+
+    'images_alt' => 'Animal’s images',
 
     /* DELETE MODAL */
     'delete_modal' => [
@@ -64,6 +67,8 @@ return [
         'date' => "Update date",
     ],
 
+    'animal_alt' => 'Image of :name',
+
     /* PLACEHOLDERS */
     'placeholder' => [
         'search' => 'Search for an animal',
@@ -87,23 +92,13 @@ return [
         'delete_note' => "Delete :email's note",
     ],
 
-    /* POSSIBLE STATES */
-    'states' => [
-        'pending' => 'Pending',
-        'done' => 'Completed',
-        'in_progress' => 'In progress',
-        'available' => 'Available',
-        'currently_adopted' => 'Currently adopted',
-        'adopted' => 'Adopted',
-        'awaiting_adoption' => 'Awaiting adoption',
-        'in_care' => 'In care',
-    ],
 
     /* BREADCRUMBS / TITLES */
     'ariane' => [
         'animals_index' => "View all animals",
         'animal_show' => ":name's record",
         'animal_create' => "Add an animal",
+        'animal_edit' => "Edit :name",
     ],
 
     /* ANIMAL RECORD SECTION TITLES */

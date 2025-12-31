@@ -23,7 +23,7 @@
             <x-public.sections.card
                 :section_title="'Animal:'. $animal->name"
                 :image_path="asset('assets/img/image_animal.png')"
-                image_alt="Image d'un chien (un golden) couché sur de l'herbe"
+                image_alt="{{__('public/homepage.animal_alt', ['name' => $animal->name])}}"
                 :animal="$animal"
                 :definitions="[
                         'name' => $animal->name,

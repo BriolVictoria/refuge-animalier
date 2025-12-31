@@ -32,7 +32,7 @@
             @forelse($this->animals as $animal)
                 <dl class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
                     <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}" href="{!! route('animals.show', $animal->id) !!}">
-                        <img alt="Image d'un chien" width="24" height="24" class="rounded-lg"
+                        <img alt="{{__('admin/animals.animal_alt', ['name' => $animal->name])}}" width="62" height="62" class="rounded-lg"
                              src="{{ $animal->images && count($animal->images) > 0
                  ? asset('storage/' . $animal->images[0])
                  : asset('assets/img/image_table.svg') }}">
@@ -53,7 +53,7 @@
 
                         <div class="flex items-baseline">
                             <dt class="text-sm font-medium pr-2.5">{{ __('admin/animals.fields.updated_at')}}&nbsp;:</dt>
-                            <dd class="text-xs font-light">{!! $animal->date !!}</dd>
+                            <dd class="text-xs font-light">{!! $animal->date->translatedFormat('d/m/Y') !!}</dd>
                         </div>
 
                         <x-admin.animals.animals_state

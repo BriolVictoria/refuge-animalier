@@ -16,7 +16,7 @@
         <div class="flex items-center gap-2 border-b border-blue-900">
             <a title="{{ __('admin/animals.ariane.animals_index')}}" href="{!! route('animals.index') !!}"
                class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg ">{{ __('admin/animals.animals.title')}}</a>
-            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
+            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/animals.animals.image_alt')}}">
             <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{ __('admin/animals.ariane.animal_show', ['name' => $animal->name])}}</h1>
         </div>
 
@@ -25,7 +25,7 @@
             title1="{!! $animal->name !!}"
             state="{!! $animal->state !!}"
             image_src="{!! asset('assets/img/image_animal_bis.png') !!}"
-            image_alt="Image de chien"
+            image_alt="{{__('admin/animals.animal_alt', ['name' => $animal->name])}}"
             image_class="rounded-xl w-full max-w-xs mx-auto md:col-span-1"
             title2="{{ __('admin/animals.sections.visit_notes')}}"
             route_name="#"

@@ -3,7 +3,7 @@
         <div class="flex items-center gap-2 border-b border-blue-900">
             <a title="{{__('admin/adoptings.ariane.adoptings_index')}}" href="{!! route('adoptings.index') !!}"
                class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">{{__('admin/adoptings.adoptings.title')}}</a>
-            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
+            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/adoptings.adoptings.image_alt')}}">
             <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/adoptings.adoptings.add_label')}}</h1>
         </div>
 
@@ -20,7 +20,7 @@
                         field_name="{{__('admin/adoptings.fields.last_name')}}"
                         label="{{__('admin/adoptings.fields.last_name')}}"
                         type="text"
-                        placeholder="Smith"
+                        placeholder="{{__('admin/adoptings.placeholder.last_name')}}"
                     />
 
                     <x-admin.form.field.input
@@ -28,7 +28,7 @@
                         field_name="{{__('admin/adoptings.fields.first_name')}}"
                         label="{{__('admin/adoptings.fields.first_name')}}"
                         type="text"
-                        placeholder="Ambre"
+                        placeholder="{{__('admin/adoptings.placeholder.first_name')}}"
                     />
 
                     <x-admin.form.field.input
@@ -36,7 +36,7 @@
                         field_name="{{__('admin/adoptings.fields.email')}}"
                         label="{{__('admin/adoptings.fields.email')}}"
                         type="email"
-                        placeholder="ambre.smith@gmail.com"
+                        placeholder="{{__('admin/adoptings.placeholder.email')}}"
                     />
 
                     <x-admin.form.field.input
@@ -44,7 +44,7 @@
                         field_name="{{__('admin/adoptings.fields.phone_number')}}"
                         label="{{__('admin/adoptings.fields.phone_number')}}"
                         type="tel"
-                        placeholder="0470 23 43 12"
+                        placeholder="{{__('admin/adoptings.placeholder.phone')}}"
                     />
 
                     <x-admin.form.field.input
@@ -68,7 +68,7 @@
                         field_name="{{__('admin/adoptings.fields.postcode')}}"
                         label="{{__('admin/adoptings.fields.postcode')}}"
                         type="text"
-                        placeholder="1234"
+                        placeholder="{{__('admin/adoptings.placeholder.post_code')}}"
                     />
 
 
@@ -112,7 +112,6 @@
                         field_name="{{__('admin/adoptings.fields.environment')}}"
                         label="{{__('admin/adoptings.fields.environment')}}"
                         :options="$this->environments"
-                        select="Maison"
                     />
 
                     <x-admin.form.field.radio
@@ -134,7 +133,7 @@
                         field_name="{{__('admin/adoptings.fields.creation_date')}}"
                         label="{{__('admin/adoptings.fields.creation_date')}}"
                         type="date"
-                        placeholder="02/12/23"
+                        placeholder="{{__('admin/adoptings.placeholder.date')}}"
                     />
 
                     <x-admin.form.field.selected

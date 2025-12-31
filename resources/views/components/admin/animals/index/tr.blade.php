@@ -2,7 +2,7 @@
     <tr class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
         <td class="px-4 py-4 transition-all duration-300 hover:scale-105">
             <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}" href="{!! route('animals.show', $animal->id) !!}">
-                <img alt="Image d'un chien" width="60" height="45"
+                <img alt="{{__('admin/animals.animal_alt', ['name' => $animal->name])}}" width="60" height="45"
                      class="inline-block aspect-square w-12 h-12 rounded-full object-cover object-center"
                      src="{{ $animal->images && count($animal->images) > 0
                  ? asset('storage/' . $animal->images[0])

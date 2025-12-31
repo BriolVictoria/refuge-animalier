@@ -27,6 +27,7 @@ return [
         ],
         'notifications' => [
             'title' => "Recent Notifications",
+            'icon_alt' => "Mail icon",
         ],
     ],
 
@@ -72,5 +73,7 @@ return [
             'title_reply_email' => "Reply by email",
         ],
     ],
+
+    'hello_mail' => 'Hello',
 
 ];

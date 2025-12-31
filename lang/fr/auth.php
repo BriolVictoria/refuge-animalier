@@ -11,7 +11,7 @@ return [
     'logout_title' => 'se déconnecter',
     'title' => 'Connectez-vous pour continuer',
     'required_fields' => 'Les champs * sont requis',
-    'forgot_password' => 'Mot de passe oublié ?',
+    'logo_alt' => 'Logo les pattes heureuses',
 
     /* CHAMPS DU FORMULAIRE */
     'fields' => [

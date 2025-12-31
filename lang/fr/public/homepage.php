@@ -84,4 +84,5 @@ return [
         ],
     ],
 
+    'animal_alt' => 'Image de :name',
 ];

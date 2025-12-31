@@ -26,4 +26,5 @@ return [
     ],
 
     'logo_alt' => 'Happy Paws logo with two green paw prints above the text',
+
 ];

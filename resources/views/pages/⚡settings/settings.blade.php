@@ -50,7 +50,7 @@
                 <x-admin.form.field.input
                     wire="userPhoneNumber"
                     field_name="{{__('admin/settings.information.fields.phone.label')}}"
-                    label="{{__('admin/settings.information.fields.phone..label')}}"
+                    label="{{__('admin/settings.information.fields.phone.label')}}"
                     type="tel"
                     placeholder="{{__('admin/settings.information.fields.phone.placeholder')}}"
                 />

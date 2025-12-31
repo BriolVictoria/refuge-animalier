@@ -26,4 +26,5 @@ return [
     ],
 
     'logo_alt' => 'Logo Les Pattes Heureuses avec deux pattes vertes au dessus du texte',
+
 ];

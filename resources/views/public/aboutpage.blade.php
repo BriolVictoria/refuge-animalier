@@ -1,4 +1,4 @@
-<x-public.app title="Notre refuge">
+<x-public.app title="{{__('public/about.page_title')}}">
 <main>
     <x-public.sections.text-media
         class="bg-green-50"

@@ -83,5 +83,5 @@ return [
             'label' => 'Become a Volunteer',
         ],
     ],
-
+    'animal_alt' => 'Image of :name',
 ];

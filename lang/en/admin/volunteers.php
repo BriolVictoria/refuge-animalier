@@ -14,6 +14,7 @@ return [
         'title_button' => '+ Add a volunteer',
         'search_placeholder' => 'Search for a volunteer',
         'delete_message' => 'Delete :name\'s record',
+        'image_alt' => 'Breadcrumb arrow icon',
     ],
 
     /* DELETE MODAL */
@@ -29,6 +30,7 @@ return [
         'volunteer_index' => "View all volunteers",
         'volunteer_show' => ":name's record",
         'volunteer_create' => "Add a volunteer",
+        'volunteer_edit' => "Edit :name",
     ],
 
     /* CREATE / EDIT FORM */

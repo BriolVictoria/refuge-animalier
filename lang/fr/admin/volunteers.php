@@ -14,6 +14,7 @@ return [
         'title_button' => '+ Ajouter un bénévole',
         'search_placeholder' => 'Rechercher un bénévole',
         'delete_message' => 'Supprimer la fiche de :name',
+        'image_alt' => 'Icône d’une flêche pour le fil d’arianne',
     ],
 
     /* MODAL SUPPRESSION */
@@ -29,6 +30,7 @@ return [
         'volunteer_index' => "Voir tous les bénévoles",
         'volunteer_show' => "Fiche de :name",
         'volunteer_create' => "Ajouter un bénévole",
+        'volunteer_edit' => "Modifier la fiche de :name",
     ],
 
     /* FORMULAIRE DE CRÉATION / ÉDITION */

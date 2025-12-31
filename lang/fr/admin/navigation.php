@@ -77,5 +77,6 @@ return [
             'title' => 'Vers les messages',
         ],
     ],
+    'profile_alt' => 'Photo de profil de :name'
 
 ];

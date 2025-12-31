@@ -53,7 +53,7 @@ new class extends Component {
                 'route' => asset('assets/img/mail_icon.svg'),
                 'alt' => __('admin/dashboard.stats.message.alt'),
                 'content' => __('admin/dashboard.stats.message.content'),
-                'number' => Message::where('state', '=', \App\Enums\MessageState::NotRead->value)->count(),
+                'number' => Message::where('state', '=', \App\Enums\MessageState::Read->value)->count(),
             ],
         ];
 

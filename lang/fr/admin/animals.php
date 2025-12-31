@@ -15,7 +15,10 @@ return [
         'add_label' => '+ Ajouter un animal',
         'add_button' => '+ Ajouter un animal',
         'search_placeholder' => 'Rechercher un animal',
+        'image_alt' => 'Icône d’une flêche pour le fil d’arianne',
     ],
+
+    'images_alt' => 'Les images de l’animal',
 
     /* MODAL SUPPRESSION */
     'delete_modal' => [
@@ -64,6 +67,8 @@ return [
         'date' => "Date de mise à jour",
     ],
 
+    'animal_alt' => 'Image de :name',
+
     /* PLACEHOLDERS */
     'placeholder' => [
         'search' => 'Rechercher un animal',
@@ -87,23 +92,12 @@ return [
         'delete_note' => "Supprimer la note de :email",
     ],
 
-    /* ETATS POSSIBLES */
-    'states' => [
-        'pending' => 'En attente',
-        'done' => 'Terminée',
-        'in_progress' => 'En cours',
-        'available' => 'Disponible',
-        'currently_adopted' => 'Actuellement adopté',
-        'adopted' => 'Adopté',
-        'awaiting_adoption' => 'En attente d’adoption',
-        'in_care' => 'En soin',
-    ],
-
     /* FIL D’ARIANE / TITRES */
     'ariane' => [
         'animals_index' => "Voir tous les animaux",
         'animal_show' => "Fiche de :name",
         'animal_create' => "Ajouter un animal",
+        'animal_edit' => "Modifier :name",
     ],
 
     /* TITRES SECTIONS FICHE ANIMAL */

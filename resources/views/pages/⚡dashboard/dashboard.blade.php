@@ -80,7 +80,7 @@
                 label="{{__('admin/dashboard.modal.buttons.reply_email')}}"
                 title_button="{{__('admin/dashboard.modal.buttons.title_reply_email')}}"
                 class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 inline-block"
-                route_name="mailto:{!! $message->email !!}?subject=Hello&body=Bonjour!"
+                route_name="mailto:{!! $message->email !!}?subject={{__('admin/dashboard.hello_mail')}}&body={{__('admin/dashboard.hello_mail')}}!"
             />
         </x-admin.modal.modal>
     @endif

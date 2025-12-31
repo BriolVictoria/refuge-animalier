@@ -78,4 +78,5 @@ return [
         ],
     ],
 
+    'profile_alt' => 'Profile picture of :name'
 ];

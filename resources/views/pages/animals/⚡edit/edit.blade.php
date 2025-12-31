@@ -1,35 +1,21 @@
-@php
-     $type =['Chien', 'Chat', 'Lapin'];
-     $race =['Golden', 'Américan staff', 'Cocker'];
-     $vaccin =[\App\Enums\AnimalVaccine::Vaccinated->value, \App\Enums\AnimalVaccine::NotVaccinated->value];
-
-      $radios =[
-            ['field_name' => \App\Enums\AnimalSex::Female->value, 'name' => 'sex'],
-            ['field_name' => \App\Enums\AnimalSex::Male->value, 'name' => 'sex'],
-      ];
-
-     $statut =[\App\Enums\AnimalStates::Available->value, \App\Enums\AnimalStates::CurrentlyAdopted->value, \App\Enums\AnimalStates::Adopted->value, \App\Enums\AnimalStates::AwaitingAdoption->value, \App\Enums\AnimalStates::InCare->value];
-
-@endphp
-
 <main class="w-full">
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
-            <a title="Voir tous les animaux" href="{!! route('animals.index') !!}"
-               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">Animaux</a>
-            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
-            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">Modifier {!! $animal->name !!}</h1>
+            <a title="{{__('admin/animals.ariane.animals_index')}}" href="{!! route('animals.index') !!}"
+               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">{{__('admin/animals.animals.title')}}</a>
+            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/animals.animals.image_alt')}}">
+            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/animals.ariane.animal_edit', ['name' => $aniaml->name])}}</h1>
         </div>
 
         <section>
-            <h2 class="sr-only">Modification d'un animal</h2>
+            <h2 class="sr-only">{{__('admin/animals.ariane.animal_edit', ['name' => $aniaml->name])}}</h2>
             <article class="flex flex-col gap-6 bg-white rounded-sm shadow-[var(--shadow-xl)] py-6 px-6 h-full">
                 <x-admin.animals.informations_animal
                     wire:click="save"
                     title="{{ __('admin/animals.sections.definitions')}}"
                     content="{{ __('admin/animals.info_texts.general_information')}}"
                 >
-                    <div class="flex flex-col items-start gap-2">
+                    {{--<div class="flex flex-col items-start gap-2">
                         <label class="text-sm font-medium text-gray-700">Images de l’animal</label>
 
                         <!-- Input multiple -->
@@ -49,7 +35,7 @@
                         @error('animalImages.*')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
-                    </div>
+                    </div>--}}
                     <x-admin.form.field.input
                         wire="animalName"
                         field_name="{{ __('admin/animals.fields.name')}}"

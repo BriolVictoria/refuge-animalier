@@ -6,7 +6,7 @@
             <a class="flex transition-all duration-300 hover:scale-101 hover:text-blue-800"
                href="{!! route('settings') !!}">
                 <img
-                    alt="Image de profil"
+                    alt="{{__('admin/navigation.profile_alt', ['name' => auth()->user()->name])}}"
                     src="{{ auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('assets/img/profil_image.svg') }}"
                     class="aspect-square w-12 h-12 rounded-full object-cover object-center">
                 <div class="flex flex-col px-3">

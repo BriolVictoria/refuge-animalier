@@ -114,4 +114,6 @@ return [
         'submit_label' => 'Envoyer la demande d’adoption',
     ],
 
+    'animal_alt' => 'Image de :name',
+
 ];

@@ -3,7 +3,7 @@
         <div class="flex items-center gap-2 border-b border-blue-900">
             <a title="{{ __('admin/animals.ariane.animals_index')}}" href="{!! route('animals.index') !!}"
                class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">{{ __('admin/animals.animals.title')}}</a>
-            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
+            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/animals.animals.image_alt')}}">
             <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{ __('admin/animals.ariane.animal_create')}}</h1>
         </div>
 
@@ -17,15 +17,13 @@
                     <div class="flex flex-col items-start gap-2">
                         <label class="text-sm font-medium text-gray-700">{{ __('admin/animals.fields.photo')}}</label>
 
-                        <!-- Input multiple -->
                         <input type="file" wire:model="animalImages" multiple class="border rounded p-2">
 
-                        <!-- Aperçu -->
                         @if ($animalImages)
                             <div class="flex flex-wrap gap-2 mt-2">
                                 @foreach ($animalImages as $image)
                                     <img src="{{ $image->temporaryUrl() }}"
-                                         alt="Aperçu image"
+                                         alt="{{__('admin/animals.images_alt')}}"
                                          class="w-24 h-24 rounded-md object-cover object-center">
                                 @endforeach
                             </div>

@@ -52,7 +52,7 @@
 
                         <div class="flex flex-col items-baseline">
                             <dt class="text-sm font-medium pr-2.5">{{__('admin/adoptings.fields.creation_date')}}</dt>
-                            <dd class="text-xs font-light">{!! $adopting->creation_date !!}</dd>
+                            <dd class="text-xs font-light">{!! $adopting->creation_date->translatedFormat('d/m/Y') !!}</dd>
                         </div>
                         <x-admin.adoptings.adoptings_state
                             :state="$adopting->state"

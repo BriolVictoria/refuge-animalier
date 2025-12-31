@@ -14,6 +14,7 @@ return [
         'add_button' => '+ Add an adoption request',
         'search_placeholder' => 'Search for a request',
         'title_edit' => 'Search for a request',
+        'image_alt' => 'Breadcrumb arrow icon',
     ],
 
     /* DELETE MODAL */
@@ -57,6 +58,12 @@ return [
         'address' => 'Lily Street',
         'city' => 'London',
         'comment' => 'Comment',
+        'last_name' => 'Smith',
+        'first_name' => 'Ambre',
+        'email' => 'ambre.smith@gmail.com',
+        'phone' => '0470 96 78 33',
+        'post_code' => '1234',
+        'date' => '02/12/2025',
     ],
 
     /* ACTIONS */
@@ -65,13 +72,6 @@ return [
         'edit' => "Edit :name's record",
         'delete' => "Delete :name's record",
         'save' => 'Save the request',
-    ],
-
-    /* POSSIBLE STATES */
-    'states' => [
-        'pending' => 'Pending',
-        'done' => 'Completed',
-        'in_progress' => 'In progress',
     ],
 
     /* BREADCRUMBS / TITLES */
@@ -85,24 +85,6 @@ return [
     'buttons_show' => [
         'edit' => 'Edit the record',
         'save' => 'Save the request',
-    ],
-
-    /* RADIO / SELECT LABELS */
-    'options' => [
-        'yes' => 'Yes',
-        'no' => 'No',
-        'environments' => [
-            'Flat' => 'Apartment',
-            'FlatShare' => 'Shared flat',
-            'House' => 'House',
-            'Studio' => 'Studio',
-            'Other' => 'Other',
-        ],
-        'states' => [
-            'En attente' => 'Pending',
-            'En cours' => 'In progress',
-            'Terminée' => 'Completed',
-        ],
     ],
 
     /* VOLUNTEER INFORMATION TITLES AND CONTENT */

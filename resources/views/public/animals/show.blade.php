@@ -30,7 +30,7 @@
         image_src="{!! asset('assets/img/arrow_arianne.svg') !!}"
         image_alt="{{__('public/animals.show.breadcrumb.arrow_alt')}}"
         animal_first_img="{!! asset('assets/img/image_animal_bis.png') !!}"
-        animal_first_alt="Image d'un chien (un cocker) qui regarde la caméra"
+        animal_first_alt="{{__('public/homepage.animal_alt', ['name' => $animal->name])}}"
         :definitions="$definitions"
         :buttons="$buttons"
         information_title="{{__('public/animals.show.information_title')}}"
