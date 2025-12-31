@@ -46,7 +46,7 @@ return [
         ],
 
         'help' => [
-            'title' => 'How to Help Us?',
+            'title' => 'How to Help Us ?',
             'content' => 'Adopt an animal and give it a lifelong home. Become a volunteer to lend us a hand. Make a donation to help cover care costs.',
             'image_alt' => 'Image of a tree with colorful hands on a green background',
             'button' => [

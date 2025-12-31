@@ -80,9 +80,9 @@ return [
         ],
 
         'info_parts' => [
-            'character' => 'Caractère :',
+            'character' => 'Caractère :',
             'character_content' => 'Calme et câline, affectueuse avec les enfants, aime les moments de repos au soleil, un peu timide au début, mais vite très attachante.',
-            'shelter_note' => 'Petit mot du refuge :',
+            'shelter_note' => 'Petit mot du refuge :',
             'shelter_note_content' => 'Sol est une vraie boule de tendresse. Elle attend avec impatience une famille qui saura lui offrir amour et douceur.',
         ],
 
@@ -101,7 +101,7 @@ return [
     */
 
     'form' => [
-        'title' => 'Voulez-vous adopter :name ?',
+        'title' => 'Voulez-vous adopter :name ?',
         'form_title' => 'Formulaire de demande d’adoption pour :name',
         'form_sub_title' => 'Les champs * sont des champs requis',
         'fields' => [

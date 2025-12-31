@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'page_title' => 'Page d\'accueil',
+    'page_title' => 'Page d’accueil',
 
     /*
     |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ return [
         'sub_title' => 'Le refuge',
         'title' => 'LES PATTES HEUREUSES',
         'content' => 'Chaque patte mérite un foyer aimant. Découvrez nos compagnons à quatre pattes et offrez-leur une nouvelle vie pleine de câlins et d’aventures !',
-        'image_alt' => "Image d'un golden qui sourit beaucoup avec fond vert.",
+        'image_alt' => "Image d’un golden qui sourit beaucoup avec fond vert.",
         'buttons' => [
             'adopt' => [
                 'title' => 'Vers Nos animaux',
@@ -76,7 +76,7 @@ return [
 
     'volunteer' => [
         'image_alt' => 'Image d’un arbre avec des mains colorées dessus sur un fond bleu',
-        'title' => 'Comment nous aider ?',
+        'title' => 'Comment nous aider ?',
         'content' => 'Envie de faire la différence ? Rejoignez notre équipe de bénévoles et offrez temps et amour à nos compagnons à quatre pattes. Chaque petit geste compte et transforme leur vie ! Aidez-nous à leur offrir un foyer heureux et une vie meilleure.',
         'button' => [
             'title' => 'Vers la page Devenir bénévole',

@@ -17,7 +17,7 @@ return [
     */
 
     'contact_section' => [
-        'title' => 'Want to help us?',
+        'title' => 'Want to help us ?',
         'content' => 'Submit your application to become a volunteer and contribute to the well-being of our animals.',
         'sub_title' => 'Our Contact Details',
         'coords' => [
@@ -70,7 +70,7 @@ return [
                 'placeholder' => 'Rue des Lilas, Argentine, 3234 No.132',
             ],
             'message' => [
-                'label' => 'Why become a volunteer?',
+                'label' => 'Why become a volunteer ?',
                 'placeholder' => 'Your message',
             ],
         ],

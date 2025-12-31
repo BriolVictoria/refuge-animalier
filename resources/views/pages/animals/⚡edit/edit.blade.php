@@ -4,11 +4,11 @@
             <a title="{{__('admin/animals.ariane.animals_index')}}" href="{!! route('animals.index') !!}"
                class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">{{__('admin/animals.animals.title')}}</a>
             <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/animals.animals.image_alt')}}">
-            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/animals.ariane.animal_edit', ['name' => $aniaml->name])}}</h1>
+            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/animals.ariane.animal_edit', ['name' => $animal->name])}}</h1>
         </div>
 
         <section>
-            <h2 class="sr-only">{{__('admin/animals.ariane.animal_edit', ['name' => $aniaml->name])}}</h2>
+            <h2 class="sr-only">{{__('admin/animals.ariane.animal_edit', ['name' => $animal ->name])}}</h2>
             <article class="flex flex-col gap-6 bg-white rounded-sm shadow-[var(--shadow-xl)] py-6 px-6 h-full">
                 <x-admin.animals.informations_animal
                     wire:click="save"

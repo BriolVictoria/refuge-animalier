@@ -3,15 +3,15 @@
 return [
 
     /* GLOBAL MESSAGES */
-    'success_message' => 'Le bénévole a été supprimé avec succès !',
+    'success_message' => 'Le bénévole a été supprimé avec succès !',
     'empty' => 'Aucun résultat trouvé pour votre recherche.',
 
     /* TABLEAU DES BÉNÉVOLES */
     'volunteers' => [
         'title_sronly' => 'Bénévoles',
         'title' => 'Bénévoles',
-        'label' => '+ Ajouter un bénévole',
-        'title_button' => '+ Ajouter un bénévole',
+        'label' => '+ Ajouter un bénévole',
+        'title_button' => '+ Ajouter un bénévole',
         'search_placeholder' => 'Rechercher un bénévole',
         'delete_message' => 'Supprimer la fiche de :name',
         'image_alt' => 'Icône d’une flêche pour le fil d’arianne',
@@ -19,7 +19,7 @@ return [
 
     /* MODAL SUPPRESSION */
     'delete_modal' => [
-        'title' => 'Voulez-vous supprimer ce bénévole ?',
+        'title' => 'Voulez-vous supprimer ce bénévole ?',
         'description' => 'Cette action est définitive. La fiche de ce bénévole sera supprimée et ne pourra pas être récupérée.',
         'delete_button' => 'Supprimer la fiche',
         'cancel_button' => 'Annuler',

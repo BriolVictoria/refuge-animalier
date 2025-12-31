@@ -17,7 +17,7 @@ return [
     */
 
     'section' => [
-        'title' => 'Do you have a question about the shelter?',
+        'title' => 'Do you have a question about the shelter ?',
         'content' => 'Write us a message so we can respond',
         'sub_title' => 'Our Contact Details',
 

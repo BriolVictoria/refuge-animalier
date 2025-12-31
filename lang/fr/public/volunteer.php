@@ -17,7 +17,7 @@ return [
     */
 
     'contact_section' => [
-        'title' => 'Envie de nous aider ?',
+        'title' => 'Envie de nous aider ?',
         'content' => 'Faites votre demande pour devenir bénévole et contribuer au bien-être de nos animaux.',
         'sub_title' => 'Nos coordonnées',
         'coords' => [

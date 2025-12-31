@@ -3,7 +3,7 @@
 return [
 
     /* GLOBAL MESSAGES */
-    'success_message' => 'The request has been successfully deleted!',
+    'success_message' => 'The request has been successfully deleted !',
     'empty' => 'No results found for your search.',
 
     /* TABLE ADOPTIONS */
@@ -19,7 +19,7 @@ return [
 
     /* DELETE MODAL */
     'delete_modal' => [
-        'title' => 'Do you want to delete this request?',
+        'title' => 'Do you want to delete this request ?',
         'description' => 'This action is permanent. The record of this request will be deleted and cannot be recovered.',
         'delete_button' => 'Delete the record',
         'cancel_button' => 'Cancel',
@@ -34,10 +34,10 @@ return [
 
     /* FIELDS */
     'fields' => [
-        'last_name' => "Adopter's last name",
-        'first_name' => "Adopter's first name",
+        'last_name' => "Adopter’s last name",
+        'first_name' => "Adopter’s first name",
         'email' => "Email address",
-        'animal_name' => "Desired animal's name",
+        'animal_name' => "Desired animal’s name",
         'phone_number' => "Phone number",
         'address' => "Address",
         'city' => "City",
@@ -68,9 +68,9 @@ return [
 
     /* ACTIONS */
     'actions' => [
-        'view' => "View :name's record",
-        'edit' => "Edit :name's record",
-        'delete' => "Delete :name's record",
+        'view' => "View :name’s record",
+        'edit' => "Edit :name’s record",
+        'delete' => "Delete :name’s record",
         'save' => 'Save the request',
     ],
 
@@ -91,7 +91,7 @@ return [
     'volunteer_sections' => [
         'personal_info' => [
             'title' => "Adopter information",
-            'content' => "Enter the adopter's personal information to contact them and track their request.",
+            'content' => "Enter the adopter’s personal information to contact them and track their request.",
         ],
         'desired_animal' => [
             'title' => "Desired animal",
@@ -99,7 +99,7 @@ return [
         ],
         'living_environment' => [
             'title' => "Living environment",
-            'content' => "Specify the adopter's living situation to ensure the animal's well-being.",
+            'content' => "Specify the adopter’s living situation to ensure the animal’s well-being.",
         ],
         'other_info' => [
             'title' => "Other information",

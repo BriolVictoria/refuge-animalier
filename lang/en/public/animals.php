@@ -16,7 +16,7 @@ return [
         'image_alt' => 'Photo of a very smiling dog placed in the center of a green circle',
         'button' => [
             'title' => 'Go to Our Animals page',
-            'label' => 'Adopt now!',
+            'label' => 'Adopt now !',
         ],
     ],
 
@@ -40,8 +40,8 @@ return [
 
     'card' => [
         'see_profile' => 'View profile',
-        'see_profile_title' => 'Go to :name\'s profile',
-        'sr_only' => 'View the animal\'s profile',
+        'see_profile_title' => 'Go to :name’s profile',
+        'sr_only' => 'View the animal’s profile',
 
         'fields' => [
             'age' => 'Age',
@@ -59,7 +59,7 @@ return [
     */
 
     'show' => [
-        'page_name' => ':name\'s Page',
+        'page_name' => ':name’s Page',
         'breadcrumb' => [
             'link' => 'Our Animals',
             'current' => 'Animal Profile',
@@ -80,9 +80,9 @@ return [
         ],
 
         'info_parts' => [
-            'character' => 'Character:',
+            'character' => 'Character :',
             'character_content' => 'Calm and cuddly, affectionate with children, enjoys resting in the sun, a bit shy at first, but quickly very affectionate.',
-            'shelter_note' => 'Shelter note:',
+            'shelter_note' => 'Shelter note :',
             'shelter_note_content' => 'Sol is a real ball of tenderness. She is eagerly waiting for a family who will offer her love and care.',
         ],
 
@@ -101,7 +101,7 @@ return [
     */
 
     'form' => [
-        'title' => 'Do you want to adopt :name?',
+        'title' => 'Do you want to adopt :name ?',
         'form_title' => 'Adoption request form for :name',
         'form_sub_title' => 'Fields marked with * are required',
         'fields' => [
