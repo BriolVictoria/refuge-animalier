@@ -22,14 +22,14 @@
         <div class="w-full lg:w-3/5 xl:w-1/2 2xl:w-2/5">
             <x-public.sections.form
                 class="not_form lg:w-full lg:max-w-2xl"
-                title="Formulaire de contact"
-                sub_title="Les champs * sont des champs requis">
+                title="{{__('public/animals.form.form_title', ['name' => $animal->name])}}"
+                sub_title="{{__('public/animals.form.form_sub_title')}}">
                 <fieldset class="flex flex-col gap-6 ">
                     <div class="flex flex-col gap-6 md:flex-row">
                         <div class=" flex-1">
                             <x-public.form.fields.input
-                                field_name="name"
-                                label="Nom"
+                                field_name="{{__('public/animals.form.fields.name')}}"
+                                label="{{__('public/animals.form.fields.name')}}"
                                 type="text"
                                 placeholder="Smith"
                             />
@@ -37,8 +37,8 @@
 
                         <div class=" flex-1">
                             <x-public.form.fields.input
-                                field_name="first-name"
-                                label="Prénom"
+                                field_name="{{__('public/animals.form.fields.first_name')}}"
+                                label="{{__('public/animals.form.fields.first_name')}}"
                                 type="text"
                                 placeholder="Ambre"
                             />
@@ -49,22 +49,22 @@
                     </div>
 
                     <x-public.form.fields.input
-                        field_name="email"
-                        label="Adresse mail"
+                        field_name="{{__('public/animals.form.fields.email')}}"
+                        label="{{__('public/animals.form.fields.email')}}"
                         type="email"
                         placeholder="ambre.smith@gmail.com"
                     />
 
                     <x-public.form.fields.input
-                        field_name="phone"
-                        label="Numéro de téléphone"
+                        field_name="{{__('public/animals.form.fields.phone')}}"
+                        label="{{__('public/animals.form.fields.phone')}}"
                         type="tel"
                         placeholder="+32 4 56 12 76 32 45"
                     />
 
                     <x-public.form.fields.selected
-                        field_name="animal"
-                        label="Nom de l'animal"
+                        field_name="{{__('public/animals.form.fields.animal')}}"
+                        label="{{__('public/animals.form.fields.animal')}}"
                         select="selected"
                         value="{!! $animal->name !!}"
                         option="{!! $animal->name !!}"
@@ -72,7 +72,7 @@
                 </fieldset>
 
                 <x-public.form.fields.input_submit
-                    label="Envoyer la demande d'adoption"/>
+                    label="{{__('public/animals.form.submit_label')}}"/>
 
             </x-public.sections.form>
         </div>

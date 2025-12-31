@@ -2,7 +2,7 @@
     'wire',
     'field_name',
     'label',
-    'select' => null, // pour que je puisse avoir une valeur par défaut
+    'select' => null,
     'options' => [],
     ])
 

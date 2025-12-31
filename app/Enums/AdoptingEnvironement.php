@@ -4,9 +4,10 @@ namespace App\Enums;
 
 enum AdoptingEnvironement: string
 {
-    case House = 'Maison';
-    case Flat = 'Appartement';
-    case FlatShare = 'Colocation';
-    case Studio = 'Studio';
-    case Other = 'Autres';
+    case House = 'house';
+    case Flat = 'flat';
+    case FlatShare = 'flat_share';
+    case Studio = 'studio';
+    case Other = 'other';
+
 }

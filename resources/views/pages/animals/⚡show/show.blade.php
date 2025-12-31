@@ -14,23 +14,23 @@
     @endif
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
-            <a title="Voir touys les animaux" href="{!! route('animals.index') !!}"
-               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg ">Animaux</a>
-            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
-            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">Fiche de {!! $animal->name !!}</h1>
+            <a title="{{ __('admin/animals.ariane.animals_index')}}" href="{!! route('animals.index') !!}"
+               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg ">{{ __('admin/animals.animals.title')}}</a>
+            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/animals.animals.image_alt')}}">
+            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{ __('admin/animals.ariane.animal_show', ['name' => $animal->name])}}</h1>
         </div>
 
         <x-admin.animals.show
-            title_sronly="Fiche de {!! $animal->name !!}"
+            title_sronly="{{ __('admin/animals.ariane.animal_show', ['name' => $animal->name])}}"
             title1="{!! $animal->name !!}"
             state="{!! $animal->state !!}"
             image_src="{!! asset('assets/img/image_animal_bis.png') !!}"
-            image_alt="Image de chien"
+            image_alt="{{__('admin/animals.animal_alt', ['name' => $animal->name])}}"
             image_class="rounded-xl w-full max-w-xs mx-auto md:col-span-1"
-            title2="Notes de visites"
+            title2="{{ __('admin/animals.sections.visit_notes')}}"
             route_name="#"
-            title_bouton="Ajouter une note de viste"
-            label="Ajouter une note de viste"
+            title_bouton="{{ __('admin/animals.ariane.animals_index')}}"
+            label="{{ __('admin/animals.ariane.animals_index')}}"
             class="bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600"
 
         />
@@ -39,27 +39,27 @@
 
     @if($openVisitNote)
         <x-admin.modal.modal
-            title="Ajouter une note"
+            title="{{ __('admin/animals.ariane.animals_index')}}"
         >
             <x-admin.form.field.form>
                 <x-admin.form.field.input
                     wire="noteEmail"
-                    field_name="Email"
-                    label="Email"
+                    field_name="{{ __('admin/animals.fields.email')}}"
+                    label="{{ __('admin/animals.fields.email')}}"
                     type="email"
-                    placeholder="ambre.smith@gmail.com"
+                    placeholder="{{ __('admin/animals.placeholder.email')}}"
                 />
 
                 <x-admin.form.field.textarea
                     wire="noteNote"
-                    field_name="Note"
-                    label="Note"
-                    placeholder="Votre note"
+                    field_name="{{ __('admin/animals.fields.note')}}"
+                    label="{{ __('admin/animals.fields.note')}}"
+                    placeholder="{{ __('admin/animals.placeholder.note')}}"
                 />
 
                 <x-admin.form.field.button
-                    label="Créer la note"
-                    title_button="Créer la note"
+                    label="{{ __('admin/animals.buttons.create_note')}}"
+                    title_button="{{ __('admin/animals.buttons.create_note')}}"
                     click_wire="create"
                 />
             </x-admin.form.field.form>
@@ -68,27 +68,27 @@
 
     @if($noteToEdit)
         <x-admin.modal.modal
-            title="Modfier la note"
+            title="{{ __('admin/animals.buttons.edit_note')}}"
         >
             <x-admin.form.field.form>
                 <x-admin.form.field.input
                     wire="noteEmail"
-                    field_name="Email"
-                    label="Email"
+                    field_name="{{ __('admin/animals.fields.email')}}"
+                    label="{{ __('admin/animals.fields.email')}}"
                     type="email"
-                    placeholder="ambre.smith@gmail.com"
+                    placeholder="{{ __('admin/animals.placeholder.email')}}"
                 />
 
                 <x-admin.form.field.textarea
                     wire="noteNote"
-                    field_name="Note"
-                    label="Note"
-                    placeholder="Votre note"
+                    field_name="{{ __('admin/animals.fields.note')}}"
+                    label="{{ __('admin/animals.fields.note')}}"
+                    placeholder="{{ __('admin/animals.placeholder.note')}}"
                 />
 
                 <x-admin.form.field.button
-                    label="Modifier la note"
-                    title_button="Modifier la note"
+                    label="{{ __('admin/animals.buttons.edit_note')}}"
+                    title_button="{{ __('admin/animals.buttons.edit_note')}}"
                     click_wire="create"
                 />
             </x-admin.form.field.form>
@@ -97,12 +97,11 @@
 
     @if($openModalForDelete)
         <x-admin.modal.modal
-            title="Voulez-vous supprimé cet animal?"
+            title="{{ __('admin/animals.delete_modal.animal.title')}}"
         >
 
             <p class="text-sm text-gray-600">
-                Cette action est définitive.
-                La fiche de cet animal sera supprimée et ne pourra pas être récupérée.
+                {{ __('admin/animals.delete_modal.animal.description')}}
             </p>
 
 
@@ -110,18 +109,18 @@
 
                 <x-admin.button.delete_button
                     wire_delete="deleteAnimal({{ $animalToDelete }})"
-                    delete_message="Supprimer la fiche"
+                    delete_message="{{ __('admin/animals.delete_modal.animal.delete_button')}}"
                     class="px-6 py-2 bg-red-600 text-white text-lg rounded-lg
                            transition-all duration-300 hover:bg-red-700 hover:scale-105"
                 >
-                    Supprimer
+                    {{ __('admin/animals.buttons.delete')}}
                 </x-admin.button.delete_button>
 
                 <x-admin.button.button
                     wire:click="closeModal"
                     route_name="#"
-                    title_button="Annuler"
-                    label="Annuler"
+                    title_button="{{ __('admin/animals.delete_modal.animal.cancel_button')}}"
+                    label="{{ __('admin/animals.buttons.cancel')}}"
                     class="px-6 py-2 border border-gray-300 text-gray-600 rounded-lg
                            transition-all duration-300 hover:bg-gray-100"
                 />
@@ -134,12 +133,11 @@
 
     @if($openModalForDelete)
         <x-admin.modal.modal
-            title="Voulez-vous supprimé lA NOTE ?"
+            title="{{ __('admin/animals.delete_modal.note.title')}}"
         >
 
             <p class="text-sm text-gray-600">
-                Cette action est définitive.
-                La NOTE sera supprimée et ne pourra pas être récupérée.
+                {{ __('admin/animals.delete_modal.note.description')}}
             </p>
 
 
@@ -147,18 +145,18 @@
 
                 <x-admin.button.delete_button
                     wire_delete="deleteNote({{ $noteToDelete }})"
-                    delete_message="Supprimer la fiche"
+                    delete_message="{{ __('admin/animals.delete_modal.note.delete_button')}}"
                     class="px-6 py-2 bg-red-600 text-white text-lg rounded-lg
                            transition-all duration-300 hover:bg-red-700 hover:scale-105"
                 >
-                    Supprimer
+                    {{ __('admin/animals.buttons.delete')}}
                 </x-admin.button.delete_button>
 
                 <x-admin.button.button
                     wire:click="closeModal"
                     route_name="#"
-                    title_button="Annuler"
-                    label="Annuler"
+                    title_button="{{ __('admin/animals.delete_modal.note.cancel_button')}}"
+                    label="{{ __('admin/animals.buttons.cancel')}}"
                     class="px-6 py-2 border border-gray-300 text-gray-600 rounded-lg
                            transition-all duration-300 hover:bg-gray-100"
                 />

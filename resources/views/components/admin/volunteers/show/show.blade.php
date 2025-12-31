@@ -22,8 +22,8 @@
             <x-admin.button
                 wire:click.prevent="openModal({{ $this->volunteer->id }})"
                 route_name="#"
-                label="Supprimer la fiche"
-                title_button="Supprimer la fiche"
+                label="{{__('admin/volunteers.delete_modal.delete_button')}}"
+                title_button="{{__('admin/volunteers.delete_modal.delete_button')}}"
                 class="border border-blue-900 self-start text-blue-900 transition-all duration-300 hover:scale-101 hover:text-blue-600 hover:border-blue-600 w-full 2xl:row-3"
             />
         </div>

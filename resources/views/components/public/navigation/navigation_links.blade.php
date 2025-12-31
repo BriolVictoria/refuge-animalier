@@ -21,8 +21,8 @@
 
     @endforeach
 
-    <a class="inline-block transition-transform duration-300 ease-in-out hover:scale-105 lg:hidden " href="{!! route('public.homepage') !!}" title="Vers la page Accueil">
-        <img src="{!! asset("assets/img/logo_bg_phone.svg") !!}" alt="Logo Les Pattes Heureuses avec deux pattes vertes au dessus du texte">
+    <a class="inline-block transition-transform duration-300 ease-in-out hover:scale-105 lg:hidden " href="{!! route('public.homepage') !!}" title="{{__('public/navigation.items.home.title')}}">
+        <img src="{!! asset("assets/img/logo_bg_phone.svg") !!}" alt="{{__('public/navigation.logo_alt')}}">
     </a>
 
 

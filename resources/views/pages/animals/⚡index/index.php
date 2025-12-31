@@ -41,7 +41,7 @@ new class extends Component {
 
         $this->reset(['animalToDelete', 'openModalForDelete']);
 
-        session()->flash('success', 'L’animal a été supprimé avec succès');
+        session()->flash('success', __('admin/animals.success_message'));
     }
 
     public function openModal(string $animalId)

@@ -16,18 +16,18 @@ new class extends Component
         $this->volunteer = Volunteer::find($id);
 
         $this->definitions =[
-            ['title' => 'Nom', 'content' => $this->volunteer->last_name],
-            ['title' => 'Prénom', 'content' => $this->volunteer->first_name],
-            ['title' => 'Email', 'content' => $this->volunteer->email],
-            ['title' => 'Numéro de téléphone', 'content' => $this->volunteer->phone_number],
-            ['title' => 'Adresse', 'content' => $this->volunteer->adresse],
-            ['title' => 'Code postal', 'content' => $this->volunteer->postal_code],
-            ['title' => 'Ville', 'content' => $this->volunteer->town],
-            ['title' => 'Mot de passe', 'content' => $this->volunteer->password],
+            ['title' => __('admin/volunteers.show.fields.last_name'), 'content' => $this->volunteer->last_name],
+            ['title' => __('admin/volunteers.show.fields.first_name'), 'content' => $this->volunteer->first_name],
+            ['title' => __('admin/volunteers.show.fields.email'), 'content' => $this->volunteer->email],
+            ['title' => __('admin/volunteers.show.fields.phone_number'), 'content' => $this->volunteer->phone_number],
+            ['title' => __('admin/volunteers.show.fields.adresse'), 'content' => $this->volunteer->adresse],
+            ['title' => __('admin/volunteers.show.fields.postal_code'), 'content' => $this->volunteer->postal_code],
+            ['title' => __('admin/volunteers.show.fields.town'), 'content' => $this->volunteer->town],
+            ['title' => __('admin/volunteers.show.fields.password'), 'content' => $this->volunteer->password],
         ];
 
         $this->buttons =[
-            ['route_name' => route('volunteers.edit', $this->volunteer->id), 'label' => 'Modifier la fiche', 'title_button' => 'Modifier le fiche de' .$this->volunteer->name, 'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600 w-full 2xl:row-3'],
+            ['route_name' => route('volunteers.edit', $this->volunteer->id), 'label' => __('admin/volunteers.show.buttons.edit'), 'title_button' => __('admin/volunteers.buttons.edit', ['name' => $this->volunteer->first_name]), 'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600 w-full 2xl:row-3'],
 
         ];
 
@@ -39,7 +39,7 @@ new class extends Component
 
         $this->reset(['volunteerToDelete', 'openModalForDelete']);
 
-        session()->flash('success', 'Le bénévole a été supprimé avec succès');
+        session()->flash('success', __('admin/volunteers.success_message'));
         $this->redirectRoute('volunteers.index');
     }
 

@@ -43,7 +43,7 @@ new class extends Component
 
         $this->reset(['volunteerToDelete', 'openModalForDelete']);
 
-        session()->flash('success', 'Le bénévole à été supprimé avec succès');
+        session()->flash('success', __('admin/volunteers.success_message'));
     }
 
     public function openModal(string $volunteerId)

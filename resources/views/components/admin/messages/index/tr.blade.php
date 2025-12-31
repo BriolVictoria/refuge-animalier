@@ -12,7 +12,7 @@
         />
     </td>
     <td class="px-4 py-4">
-        <a title="Supprimer le message de {!! $message->email !!} "
+        <a title="{{ __('admin/messages.messages.delete_message', ['name' => $message->name])}}"
            wire:click.prevent="openModalDelete({{ $message->id }})"
            href="#"
            class="inline-block pr-2 transition-all duration-300 hover:scale-105">
@@ -40,7 +40,7 @@
 @empty
     <tr>
         <td colspan="6" class="text-center py-6 text-gray-500">
-            Aucun résultat trouvé pour votre recherche.
+            {{ __('admin/messages.empty')}}
         </td>
     </tr>
 @endforelse

@@ -1,162 +1,155 @@
 <main class="w-full">
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
-            <a title="Voir tous les bénévoles" href="{!! route('volunteers.index') !!}"
-               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">Bénévoles</a>
-            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="Image">
-            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">Ajouter un bénévole</h1>
+            <a title="{{__('admin/volunteers.ariane.volunteer_index')}}" href="{!! route('volunteers.index') !!}"
+               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">{{__('admin/volunteers.volunteers.title')}}</a>
+            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/volunteers.volunteers.image_alt')}}">
+            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/volunteers.ariane.volunteer_create')}}</h1>
         </div>
 
         <section>
-            <h2 class="sr-only">Bénévoles</h2>
+            <h2 class="sr-only">{{__('admin/volunteers.volunteers.title_sronly')}}</h2>
             <article class="flex flex-col gap-6 bg-white rounded-sm shadow-[var(--shadow-xl)] py-6 px-6 h-full">
                 <x-admin.volunteers.informations_volunteer
-                    title="Informations personnelles"
-                    content="Renseignez les informations personnelles du bénévole pour le contacter et gérer son profil."
+                    title="{{__('admin/volunteers.form.sections.personal_info.title')}}"
+                    content="{{__('admin/volunteers.form.sections.personal_info.description')}}"
                 >
 
                     <x-admin.form.field.input
                         wire="volunteerLastName"
-                        field_name="Nom"
-                        label="Nom"
+                        field_name="{{__('admin/volunteers.form.fields.last_name.label')}}"
+                        label="{{__('admin/volunteers.form.fields.last_name.label')}}"
                         type="text"
-                        placeholder="Smith"
+                        placeholder="{{__('admin/volunteers.form.fields.last_name.placeholder')}}"
                     />
 
                     <x-admin.form.field.input
                         wire="volunteerFirstName"
-                        field_name="Prénom"
-                        label="Prénom"
+                        field_name="{{__('admin/volunteers.form.fields.first_name.label')}}"
+                        label="{{__('admin/volunteers.form.fields.first_name.label')}}"
                         type="text"
-                        placeholder="Ambre"
+                        placeholder="{{__('admin/volunteers.form.fields.first_name.placeholder')}}"
                     />
 
                     <x-admin.form.field.input
                         wire="volunteerEmail"
-                        field_name="Adresse email"
-                        label="Adresse email"
+                        field_name="{{__('admin/volunteers.form.fields.email.label')}}"
+                        label="{{__('admin/volunteers.form.fields.email.label')}}"
                         type="email"
-                        placeholder="ambre.smith@gmail.com"
+                        placeholder="{{__('admin/volunteers.form.fields.email.placeholder')}}"
                     />
 
                     <x-admin.form.field.input
                         wire="volunteerPhoneNumber"
-                        field_name="Numéro de téléphone"
-                        label="Numéro de téléphone"
+                        field_name="{{__('admin/volunteers.form.fields.phone_number.label')}}"
+                        label="{{__('admin/volunteers.form.fields.phone_number.label')}}"
                         type="tel"
-                        placeholder="0450 78 96 87"
+                        placeholder="{{__('admin/volunteers.form.fields.phone_number.placeholder')}}"
                     />
 
                     <x-admin.form.field.input
                         wire="volunteerAdresse"
-                        field_name="Adresse"
-                        label="Adresse"
+                        field_name="{{__('admin/volunteers.form.fields.adresse.label')}}"
+                        label="{{__('admin/volunteers.form.fields.adresse.label')}}"
                         type="text"
-                        placeholder="Rue des Lilas 50"
+                        placeholder="{{__('admin/volunteers.form.fields.adresse.placeholder')}}"
                     />
 
                     <x-admin.form.field.input
                         wire="volunteerTown"
-                        field_name="Ville"
-                        label="Ville"
+                        field_name="{{__('admin/volunteers.form.fields.town.label')}}"
+                        label="{{__('admin/volunteers.form.fields.town.label')}}"
                         type="text"
-                        placeholder="Londres"
+                        placeholder="{{__('admin/volunteers.form.fields.town.placeholder')}}"
                     />
 
                     <x-admin.form.field.input
                         wire="volunteerPostalCode"
-                        field_name="Code postal"
-                        label="Code Postal"
+                        field_name="{{__('admin/volunteers.form.fields.postal_code.label')}}"
+                        label="{{__('admin/volunteers.form.fields.postal_code.label')}}"
                         type="text"
-                        placeholder="1234"
+                        placeholder="{{__('admin/volunteers.form.fields.postal_code.placeholder')}}"
                     />
 
 
                 </x-admin.volunteers.informations_volunteer>
 
                 <x-admin.volunteers.informations_volunteer
-                    title="Disponiblités"
-                    content="Indiquez les jours et créneaux où le bénévole est disponible pour participer aux activités."
+                    title="{{__('admin/volunteers.form.sections.availabilities.title')}}"
+                    content="{{__('admin/volunteers.form.sections.availabilities.description')}}"
                 >
 
                     <x-admin.volunteers.day_select
                         wire="volunteerAvailabilities.monday"
-                        field_name="Lundi"
-                        label="Lundi"
+                        field_name="{{__('admin/volunteers.form.availabilities.monday')}}"
+                        label="{{__('admin/volunteers.form.availabilities.monday')}}"
                         :options="$this->options"
-                        select="Pas disponible"
                     />
 
                     <x-admin.volunteers.day_select
                         wire="volunteerAvailabilities.tuesday"
-                        field_name="Mardi"
-                        label="Mardi"
+                        field_name="{{__('admin/volunteers.form.availabilities.tuesday')}}"
+                        label="{{__('admin/volunteers.form.availabilities.tuesday')}}"
                         :options="$this->options"
-                        select="Pas disponible"
                     />
 
                     <x-admin.volunteers.day_select
                         wire="volunteerAvailabilities.wednesday"
-                        field_name="Mercredi"
-                        label="Mercredi"
+                        field_name="{{__('admin/volunteers.form.availabilities.wednesday')}}"
+                        label="{{__('admin/volunteers.form.availabilities.wednesday')}}"
                         :options="$this->options"
-                        select="Pas disponible"
                     />
 
                     <x-admin.volunteers.day_select
                         wire="volunteerAvailabilities.thursday"
-                        field_name="Jeudi"
-                        label="Jeudi"
+                        field_name="{{__('admin/volunteers.form.availabilities.thursday')}}"
+                        label="{{__('admin/volunteers.form.availabilities.thursday')}}"
                         :options="$this->options"
-                        select="Pas disponible"
                     />
 
                     <x-admin.volunteers.day_select
                         wire="volunteerAvailabilities.friday"
-                        field_name="Vendredi"
-                        label="Vendredi"
+                        field_name="{{__('admin/volunteers.form.availabilities.friday')}}"
+                        label="{{__('admin/volunteers.form.availabilities.friday')}}"
                         :options="$this->options"
-                        select="Pas disponible"
                     />
 
                     <x-admin.volunteers.day_select
                         wire="volunteerAvailabilities.saturday"
-                        field_name="Samedi"
-                        label="Samedi"
+                        field_name="{{__('admin/volunteers.form.availabilities.saturday')}}"
+                        label="{{__('admin/volunteers.form.availabilities.saturday')}}"
                         :options="$this->options"
-                        select="Pas disponible"
                     />
 
                     <x-admin.volunteers.day_select
                         wire="volunteerAvailabilities.sunday"
-                        field_name="Dimanche"
-                        label="Dimanche"
+                        field_name="{{__('admin/volunteers.form.availabilities.sunday')}}"
+                        label="{{__('admin/volunteers.form.availabilities.sunday')}}"
                         :options="$this->options"
-                        select="Pas disponible"
                     />
 
 
                 </x-admin.volunteers.informations_volunteer>
 
                 <x-admin.volunteers.informations_volunteer
-                    title="Création du compte"
-                    content="Définissez le mot de passe pour que le bénévole puisse accéder à son compte."
+                    title="{{__('admin/volunteers.form.sections.account.title')}}"
+                    content="{{__('admin/volunteers.form.sections.account.description')}}"
                 >
 
                     <x-admin.form.field.input
                         wire="volunteerPassword"
-                        field_name="Mot de passe du compte"
-                        label="Mot de passe du compte"
+                        field_name="{{__('admin/volunteers.form.fields.password.label')}}"
+                        label="{{__('admin/volunteers.form.fields.password.label')}}"
                         type="password"
-                        placeholder="123456789"
+                        placeholder="{{__('admin/volunteers.form.fields.password.placeholder')}}"
                     />
 
                 </x-admin.volunteers.informations_volunteer>
 
                 <div class="flex flex-col lg:flex-row gap-6">
                     <x-admin.form.field.button
-                        label="Créer la fiche du bénévole"
-                        title_button="Créer la fiche du bénévole"
+                        label="{{__('admin/volunteers.form.buttons.create')}}"
+                        title_button="{{__('admin/volunteers.form.buttons.create')}}"
                         click_wire="create"
                     />
                 </div>

@@ -15,12 +15,12 @@ new class extends Component {
     public string $adoptingAddress;
     public string $adoptingCity;
     public string $adoptingPostCode;
-    public string $adoptingOtherAnimal = 'Oui';
-    public string $adoptingChildren = 'Oui';
-    public string $adoptingEnvironment = 'Maison';
-    public string $adoptingOutside = 'Oui';
+    public string $adoptingOtherAnimal = \App\Enums\TrueOrFalse::Yes->value;
+    public string $adoptingChildren = \App\Enums\TrueOrFalse::Yes->value;
+    public string $adoptingEnvironment = \App\Enums\AdoptingEnvironement::House->value;
+    public string $adoptingOutside = \App\Enums\TrueOrFalse::Yes->value;
     public string $adoptingCreationDate;
-    public string $adoptingState = 'En attente';
+    public string $adoptingState = \App\Enums\AdoptingState::Pending->value;
     public string $adoptingComment;
     public string $adoptingSelectedAnimalId;
 
@@ -81,7 +81,7 @@ new class extends Component {
                 'other_animal' => $this->adoptingOtherAnimal,
                 'children' => $this->adoptingChildren,
                 'environment' => $this->adoptingEnvironment,
-                'outside' => $this->adoptingEnvironment,
+                'outside' => $this->adoptingOutside,
                 'creation_date' => $this->adoptingCreationDate,
                 'state' => $this->adoptingState,
                 'comment' => $this->adoptingComment,

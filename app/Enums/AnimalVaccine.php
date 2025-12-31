@@ -4,6 +4,6 @@ namespace App\Enums;
 
 enum AnimalVaccine: string
 {
-    case Vaccinated = 'Vacciné';
-    case NotVaccinated = 'Pas vacciné';
+    case Vaccinated = 'vaccinated';
+    case NotVaccinated = 'not_vaccinated';
 }

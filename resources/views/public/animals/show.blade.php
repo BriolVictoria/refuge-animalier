@@ -21,31 +21,30 @@
 
 @endphp
 
-<x-public.app title="Page de {!! $animal->name !!}">
+<x-public.app title="{{__('public/animals.show.page_name', ['name' => $animal->name])}}">
 
     <x-public.sections.show_section
         ariane_link="{!! route('public.animals.index') !!}"
-        ariane_name="Nos animaux"
-        ariane_title="Fiche de l'animal"
+        ariane_name="{{__('public/animals.show.breadcrumb.link')}}"
+        ariane_title="{{__('public/animals.show.breadcrumb.current')}}"
         image_src="{!! asset('assets/img/arrow_arianne.svg') !!}"
-        image_alt="Image d'un fleche"
+        image_alt="{{__('public/animals.show.breadcrumb.arrow_alt')}}"
         animal_first_img="{!! asset('assets/img/image_animal_bis.png') !!}"
-        animal_first_alt="Image d'un chien (un cocker) qui regarde la caméra"
+        animal_first_alt="{{__('public/homepage.animal_alt', ['name' => $animal->name])}}"
         :definitions="$definitions"
         :buttons="$buttons"
-        information_title="Informations supplémentaires"
-        images_title="Images supplémentaire"
-        images_content="Nous avons ajouté plusieurs photos pour que vous puissiez ressentir toute
-                    sa douceur et son charme unique. Chaque image montre un petit bout de sa personnalité."
+        information_title="{{__('public/animals.show.information_title')}}"
+        images_title="{{__('public/animals.show.images_title')}}"
+        images_content="{{__('public/animals.show.images_content')}}"
         :images="$images"
         :animal="$animal"
     />
 
 
     <x-public.sections.animal_form
-        title="Voulez-vous adopter {!! $animal->name !!} &nbsp;?"
-        form_title="Formulaire de demande d’adoption pour {!! $animal->name !!}"
-        form_sub_title="Les champs * sont des champs requis"
+        title="{{__('public/animals.form.title', ['name' => $animal->name])}}"
+        form_title="{{__('public/animals.form.form_title', ['name' => $animal->name])}}"
+        form_sub_title="{{__('public/animals.form.form_sub_title')}}"
         :animal="$animal"
         id="animal_form"
     />

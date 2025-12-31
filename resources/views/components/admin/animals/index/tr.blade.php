@@ -1,8 +1,8 @@
 @forelse($this->animals as $animal)
     <tr class="odd:bg-blue-50 even:bg-white border border-blue-100 text-center">
         <td class="px-4 py-4 transition-all duration-300 hover:scale-105">
-            <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}">
-                <img alt="Image d'un chien" width="60" height="45"
+            <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}" href="{!! route('animals.show', $animal->id) !!}">
+                <img alt="{{__('admin/animals.animal_alt', ['name' => $animal->name])}}" width="60" height="45"
                      class="inline-block aspect-square w-12 h-12 rounded-full object-cover object-center"
                      src="{{ $animal->images && count($animal->images) > 0
                  ? asset('storage/' . $animal->images[0])
@@ -10,7 +10,7 @@
             </a>
         </td>
         <td class="px-4 py-4 transition-all duration-300 hover:text-blue-800 ">
-            <a title="Voir la fiche de {!! $animal->name !!}"
+            <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}"
                href="{!! route('animals.show', $animal->id) !!}">{!! $animal->name !!}</a></td>
 
         <td class="px-4 py-4">{!! $animal->breed !!}</td>
@@ -22,7 +22,7 @@
         </td>
         <td class="px-4 py-4">{!! $animal->date->translatedFormat('d/m/Y') !!}</td>
         <td class="px-4 py-4">
-            <a title="Voir la fiche de {!! $animal->name !!}" href="{!! route('animals.show', $animal->id) !!}"
+            <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}" href="{!! route('animals.show', $animal->id) !!}"
                class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -35,7 +35,7 @@
                         stroke-linejoin="round"/>
                 </svg>
             </a>
-            <a title="Modifier la fiche de {!! $animal->name !!}" href="{!! route('animals.edit', $animal->id) !!}"
+            <a title="{{ __('admin/animals.actions.edit_animal', ['name' => $animal->name])}}" href="{!! route('animals.edit', $animal->id) !!}"
                class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                 <svg width="28" height="28" viewBox="0 0 28 28"
                      xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@
                 </svg>
 
             </a>
-            <a title="Supprimer la fiche de {!! $animal->name !!} "
+            <a title="{{ __('admin/animals.actions.delete_animal', ['name' => $animal->name])}} "
                wire:click.prevent="openModal({{ $animal->id }})"
                href="#"
                class="inline-block pr-2 transition-all duration-300 hover:scale-105">
@@ -73,7 +73,7 @@
 @empty
     <tr>
         <td colspan="6" class="text-center py-6 text-gray-500">
-            Aucun résultat trouvé pour votre recherche.
+            {{ __('admin/animals.empty')}}
         </td>
     </tr>
 @endforelse

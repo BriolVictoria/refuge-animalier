@@ -8,66 +8,66 @@
 
 @endphp
 
-<x-public.app title="Formulaire de demande de bénévolat">
+<x-public.app title="{{__('public/volunteer.page_title')}}">
     <main class="lg:flex lg:flex-row ">
 
     <x-public.sections.section-contact-forms
-            title="Envie de nous aider &nbsp;?"
-            content="Faites votre demande d’adoption pour adopter votre animal de rêve"
-            sub_title="Nos coordonnées"
+            title="{{__('public/volunteer.contact_section.title')}}"
+            content="{{__('public/volunteer.contact_section.content')}}"
+            sub_title="{{__('public/volunteer.contact_section.sub_title')}}"
             :coords="$coords"
         />
 
         <x-public.sections.form
             class="lg:w-2/3"
-            title="Formulaire de demande de bénévolat"
-            sub_title="Les champs * sont des champs requis">
+            title="{{__('public/volunteer.form.title')}}"
+            sub_title="{{__('public/volunteer.form.sub_title')}}">
             <fieldset class="flex flex-col gap-6">
                 <x-public.form.fields.input
-                    field_name="name"
-                    label="Nom"
+                    field_name="{{__('public/volunteer.form.fields.name.label')}}"
+                    label="{{__('public/volunteer.form.fields.name.label')}}"
                     type="text"
-                    placeholder="Smith"
+                    placeholder="{{__('public/volunteer.form.fields.name.placeholder')}}"
                 />
 
                 <x-public.form.fields.input
-                    field_name="first-name"
-                    label="Prénom"
+                    field_name="{{__('public/volunteer.form.fields.first_name.label')}}"
+                    label="{{__('public/volunteer.form.fields.first_name.label')}}"
                     type="text"
-                    placeholder="Ambre"
+                    placeholder="{{__('public/volunteer.form.fields.name.placeholder')}}"
                 />
 
                 <x-public.form.fields.input
-                    field_name="email"
-                    label="Adresse mail"
+                    field_name="{{__('public/volunteer.form.fields.email.label')}}"
+                    label="{{__('public/volunteer.form.fields.email.label')}}"
                     type="email"
-                    placeholder="ambre.smith@gmail.com"
+                    placeholder="{{__('public/volunteer.form.fields.email.placeholder')}}"
                 />
 
                 <x-public.form.fields.input
-                    field_name="phone"
-                    label="Numéro de téléphone"
+                    field_name="{{__('public/volunteer.form.fields.phone.label')}}"
+                    label="{{__('public/volunteer.form.fields.phone.label')}}"
                     type="tel"
-                    placeholder="+32 4 56 12 76 32 45"
+                    placeholder="{{__('public/volunteer.form.fields.phone.placeholder')}}"
                 />
 
                 <x-public.form.fields.input
-                    field_name="address"
-                    label="Adresse compléte"
+                    field_name="{{__('public/volunteer.form.fields.address.label')}}"
+                    label="{{__('public/volunteer.form.fields.address.label')}}"
                     type="text"
-                    placeholder="Rue des Lilas, Argentine, 3234 n°132"
+                    placeholder="{{__('public/volunteer.form.fields.address.placeholder')}}"
                 />
 
                 <x-public.form.fields.textarea
-                    field_name="message"
-                    label="Pourquoi devenir bénévole &nbsp;?"
-                    placeholder="Votre message"
+                    field_name="{{__('public/volunteer.form.fields.message.label')}}"
+                    label="{{__('public/volunteer.form.fields.message.label')}}"
+                    placeholder="{{__('public/volunteer.form.fields.message.placeholder')}}"
                 />
 
             </fieldset>
 
             <x-public.form.fields.input_submit
-                label="Envoyer la demande"
+                label="{{__('public/volunteer.form.submit')}}"
             />
 
         </x-public.sections.form>

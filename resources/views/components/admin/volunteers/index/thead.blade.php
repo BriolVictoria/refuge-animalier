@@ -5,7 +5,7 @@
         class="px-4 py-4 cursor-pointer select-none"
     >
         <div class="flex items-center justify-center gap-1">
-            Nom
+            {{__('admin/volunteers.fields.last_name')}}
 
             @if ($this->sortField === 'last_name')
                 @if ($this->sortDirection === 'asc')
@@ -29,10 +29,10 @@
             @endif
         </div>
     </th>
-    <th class="px-4 py-4">Prénom</th>
-    <th class="px-4 py-4">Email</th>
-    <th class="px-4 py-4">Téléphone</th>
-    <th class="px-4 py-4">Action</th>
+    <th class="px-4 py-4">{{ __('admin/volunteers.fields.first_name')}}</th>
+    <th class="px-4 py-4">{{ __('admin/volunteers.fields.email')}}</th>
+    <th class="px-4 py-4">{{ __('admin/volunteers.fields.phone_number')}}</th>
+    <th class="px-4 py-4">{{ __('admin/volunteers.fields.action')}}</th>
 </tr>
 </thead>
 

@@ -26,10 +26,10 @@ new class extends Component {
         $this->roles = [\App\Enums\RoleUser::Volunteer->value, \App\Enums\RoleUser::Administrator->value];
 
         $this->notifications = [
-            ['title' => 'Notifications par email', 'id' => '1', 'for' => '1'],
-            ['title' => 'Notifications tableau de bord', 'id' => '2', 'for' => '2'],
-            ['title' => 'Alertes adoption urgentes', 'id' => '3', 'for' => '3'],
-            ['title' => 'Rappel de RDV', 'id' => '4', 'for' => '4'],
+            ['title' => __('admin/settings.notifications.items.email'), 'id' => '1', 'for' => '1'],
+            ['title' => __('admin/settings.notifications.items.dashboard'), 'id' => '2', 'for' => '2'],
+            ['title' => __('admin/settings.notifications.items.urgent_adoption'), 'id' => '3', 'for' => '3'],
+            ['title' => __('admin/settings.notifications.items.appointment'), 'id' => '4', 'for' => '4'],
         ];
 
         $this->userName = $this->user->name;

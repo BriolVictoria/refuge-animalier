@@ -24,19 +24,19 @@ new class extends Component {
         $this->animal = Animal::find($id);
 
         $this->definitions = [
-            ['title' => 'Type', 'content' => $this->animal->type],
-            ['title' => 'Age', 'content' => $this->animal->age],
-            ['title' => 'Sexe', 'content' => $this->animal->sex],
-            ['title' => 'Race', 'content' => $this->animal->breed],
-            ['title' => 'Pelage', 'content' => $this->animal->coat],
-            ['title' => 'Vaccin', 'content' => $this->animal->vaccine],
-            ['title' => 'Statut', 'content' => $this->animal->state],
-            ['title' => 'Caractèristique', 'content' => $this->animal->attitude],
-            ['title' => 'Mise à jour', 'content' => $this->animal->date->translatedFormat('d/m/Y')],
+            ['title' => __('admin/animals.fields.type'), 'content' => $this->animal->type],
+            ['title' => __('admin/animals.fields.age'), 'content' => $this->animal->age],
+            ['title' => __('admin/animals.fields.sex'), 'content' => $this->animal->sex],
+            ['title' => __('admin/animals.fields.breed'), 'content' => $this->animal->breed],
+            ['title' => __('admin/animals.fields.coat'), 'content' => $this->animal->coat],
+            ['title' => __('admin/animals.fields.vaccine'), 'content' => $this->animal->vaccine],
+            ['title' => __('admin/animals.fields.state'), 'content' => $this->animal->state],
+            ['title' => __('admin/animals.fields.attitude'), 'content' => $this->animal->attitude],
+            ['title' => __('admin/animals.fields.updated_at'), 'content' => $this->animal->date->translatedFormat('d/m/Y')],
         ];
 
         $this->buttons = [
-            ['route_name' =>route('animals.edit', $this->animal->id), 'label' => 'Modifier la fiche', 'title_button' => 'Modifier le fiche de'. $this->animal->name, 'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600 w-full 2xl:row-3'],
+            ['route_name' =>route('animals.edit', $this->animal->id), 'label' => __('admin/animals.buttons.edit_record'), 'title_button' => __('admin/animals.actions.edit_animal', ['name' => $this->animal->name]), 'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600 w-full 2xl:row-3'],
         ];
 
     }
@@ -95,7 +95,7 @@ new class extends Component {
 
         $this->reset(['animalToDelete', 'openModalForDelete']);
 
-        session()->flash('success', 'L’animal a été supprimé avec succès');
+        session()->flash('success', __('admin/animals.success_message'));
         $this->redirectRoute('animals.index');
     }
 
@@ -153,7 +153,7 @@ new class extends Component {
 
             $this->reset(['noteToDelete', 'openModalForDelete']);
 
-            session()->flash('success', 'La note a été supprimée avec succès');
+            session()->flash('success', __('admin/animals.note_success_message'));
         }
     }
 };

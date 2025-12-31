@@ -30,27 +30,27 @@
 
         <div
             class="2xl:hidden space-y-4 md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-1 [@media(min-width:1170px)]:grid-cols-2">
-            @foreach($this->messages as $message)
+            @forelse($this->messages as $message)
                 <div wire:click="openModal('see_message', {{$message->id}})"
                      class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
                     <div class="flex flex-col space-y-3">
                         <div class="flex flex-col items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Nom&nbsp;:</dt>
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/messages.show_modal.fields.name')}}&nbsp;:</dt>
                             <dd class="text-xs font-light">{!! $message->name !!}</dd>
                         </div>
 
                         <div class="flex flex-col items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Email&nbsp;:</dt>
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/messages.show_modal.fields.email')}}&nbsp;:</dt>
                             <dd class="text-xs font-light">{!! $message->email !!}</dd>
                         </div>
 
                         <div class="flex flex-col items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Objet&nbsp;:</dt>
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/messages.show_modal.fields.object')}}&nbsp;:</dt>
                             <dd class="text-xs font-light">{!! $message->object !!}</dd>
                         </div>
 
                         <div class="flex flex-col items-baseline">
-                            <dt class="text-sm font-medium pr-2.5">Date&nbsp;:</dt>
+                            <dt class="text-sm font-medium pr-2.5">{{ __('admin/messages.show_modal.fields.date')}}&nbsp;:</dt>
                             <dd class="text-xs font-light">{!! $message->date->translatedFormat('d/m/Y') !!}</dd>
                         </div>
 
@@ -60,7 +60,7 @@
                         />
 
                     </div>
-                    <a title="Supprimer le message de {!! $message->email !!} "
+                    <a title="{{__('admin/messages.messages.delete_message', ['name' => $message->name])}}"
                        wire:click.prevent="openModalDelete({{ $message->id }})"
                        href="#"
                        class="inline-block pr-2 transition-all duration-300 hover:scale-105">
@@ -83,7 +83,12 @@
                         </svg>
                     </a>
                 </div>
-            @endforeach
+                @empty
+                    <span class="text-center py-6 text-gray-500">
+                            {{ __('admin/messages.empty')}}
+                        </span>
+
+                @endforelse
         </div>
         {!! $this->messages->links() !!}
     </section>
