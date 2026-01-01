@@ -51,13 +51,13 @@ new class extends Component
     {
         $this->validate(
             [
-                'volunteerFirstName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
+                'volunteerFirstName' => ['required', 'string', 'max:255', 'min:2'],
                 'volunteerEmail' => ['required', 'email', 'max:255'],
-                'volunteerPhoneNumber' => ['required', 'string', 'max:255', 'regex:/^(\+32|0)[1-9][0-9]{7}$/'],
-                'volunteerLastName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
+                'volunteerPhoneNumber' => ['required', 'string', 'max:255'],
+                'volunteerLastName' => ['required', 'string', 'max:255', 'min:2'],
                 'volunteerAdresse' => ['required', 'string', 'max:255'],
                 'volunteerTown' => ['required', 'string', 'max:255'],
-                'volunteerPostalCode' => ['required', 'string', 'regex:/^\d{4}$/'],
+                'volunteerPostalCode' => ['required', 'string'],
                 'volunteerPassword' => ['required', 'string', 'max:255'],
             ]
         );
@@ -75,6 +75,6 @@ new class extends Component
             ]
         );
 
-        $this->redirect(route('volunteers.show', $this->volunteer->id));
+        $this->redirect(route('volunteers.show', ['locale' => app()->getLocale(), 'id' => $this->volunteer->id]));
     }
 };

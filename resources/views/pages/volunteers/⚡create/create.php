@@ -34,13 +34,13 @@ new class extends Component {
 
         $this->validate(
             [
-                'volunteerFirstName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
-                'volunteerEmail' => ['required', 'email', 'max:255'],
-                'volunteerPhoneNumber' => ['required', 'string', 'max:255', 'regex:/^(\+32|0)[1-9][0-9]{7}$/'],
-                'volunteerLastName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
+                'volunteerFirstName' => ['required', 'string', 'max:255', 'min:2'],
+                'volunteerEmail' => ['required', 'email', 'max:255', 'unique:users,email'],
+                'volunteerPhoneNumber' => ['required', 'string', 'max:255'],
+                'volunteerLastName' => ['required', 'string', 'max:255', 'min:2'],
                 'volunteerAdresse' => ['required', 'string', 'max:255'],
                 'volunteerTown' => ['required', 'string', 'max:255'],
-                'volunteerPostalCode' => ['required', 'string', 'regex:/^\d{4}$/'],
+                'volunteerPostalCode' => ['required', 'string'],
                 'volunteerPassword' => ['required', 'string', 'max:255'],
                 'volunteerAvailabilities.monday' => ['required', 'string', 'max:255'],
                 'volunteerAvailabilities.tuesday' => ['required', 'string', 'max:255'],
@@ -60,7 +60,7 @@ new class extends Component {
             'adresse' => $this->volunteerAdresse,
             'town' => $this->volunteerTown,
             'postal_code' => $this->volunteerPostalCode,
-            'password' => $this->volunteerPassword,
+            'password' => Hash::make($this->volunteerPassword),
         ]);
 
         $volunteer->availability()->create([
@@ -73,6 +73,19 @@ new class extends Component {
             'sunday' => $this->volunteerAvailabilities['sunday'],
         ]);
 
-        $this->redirect(route('volunteers.index'));
+        $user = \App\Models\User::firstOrCreate(
+            ['email' => $volunteer->email],
+            [
+                'name' => $volunteer->first_name . ' ' . $volunteer->last_name,
+                'password' => $volunteer->password,
+                'phone_number' => $volunteer->phone_number,
+                'role' => 'Volunteer',
+                'creation_date' => now(),
+                'volunteer_id' => $volunteer->id,
+            ]
+        );
+
+        $this->redirect(route('volunteers.index', ['locale' => app()->getLocale()]));
+
     }
 };

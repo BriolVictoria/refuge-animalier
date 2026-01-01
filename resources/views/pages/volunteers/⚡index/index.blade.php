@@ -17,7 +17,7 @@
         title="{{ __('admin/volunteers.volunteers.title')}}"
         label="{{ __('admin/volunteers.volunteers.label')}}"
         title_button="{{ __('admin/volunteers.volunteers.title_button')}}"
-        route_name="{!! route('volunteers.create') !!}"
+        route_name="{!! route('volunteers.create', ['locale' => app()->getLocale()]) !!}"
         class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 inline-block"
         search_placeholder="{{ __('admin/volunteers.volunteers.search_placeholder')}}"
     />
