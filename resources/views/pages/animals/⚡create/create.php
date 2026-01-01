@@ -1,21 +1,24 @@
 <?php
 
+use App\Enums\AnimalSex;
 use App\Enums\AnimalStates;
 use Illuminate\Support\Carbon;
+use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
 new class extends Component {
     use \Livewire\WithFileUploads;
+
     public string $animalName;
     public array $animalImages = [];
     public string $animalRace;
-    public string $animalVaccine = 'Vacciné';
+    public string $animalVaccine = \App\Enums\AnimalVaccine::Vaccinated->value;
     public string $animalAge;
     public string $animalCoat;
     public string $animalDate;
+    public string $animalType = \App\Enums\Type::Dog->value;
     public string $animalState = AnimalStates::AwaitingAdoption->value;
-    public string $animalSex = 'Mâle';
-    public string $animalType = 'Chien';
+    public string $animalSex = \App\Enums\AnimalSex::Female->value;
     public string $animalAttitude;
 
     public array $types = [];
@@ -25,15 +28,21 @@ new class extends Component {
 
     public function mount()
     {
-        $this->types = ['Chien', 'Chat', 'Lapin', 'Hamster'];
+        $this->types = [\App\Enums\Type::Dog->value, \App\Enums\Type::Cat->value, \App\Enums\Type::Rabbit->value, \App\Enums\Type::Hamster->value, \App\Enums\Type::Bird->value];
         $this->vaccins = [\App\Enums\AnimalVaccine::Vaccinated->value, \App\Enums\AnimalVaccine::NotVaccinated->value];
 
         $this->sexes = [
-            ['field_name' => \App\Enums\AnimalSex::Female->value, 'name' => 'sex'],
-            ['field_name' => \App\Enums\AnimalSex::Male->value, 'name' => 'sex'],
+            [
+                'field_name' => AnimalSex::Male->value,
+                'name' => 'sex',
+            ],
+            [
+                'field_name' => AnimalSex::Female->value,
+                'name' => 'sex',
+            ],
         ];
 
-        $this->states =[\App\Enums\AnimalStates::Available->value, \App\Enums\AnimalStates::CurrentlyAdopted->value, \App\Enums\AnimalStates::Adopted->value, \App\Enums\AnimalStates::AwaitingAdoption->value, \App\Enums\AnimalStates::InCare->value];
+        $this->states = [\App\Enums\AnimalStates::Available->value, \App\Enums\AnimalStates::CurrentlyAdopted->value, \App\Enums\AnimalStates::Adopted->value, \App\Enums\AnimalStates::AwaitingAdoption->value, \App\Enums\AnimalStates::InCare->value];
 
     }
 
@@ -41,24 +50,31 @@ new class extends Component {
     {
         $this->validate(
             [
-                'animalName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
+                'animalName' => ['required', 'string', 'max:255', 'min:2'],
                 'animalRace' => ['required', 'string', 'max:255'],
                 'animalVaccine' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalAge' => ['required', 'integer', 'min:0', 'max:100'],
                 'animalCoat' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalDate' => ['required', 'date'],
                 'animalState' => ['required', 'string', 'max:255'], /*A voir*/
-                'animalSex' => ['required', 'string', 'max:255'], /*A voir*/
+                'animalSex' => ['required', 'in:male,female'],
                 'animalType' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalAttitude' => ['required', 'string', 'max:255'],
-                'animalImages.*' =>['image', 'max:2048'],
-                'animalImages' =>['max:4'],
-            ] );
-
+                'animalImages' => ['array', 'max:4'],
+                'animalImages.*' => ['max:2048'],
+            ]);
         $imagesUrl = [];
         foreach ($this->animalImages as $image) {
-            $imagesUrl[] = $image->store('animals', 'public');
+            $file_name = uniqid() . '.jpg';
+            Storage::disk('public')->putFileAs(
+                'animals',
+                $image,
+                $file_name
+            );
+
+            $imagesUrl[] = $file_name;
         }
+
 
         \App\Models\Animal::create(
             [
@@ -76,6 +92,6 @@ new class extends Component {
             ]
         );
 
-        $this->redirect(route('animals.index'));
+        $this->redirect(route('animals.index', ['locale' => app()->getLocale()]));
     }
 };

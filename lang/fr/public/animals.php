@@ -81,9 +81,9 @@ return [
 
         'info_parts' => [
             'character' => 'Caractère :',
-            'character_content' => 'Calme et câline, affectueuse avec les enfants, aime les moments de repos au soleil, un peu timide au début, mais vite très attachante.',
+            'character_content' => 'Les animaux du refuge sont curieux et joueurs, tout en restant doux et sociables. Ils apprécient la compagnie des humains et des autres animaux, mais aiment aussi se reposer tranquillement. Avec un peu de patience et d’attention, ils savent se montrer très attachants et créer un lien fort avec leur future famille.',
             'shelter_note' => 'Petit mot du refuge :',
-            'shelter_note_content' => 'Sol est une vraie boule de tendresse. Elle attend avec impatience une famille qui saura lui offrir amour et douceur.',
+            'shelter_note_content' => 'Les animaux du refuge sont de vraies boules de tendresse. Ils attendent avec impatience une famille qui saura leur offrir amour, attention et douceur.',
         ],
 
         'buttons' => [
@@ -109,11 +109,17 @@ return [
             'first_name' => 'Prénom',
             'email' => 'Adresse mail',
             'phone' => 'Numéro de téléphone',
+            'address' => 'Adresse complète',
+            'postal_code' => 'Code postal',
             'animal' => 'Nom de l’animal',
+            'city' => 'Ville',
+            'message' => 'Votre message',
         ],
         'submit_label' => 'Envoyer la demande d’adoption',
     ],
 
     'animal_alt' => 'Image de :name',
+    'animal_none' => 'Aucun animal n’a été trouvé à votre recherche',
+    'animal_none_img' => 'Aucune photo de :name',
 
 ];

@@ -90,7 +90,8 @@ return [
         'view_note' => "Voir la note de :email",
         'edit_note' => "Modifier la note de :email",
         'delete_note' => "Supprimer la note de :email",
-    ],
+        'add_note'
+=>'Ajouter une note'    ],
 
     /* FIL D’ARIANE / TITRES */
     'ariane' => [

@@ -8,7 +8,7 @@
             title="{{__('public/animals.hero.title')}}"
             content="{{__('public/animals.hero.content')}}"
             :have_button="true"
-            btn_url="{!! route('public.animals.index') !!}"
+            btn_url="{!! route('public.animals.index', ['locale' => app()->getLocale()]) !!}"
             btn_title="{{__('public/animals.hero.button.title')}}"
             btn_label="{{__('public/animals.hero.button.label')}}"
             btn_class="bg-blue-900 text-white self-start transition-transform duration-300 hover:scale-105"
@@ -17,10 +17,6 @@
         <x-public.sections.section-animals-card
             title="{{__('public/animals.list.title')}}"
             :animals="$animals"
-            btn_url="{!! route('public.animals.index') !!}"
-            btn_title="{{__('public/animals.list.filter')}}"
-            btn_label="{{__('public/animals.list.filter')}}"
-            btn_class="border-blue-900 border-[0.09375rem] text-blue-900 transition-transform duration-300 hover:scale-105"
         />
 
     </main>

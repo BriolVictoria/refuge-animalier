@@ -22,7 +22,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Animal List Section
+    | AnimalEnum List Section
     |--------------------------------------------------------------------------
     */
 
@@ -34,7 +34,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Animal Card
+    | AnimalEnum Card
     |--------------------------------------------------------------------------
     */
 
@@ -45,7 +45,7 @@ return [
 
         'fields' => [
             'age' => 'Age',
-            'breed' => 'Breed',
+            'breed' => 'Type',
             'coat' => 'Coat',
             'attitude' => 'Attitude',
             'status' => 'Status',
@@ -54,7 +54,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Animal Profile Page
+    | AnimalEnum Profile Page
     |--------------------------------------------------------------------------
     */
 
@@ -62,7 +62,7 @@ return [
         'page_name' => ':name’s Page',
         'breadcrumb' => [
             'link' => 'Our Animals',
-            'current' => 'Animal Profile',
+            'current' => 'AnimalEnum Profile',
             'arrow_alt' => 'Image of an arrow',
         ],
 
@@ -74,16 +74,16 @@ return [
         'fields' => [
             'name' => 'Name',
             'age' => 'Age',
-            'breed' => 'Breed',
+            'breed' => 'Type',
             'coat' => 'Coat',
             'attitude' => 'Attitude',
         ],
 
         'info_parts' => [
-            'character' => 'Character :',
-            'character_content' => 'Calm and cuddly, affectionate with children, enjoys resting in the sun, a bit shy at first, but quickly very affectionate.',
-            'shelter_note' => 'Shelter note :',
-            'shelter_note_content' => 'Sol is a real ball of tenderness. She is eagerly waiting for a family who will offer her love and care.',
+            'character' => 'Character:',
+            'character_content' => 'The shelter animals are curious and playful, while remaining gentle and sociable. They enjoy the company of humans and other animals, but also like to rest quietly. With a little patience and attention, they can become very affectionate and form a strong bond with their future family.',
+            'shelter_note' => 'A note from the shelter:',
+            'shelter_note_content' => 'The shelter animals are real bundles of affection. They are eagerly waiting for a family that will give them love, care, and kindness.',
         ],
 
         'buttons' => [
@@ -109,11 +109,17 @@ return [
             'first_name' => 'First Name',
             'email' => 'Email Address',
             'phone' => 'Phone Number',
-            'animal' => 'Animal Name',
+            'city' => 'City',
+            'postal_code' => 'Postal code',
+            'address' => 'Full address',
+            'message' => 'Your message',
+            'animal' => 'AnimalEnum Name',
         ],
         'submit_label' => 'Submit adoption request',
     ],
 
     'animal_alt' => 'Image of :name',
+    'animal_none' => 'No animals were found for your search',
+    'animal_none_img' => 'No photos of :name',
 
 ];

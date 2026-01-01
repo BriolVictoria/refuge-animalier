@@ -33,24 +33,25 @@
             @if($this->animal->images && count($this->animal->images) > 0)
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
                     @foreach($this->animal->images as $image)
-                        <img
-                            src="{{ asset('storage/' . $image) }}"
-                            alt="{{__('admin/animals.animal_alt', ['name' => $this->animal->name])}}"
-                            class="rounded-xl w-full aspect-square object-cover object-center shadow-md">
+                        <img width="72" height="72"
+                             src="{{ asset('storage/animals/' . $image) }}"
+                             alt="{{__('admin/animals.animal_alt', ['name' => $this->animal->name])}}"
+                             class="rounded-xl w-72 h-72 object-cover object-center shadow-md">
                     @endforeach
                 </div>
 
             @else
                 <img
+                    width="72" height="72"
                     src="{{ asset('assets/img/animalProfil.jpg') }}"
                     alt="{{__('admin/animals.animal_alt', ['name' => $this->animal->name])}}"
-                    class="rounded-xl w-full aspect-square object-cover object-center shadow-md">
+                    class="rounded-xl w-72 h-72 object-cover object-center shadow-md">
             @endif
         </div>
         <div class="flex flex-col gap-3 md:col-span-3 lg:flex-row lg:justify-end">
             <x-admin.animals.show.buttons_show_animal/>
             <x-admin.button
-                wire:click.prevent="openModal({{ $this->animal->id }})"
+                wire:click.prevent="openModalAnimal({{ $this->animal->id }})"
                 route_name="#"
                 label="{{ __('admin/animals.delete_modal.animal.delete_button')}}"
                 title_button="{{ __('admin/animals.delete_modal.animal.delete_button')}}"

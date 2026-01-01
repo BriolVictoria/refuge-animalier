@@ -18,7 +18,7 @@ return [
         'image_alt' => 'Breadcrumb arrow icon',
     ],
 
-    'images_alt' => 'Animal’s images',
+    'images_alt' => 'AnimalEnum’s images',
 
     /* DELETE MODAL */
     'delete_modal' => [
@@ -50,7 +50,7 @@ return [
 
     /* FIELDS */
     'fields' => [
-        'photo' => "Animal images",
+        'photo' => "AnimalEnum images",
         'name' => "Name",
         'type' => "Type",
         'age' => "Age",
@@ -103,7 +103,7 @@ return [
 
     /* ANIMAL RECORD SECTION TITLES */
     'sections' => [
-        'definitions' => "Animal information",
+        'definitions' => "AnimalEnum information",
         'general_information' => "General information",
         'health_and_characteristics' => "Health and characteristics",
         'visit_notes' => "Visit notes",
