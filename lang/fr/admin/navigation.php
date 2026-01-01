@@ -31,7 +31,7 @@ return [
         ],
 
         'desktop' => [
-            'alt' => 'Logo Les Pattes Heureuses avec deux pattes vertes au-dessus du texte',
+            'alt' => 'Logo menant vers le dashboard',
         ],
     ],
 
@@ -41,8 +41,12 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'icons' => [
-        'alt' => "Image d’un logo",
+    'icons_alt' => [
+        'dashboard' => "Icône menant vers le tableau de bord",
+        'animal' => "Icône menant vers les animaux",
+        'adopting' => "Icône menant vers les demandes d’adoption",
+        'volunteer' => "Icône menant vers les bénévoles",
+        'message' => "Icône menant vers les messages",
     ],
 
     /*

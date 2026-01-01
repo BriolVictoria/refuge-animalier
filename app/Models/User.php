@@ -26,6 +26,7 @@ class User extends Authenticatable
         'role',
         'creation_date',
         'password',
+        'volunteer_id',
     ];
 
     /**
@@ -56,8 +57,8 @@ class User extends Authenticatable
         return $this->hasMany(Animal::class);
     }
 
-   /* public function adoptings(): HasMany
+    public function volunteer(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasMany(Adopting::class);
-    }*/
+        return $this->belongsTo(Volunteer::class);
+    }
 }
