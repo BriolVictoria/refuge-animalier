@@ -45,7 +45,7 @@ new class extends Component {
         $this->reset(['messageToDelete', 'openModalForDelete']);
 
         session()->flash('success', __('admin/messages.success_message'));
-        $this->redirectRoute('messages.index');
+        $this->redirectRoute('messages.index', ['locale' => app()->getLocale()]);
     }
 
     public function openModalDelete(string $animalId)

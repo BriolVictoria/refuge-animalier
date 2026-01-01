@@ -72,7 +72,7 @@ new class extends Component {
             ]
         );
 
-        $this->redirect(route('settings'));
+        $this->redirect(route('settings', ['locale' => app()->getLocale()]));
     }
 
 

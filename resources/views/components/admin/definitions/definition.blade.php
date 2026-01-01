@@ -14,7 +14,7 @@
         label="{!! $label !!}"
         title_button="{!! $title_button !!}"
         class="{!! $class !!}"
-        route_name="{!! route('adoptings.index') !!}"
+        route_name="{!! route('adoptings.index', ['locale' => app()->getLocale()]) !!}"
     />
 
 </article>

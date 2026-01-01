@@ -36,7 +36,7 @@
 
                 <div class="flex items-baseline">
                     <dt class="text-sm font-medium pr-2.5">{{ __('admin/messages.show_modal.fields.email')}}&nbsp;:</dt>
-                    <dd class="text-xs font-light">{!! $message->email !!}</dd>
+                    <dd class="text-xs font-light break-all max-w-full">{!! $message->email !!}</dd>
                 </div>
 
 
