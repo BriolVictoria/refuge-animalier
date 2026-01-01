@@ -16,4 +16,24 @@ return [
         'keywords' => 'Shelter, Animals, Adoption',
     ],
 
+    'header' => [
+            'home' => [
+                'label' => 'Home',
+                'title' => 'Go to the home page',
+            ],
+            'about' => [
+                'label' => 'The shelter',
+                'title' => 'Go to the shelter page',
+            ],
+            'animals' => [
+                'label' => 'Our animals',
+                'title' => 'Go to the animals page',
+            ],
+            'contact' => [
+                'label' => 'Contact us',
+                'title' => 'Go to the contact page',
+            ],
+        ],
+
+
 ];

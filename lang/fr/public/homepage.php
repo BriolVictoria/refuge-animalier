@@ -85,4 +85,15 @@ return [
     ],
 
     'animal_alt' => 'Image de :name',
+
+    'buttons' => [
+        'animals' => [
+            'title' => 'Vers nos animaux',
+            'label' => 'Adopter maintenant !',
+        ],
+        'contact' => [
+            'title' => 'Vers Contactez-nous',
+            'label' => 'Contactez-nous',
+        ],
+    ],
 ];

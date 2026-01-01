@@ -84,4 +84,15 @@ return [
         ],
     ],
     'animal_alt' => 'Image of :name',
+
+    'buttons' => [
+        'animals' => [
+            'title' => 'Go to our animals',
+            'label' => 'Adopt now !',
+        ],
+        'contact' => [
+            'title' => 'Go to contact page',
+            'label' => 'Contact us',
+        ],
+    ],
 ];

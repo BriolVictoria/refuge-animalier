@@ -16,4 +16,23 @@ return [
         'keywords' => 'Refuge, Animaux, Adoption',
     ],
 
+    'header' => [
+        'home' => [
+            'label' => 'Accueil',
+            'title' => 'Vers la page Accueil',
+        ],
+        'about' => [
+            'label' => 'Le refuge',
+            'title' => 'Vers la page Le refuge',
+        ],
+        'animals' => [
+            'label' => 'Nos animaux',
+            'title' => 'Vers la page Nos animaux',
+        ],
+        'contact' => [
+            'label' => 'Contactez-nous',
+            'title' => 'Vers la page Contactez-nous',
+        ],
+    ],
+
 ];
