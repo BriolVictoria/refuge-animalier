@@ -49,7 +49,7 @@ return [
         'creation_date' => "Date de la demande",
         'state' => "Statut",
         'comment' => "Commentaire interne (réservé au personnel)",
-        'selected_animal' => "Animal désiré",
+        'selected_animal' => "AnimalEnum désiré",
         'actions' => "Actions",
     ],
 
@@ -96,7 +96,7 @@ return [
             'content' => "Renseignez les informations personnelles de l’adoptant pour le contacter et suivre sa demande.",
         ],
         'desired_animal' => [
-            'title' => "Animal désiré",
+            'title' => "AnimalEnum désiré",
             'content' => "Sélectionnez l’animal que l’adoptant souhaite accueillir.",
         ],
         'living_environment' => [

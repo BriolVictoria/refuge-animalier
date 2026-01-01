@@ -18,7 +18,7 @@
         title="{{__('admin/adoptings.adoptings.title')}}"
         label="{{__('admin/adoptings.adoptings.add_label')}}"
         title_button="{{__('admin/adoptings.adoptings.add_button')}}"
-        route_name="{!! route('adoptings.create') !!}"
+        route_name="{!! route('adoptings.create', ['locale' => app()->getLocale()]) !!}"
         class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 inline-block"
         search_placeholder="{{__('admin/adoptings.adoptings.search_placeholder')}}"
     />

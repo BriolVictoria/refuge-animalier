@@ -41,18 +41,18 @@ new class extends Component {
         $this->adoptingSelectedAnimalId = $id;
 
         $this->other_animals = [
-            ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'animal'],
-            ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'animal'],
+            ['field_name' => \App\Enums\AnimalEnum::Animal->value, 'name' => 'animal'],
+            ['field_name' => \App\Enums\AnimalEnum::NoAnimal->value, 'name' => 'animal'],
         ];
 
         $this->children = [
-            ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'children'],
-            ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'children'],
+            ['field_name' => \App\Enums\Children::Children->value, 'name' => 'children'],
+            ['field_name' => \App\Enums\Children::NoChildren->value, 'name' => 'children'],
         ];
 
         $this->outsides = [
-            ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'outside'],
-            ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'outside'],
+            ['field_name' => \App\Enums\Outside::Outside->value, 'name' => 'outside'],
+            ['field_name' => \App\Enums\Outside::NoOutside->value, 'name' => 'outside'],
         ];
 
         $this->states = [\App\Enums\AdoptingState::Pending->value, \App\Enums\AdoptingState::Done->value, \App\Enums\AdoptingState::InProgress->value];
@@ -78,7 +78,24 @@ new class extends Component {
 
     public function update(): void
     {
-        $this->validation();
+        $this->validate(
+            [
+                'adoptingFirstName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
+                'adoptingLastName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
+                'adoptingEmail' => ['required', 'email', 'max:255', 'unique:users,email'],
+                'adoptingPhoneNumber' => ['required', 'string', 'max:255'],
+                'adoptingAddress' => ['required', 'string', 'max:255'],
+                'adoptingCity' => ['required', 'string', 'max:255'],
+                'adoptingPostCode' => ['required', 'string'],
+                'adoptingOtherAnimal' => ['required', 'string', 'max:255'],
+                'adoptingChildren' => ['required', 'string', 'max:255'],
+                'adoptingEnvironment' => ['required', 'string', 'max:255'],
+                'adoptingOutside' => ['required', 'string', 'max:255'],
+                'adoptingCreationDate' => ['required', 'date'],
+                'adoptingState' => ['required', 'string', 'max:255'],
+                'adoptingComment' => ['required', 'string', 'max:255'],
+            ]
+        );
         $this->adopting->update(
             [
                 'first_name' => $this->adoptingFirstName,
@@ -99,7 +116,7 @@ new class extends Component {
             ]
         );
 
-        $this->redirect(route('adoptings.show', $this->adopting->id));
+        $this->redirect(route('adoptings.show', ['locale' => app()->getLocale(), 'id' => $this->adopting->id]));
     }
 };
 
