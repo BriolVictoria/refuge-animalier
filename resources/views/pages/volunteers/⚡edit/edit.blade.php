@@ -162,8 +162,8 @@
 
                 <div class="flex flex-col lg:flex-row gap-6">
                     <x-admin.form.field.button
-                        label="{{__('admin/volunteers.form.buttons.create')}}"
-                        title_button="{{__('admin/volunteers.form.buttons.create')}}"
+                        label="{{__('admin/volunteers.form.buttons.edit')}}"
+                        title_button="{{__('admin/volunteers.form.buttons.edit')}}"
                         click_wire="update"
                     />
                 </div>

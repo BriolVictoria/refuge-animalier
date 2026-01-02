@@ -32,7 +32,6 @@ new class extends Component {
             ['title' => __('admin/animals.fields.breed'), 'content' => $this->animal->breed],
             ['title' => __('admin/animals.fields.coat'), 'content' => $this->animal->coat],
             ['title' => __('admin/animals.fields.vaccine'), 'content' => $this->animal->vaccine],
-            ['title' => __('admin/animals.fields.state'), 'content' => $this->animal->state],
             ['title' => __('admin/animals.fields.attitude'), 'content' => $this->animal->attitude],
             ['title' => __('admin/animals.fields.updated_at'), 'content' => $this->animal->date->translatedFormat('d/m/Y')],
         ];

@@ -141,8 +141,8 @@
 
                 <div class="flex flex-col lg:flex-row gap-6">
                     <x-admin.form.field.button
-                        label="{{__('admin/adoptings.actions.save')}}"
-                        title_button="{{__('admin/adoptings.actions.save')}}"
+                        label="{{__('admin/adoptings.buttons_show.edit')}}"
+                        title_button="{{__('admin/adoptings.buttons_show.edit')}}"
                         click_wire="update"
                     />
                 </div>

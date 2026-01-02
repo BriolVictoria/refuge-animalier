@@ -74,6 +74,7 @@ return [
         ],
         'buttons' => [
             'create' => 'Créer la fiche du bénévole',
+            'edit' => 'Modifier la fiche du bénévole',
         ],
     ],
 

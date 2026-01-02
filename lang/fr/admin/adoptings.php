@@ -84,7 +84,7 @@ return [
 
     /* BOUTONS SUR LA PAGE CREATE / SHOW */
     'buttons_show' => [
-        'edit' => 'Modifier la fiche',
+        'edit' => 'Modifier la demande',
         'save' => 'Enregistrer la demande',
     ],
 
