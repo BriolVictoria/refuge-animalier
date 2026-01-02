@@ -101,6 +101,7 @@
                         field_name="{{__('admin/settings.security.fields.current_password')}}"
                         label="{{__('admin/settings.security.fields.current_password')}}"
                         type="password"
+                        value="{{auth()->user()->password}}"
                     />
                 </div>
 

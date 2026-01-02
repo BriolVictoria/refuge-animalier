@@ -5,7 +5,7 @@ it(
     'displays the homepage',
     function () {
         //Act
-        $response = $this->get(route('public.homepage')) ;
+        $response = $this->get(route('public.homepage', ['locale' => app()->getLocale()])) ;
 
         // Assert
         $response->assertStatus(200);
