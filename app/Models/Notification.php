@@ -9,10 +9,4 @@ class Notification extends Model
 {
     use HasFactory;
     protected $fillable = ['text'];
-    public static function add(string $text): self
-    {
-        return self::create([
-            'text' => $text,
-        ]);
-    }
 }
