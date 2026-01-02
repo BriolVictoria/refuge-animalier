@@ -1,0 +1,168 @@
+<main class="w-full">
+    <div>
+        <div class="flex items-center gap-2 border-b border-blue-900">
+            <a title="{{__('admin/adoptings.ariane.adoptings_index')}}" href="{!! route('adoptings.index', ['locale' => app()->getLocale()]) !!}"
+               class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">{{__('admin/adoptings.adoptings.title')}}</a>
+            <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/adoptings.adoptings.image_alt')}}">
+            <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/adoptings.adoptings.add_label')}}</h1>
+        </div>
+
+        <section>
+            <h2 class="sr-only">{{__('admin/adoptings.adoptings.title_sronly')}}</h2>
+            <article class="flex flex-col gap-6 bg-white rounded-sm shadow-[var(--shadow-xl)] py-6 px-6 h-full">
+                <x-admin.volunteers.informations_volunteer
+                    title="{{__('admin/adoptings.volunteer_sections.personal_info.title')}}"
+                    content="{{__('admin/adoptings.volunteer_sections.personal_info.content')}}"
+                >
+
+                    <x-admin.form.field.input
+                        wire="adoptingLastName"
+                        field_name="first_name"
+                        label="{{__('admin/adoptings.fields.last_name')}}"
+                        type="text"
+                        placeholder="{{__('admin/adoptings.placeholder.last_name')}}"
+                    />
+
+                    <x-admin.form.field.input
+                        wire="adoptingFirstName"
+                        field_name="last_name"
+                        label="{{__('admin/adoptings.fields.first_name')}}"
+                        type="text"
+                        placeholder="{{__('admin/adoptings.placeholder.first_name')}}"
+                    />
+
+                    <x-admin.form.field.input
+                        wire="adoptingEmail"
+                        field_name="email"
+                        label="{{__('admin/adoptings.fields.email')}}"
+                        type="email"
+                        placeholder="{{__('admin/adoptings.placeholder.email')}}"
+                    />
+
+                    <x-admin.form.field.input
+                        wire="adoptingPhoneNumber"
+                        field_name="phone"
+                        label="{{__('admin/adoptings.fields.phone_number')}}"
+                        type="tel"
+                        placeholder="{{__('admin/adoptings.placeholder.phone')}}"
+                    />
+
+                    <x-admin.form.field.input
+                        wire="adoptingAddress"
+                        field_name="address"
+                        label="{{__('admin/adoptings.fields.address')}}"
+                        type="text"
+                        placeholder="{{ __('admin/adoptings.placeholder.address')}}"
+                    />
+
+                    <x-admin.form.field.input
+                        wire="adoptingCity"
+                        field_name="city"
+                        label="{{__('admin/adoptings.fields.city')}}"
+                        type="text"
+                        placeholder="{{ __('admin/adoptings.placeholder.city')}}"
+                    />
+
+                    <x-admin.form.field.input
+                        wire="adoptingPostCode"
+                        field_name="postal"
+                        label="{{__('admin/adoptings.fields.postcode')}}"
+                        type="text"
+                        placeholder="{{__('admin/adoptings.placeholder.post_code')}}"
+                    />
+
+
+                </x-admin.volunteers.informations_volunteer>
+
+                <x-admin.volunteers.informations_volunteer
+                    title="{{__('admin/adoptings.volunteer_sections.desired_animal.title')}}"
+                    content="{{__('admin/adoptings.volunteer_sections.desired_animal.content')}}"
+                >
+
+                    <x-admin.form.field.selected-collection
+                        wire="adoptingSelectedAnimalId"
+                        field_name="animal"
+                        label="{{__('admin/adoptings.fields.animal_name')}}"
+                        :options="$this->animals"
+                        :select="$adoptingSelectedAnimalId"
+                    />
+
+                </x-admin.volunteers.informations_volunteer>
+
+
+                <x-admin.volunteers.informations_volunteer
+                    title="{{__('admin/adoptings.volunteer_sections.living_environment.title')}}"
+                    content="{{__('admin/adoptings.volunteer_sections.living_environment.content')}}"
+                >
+
+                    <x-admin.form.field.radio
+                        wire="adoptingOtherAnimal"
+                        title="{{__('admin/adoptings.fields.other_animal')}}"
+                        :radios="$this->other_animals"
+                    />
+
+                    <x-admin.form.field.radio
+                        wire="adoptingChildren"
+                        title="{{__('admin/adoptings.fields.children')}}"
+                        :radios="$this->children"
+                    />
+
+                    <x-admin.form.field.selected
+                        wire="adoptingEnvironment"
+                        field_name="environment"
+                        label="{{__('admin/adoptings.fields.environment')}}"
+                        :options="$this->environments"
+                    />
+
+                    <x-admin.form.field.radio
+                        wire="adoptingOutside"
+                        title="{{__('admin/adoptings.fields.outside')}}"
+                        :radios="$this->outsides"
+                    />
+
+
+                </x-admin.volunteers.informations_volunteer>
+
+                <x-admin.volunteers.informations_volunteer
+                    title="{{__('admin/adoptings.volunteer_sections.other_info.title')}}"
+                    content="{{__('admin/adoptings.volunteer_sections.other_info.content')}}"
+                >
+
+                    <x-admin.form.field.input
+                        wire="adoptingCreationDate"
+                        field_name="date"
+                        label="{{__('admin/adoptings.fields.creation_date')}}"
+                        type="date"
+                        placeholder="{{__('admin/adoptings.placeholder.date')}}"
+                    />
+
+                    <x-admin.form.field.selected
+                        wire="adoptingState"
+                        field_name="state"
+                        label="{{__('admin/adoptings.fields.state')}}"
+                        :options="$this->states"
+                    />
+
+
+                    <x-admin.form.field.textarea
+                        wire="adoptingComment"
+                        field_name="comment"
+                        label="{{__('admin/adoptings.fields.comment')}}"
+                        placeholder="{{ __('admin/adoptings.placeholder.comment')}}"
+                    />
+
+
+                </x-admin.volunteers.informations_volunteer>
+
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <x-admin.form.field.button
+                        label="{{__('admin/adoptings.actions.save')}}"
+                        title_button="{{__('admin/adoptings.actions.save')}}"
+                        click_wire="create"
+                    />
+                </div>
+
+            </article>
+        </section>
+    </div>
+</main>

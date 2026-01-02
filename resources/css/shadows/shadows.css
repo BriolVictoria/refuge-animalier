@@ -1,0 +1,5 @@
+@layer base {
+    :root {
+        --shadow-xl: 0 0 1rem rgba(0 0 0 / 0.2);
+    }
+}

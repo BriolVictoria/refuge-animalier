@@ -1,0 +1,52 @@
+@layer base {
+    :root{
+        /*BLUE*/
+        --color-blue-50: #F0F4F7;
+        --color-blue-100: #D5EAFF;
+        --color-blue-200: #DFE6ED;
+        --color-blue-300: #C0CDDB;
+        --color-blue-400: #A1B4C9;
+        --color-blue-500: #829CB7;
+        --color-blue-600: #6383A5;
+        --color-blue-700: #679FD1;
+        --color-blue-800: #4F80AE;
+        --color-blue-900: #2B517A;
+
+        /*GREEN*/
+        --color-green-50: #E9F4EE;
+        --color-green-100: #D7ECE2;
+        --color-green-200: #C7E5D7;
+        --color-green-300: #B7D7C2;
+        --color-green-400: #A8D1B6;
+        --color-green-500: #A3C9A8;
+        --color-green-600: #8EBB9A;
+        --color-green-700: #79BB97;
+        --color-green-800: #5F9478;
+        --color-green-900: #4F7A63;
+
+        /*RED*/
+        --color-red-50: #FFE3E3;
+        --color-red-100: #FFCFCF;
+        --color-red-200: #FFC7C7;
+        --color-red-300: #FF9F9F;
+        --color-red-400: #FF6F6F;
+        --color-red-500: #FF3A3A;
+        --color-red-600: #FF1F1F;
+        --color-red-700: #FF0C0C;
+        --color-red-800: #FF0505;
+        --color-red-900: #FF0000;
+
+        /*ORANGE*/
+        --color-orange-50: #FFFAE2;
+        --color-orange-100: #FFF5D4;
+        --color-orange-200: #FFEEC6;
+        --color-orange-300: #FFE6B3;
+        --color-orange-400: #FFDEA0;
+        --color-orange-500: #FFD48E;
+        --color-orange-600: #FEC974;
+        --color-orange-700: #F3C069;
+        --color-orange-800: #EFBF61;
+        --color-orange-900: #EFB758;
+
+    }
+}

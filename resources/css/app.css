@@ -1,4 +1,11 @@
 @import 'tailwindcss';
+@import './colors/colors.css';
+@import './fonts/fonts.css';
+@import './fonts/font-sizes.css';
+@import './shadows/shadows.css';
+@import './public/burger_menu.css';
+@import './public/general.css';
+@import './public/background_image.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,6 +13,6 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
