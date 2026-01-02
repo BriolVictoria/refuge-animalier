@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\RoleUser;
 use App\Models\Adopting;
 use App\Models\Animal;
 use App\Models\Availability;
@@ -25,9 +26,17 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $user = User::factory()->create([
-            'name' => 'Ambre Smith',
-            'email' => 'ambre.smith@gmail.com',
+            'name' => 'Elise Smith',
+            'email' => 'elise.smith@admin.com',
             'password' => password_hash('123', PASSWORD_BCRYPT),
+            'role' => RoleUser::Administrator->value,
+        ]);
+
+        $user = User::factory()->create([
+            'name' => 'Thomas Tomate',
+            'email' => 'thomas.tomate@volunteer.com',
+            'password' => password_hash('123', PASSWORD_BCRYPT),
+            'role' => RoleUser::Volunteer->value,
         ]);
 
 

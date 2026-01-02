@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'home' => '{locale}/admin/dashboard',
+    'home' => app()->getLocale() . '/admin/dashboard',
 
     /*
     |--------------------------------------------------------------------------

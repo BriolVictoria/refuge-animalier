@@ -3,6 +3,9 @@
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+   return redirect('/fr');
+});
 Route::prefix('{locale}')->middleware(\App\Http\Middleware\SetLocaleMiddleware::class)->group(function (){
     Route::get('/', [\App\Http\Controllers\HomePageController::class, 'index'])->name('public.homepage');
 
