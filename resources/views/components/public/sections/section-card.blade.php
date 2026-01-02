@@ -22,7 +22,7 @@
         @foreach($animals as $animal)
             <x-public.sections.card
                 :section_title="'AnimalEnum:'. $animal->name"
-                :image_path="asset('assets/img/image_animal.png')"
+                image_path="{{ !empty($animal->images[0]) ? asset('storage/animals/' . $animal->images[0]) : asset('assets/img/animalProfil.jpg')}}"
                 :image_alt="__('public/homepage.animal_alt', ['name' => $animal->name])"
                 :animal="$animal"
                 :definitions="[

@@ -10,7 +10,7 @@
         </a>
 
         <a class="transition-transform duration-300 ease-in-out hover:scale-105 hidden lg:block pr-5" href="{!! route('dashboard', ['locale' => app()->getLocale()]) !!}" title="{{__('admin/navigation.logos.dashboard_link_title')}}">
-            <img class="w-[20rem]" src="{!! asset("assets/img/full_logo_phone.svg") !!}" alt="{{__('admin/navigation.logos.desktop.alt')}}">
+            <img class="w-[20rem]" width="22" height="22" src="{!! asset("assets/img/full_logo_phone.svg") !!}" alt="{{__('admin/navigation.logos.desktop.alt')}}">
         </a>
 
         <x-admin.navigation.burger_menu/>

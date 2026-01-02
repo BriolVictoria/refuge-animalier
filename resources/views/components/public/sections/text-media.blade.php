@@ -15,6 +15,8 @@
 
     <figure class="md:col-start-1 md:col-end-5 2xl:col-start-2 2xl:col-end-7 2xl:flex 2xl:justify-center">
         <img class="2xl:w-[34rem]"
+             width="50"
+             height="50"
             src="{!! $image_path !!}"
              alt="{!! $image_alt !!}">
     </figure>

@@ -13,7 +13,7 @@
 
         <div class="lg:w-1/2 2xl:w-2/5">
             <img
-                src="{{ asset('storage/animals/' . ($animal->images[0] ?? __('public/animals.animal_none_img', ['name' => $animal->name]))) }}"
+                src="{{ !empty($animal->images[0]) ? asset('storage/animals/' . $animal->images[0]) : asset('assets/img/animalProfil.jpg')}}"
                 alt="{{ __('public/animals.animal_alt', ['name' => $animal->name]) }}"
                 class="hidden lg:block lg:w-full lg:object-cover lg:rounded-xl"
             >

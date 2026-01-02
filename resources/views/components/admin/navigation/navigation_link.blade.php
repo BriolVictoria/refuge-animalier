@@ -10,7 +10,7 @@
 
 <li class="{!! $list_class !!}">
     <a class="{!! $links_class !!}" wire:navigate wire:current="active bg-blue-400 rounded-sm " href="{!! $route_name !!}" title="{!! $title !!}">
-        <img  class="pr-2.5" src="{!! $icon !!}" alt="{!! $icon_alt !!}">
+        <img  class="pr-2.5" width="35" height="35" src="{!! $icon !!}" alt="{!! $icon_alt !!}">
         {!! $label !!}
     </a>
 </li>

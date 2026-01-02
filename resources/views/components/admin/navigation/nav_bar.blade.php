@@ -11,6 +11,8 @@
             ? asset('storage/' . auth()->user()->avatar)
             : asset('assets/img/profil_image.svg') }}"
                     class="aspect-square w-12 h-12 rounded-full object-cover object-center"
+                    width="22"
+                    height="22"
                 />
                 <div class="flex flex-col px-3">
                     <span class="text-lg font-normal">{!! auth()->user()->name !!}</span>

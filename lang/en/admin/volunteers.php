@@ -74,6 +74,7 @@ return [
         ],
         'buttons' => [
             'create' => 'Create volunteer record',
+            'edit' => 'Edit volunteer record',
         ],
     ],
 
