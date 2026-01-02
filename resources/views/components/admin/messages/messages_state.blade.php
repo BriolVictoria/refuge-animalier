@@ -27,10 +27,7 @@
         ];
 @endphp
 
-<span class="{!! $states[(string)$page][(string)$state] !!}">{!! $state !!}</span>
 
-
-{{--
-<span class="{{$states[(string)$state]}}">
+<span class="{{$states[(string)$page][(string)$state]}}">
     {{ __('enum.' . $state) }}
-</span>--}}
+</span>

@@ -14,7 +14,7 @@
     @endif
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
-            <a title="{{__('admin/volunteers.ariane.volunteer_index')}}" href="{!! route('volunteers.index') !!}"
+            <a title="{{__('admin/volunteers.ariane.volunteer_index')}}" href="{!! route('volunteers.index', ['locale' => app()->getLocale()]) !!}"
                class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg ">{{__('admin/volunteers.volunteers.title')}}</a>
             <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/volunteers.volunteers.image_alt')}}">
             <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/volunteers.ariane.volunteer_show', ['name' => $volunteer->first_name])}}</h1>

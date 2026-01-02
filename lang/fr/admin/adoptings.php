@@ -3,15 +3,15 @@
 return [
 
     /* GLOBAL MESSAGES */
-    'success_message' => 'La demande a été supprimée avec succès !',
+    'success_message' => 'La demande a été supprimée avec succès !',
     'empty' => 'Aucun résultat trouvé pour votre recherche.',
 
     /* TABLE ADOPTIONS */
     'adoptings' => [
         'title_sronly' => 'Demandes d’adoptions',
         'title' => 'Demandes d’adoptions',
-        'add_label' => '+ Ajouter une demande d’adoption',
-        'add_button' => '+ Ajouter une demande d’adoption',
+        'add_label' => '+ Ajouter une demande d’adoption',
+        'add_button' => '+ Ajouter une demande d’adoption',
         'search_placeholder' => 'Rechercher une demande',
         'title_edit' => 'Rechercher une demande',
         'image_alt' => 'Icône d’une flêche pour le fil d’arianne',
@@ -19,7 +19,7 @@ return [
 
     /* MODAL SUPPRESSION */
     'delete_modal' => [
-        'title' => 'Voulez-vous supprimer la demande ?',
+        'title' => 'Voulez-vous supprimer la demande ?',
         'description' => 'Cette action est définitive. La fiche de cette demande sera supprimée et ne pourra pas être récupérée.',
         'delete_button' => 'Supprimer la fiche',
         'cancel_button' => 'Annuler',
@@ -34,22 +34,22 @@ return [
 
     /* CHAMPS */
     'fields' => [
-        'last_name' => "Nom de l'adoptant",
-        'first_name' => "Prénom de l'adoptant",
+        'last_name' => "Nom de l’adoptant",
+        'first_name' => "Prénom de l’adoptant",
         'email' => "Adresse mail",
-        'animal_name' => "Nom de l'animal désiré",
+        'animal_name' => "Nom de l’animal désiré",
         'phone_number' => "Numéro de téléphone",
         'address' => "Adresse",
         'city' => "Ville",
         'postcode' => "Code postal",
-        'other_animal' => "D'autres animaux à la maison",
-        'children' => "Présence d'enfants",
-        'environment' => "Type d'environnement",
+        'other_animal' => "D’autres animaux à la maison",
+        'children' => "Présence d’enfants",
+        'environment' => "Type d’environnement",
         'outside' => "Espace extérieur",
         'creation_date' => "Date de la demande",
         'state' => "Statut",
         'comment' => "Commentaire interne (réservé au personnel)",
-        'selected_animal' => "Animal désiré",
+        'selected_animal' => "AnimalEnum désiré",
         'actions' => "Actions",
     ],
 
@@ -92,16 +92,16 @@ return [
     /* TITRES ET CONTENUS DES INFORMATIONS VOLUNTEER */
     'volunteer_sections' => [
         'personal_info' => [
-            'title' => "Informations sur l‘adoptant",
-            'content' => "Renseignez les informations personnelles de l'adoptant pour le contacter et suivre sa demande.",
+            'title' => "Informations sur l’adoptant",
+            'content' => "Renseignez les informations personnelles de l’adoptant pour le contacter et suivre sa demande.",
         ],
         'desired_animal' => [
-            'title' => "Animal désiré",
-            'content' => "Sélectionnez l'animal que l'adoptant souhaite accueillir.",
+            'title' => "AnimalEnum désiré",
+            'content' => "Sélectionnez l’animal que l’adoptant souhaite accueillir.",
         ],
         'living_environment' => [
             'title' => "Environnement de vie",
-            'content' => "Indiquez le cadre de vie de l'adoptant pour assurer le bien-être de l'animal.",
+            'content' => "Indiquez le cadre de vie de l’adoptant pour assurer le bien-être de l’animal.",
         ],
         'other_info' => [
             'title' => "Autres informations",

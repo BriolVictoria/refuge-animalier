@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\AnimalSex;
 use App\Models\Animal;
 use Livewire\Component;
 
@@ -8,7 +9,6 @@ new class extends Component {
     public Animal $animal;
 
     public string $animalName;
-    public array $animalImages = [];
     public string $animalRace;
     public string $animalVaccine;
     public string $animalAge;
@@ -19,10 +19,31 @@ new class extends Component {
     public string $animalSex;
     public string $animalType;
     public string $animalAttitude;
+    public array $types = [];
+    public array $vaccins = [];
+    public array $sexes = [];
+    public array $states = [];
 
 
     public function mount($id): void
     {
+        $this->types = [\App\Enums\Type::Dog->value, \App\Enums\Type::Cat->value, \App\Enums\Type::Rabbit->value, \App\Enums\Type::Hamster->value, \App\Enums\Type::Bird->value];
+        $this->vaccins = [\App\Enums\AnimalVaccine::Vaccinated->value, \App\Enums\AnimalVaccine::NotVaccinated->value];
+
+        $this->sexes = [
+            [
+                'field_name' => AnimalSex::Male->value,
+                'name' => 'sex',
+            ],
+            [
+                'field_name' => AnimalSex::Female->value,
+                'name' => 'sex',
+            ],
+        ];
+
+        $this->states = [\App\Enums\AnimalStates::Available->value, \App\Enums\AnimalStates::CurrentlyAdopted->value, \App\Enums\AnimalStates::Adopted->value, \App\Enums\AnimalStates::AwaitingAdoption->value, \App\Enums\AnimalStates::InCare->value];
+
+
         $this->animal = Animal::find($id);
 
 
@@ -36,14 +57,13 @@ new class extends Component {
         $this->animalVaccine = $this->animal->vaccine;
         $this->animalType = $this->animal->type;
         $this->animalAttitude = $this->animal->attitude;
-        $this->animalImages = $this->animal->images ?? [];
     }
 
     public function update(): void
     {
         $this->validate(
             [
-                'animalName' => ['required', 'string', 'max:255', 'min:2', 'alpha'],
+                'animalName' => ['required', 'string', 'max:255', 'min:2'],
                 'animalRace' => ['required', 'string', 'max:255'],
                 'animalVaccine' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalAge' => ['required', 'integer', 'min:0', 'max:100'],
@@ -53,7 +73,6 @@ new class extends Component {
                 'animalSex' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalType' => ['required', 'string', 'max:255'], /*A voir*/
                 'animalAttitude' => ['required', 'string', 'max:255'],
-                'animalImages.*' =>['image', 'max:2048'],
             ]
         );
 
@@ -73,6 +92,6 @@ new class extends Component {
             ]
         );
 
-        $this->redirect(route('animals.show', $this->animal->id));
+        $this->redirect(route('animals.show', ['locale' => app()->getLocale(), 'id' => $this->animal->id]));
     }
 };

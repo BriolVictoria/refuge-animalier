@@ -2,6 +2,7 @@
     'title',
     'sub_title',
     'content',
+    'action',
 ])
 
 
@@ -11,7 +12,8 @@
     <p class="text-xs font-light text-red-500">{!! $sub_title !!}</p>
 </div>
     <form class="flex flex-col gap-6"
-        method="POST" action="">
+        method="POST" action="{{$action}}">
+        @csrf
         {!! $slot !!}
     </form>
 

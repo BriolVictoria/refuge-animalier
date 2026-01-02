@@ -1,12 +1,12 @@
 <?php
 
 use App\Models\Animal;
-use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 new class extends Component {
     use WithPagination;
+
     public Animal $animal;
     public string $noteNote;
     public string $noteEmail;
@@ -14,14 +14,16 @@ new class extends Component {
 
     public array $definitions;
     public array $buttons;
-    public bool $openModalForDelete = false;
+    public ?int $noteToEdit = null;
+
+    public bool $openModalForDeleteAnimal = false;
+    public bool $openModalForDeleteNote = false;
     public ?int $animalToDelete = null;
     public ?int $noteToDelete = null;
-    public ?int $noteToEdit = null;
 
     public function mount($id): void
     {
-        $this->animal = Animal::find($id);
+        $this->animal = Animal::findOrFail($id);
 
         $this->definitions = [
             ['title' => __('admin/animals.fields.type'), 'content' => $this->animal->type],
@@ -36,20 +38,21 @@ new class extends Component {
         ];
 
         $this->buttons = [
-            ['route_name' =>route('animals.edit', $this->animal->id), 'label' => __('admin/animals.buttons.edit_record'), 'title_button' => __('admin/animals.actions.edit_animal', ['name' => $this->animal->name]), 'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600 w-full 2xl:row-3'],
+            [
+                'route_name' => route('animals.edit', ['locale' => app()->getLocale(), 'id' => $this->animal->id]),
+                'label' => __('admin/animals.buttons.edit_record'),
+                'title_button' => __('admin/animals.actions.edit_animal', ['name' => $this->animal->name]),
+                'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600 w-full 2xl:row-3'
+            ],
         ];
-
     }
 
     public function create()
     {
-
-        $this->validate(
-            [
-                'noteEmail' => ['required', 'email', 'max:255'],
-                'noteNote' => ['required', 'string', 'max:255'],
-            ]
-        );
+        $this->validate([
+            'noteEmail' => ['required', 'email', 'max:255'],
+            'noteNote' => ['required', 'string', 'max:255'],
+        ]);
 
         if ($this->noteToEdit) {
             $note = $this->animal->notes()->findOrFail($this->noteToEdit);
@@ -57,7 +60,6 @@ new class extends Component {
                 'email' => $this->noteEmail,
                 'note' => $this->noteNote,
             ]);
-
             $this->noteToEdit = null;
         } else {
             $this->animal->notes()->create([
@@ -65,48 +67,41 @@ new class extends Component {
                 'note' => $this->noteNote,
             ]);
         }
-        $this->openVisitNote = false;
 
-        $this->redirect(route('animals.show', $this->animal->id));
+        $this->openVisitNote = false;
+        $this->redirect(route('animals.show', ['locale' => app()->getLocale(), 'id' => $this->animal->id]));
     }
 
     public function update(): void
     {
-        $this->validate(
-            [
-                'noteEmail' => ['required', 'email', 'max:255'],
-                'noteNote' => ['required', 'string', 'max:255'],
-            ]
-        );
+        $this->validate([
+            'noteEmail' => ['required', 'email', 'max:255'],
+            'noteNote' => ['required', 'string', 'max:255'],
+        ]);
 
-        $this->animal->notes()->create(
-            [
-                'email' => $this->noteEmail,
-                'note' => $this->noteNote,
-            ]
-        );
+        $this->animal->notes()->create([
+            'email' => $this->noteEmail,
+            'note' => $this->noteNote,
+        ]);
 
-        $this->redirect(route('animals.show', $this->animal->id));
+        $this->redirect(route('animals.show', ['locale' => app()->getLocale(), 'id' => $this->animal->id]));
     }
 
     public function deleteAnimal(int $id): void
     {
         Animal::findOrFail($id)->delete();
-
-        $this->reset(['animalToDelete', 'openModalForDelete']);
-
+        $this->reset(['animalToDelete', 'openModalForDeleteAnimal']);
         session()->flash('success', __('admin/animals.success_message'));
-        $this->redirectRoute('animals.index');
+        $this->redirectRoute('animals.index', ['locale' => app()->getLocale()]);
     }
 
     public function editNote(int $id): void
     {
         $note = $this->animal->notes()->findOrFail($id);
         $this->noteToEdit = $note->id;
-        $this->noteEmail =$note->email;
-        $this->noteNote =$note->note;
+        $this->noteEmail = $note->email;
+        $this->noteNote = $note->note;
         $this->openVisitNote = true;
-
         $this->dispatch('open-modal');
     }
 
@@ -119,40 +114,40 @@ new class extends Component {
     public function openModalVisit(string $modal)
     {
         $this->openVisitNote = true;
-
         $this->dispatch('open-modal');
     }
 
-    public function openModal(string $animalId)
+    public function openModalAnimal(int $animalId)
     {
         $this->animalToDelete = $animalId;
-        $this->openModalForDelete = true;
-
+        $this->openModalForDeleteAnimal = true;
         $this->dispatch('open-modal');
     }
 
-    public function closeModal()
+    public function closeModalAnimal()
     {
-        $this->openModalForDelete = false;
-
+        $this->openModalForDeleteAnimal = false;
         $this->dispatch('close-modal');
     }
 
     public function openModalDeleteNote(int $noteId)
     {
         $this->noteToDelete = $noteId;
-        $this->openModalForDelete = true;
+        $this->openModalForDeleteNote = true;
         $this->dispatch('open-modal');
+    }
+
+    public function closeModalNote()
+    {
+        $this->openModalForDeleteNote = false;
+        $this->dispatch('close-modal');
     }
 
     public function deleteNote(): void
     {
         if ($this->noteToDelete) {
-            $note = $this->animal->notes()->findOrFail($this->noteToDelete);
-            $note->delete();
-
-            $this->reset(['noteToDelete', 'openModalForDelete']);
-
+            $this->animal->notes()->findOrFail($this->noteToDelete)->delete();
+            $this->reset(['noteToDelete', 'openModalForDeleteNote']);
             session()->flash('success', __('admin/animals.note_success_message'));
         }
     }

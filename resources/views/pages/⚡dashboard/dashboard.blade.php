@@ -24,17 +24,14 @@
                 <div class="md:col-start-1 md:col-end-6">
                     <x-admin.statistiques.statistiques_container
                         title="{{__('admin/dashboard.cards.statistics.title')}}"
-                        route="#"
-                        label="{{__('admin/dashboard.cards.statistics.label')}}"
-                        title_button="{{__('admin/dashboard.cards.statistics.title_button')}}"
-                        class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 w-1/1 inline-block"
+
                     />
                 </div>
 
                 <div class="md:col-start-6 md:col-end-10">
                     <x-admin.messages_dashboard.message_container
                         title="{{__('admin/dashboard.cards.messages.title')}}"
-                        route="{!! route('messages.index') !!}"
+                        route="{!! route('messages.index', ['locale' => app()->getLocale()]) !!}"
                         label="{{__('admin/dashboard.cards.messages.label')}}"
                         title_button="{{__('admin/dashboard.cards.messages.title_button')}}"
                         class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 w-1/1 inline-block"
@@ -55,7 +52,7 @@
 
                 <div class="flex items-baseline">
                     <dt class="text-sm font-medium pr-2.5">{{__('admin/dashboard.modal.fields.email')}}&nbsp;:</dt>
-                    <dd class="text-xs font-light">{!! $message->email !!}</dd>
+                    <dd class="text-xs font-light break-all max-w-full">{!! $message->email !!}</dd>
                 </div>
 
 

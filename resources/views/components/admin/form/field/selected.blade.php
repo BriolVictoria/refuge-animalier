@@ -13,7 +13,9 @@
             wire:model.defer="{{$wire}}"
             class="text-blue-900 text-sm font-normal border border-blue-400 px-3 py-3 rounded-sm">
         @foreach($options as $option)
-            <option {!!($select === $option) ? 'selected': '' !!} value="{!! $option !!}">{!! $option !!}</option>
+            <option {!!($select === $option) ? 'selected': '' !!} value="{!! $option !!}">
+                {!! __('enum.' . $option) !!}
+            </option>
         @endforeach
     </select>
     @error($wire)

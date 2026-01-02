@@ -27,7 +27,7 @@ new class extends Component
         ];
 
         $this->buttons =[
-            ['route_name' => route('volunteers.edit', $this->volunteer->id), 'label' => __('admin/volunteers.show.buttons.edit'), 'title_button' => __('admin/volunteers.buttons.edit', ['name' => $this->volunteer->first_name]), 'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600 w-full 2xl:row-3'],
+            ['route_name' => route('volunteers.edit', ['locale' => app()->getLocale(), 'id' => $this->volunteer->id]), 'label' => __('admin/volunteers.show.buttons.edit'), 'title_button' => __('admin/volunteers.buttons.edit', ['name' => $this->volunteer->first_name]), 'class' => 'bg-blue-900 self-start text-white transition-all duration-300 hover:scale-101 hover:bg-blue-600 w-full 2xl:row-3'],
 
         ];
 
@@ -40,7 +40,7 @@ new class extends Component
         $this->reset(['volunteerToDelete', 'openModalForDelete']);
 
         session()->flash('success', __('admin/volunteers.success_message'));
-        $this->redirectRoute('volunteers.index');
+        $this->redirectRoute('volunteers.index', ['locale' => app()->getLocale()]);
     }
 
     public function openModal(string $volunteerId)

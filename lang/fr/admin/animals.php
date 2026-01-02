@@ -3,17 +3,17 @@
 return [
 
     /* GLOBAL MESSAGES */
-    'success_message' => "L'animal a été supprimé avec succès !",
-    'note_success_message' => "La note a été supprimée avec succès !",
+    'success_message' => "L’animal a été supprimé avec succès !",
+    'note_success_message' => "La note a été supprimée avec succès !",
     'empty' => 'Aucun résultat trouvé pour votre recherche.',
-    'empty_notes' => "Cet animal n'a pas de note",
+    'empty_notes' => "Cet animal n’a pas de note",
 
     /* TABLE ANIMAUX */
     'animals' => [
         'title_sronly' => 'Animaux',
         'title' => 'Animaux',
-        'add_label' => '+ Ajouter un animal',
-        'add_button' => '+ Ajouter un animal',
+        'add_label' => '+ Ajouter un animal',
+        'add_button' => '+ Ajouter un animal',
         'search_placeholder' => 'Rechercher un animal',
         'image_alt' => 'Icône d’une flêche pour le fil d’arianne',
     ],
@@ -23,13 +23,13 @@ return [
     /* MODAL SUPPRESSION */
     'delete_modal' => [
         'animal' => [
-            'title' => 'Voulez-vous supprimer l’animal ?',
+            'title' => 'Voulez-vous supprimer l’animal ?',
             'description' => "Cette action est définitive. La fiche de cet animal sera supprimée et ne pourra pas être récupérée.",
             'delete_button' => 'Supprimer la fiche',
             'cancel_button' => 'Annuler',
         ],
         'note' => [
-            'title' => 'Voulez-vous supprimer la note ?',
+            'title' => 'Voulez-vous supprimer la note ?',
             'description' => "Cette action est définitive. La note sera supprimée et ne pourra pas être récupérée.",
             'delete_button' => 'Supprimer la note',
             'cancel_button' => 'Annuler',
@@ -90,7 +90,8 @@ return [
         'view_note' => "Voir la note de :email",
         'edit_note' => "Modifier la note de :email",
         'delete_note' => "Supprimer la note de :email",
-    ],
+        'add_note'
+=>'Ajouter une note'    ],
 
     /* FIL D’ARIANE / TITRES */
     'ariane' => [
@@ -102,7 +103,7 @@ return [
 
     /* TITRES SECTIONS FICHE ANIMAL */
     'sections' => [
-        'definitions' => "Informations sur l'animal",
+        'definitions' => "Informations sur l’animal",
         'general_information' => "Informations générales",
         'health_and_characteristics' => "Santé et caractéristiques",
         'visit_notes' => "Notes de visites",

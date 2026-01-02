@@ -16,7 +16,6 @@ new class extends Component {
     public Collection $adoptings;
     public Collection $messages;
     public Collection $notifications;
-    public array $statistiques = [];
 
 
     public function mount(): void
@@ -27,7 +26,13 @@ new class extends Component {
 
         $this->notifications = Notification::latest()->take(7)->get();
 
-        $this->statistiques = [
+
+    }
+
+    #[Computed]
+    public function statistiques()
+    {
+        return [
             'animals' => [
                 'route' => asset('assets/img/paw_icon.svg'),
                 'alt' => __('admin/dashboard.stats.animals.alt'),
@@ -53,13 +58,11 @@ new class extends Component {
                 'route' => asset('assets/img/mail_icon.svg'),
                 'alt' => __('admin/dashboard.stats.message.alt'),
                 'content' => __('admin/dashboard.stats.message.content'),
-                'number' => Message::where('state', '=', \App\Enums\MessageState::Read->value)->count(),
+                'number' => Message::where('state', '=', \App\Enums\MessageState::NotRead->value)->count(),
             ],
         ];
-
     }
 
-    #[Computed]
     function messages()
     {
         return Message::paginate(10);

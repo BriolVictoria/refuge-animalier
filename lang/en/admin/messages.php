@@ -3,7 +3,7 @@
 return [
 
     /* GLOBAL MESSAGES */
-    'success_message' => 'The message has been successfully deleted!',
+    'success_message' => 'The message has been successfully deleted !',
     'empty' => 'No messages found for your search.',
 
     /* MESSAGES TABLE */
@@ -13,7 +13,7 @@ return [
         'label' => 'Open email',
         'title_button' => 'Open email',
         'search_placeholder' => 'Search for a message',
-        'delete_message' => 'Delete :name\'s message',
+        'delete_message' => 'Delete :name’s message',
     ],
 
     /* SHOW MESSAGE MODAL */
@@ -33,7 +33,7 @@ return [
 
     /* DELETE MODAL */
     'delete_modal' => [
-        'title' => 'Do you want to delete this message?',
+        'title' => 'Do you want to delete this message ?',
         'description' => 'This action is permanent. This message will be deleted and cannot be recovered.',
         'delete_button' => 'Delete',
         'cancel_button' => 'Cancel',

@@ -17,7 +17,7 @@
         title="{{ __('admin/animals.animals.title')}}"
         label="{{ __('admin/animals.animals.add_label')}}"
         title_button="{{ __('admin/animals.animals.add_button')}}"
-        route_name="{!! route('animals.create') !!}"
+        route_name="{!! route('animals.create', ['locale' => app()->getLocale()]) !!}"
         class="bg-blue-900 self-start text-white transition-transform duration-300 hover:scale-101 hover:bg-blue-600 inline-block"
         search_placeholder="{{ __('admin/animals.animals.search_placeholder')}}"
     />

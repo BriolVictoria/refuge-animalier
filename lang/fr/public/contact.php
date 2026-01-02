@@ -17,7 +17,7 @@ return [
     */
 
     'section' => [
-        'title' => 'Vous avez une question sur le refuge ?',
+        'title' => 'Vous avez une question sur le refuge ?',
         'content' => 'Écrivez-nous un message pour qu’on puisse y répondre',
         'sub_title' => 'Nos coordonnées',
 

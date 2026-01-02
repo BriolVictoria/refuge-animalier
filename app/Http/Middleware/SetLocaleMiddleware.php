@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Enums\Language;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class SetLocaleMiddleware
 
         $locale = $request->route('locale');
 
-        if ($locale && in_array($locale, ['fr', 'en'])) {
+        if ($locale && in_array($locale, array_column(Language::cases(), 'value'))) {
             app()->setLocale($locale);
             session(['locale' => $locale]);
         } elseif (session()->has('locale')) {

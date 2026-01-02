@@ -11,7 +11,7 @@ return [
     /* DÉFINITIONS / CARDS */
     'cards' => [
         'adoptions' => [
-            'title' => "Demandes d'adoptions",
+            'title' => "Demandes d’adoptions",
             'label' => "Voir toutes les demandes",
             'title_button' => "Voir toutes les demandes",
         ],
@@ -47,7 +47,7 @@ return [
         ],
         'message' => [
             'content' => "Messages non-lus",
-            'alt' => "Icône d'enveloppe",
+            'alt' => "Icône d’enveloppe",
         ],
     ],
 
@@ -55,7 +55,7 @@ return [
     /* LISTE DES DEMANDES D’ADOPTION */
     'list' => [
         'adopter' => 'Adoptant',
-        'animal_name' => "Nom de l'animal",
+        'animal_name' => "Nom de l’animal",
         'date' => 'Date',
     ],
 

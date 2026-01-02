@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Enums\AdoptingEnvironement;
 use App\Enums\AdoptingState;
-use App\Enums\TrueOrFalse;
+use App\Enums\Children;
 use App\Models\Adopting;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
@@ -15,7 +15,7 @@ class AdoptingFactory extends Factory
 
     public function definition(): array
     {
-        $true_or_false = [TrueOrFalse::Yes->value, TrueOrFalse::No->value];
+        $true_or_false = [Children::Children->value, Children::NoChildren->value];
         $adopting_environment = [AdoptingEnvironement::House->value, AdoptingEnvironement::FlatShare->value, AdoptingEnvironement::FlatShare->value, AdoptingEnvironement::Other->value, AdoptingEnvironement::Studio->value];
         $adopting_state = [AdoptingState::Pending->value, AdoptingState::Done->value, AdoptingState::InProgress->value];
 

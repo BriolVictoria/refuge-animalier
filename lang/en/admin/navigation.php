@@ -41,8 +41,12 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'icons' => [
-        'alt' => "Logo image",
+    'icons_alt' => [
+        'dashboard' => "Icon leading to the dashboard",
+        'animal' => "Icon leading to animals",
+        'adopting' => "Icon leading to adoption requests",
+        'volunteer' => "Icon leading to volunteers",
+        'message' => "Icon leading to messages",
     ],
 
     /*

@@ -64,7 +64,7 @@ return [
         ],
         'card' => [
             'btn_label' => 'View Profile',
-            'btn_title' => 'Go to :name\'s profile',
+            'btn_title' => 'Go to :name’s profile',
         ],
     ],
 
@@ -76,7 +76,7 @@ return [
 
     'volunteer' => [
         'image_alt' => 'Image of a tree with colorful hands on a blue background',
-        'title' => 'How to Help Us?',
+        'title' => 'How to Help Us ?',
         'content' => 'Want to make a difference? Join our volunteer team and give your time and love to our four-legged companions. Every small gesture counts and transforms their lives! Help us provide them with a happy home and a better life.',
         'button' => [
             'title' => 'Go to Become a Volunteer page',
@@ -84,4 +84,15 @@ return [
         ],
     ],
     'animal_alt' => 'Image of :name',
+
+    'buttons' => [
+        'animals' => [
+            'title' => 'Go to our animals',
+            'label' => 'Adopt now !',
+        ],
+        'contact' => [
+            'title' => 'Go to contact page',
+            'label' => 'Contact us',
+        ],
+    ],
 ];

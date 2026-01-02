@@ -3,7 +3,7 @@
 return [
 
     /* GLOBAL MESSAGES */
-    'success_message' => 'Le message a été supprimé avec succès !',
+    'success_message' => 'Le message a été supprimé avec succès !',
     'empty' => 'Aucun message trouvé pour votre recherche.',
 
     /* TABLEAU DES MESSAGES */
@@ -33,7 +33,7 @@ return [
 
     /* MODAL SUPPRESSION */
     'delete_modal' => [
-        'title' => 'Voulez-vous supprimer le message ?',
+        'title' => 'Voulez-vous supprimer le message ?',
         'description' => 'Cette action est définitive. Ce message sera supprimé et ne pourra pas être récupéré.',
         'delete_button' => 'Supprimer',
         'cancel_button' => 'Annuler',

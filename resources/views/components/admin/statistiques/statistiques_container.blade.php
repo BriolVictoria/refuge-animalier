@@ -12,10 +12,5 @@
 
     <x-admin.statistiques.statistique/>
 
-    <x-admin.button.button
-        route_name="{!! $route !!}"
-        title_button="{!! $title !!}"
-        label="{!! $label !!}"
-        class="{!! $class !!}"/>
 
 </article>

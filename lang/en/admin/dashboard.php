@@ -54,7 +54,7 @@ return [
     /* ADOPTION REQUEST LIST */
     'list' => [
         'adopter' => 'Adopter',
-        'animal_name' => "Animal Name",
+        'animal_name' => "AnimalEnum Name",
         'date' => 'Date',
     ],
 

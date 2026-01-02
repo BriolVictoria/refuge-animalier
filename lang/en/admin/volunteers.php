@@ -3,7 +3,7 @@
 return [
 
     /* GLOBAL MESSAGES */
-    'success_message' => 'The volunteer has been successfully deleted!',
+    'success_message' => 'The volunteer has been successfully deleted !',
     'empty' => 'No results found for your search.',
 
     /* VOLUNTEERS TABLE */
@@ -13,13 +13,13 @@ return [
         'label' => '+ Add a volunteer',
         'title_button' => '+ Add a volunteer',
         'search_placeholder' => 'Search for a volunteer',
-        'delete_message' => 'Delete :name\'s record',
+        'delete_message' => 'Delete :name’s record',
         'image_alt' => 'Breadcrumb arrow icon',
     ],
 
     /* DELETE MODAL */
     'delete_modal' => [
-        'title' => 'Do you want to delete this volunteer?',
+        'title' => 'Do you want to delete this volunteer ?',
         'description' => 'This action is permanent. The record of this volunteer will be deleted and cannot be recovered.',
         'delete_button' => 'Delete record',
         'cancel_button' => 'Cancel',
@@ -28,7 +28,7 @@ return [
     /* BREADCRUMBS / TITLES */
     'ariane' => [
         'volunteer_index' => "View all volunteers",
-        'volunteer_show' => ":name's record",
+        'volunteer_show' => ":name’s record",
         'volunteer_create' => "Add a volunteer",
         'volunteer_edit' => "Edit :name",
     ],
@@ -38,7 +38,7 @@ return [
         'sections' => [
             'personal_info' => [
                 'title' => 'Personal Information',
-                'description' => 'Enter the volunteer\'s personal information to contact them and manage their profile.',
+                'description' => 'Enter the volunteer’s personal information to contact them and manage their profile.',
             ],
             'availabilities' => [
                 'title' => 'Availabilities',
@@ -109,11 +109,11 @@ return [
     /* GENERAL BUTTONS */
     'buttons' => [
         'delete' => 'Delete',
-        'delete_fiche' => 'Delete :name\'s record',
+        'delete_fiche' => 'Delete :name’s record',
         'cancel' => 'Cancel',
-        'add_volunteer' => '+ Add a volunteer',
-        'edit' => 'Edit :name\'s record',
-        'view' => 'View :name\'s record',
+        'add_volunteer' => '+ Add a volunteer',
+        'edit' => 'Edit :name’s record',
+        'view' => 'View :name’s record',
     ],
 
 ];

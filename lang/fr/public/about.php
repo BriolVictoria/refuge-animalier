@@ -46,7 +46,7 @@ return [
         ],
 
         'help' => [
-            'title' => 'Comment nous aider ?',
+            'title' => 'Comment nous aider ?',
             'content' => 'Adopter un animal et lui offrir un foyer pour la vie. Devenir bénévole pour nous prêter main-forte. Faire un don pour nous aider à couvrir les frais de soins.',
             'image_alt' => 'Image d’un arbre avec des mains colorées dessus sur un fond vert',
             'button' => [

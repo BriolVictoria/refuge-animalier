@@ -55,6 +55,7 @@ return [
         ],
     ],
 
-    'copyright' => '© 2025 Happy Paws. All rights reserved.',
-    'image_alt' => 'Happy Paws logo with two green paw prints',
+    'copyright' => '© 2025 Les pattes heureuses. All rights reserved.',
+    'image_alt' => 'Les pattes heureuses logo with two green paw prints',
+
 ];

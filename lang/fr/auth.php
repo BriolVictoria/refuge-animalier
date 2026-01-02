@@ -8,9 +8,10 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'logout_title' => 'se déconnecter',
+    'logout_title' => 'Se déconnecter',
     'title' => 'Connectez-vous pour continuer',
     'required_fields' => 'Les champs * sont requis',
+    'forgot_password' => 'Vous avez oublié votre mot de passe ?',
     'logo_alt' => 'Logo les pattes heureuses',
 
     /* CHAMPS DU FORMULAIRE */

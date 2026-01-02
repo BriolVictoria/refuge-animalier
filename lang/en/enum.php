@@ -2,13 +2,16 @@
 
 use App\Enums\AdoptingEnvironement;
 use App\Enums\AdoptingState;
+use App\Enums\AnimalEnum;
 use App\Enums\AnimalSex;
 use App\Enums\AnimalStates;
 use App\Enums\AnimalVaccine;
 use App\Enums\AvailabilitySelect;
 use App\Enums\MessageState;
+use App\Enums\Outside;
 use App\Enums\RoleUser;
-use App\Enums\TrueOrFalse;
+use App\Enums\Children;
+use App\Enums\Type;
 
 return [
     //AdoptingEnvironment
@@ -52,7 +55,28 @@ return [
     RoleUser::Administrator->value => 'Administrator',
     RoleUser::Volunteer->value => 'Volunteer',
 
-    //TrueOrFalse
-    TrueOrFalse::Yes->value => 'Yes',
-    TrueOrFalse::No->value => 'No',
+    //Children
+    Children::Children->value => 'Yes',
+    Children::NoChildren->value => 'No',
+
+    //Outside
+    Outside::Outside->value => 'Yes',
+    Outside::NoOutside->value => 'No',
+
+    //AnimalEnum
+    AnimalEnum::Animal->value => 'Yes',
+    AnimalEnum::NoAnimal->value => 'No',
+
+    //TypeEnum
+    Type::Dog->value => 'Dog',
+    Type::Cat->value => 'Cat',
+    Type::Rabbit->value => 'Rabbit',
+    Type::Hamster->value => 'Hamster',
+    Type::Bird->value => 'Bird',
+
+    //LanguageEnum
+    \App\Enums\Language::Fr->value => 'French',
+    \App\Enums\Language::En->value => 'English',
 ];
+
+

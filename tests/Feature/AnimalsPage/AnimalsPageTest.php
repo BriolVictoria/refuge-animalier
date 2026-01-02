@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\AnimalStates;
 use App\Models\Animal;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -9,7 +10,7 @@ it(
     'displays the animals index page',
     function () {
         //Act
-        $response = $this->get(route('public.animals.index'));
+        $response = $this->get(route('public.animals.index', ['locale' => app()->getLocale()]));
 
         // Assert
         $response->assertStatus(200);
@@ -34,12 +35,13 @@ it(
         }
 
         /*Voir dan sla page*/
-        $response = $this->get(route('public.animals.index'));
+        $response = $this->get(route('public.animals.index', ['locale' => app()->getLocale()]));
 
         $response->assertStatus(200);
 
         /*Regarder si on reçoit Available*/
-        $response->assertSee(\App\Enums\AnimalStates::Available->value);
+        $availableStatut = __('Disponible');
+        $response->assertSee($availableStatut);
 
         /*Regarder qu'on ne reçoivent pas les autres*/
         foreach (\App\Enums\AnimalStates::cases() as $animalStates) {
@@ -56,17 +58,39 @@ it(
     'verifies if the animal that we see on the show page have the correct information',
     function () {
 
-        $animal = Animal::factory()->create()->toArray();
-        $other_animal = Animal::factory()->create()->toArray();
+        $animal = Animal::factory()->create();
+        $other_animal = Animal::factory()->create();
 
         //Act
-        $response = $this->get(route('public.animals.show', $animal['id']));
+        $response = $this->get(route('public.animals.show', ['locale' => app()->getLocale(), 'animal' => $animal->id]));
 
         $response->assertStatus(200);
 
         $response->assertSee($animal['name']);
         $response->assertDontSee($other_animal['name']);
     }
+);
+
+it('creates an adoption request from animal page',
+    function () {
+        $animal = Animal::factory()->create();
+        $this->post(route('public.animal.store',['locale' => app()->getLocale()]), [
+            'animal_id'   => $animal->id,
+            'first_name'  => 'John',
+            'last_name'   => 'Doe',
+            'email'       => 'john.doe@gmail.com',
+            'phone'       => '0458 96 78 96',
+            'address'     => 'Rue des Lilas',
+            'city'        => 'Londres',
+            'postal_code' => '1234',
+            'message'     => 'Je souhaite adopter cet animal',
+        ])->assertRedirect();
+
+        $this->assertDatabaseHas('adoptings', [
+           'email' => 'john.doe@gmail.com',
+            'animal_id' => $animal->id,
+        ]);
+}
 );
 
 

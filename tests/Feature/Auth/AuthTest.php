@@ -6,7 +6,7 @@ it(
     'can display the login form',
     function () {
         //Act
-        $response = $this->get('/login'); //rediriger vers login
+        $response = $this->get('/login', ['locale' => app()->getLocale()]); //rediriger vers login
 
         //Assert
         $response->assertSee('Connectez-vous pour continuer');
@@ -26,7 +26,7 @@ it(
         ]);
 
         //Act
-        $response = $this->post(route('login.store'), [
+        $response = $this->post(route('login.store', ['locale' => app()->getLocale()]), [
             'email' => $user->email,
             'password' => $password,
         ]);

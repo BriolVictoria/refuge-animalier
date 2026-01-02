@@ -15,10 +15,10 @@ new class extends Component {
     public string $adoptingAddress;
     public string $adoptingCity;
     public string $adoptingPostCode;
-    public string $adoptingOtherAnimal = \App\Enums\TrueOrFalse::Yes->value;
-    public string $adoptingChildren = \App\Enums\TrueOrFalse::Yes->value;
+    public string $adoptingOtherAnimal = \App\Enums\AnimalEnum::Animal->value;
+    public string $adoptingChildren = \App\Enums\Children::Children->value;
     public string $adoptingEnvironment = \App\Enums\AdoptingEnvironement::House->value;
-    public string $adoptingOutside = \App\Enums\TrueOrFalse::Yes->value;
+    public string $adoptingOutside = \App\Enums\Outside::Outside->value;
     public string $adoptingCreationDate;
     public string $adoptingState = \App\Enums\AdoptingState::Pending->value;
     public string $adoptingComment;
@@ -39,18 +39,18 @@ new class extends Component {
 
 
         $this->other_animals = [
-            ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'animal'],
-            ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'animal'],
+            ['field_name' => \App\Enums\AnimalEnum::Animal->value, 'name' => 'animal'],
+            ['field_name' => \App\Enums\AnimalEnum::NoAnimal->value, 'name' => 'animal'],
         ];
 
         $this->children = [
-            ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'children'],
-            ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'children'],
+            ['field_name' => \App\Enums\Children::Children->value, 'name' => 'children'],
+            ['field_name' => \App\Enums\Children::NoChildren->value, 'name' => 'children'],
         ];
 
         $this->outsides = [
-            ['field_name' => \App\Enums\TrueOrFalse::Yes->value, 'name' => 'outside'],
-            ['field_name' => \App\Enums\TrueOrFalse::No->value, 'name' => 'outside'],
+            ['field_name' => \App\Enums\Outside::Outside->value, 'name' => 'outside'],
+            ['field_name' => \App\Enums\Outside::NoOutside->value, 'name' => 'outside'],
         ];
 
         $this->states = [\App\Enums\AdoptingState::Pending->value, \App\Enums\AdoptingState::Done->value, \App\Enums\AdoptingState::InProgress->value];
@@ -89,6 +89,6 @@ new class extends Component {
             ]
         );
 
-        $this->redirect(route('adoptings.index'));
+        $this->redirect(route('adoptings.index', ['locale' => app()->getLocale()]));
     }
 };

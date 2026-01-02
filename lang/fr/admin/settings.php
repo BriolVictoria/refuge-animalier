@@ -14,9 +14,9 @@ return [
         'description' => 'Consultez et mettez à jour vos informations personnelles afin que votre profil soit toujours à jour.',
 
         'avatar' => [
-            'preview_alt' => "Aperçu de l'image",
+            'preview_alt' => "Aperçu de l’image",
             'current_alt' => 'Avatar actuel',
-            'edit_button' => "Modifier l'image",
+            'edit_button' => "Modifier l’image",
         ],
 
         'fields' => [
@@ -36,7 +36,7 @@ return [
                 'label' => 'Rôle',
             ],
             'creation_date' => [
-                'label' => "Date d'inscription",
+                'label' => "Date d’inscription",
                 'placeholder' => '12/12/2025',
             ],
         ],

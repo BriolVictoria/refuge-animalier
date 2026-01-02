@@ -31,17 +31,15 @@
             class="space-y-4 2xl:hidden  md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-1 [@media(min-width:1170px)]:grid-cols-2">
             @forelse($this->animals as $animal)
                 <dl class="relative border border-blue-100 rounded-xl shadow-md p-4 flex flex-col items-start space-y-2">
-                    <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}" href="{!! route('animals.show', $animal->id) !!}">
+                    <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}" href="{!! route('animals.show',['locale' => app()->getLocale(), 'id' => $animal->id]) !!}">
                         <img alt="{{__('admin/animals.animal_alt', ['name' => $animal->name])}}" width="62" height="62" class="rounded-lg"
-                             src="{{ $animal->images && count($animal->images) > 0
-                 ? asset('storage/' . $animal->images[0])
-                 : asset('assets/img/image_table.svg') }}">
+                             src="{{empty($animal->images) ? asset('assets/img/animalProfil.jpg') : asset('storage/animals/' . $animal->images[0])}}">
                     </a>
                     <div class="flex flex-col space-y-1">
                         <div class="flex items-baseline">
                             <dt class="text-sm font-medium pr-2.5">{{ __('admin/animals.fields.name')}}&nbsp;:</dt>
                             <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}"
-                               href="{!! route('animals.show', $animal->id) !!}">
+                               href="{!! route('animals.show', ['locale' => app()->getLocale(), 'id' => $animal->id]) !!}">
                                 <dd class="text-xs font-light transition-all duration-300 hover:text-blue-800 ">{!! $animal->name !!}</dd>
                             </a>
 
@@ -63,7 +61,7 @@
                     </div>
                     <div class="flex mt-7">
                         <a title="{{ __('admin/animals.actions.view_animal', ['name' => $animal->name])}}"
-                           href="{!! route('animals.show', $animal->id) !!}"
+                           href="{!! route('animals.show', ['locale' => app()->getLocale(), 'id' => $animal->id]) !!}"
                            class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                             <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -77,7 +75,7 @@
                             </svg>
                         </a>
                         <a title="{{ __('admin/animals.actions.edit_animal', ['name' => $animal->name])}}"
-                           href="{!! route('animals.edit', $animal->id) !!}"
+                           href="{!! route('animals.edit', ['locale' => app()->getLocale(), 'id' => $animal->id]) !!}"
                            class="inline-block pr-2 transition-all duration-300 hover:scale-105">
                             <svg width="28" height="28" viewBox="0 0 28 28"
                                  xmlns="http://www.w3.org/2000/svg">

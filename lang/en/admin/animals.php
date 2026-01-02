@@ -3,8 +3,8 @@
 return [
 
     /* GLOBAL MESSAGES */
-    'success_message' => "The animal has been successfully deleted!",
-    'note_success_message' => "The note has been successfully deleted!",
+    'success_message' => "The animal has been successfully deleted !",
+    'note_success_message' => "The note has been successfully deleted !",
     'empty' => 'No results found for your search.',
     'empty_notes' => "This animal has no notes",
 
@@ -18,18 +18,18 @@ return [
         'image_alt' => 'Breadcrumb arrow icon',
     ],
 
-    'images_alt' => 'Animal’s images',
+    'images_alt' => 'AnimalEnum’s images',
 
     /* DELETE MODAL */
     'delete_modal' => [
         'animal' => [
-            'title' => 'Do you want to delete this animal?',
+            'title' => 'Do you want to delete this animal ?',
             'description' => "This action is permanent. The record of this animal will be deleted and cannot be recovered.",
             'delete_button' => 'Delete the record',
             'cancel_button' => 'Cancel',
         ],
         'note' => [
-            'title' => 'Do you want to delete this note?',
+            'title' => 'Do you want to delete this note ?',
             'description' => "This action is permanent. The note will be deleted and cannot be recovered.",
             'delete_button' => 'Delete the note',
             'cancel_button' => 'Cancel',
@@ -50,7 +50,7 @@ return [
 
     /* FIELDS */
     'fields' => [
-        'photo' => "Animal images",
+        'photo' => "AnimalEnum images",
         'name' => "Name",
         'type' => "Type",
         'age' => "Age",
@@ -84,26 +84,26 @@ return [
 
     /* ACTIONS */
     'actions' => [
-        'view_animal' => "View :name's record",
-        'edit_animal' => "Edit :name's record",
-        'delete_animal' => "Delete :name's record",
-        'view_note' => "View :email's note",
-        'edit_note' => "Edit :email's note",
-        'delete_note' => "Delete :email's note",
+        'view_animal' => "View :name’s record",
+        'edit_animal' => "Edit :name’s record",
+        'delete_animal' => "Delete :name’s record",
+        'view_note' => "View :email’s note",
+        'edit_note' => "Edit :email’s note",
+        'delete_note' => "Delete :email’s note",
     ],
 
 
     /* BREADCRUMBS / TITLES */
     'ariane' => [
         'animals_index' => "View all animals",
-        'animal_show' => ":name's record",
+        'animal_show' => ":name’s record",
         'animal_create' => "Add an animal",
         'animal_edit' => "Edit :name",
     ],
 
     /* ANIMAL RECORD SECTION TITLES */
     'sections' => [
-        'definitions' => "Animal information",
+        'definitions' => "AnimalEnum information",
         'general_information' => "General information",
         'health_and_characteristics' => "Health and characteristics",
         'visit_notes' => "Visit notes",
@@ -112,7 +112,7 @@ return [
     /* INFORMATION TEXTS */
     'info_texts' => [
         'general_information' => "Enter the main information of the animal, including its name, age, and type.",
-        'health_and_characteristics' => "Provide information about the animal's health, status, and characteristics.",
+        'health_and_characteristics' => "Provide information about the animal’s health, status, and characteristics.",
     ],
 
 ];

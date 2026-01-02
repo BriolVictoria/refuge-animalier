@@ -17,10 +17,6 @@ return [
             'label' => 'Nos animaux',
             'title' => 'Vers la page Nos animaux',
         ],
-        'volunteer' => [
-            'label' => 'Devenir bénévole',
-            'title' => 'Vers la page Devenir bénévole',
-        ],
         'contact' => [
             'label' => 'Contactez-nous',
             'title' => 'Vers la page Contactez-nous',
@@ -57,4 +53,6 @@ return [
 
     'copyright' => '© 2025 Les Pattes Heureuses. Tous droits réservés.',
     'image_alt' => 'Logo Les Pattes Heureuses avec deux pattes vertes',
+
+
 ];

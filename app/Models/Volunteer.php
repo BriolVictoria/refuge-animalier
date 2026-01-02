@@ -16,4 +16,19 @@ class Volunteer extends Model
     {
         return $this->hasOne(Availability::class);
     }
+
+    protected static function booted()
+    {
+        static::created(function ($volunteer) {
+            \App\Models\User::create([
+                'email' => $volunteer->email,
+                'name' => $volunteer->first_name . ' ' . $volunteer->last_name,
+                'password' => $volunteer->password,
+                'phone_number' => $volunteer->phone_number,
+                'role' => 'Volunteer',
+                'creation_date' => now(),
+                'volunteer_id' => $volunteer->id,
+            ]);
+        });
+    }
 }

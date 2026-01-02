@@ -1,7 +1,7 @@
 <main class="w-full">
     <div>
         <div class="flex items-center gap-2 border-b border-blue-900">
-            <a title="{{__('admin/adoptings.ariane.adoptings_index')}}" href="{!! route('adoptings.index') !!}"
+            <a title="{{__('admin/adoptings.ariane.adoptings_index')}}" href="{!! route('adoptings.index', ['locale' => app()->getLocale()]) !!}"
                class="py-4 px-8 text-xs text-blue-900 font-light md:text-lg">{{__('admin/adoptings.adoptings.title')}}</a>
             <img src="{!! asset('assets/img/arrow_arianne.svg') !!}" class="w-4 h-4" alt="{{__('admin/adoptings.adoptings.image_alt')}}">
             <h1 class="py-4 px-8 text-sm text-blue-900 font-semibold md:text-xl">{{__('admin/adoptings.adoptings.add_label')}}</h1>
@@ -17,7 +17,7 @@
 
                     <x-admin.form.field.input
                         wire="adoptingLastName"
-                        field_name="{{__('admin/adoptings.fields.last_name')}}"
+                        field_name="first_name"
                         label="{{__('admin/adoptings.fields.last_name')}}"
                         type="text"
                         placeholder="{{__('admin/adoptings.placeholder.last_name')}}"
@@ -25,7 +25,7 @@
 
                     <x-admin.form.field.input
                         wire="adoptingFirstName"
-                        field_name="{{__('admin/adoptings.fields.first_name')}}"
+                        field_name="last_name"
                         label="{{__('admin/adoptings.fields.first_name')}}"
                         type="text"
                         placeholder="{{__('admin/adoptings.placeholder.first_name')}}"
@@ -33,7 +33,7 @@
 
                     <x-admin.form.field.input
                         wire="adoptingEmail"
-                        field_name="{{__('admin/adoptings.fields.email')}}"
+                        field_name="email"
                         label="{{__('admin/adoptings.fields.email')}}"
                         type="email"
                         placeholder="{{__('admin/adoptings.placeholder.email')}}"
@@ -41,7 +41,7 @@
 
                     <x-admin.form.field.input
                         wire="adoptingPhoneNumber"
-                        field_name="{{__('admin/adoptings.fields.phone_number')}}"
+                        field_name="phone"
                         label="{{__('admin/adoptings.fields.phone_number')}}"
                         type="tel"
                         placeholder="{{__('admin/adoptings.placeholder.phone')}}"
@@ -49,7 +49,7 @@
 
                     <x-admin.form.field.input
                         wire="adoptingAddress"
-                        field_name="{{__('admin/adoptings.fields.address')}}"
+                        field_name="address"
                         label="{{__('admin/adoptings.fields.address')}}"
                         type="text"
                         placeholder="{{ __('admin/adoptings.placeholder.address')}}"
@@ -57,7 +57,7 @@
 
                     <x-admin.form.field.input
                         wire="adoptingCity"
-                        field_name="{{__('admin/adoptings.fields.city')}}"
+                        field_name="city"
                         label="{{__('admin/adoptings.fields.city')}}"
                         type="text"
                         placeholder="{{ __('admin/adoptings.placeholder.city')}}"
@@ -65,7 +65,7 @@
 
                     <x-admin.form.field.input
                         wire="adoptingPostCode"
-                        field_name="{{__('admin/adoptings.fields.postcode')}}"
+                        field_name="postal"
                         label="{{__('admin/adoptings.fields.postcode')}}"
                         type="text"
                         placeholder="{{__('admin/adoptings.placeholder.post_code')}}"
@@ -81,7 +81,7 @@
 
                     <x-admin.form.field.selected-collection
                         wire="adoptingSelectedAnimalId"
-                        field_name="{{__('admin/adoptings.fields.animal_name')}}"
+                        field_name="animal"
                         label="{{__('admin/adoptings.fields.animal_name')}}"
                         :options="$this->animals"
                         :select="$adoptingSelectedAnimalId"
@@ -109,7 +109,7 @@
 
                     <x-admin.form.field.selected
                         wire="adoptingEnvironment"
-                        field_name="{{__('admin/adoptings.fields.environment')}}"
+                        field_name="environment"
                         label="{{__('admin/adoptings.fields.environment')}}"
                         :options="$this->environments"
                     />
@@ -130,7 +130,7 @@
 
                     <x-admin.form.field.input
                         wire="adoptingCreationDate"
-                        field_name="{{__('admin/adoptings.fields.creation_date')}}"
+                        field_name="date"
                         label="{{__('admin/adoptings.fields.creation_date')}}"
                         type="date"
                         placeholder="{{__('admin/adoptings.placeholder.date')}}"
@@ -138,7 +138,7 @@
 
                     <x-admin.form.field.selected
                         wire="adoptingState"
-                        field_name="{{__('admin/adoptings.fields.state')}}"
+                        field_name="state"
                         label="{{__('admin/adoptings.fields.state')}}"
                         :options="$this->states"
                     />
@@ -146,7 +146,7 @@
 
                     <x-admin.form.field.textarea
                         wire="adoptingComment"
-                        field_name="{{__('admin/adoptings.fields.comment')}}"
+                        field_name="comment"
                         label="{{__('admin/adoptings.fields.comment')}}"
                         placeholder="{{ __('admin/adoptings.placeholder.comment')}}"
                     />

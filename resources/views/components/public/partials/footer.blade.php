@@ -1,21 +1,20 @@
 @php
     $navigations = [
-           ['list_class'=>'pb-3.5', 'label'=> 'Accueil', 'title' => 'Vers la page Accueil', 'route_name' => route('public.homepage'), 'links_class' => 'text-xs font-normal pt-6 inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
-           ['list_class'=>'pb-3.5', 'label'=> 'Le refuge', 'title' => 'Vers la page Le refuge', 'route_name' => route('public.aboutpage'), 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
-           ['list_class'=>'pb-3.5', 'label'=> 'Nos animaux', 'title' => 'Vers la page Nos animaux', 'route_name' => route('public.animals.index'), 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
-           ['list_class'=>'pb-3.5', 'label'=> 'Devenir bénévole', 'title' => 'Vers la page Devenir bénévole', 'route_name' => route('public.volunteerpage'), 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
-           ['list_class'=>'pb-3.5', 'label'=> 'Contactez-nous', 'title' => 'Vers la page Contactez-nous', 'route_name' => route('public.contactpage'), 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
+           ['list_class'=>'pb-3.5', 'label'=> __('public/footer.navigation.home.label'), 'title' => __('public/footer.navigation.home.title'), 'route_name' => route('public.homepage', ['locale' => app()->getLocale()]), 'links_class' => 'text-xs font-normal pt-6 inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
+           ['list_class'=>'pb-3.5', 'label'=> __('public/footer.navigation.about.label'), 'title' => __('public/footer.navigation.about.title'), 'route_name' => route('public.aboutpage', ['locale' => app()->getLocale()]), 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
+           ['list_class'=>'pb-3.5', 'label'=> __('public/footer.navigation.animals.label'), 'title' => __('public/footer.navigation.animals.title'), 'route_name' => route('public.animals.index', ['locale' => app()->getLocale()]), 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
+           ['list_class'=>'pb-3.5', 'label'=> __('public/footer.navigation.contact.label'), 'title' => __('public/footer.navigation.contact.title'), 'route_name' => route('public.contactpage', ['locale' => app()->getLocale()]), 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
        ];
 
     $contact_details = [
-           ['list_class'=>'pb-3.5', 'label'=> '04 72 56 91 42', 'title' => 'Vers le numéro', 'route_name' => 'tel:0472569142', 'links_class' => 'text-xs font-normal pt-6 inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
-           ['list_class'=>'pb-3.5', 'label'=> 'contact@lespattesheureuses.be', 'title' => 'Vers l‘adresse mail', 'route_name' => 'mailto:contact@lespattesheureuses.be', 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
-           ['list_class'=>'pb-3.5', 'label'=> '12 Rue des Fleurs, 69000 Heusy, Belgique', 'title' => 'Vers l‘adresse', 'route_name' => 'https://www.google.com/maps?q=12+Rue+des+Fleurs,+69000+Heusy,+Belgique', 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
+           ['list_class'=>'pb-3.5', 'label'=> __('public/footer.contact.phone.label'), 'title' =>__('public/footer.contact.phone.title'), 'route_name' => 'tel:0472569142', 'links_class' => 'text-xs font-normal pt-6 inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
+           ['list_class'=>'pb-3.5', 'label'=> __('public/footer.contact.email.label'), 'title' => __('public/footer.contact.email.title'), 'route_name' => 'mailto:contact@lespattesheureuses.be', 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
+           ['list_class'=>'pb-3.5', 'label'=> __('public/footer.contact.address.label'), 'title' => __('public/footer.contact.address.title'), 'route_name' => 'https://www.google.com/maps?q=12+Rue+des+Fleurs,+69000+Heusy,+Belgique', 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
     ];
 
     $legal_notices = [
-           ['list_class'=>'pb-3.5', 'label'=> 'Mentions légales', 'title' => 'Vers la page Mentions légales', 'route_name' => '#', 'links_class' => 'text-xs font-normal pt-6 inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
-           ['list_class'=>'pb-3.5', 'label'=> 'Politique de confidentialité', 'title' => 'Vers la page Politique de confidentialité', 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
+           ['list_class'=>'pb-3.5', 'label'=> __('public/footer.legal.terms.label'), 'title' => __('public/footer.legal.terms.title'), 'route_name' => '#', 'links_class' => 'text-xs font-normal pt-6 inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
+           ['list_class'=>'pb-3.5', 'label'=> __('public/footer.legal.privacy.label'), 'title' => __('public/footer.legal.privacy.title'), 'route_name' => '#', 'links_class' => 'text-xs font-normal inline-block transition-transform duration-300 hover:scale-105 hover:text-blue-800'],
     ];
 
 
@@ -79,7 +78,7 @@
 
 
         <div class="flex flex-col pt-10.5 lg:items-center min-[1600px]:pr-[8.375rem]">
-            <a href="{!! route('public.homepage') !!}" title="{{__('public/footer.navigation.home.title')}}">
+            <a href="{!! route('public.homepage', ['locale' => app()->getLocale()]) !!}" title="{{__('public/footer.navigation.home.title')}}">
                 <img src="{!! asset("assets/img/logo_admin.svg") !!}" width="300"
                      alt="{{__('public/footer.image_alt')}}">
             </a>
