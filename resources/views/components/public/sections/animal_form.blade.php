@@ -21,6 +21,7 @@
 
         <div class="w-full lg:w-3/5 xl:w-1/2 2xl:w-2/5">
             @if(session('success'))
+
                 <div class="fixed top-50 right-10 z-50
                px-4 py-3 rounded-lg
                bg-blue-600 text-white text-md shadow-md">

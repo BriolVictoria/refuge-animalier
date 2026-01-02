@@ -24,8 +24,8 @@
                     src="{{ !empty($animal->images[0]) ? asset('storage/animals/' . $animal->images[0]) : asset('assets/img/animalProfil.jpg')}}"
                     alt="{{ __('public/animals.animal_alt', ['name' => $animal->name]) }}"
                     class="rounded-4xl 2xl:w-[30rem]"
-                    width="50"
-                    height="50"
+                    width="500"
+                    height="500"
                 >
             </figure>
         </div>
@@ -34,7 +34,7 @@
             class="flex flex-col gap-8 md:col-start-1 md:col-end-5 md:row-start-1 lg:col-start-1 lg:col-end-7 lg:row-start-1">
             <div class="flex flex-wrap gap-2 self-baseline">
                 <a href="{!! $ariane_link !!}" class="text-xs text-black font-light">{!! $ariane_name !!}</a>
-                <img src="{!! $image_src !!}" alt="{!! $image_alt !!}" width="15" height="15">
+                <img src="{!! $image_src !!}" alt="{!! $image_alt !!}">
                 <span class="text-xs font-medium">{!! $ariane_title !!}</span>
             </div>
 

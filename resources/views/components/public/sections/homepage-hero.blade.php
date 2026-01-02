@@ -11,7 +11,7 @@
 
 <section class="bg-green-50 flex flex-col items-center gap-6 2xl:grid 2xl:grid-cols-12 min-[1850px]:justify-between">
     <figure class="2xl:col-start-8 2xl:col-end-13 2xl:flex 2xl:justify-center">
-        <img class="2xl:w-[34rem]" width="50" height="50" src="{!! $image_path !!}"
+        <img class="2xl:w-[34rem]" width="500" height="500" src="{!! $image_path !!}"
              alt="{!! $image_alt !!}">
     </figure>
     <div class="flex flex-col 2xl:col-start-1 2xl:col-end-7 2xl:row-start-1">
